@@ -11,3 +11,7 @@
 !project.code-workspace
 
 # Please, add your custom content below!
+node_modules
+build
+sandbox/tests
+sandbox/__pycache__

@@ -23,6 +23,8 @@ Make use of this repository template to expedite your project setup and enhance 
     - [Configuration](#configuration)
   - [Usage](#usage)
     - [Testing](#testing)
+  - [Sandbox](#sandbox)
+  - [Specification](#specification)
   - [Design](#design)
     - [Diagrams](#diagrams)
     - [Modularity](#modularity)
@@ -82,6 +84,15 @@ After a successful installation, provide an informative example of how this proj
 ### Testing
 
 There are `make` tasks for you to configure to run your tests.  Run `make test` to see how they work.  You should be able to use the same entry points for local development as in your CI pipeline.
+
+## Sandbox
+
+There is a minimalist sandbox environment in `/sandbox` with an accompanying README with instructions on how to run it locally.
+
+## Specification
+
+The OpenAPI specification is stored in `specification`. In that folder, there is an accompanying README with instructions on how to produce an environment-specification specification and publish
+it using Proxygen CLI.
 
 ## Design
 

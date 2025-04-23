@@ -1,0 +1,924 @@
+{
+    "item": [
+        {
+            "name": "Eligibility",
+            "description": "",
+            "item": []
+        },
+        {
+            "name": "Signposting",
+            "description": "",
+            "item": []
+        },
+        {
+            "name": "NextActions",
+            "description": "",
+            "item": []
+        },
+        {
+            "id": "1b74a3ea-8856-4c73-a727-b44e2eab6cb7",
+            "name": "Check Eligibility",
+            "request": {
+                "name": "Check Eligibility",
+                "description": {
+                    "content": "Determines which suggestions a person is eligible for and which they are not, including reasons and next steps.",
+                    "type": "text/plain"
+                },
+                "url": {
+                    "path": [
+                        "eligibility-check"
+                    ],
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "query": [
+                        {
+                            "disabled": false,
+                            "description": {
+                                "content": "(Required) The NHS number of the person.",
+                                "type": "text/plain"
+                            },
+                            "key": "patient",
+                            "value": "9876543210"
+                        },
+                        {
+                            "disabled": true,
+                            "description": {
+                                "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                                "type": "text/plain"
+                            },
+                            "key": "category",
+                            "value": "VACCINATIONS"
+                        },
+                        {
+                            "disabled": true,
+                            "description": {
+                                "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                                "type": "text/plain"
+                            },
+                            "key": "conditions",
+                            "value": "FLU,RSV"
+                        },
+                        {
+                            "disabled": true,
+                            "description": {
+                                "content": "When Y is passed in, the API will include one or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                                "type": "text/plain"
+                            },
+                            "key": "includeActions",
+                            "value": "Y"
+                        }
+                    ],
+                    "variable": []
+                },
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json"
+                    }
+                ],
+                "method": "GET",
+                "body": {},
+                "auth": {
+                    "type": "oauth2",
+                    "oauth2": [
+                        {
+                            "key": "accessTokenUrl",
+                            "value": "/oauth2/token"
+                        },
+                        {
+                            "key": "authUrl",
+                            "value": "/oauth2/authorize"
+                        },
+                        {
+                            "key": "grant_type",
+                            "value": "authorization_code"
+                        }
+                    ]
+                }
+            },
+            "response": [
+                {
+                    "id": "eb13a658-b2f5-4709-990a-fbbd97e01daa",
+                    "name": "RSV - Actionable CP Booking",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "eligibility-check"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) The NHS number of the person.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "patient",
+                                    "value": "9876543210"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "category",
+                                    "value": "VACCINATIONS"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "conditions",
+                                    "value": "FLU,RSV"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "When Y is passed in, the API will include one or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "includeActions",
+                                    "value": "Y"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "description": {
+                                    "content": "Added as a part of security scheme: oauth2",
+                                    "type": "text/plain"
+                                },
+                                "key": "Authorization",
+                                "value": "<token>"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"Actionable - Individual is eligible and we suggest that they follow one or more of the provided actions\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_75-79_initial\",\n          \"cohortText\": \"You turned 80 after 1 September 2024, so are eligible for the RSV vaccine until 31 August 2025\",\n          \"cohortStatus\": \"NotEligible\"\n        },\n        {\n          \"cohortCode\": \"rsv_75-79_ongoing\",\n          \"cohortText\": \"You're aged 75 to 79\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"PrimaryButton\",\n          \"actionCode\": \"NationalCPBook\",\n          \"description\": \"Book or Amend an RSV vaccinations appointment\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"AwaitGPContact\",\n          \"description\": \"You can wait for your GP surgery to contact you about getting the RSV vaccine. This may be by letter, text, phone call or email.\"\n        }\n      ]\n    }\n  ]\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "1eedad4b-6f7f-4fc3-9eca-229ef21bebd3",
+                    "name": "RSV - Actionable Not CP Booking",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "eligibility-check"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) The NHS number of the person.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "patient",
+                                    "value": "9876543210"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "category",
+                                    "value": "VACCINATIONS"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "conditions",
+                                    "value": "FLU,RSV"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "When Y is passed in, the API will include one or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "includeActions",
+                                    "value": "Y"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "description": {
+                                    "content": "Added as a part of security scheme: oauth2",
+                                    "type": "text/plain"
+                                },
+                                "key": "Authorization",
+                                "value": "<token>"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3002\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"Actionable - Individual is eligible and we suggest that they follow one or more of the provided actions\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_75-79_ongoing\",\n          \"cohortText\": \"You're aged 75 to 79\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"AwaitGPContact\",\n          \"description\": \"You can wait for your GP surgery to contact you about getting the RSV vaccine. This may be by letter, text, phone call or email.\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"InfoCPBook\",\n          \"description\": \"People in some parts of England are able to book for an RSV vaccination in Community Pharmacies.  Unfortunately, your area does not yet offer RSV vaccinations in that way.  You may be able to receive other vaccinations in pharmacies (such as Flu or COVID)\"\n        }\n      ]\n    }\n  ]\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "79facae7-bbd5-4c75-9298-868d36a098e5",
+                    "name": "RSV - Eligible, not actionable",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "eligibility-check"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) The NHS number of the person.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "patient",
+                                    "value": "9876543210"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "category",
+                                    "value": "VACCINATIONS"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "conditions",
+                                    "value": "FLU,RSV"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "When Y is passed in, the API will include one or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "includeActions",
+                                    "value": "Y"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "description": {
+                                    "content": "Added as a part of security scheme: oauth2",
+                                    "type": "text/plain"
+                                },
+                                "key": "Authorization",
+                                "value": "<token>"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3003\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"Actionable - Individual is eligible but suggest that they need not take any action at this time\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_75-79_ongoing\",\n          \"cohortText\": \"You're aged 75 to 79\",\n          \"cohortStatus\": \"NotActionable\"\n        }\n      ],\n      \"suitablityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AwaitVaccination\",\n          \"ruleText\": \"You are in a setting or organisation that will arrange your vaccination for you.  For example, if you are in a Care Home or a member of some government organisations.\"\n        }\n      ]\n    }\n  ]\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "2fb04f8a-1300-4089-bc8f-e93a60033fe5",
+                    "name": "RSV - Not Eligible Due to Vaccination",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "eligibility-check"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) The NHS number of the person.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "patient",
+                                    "value": "9876543210"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "category",
+                                    "value": "VACCINATIONS"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "conditions",
+                                    "value": "FLU,RSV"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "When Y is passed in, the API will include one or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "includeActions",
+                                    "value": "Y"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "description": {
+                                    "content": "Added as a part of security scheme: oauth2",
+                                    "type": "text/plain"
+                                },
+                                "key": "Authorization",
+                                "value": "<token>"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3004\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotEligible\",\n      \"statusText\": \"NotEligible - Individual is not currently eligible\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_75-79_ongoing\",\n          \"cohortText\": \"You're aged 75 to 79\",\n          \"cohortStatus\": \"NotEligible\"\n        }\n      ],\n      \"suitablityRules\": [\n        {\n          \"ruleType\": \"F\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"You have already have an RSV vaccination recorded\"\n        }\n      ]\n    }\n  ]\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "58f3bd3a-024a-453b-91b8-bdba918eef8b",
+                    "name": "RSV - Not Eligible Due to not being cohorted",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "eligibility-check"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) The NHS number of the person.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "patient",
+                                    "value": "9876543210"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "category",
+                                    "value": "VACCINATIONS"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "conditions",
+                                    "value": "FLU,RSV"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "When Y is passed in, the API will include one or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "includeActions",
+                                    "value": "Y"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "description": {
+                                    "content": "Added as a part of security scheme: oauth2",
+                                    "type": "text/plain"
+                                },
+                                "key": "Authorization",
+                                "value": "<token>"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3005\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotEligible\",\n      \"statusText\": \"NotEligible - Individual is not currently eligible\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_75-79_ongoing\",\n          \"cohortText\": \"You're aged 75 to 79\",\n          \"cohortStatus\": \"NotEligible\"\n        },\n        {\n          \"cohortCode\": \"rsv_75-79_initial\",\n          \"cohortText\": \"You turned 80 after 1 September 2024, so are eligible for the RSV vaccine until 31 August 2025\",\n          \"cohortStatus\": \"NotEligible\"\n        }\n      ]\n    }\n  ]\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "2cf3480b-9174-4688-8d4e-51b3d14de258",
+                    "name": "RSV - No rules",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "eligibility-check"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) The NHS number of the person.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "patient",
+                                    "value": "9876543210"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "category",
+                                    "value": "VACCINATIONS"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "conditions",
+                                    "value": "FLU,RSV"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "When Y is passed in, the API will include one or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "includeActions",
+                                    "value": "Y"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "description": {
+                                    "content": "Added as a part of security scheme: oauth2",
+                                    "type": "text/plain"
+                                },
+                                "key": "Authorization",
+                                "value": "<token>"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3006\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  }\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "eaa589e1-bee3-4e0e-ac30-8886da1d8402",
+                    "name": "Invalid input data.",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "eligibility-check"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) The NHS number of the person.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "patient",
+                                    "value": "9876543210"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "category",
+                                    "value": "VACCINATIONS"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "conditions",
+                                    "value": "FLU,RSV"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "When Y is passed in, the API will include one or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "includeActions",
+                                    "value": "Y"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/fhir+json"
+                            },
+                            {
+                                "description": {
+                                    "content": "Added as a part of security scheme: oauth2",
+                                    "type": "text/plain"
+                                },
+                                "key": "Authorization",
+                                "value": "<token>"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Bad Request",
+                    "code": 400,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/fhir+json"
+                        }
+                    ],
+                    "body": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"id\": \"rrt-2959959087381887325-c-geu2-24001-99999999-1\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-11T14:40:00+00:00\"\n  },\n  \"issue\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"value\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The given conditions were not not in the expected format.\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The given conditions were not not in the expected format.\"\n          }\n        ]\n      },\n      \"diagnostics\": \"FLU&COVID should be a single or comma separated list of condition strings with no other punctuation or special characters\",\n      \"location\": [\n        \"parameters/conditions\",\n        \"parameters/conditions\"\n      ]\n    },\n    {\n      \"severity\": \"error\",\n      \"code\": \"value\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The given conditions were not not in the expected format.\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The given conditions were not not in the expected format.\"\n          }\n        ]\n      },\n      \"diagnostics\": \"FLU&COVID should be a single or comma separated list of condition strings with no other punctuation or special characters\",\n      \"location\": [\n        \"parameters/conditions\",\n        \"parameters/conditions\"\n      ]\n    }\n  ]\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "81b64d91-1f24-46a9-970d-9aaa71e2d4e3",
+                    "name": "Person not found.",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "eligibility-check"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) The NHS number of the person.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "patient",
+                                    "value": "9876543210"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "category",
+                                    "value": "VACCINATIONS"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "conditions",
+                                    "value": "FLU,RSV"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "When Y is passed in, the API will include one or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "includeActions",
+                                    "value": "Y"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/fhir+json"
+                            },
+                            {
+                                "description": {
+                                    "content": "Added as a part of security scheme: oauth2",
+                                    "type": "text/plain"
+                                },
+                                "key": "Authorization",
+                                "value": "<token>"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Not Found",
+                    "code": 404,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/fhir+json"
+                        }
+                    ],
+                    "body": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"id\": \"rrt-2959959087381887325-c-geu2-24001-82918062-1\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-14T11:35:00+00:00\"\n  },\n  \"issue\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"processing\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"RESOURCE_NOT_FOUND\",\n            \"display\": \"The given NHS number was not found in our datasets.  This could be because the number is incorrect or some other reason we cannot process that number.\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"RESOURCE_NOT_FOUND\",\n            \"display\": \"The given NHS number was not found in our datasets.  This could be because the number is incorrect or some other reason we cannot process that number.\"\n          }\n        ]\n      },\n      \"diagnostics\": \"NHS Number 9000000404 was not recognised by the Eligibilty Signposting API\",\n      \"location\": [\n        \"parameters/patient\",\n        \"parameters/patient\"\n      ]\n    },\n    {\n      \"severity\": \"error\",\n      \"code\": \"processing\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"RESOURCE_NOT_FOUND\",\n            \"display\": \"The given NHS number was not found in our datasets.  This could be because the number is incorrect or some other reason we cannot process that number.\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"RESOURCE_NOT_FOUND\",\n            \"display\": \"The given NHS number was not found in our datasets.  This could be because the number is incorrect or some other reason we cannot process that number.\"\n          }\n        ]\n      },\n      \"diagnostics\": \"NHS Number 9000000404 was not recognised by the Eligibilty Signposting API\",\n      \"location\": [\n        \"parameters/patient\",\n        \"parameters/patient\"\n      ]\n    }\n  ]\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "0ddc38f0-db2e-4723-8ee9-fdb6abc1e2dc",
+                    "name": "Unrecognised input data. (Unprocessable Content)",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "eligibility-check"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) The NHS number of the person.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "patient",
+                                    "value": "9876543210"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "category",
+                                    "value": "VACCINATIONS"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "conditions",
+                                    "value": "FLU,RSV"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "When Y is passed in, the API will include one or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "includeActions",
+                                    "value": "Y"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/fhir+json"
+                            },
+                            {
+                                "description": {
+                                    "content": "Added as a part of security scheme: oauth2",
+                                    "type": "text/plain"
+                                },
+                                "key": "Authorization",
+                                "value": "<token>"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                    "code": 422,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/fhir+json"
+                        }
+                    ],
+                    "body": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"id\": \"rrt-2959959087381887325-c-geu2-24001-88888888-1\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-11T14:40:00+00:00\"\n  },\n  \"issue\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"value\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The supplied category was not recognised by the API.\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The supplied category was not recognised by the API.\"\n          }\n        ]\n      },\n      \"diagnostics\": \"HEALTHCHECKS is not a category that is supported by the API\",\n      \"location\": [\n        \"parameters/category\",\n        \"parameters/category\"\n      ]\n    },\n    {\n      \"severity\": \"error\",\n      \"code\": \"value\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The supplied category was not recognised by the API.\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The supplied category was not recognised by the API.\"\n          }\n        ]\n      },\n      \"diagnostics\": \"HEALTHCHECKS is not a category that is supported by the API\",\n      \"location\": [\n        \"parameters/category\",\n        \"parameters/category\"\n      ]\n    }\n  ]\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                },
+                {
+                    "id": "11d0b0ab-ab4c-493f-8327-86bcd22a1adc",
+                    "name": "Internal server error.",
+                    "originalRequest": {
+                        "url": {
+                            "path": [
+                                "eligibility-check"
+                            ],
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "query": [
+                                {
+                                    "disabled": false,
+                                    "description": {
+                                        "content": "(Required) The NHS number of the person.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "patient",
+                                    "value": "9876543210"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "category",
+                                    "value": "VACCINATIONS"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "conditions",
+                                    "value": "FLU,RSV"
+                                },
+                                {
+                                    "disabled": true,
+                                    "description": {
+                                        "content": "When Y is passed in, the API will include one or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                                        "type": "text/plain"
+                                    },
+                                    "key": "includeActions",
+                                    "value": "Y"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/fhir+json"
+                            },
+                            {
+                                "description": {
+                                    "content": "Added as a part of security scheme: oauth2",
+                                    "type": "text/plain"
+                                },
+                                "key": "Authorization",
+                                "value": "<token>"
+                            }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                    },
+                    "status": "Internal Server Error",
+                    "code": 500,
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/fhir+json"
+                        }
+                    ],
+                    "body": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"id\": \"rrt-2959959087381887325-c-geu2-24001-77777777-1\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-10T13:40:00+00:00\"\n  },\n  \"issue\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"processing\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"SERVICE_ERROR\",\n            \"display\": \"An unknown error occurred processing this request. Contact us for assistance diagnosing this issue: https://digital.nhs.uk/developer/help-and-support quoting the id included in this message\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"SERVICE_ERROR\",\n            \"display\": \"An unknown error occurred processing this request. Contact us for assistance diagnosing this issue: https://digital.nhs.uk/developer/help-and-support quoting the id included in this message\"\n          }\n        ]\n      },\n      \"diagnostics\": \"No diagnostics available\",\n      \"location\": [\n        \"parameters/category\",\n        \"parameters/category\"\n      ]\n    },\n    {\n      \"severity\": \"error\",\n      \"code\": \"processing\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"SERVICE_ERROR\",\n            \"display\": \"An unknown error occurred processing this request. Contact us for assistance diagnosing this issue: https://digital.nhs.uk/developer/help-and-support quoting the id included in this message\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"SERVICE_ERROR\",\n            \"display\": \"An unknown error occurred processing this request. Contact us for assistance diagnosing this issue: https://digital.nhs.uk/developer/help-and-support quoting the id included in this message\"\n          }\n        ]\n      },\n      \"diagnostics\": \"No diagnostics available\",\n      \"location\": [\n        \"parameters/category\",\n        \"parameters/category\"\n      ]\n    }\n  ]\n}",
+                    "cookie": [],
+                    "_postman_previewlanguage": "json"
+                }
+            ],
+            "event": [],
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            }
+        }
+    ],
+    "event": [],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "https://sandbox.api.service.nhs.uk/eligibility-signposting"
+        }
+    ],
+    "info": {
+        "_postman_id": "6c154c62-3447-43d1-a536-c18e26f55050",
+        "name": "Eligibility Signposting API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": {
+            "content": "API to assess eligibility based on category, condition and NHS number.",
+            "type": "text/plain"
+        }
+    }
+}
