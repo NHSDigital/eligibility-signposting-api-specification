@@ -19,10 +19,10 @@ runs:
         sudo apt-get update
         sudo apt-get install -y make
 
-    - name: Install Spectral and Swagger CLI
+    - name: Install Spectral, Swagger CLI, and Redocly CLI
       shell: bash
       run: |
-        npm install -g @stoplight/spectral-cli swagger-cli
+        npm install -g @stoplight/spectral-cli swagger-cli @redocly/cli
 
     - name: Construct OpenAPI Spec
       shell: bash
