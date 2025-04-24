@@ -28,7 +28,7 @@ To build a specification for a specific environment:
 2. Run `make construct-spec` from the repository root, which:
    - Updates templates with environment-specific values
    - Uses Redocly to compile the complete specification to `build/specification/`
-   - For the `sandbox` environment, automatically runs `make publish` to convert the specification to JSON and save it to `sandbox/specification/` for immediate use
+3. For the `sandbox` environment, run `make publish` to convert the specification to JSON and save it to `sandbox/specification/` for immediate use
 
 ### Deploying Environment-Specific Specifications
 

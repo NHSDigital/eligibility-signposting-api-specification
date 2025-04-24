@@ -1,8 +1,8 @@
 name: "Lint and Validate OpenAPI v2 Spec"
 description: "Lint and validate an OpenAPI v2 (Swagger) specification using Spectral and Swagger CLI"
 inputs:
-  spec-file:
-    description: "Path to the OpenAPI v2 (Swagger) specification file"
+  apim-env:
+    description: "APIM environment for constructing the spec"
     required: true
 
 runs:
@@ -11,17 +11,28 @@ runs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: "20"
 
-    - name: Install Spectral and Swagger CLI
+    - name: Install dependencies
       shell: bash
       run: |
-        npm install -g @stoplight/spectral-cli swagger-cli
+        sudo apt-get update
+        sudo apt-get install -y make
+
+    - name: Install Spectral, Swagger CLI, and Redocly CLI
+      shell: bash
+      run: |
+        npm install -g @stoplight/spectral-cli swagger-cli @redocly/cli
+
+    - name: Construct OpenAPI Spec
+      shell: bash
+      run: |
+        make construct-spec APIM_ENV=${{ inputs.apim-env }}
 
     - name: Lint OpenAPI Spec with Spectral
       shell: bash
-      run: spectral lint ${{ inputs.spec-file }}
+      run: spectral lint --ruleset .spectral.yaml build/specification/eligibility-signposting-api.yaml
 
     - name: Validate OpenAPI Spec with Swagger CLI
       shell: bash
-      run: swagger-cli validate ${{ inputs.spec-file }}
+      run: swagger-cli validate build/specification/eligibility-signposting-api.yaml
