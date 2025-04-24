@@ -46,9 +46,6 @@ _dist_include="pytest.ini poetry.lock poetry.toml pyproject.toml Makefile build/
 dependencies: # Install dependencies needed to build and test the project @Pipeline
 	scripts/dependencies.sh
 
-
-
-
 config:: # Configure development environment (main) @Configuration
 	# TODO: Use only 'make' targets that are specific to this project, e.g. you may not need to install Node.js
 	make _install-dependencies

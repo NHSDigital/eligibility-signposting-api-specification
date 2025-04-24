@@ -12,6 +12,22 @@
 
 # Please, add your custom content below!
 node_modules
-build
+node_modules/
+bin/
+dist/
+build/
+public/
 sandbox/tests
 sandbox/__pycache__
+/specification/tmp/*
+/sandbox/specification/*
+sandbox/specification/*
+/specification/postman
+/coverage.xml
+*/package-lock.json
+
+.env
+__pycache__/
+.envrc
+.idea/
+.venv/

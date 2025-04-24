@@ -1,0 +1,27 @@
+name: "Lint and Validate OpenAPI v2 Spec"
+description: "Lint and validate an OpenAPI v2 (Swagger) specification using Spectral and Swagger CLI"
+inputs:
+  spec-file:
+    description: "Path to the OpenAPI v2 (Swagger) specification file"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install Spectral and Swagger CLI
+      shell: bash
+      run: |
+        npm install -g @stoplight/spectral-cli swagger-cli
+
+    - name: Lint OpenAPI Spec with Spectral
+      shell: bash
+      run: spectral lint ${{ inputs.spec-file }}
+
+    - name: Validate OpenAPI Spec with Swagger CLI
+      shell: bash
+      run: swagger-cli validate ${{ inputs.spec-file }}
