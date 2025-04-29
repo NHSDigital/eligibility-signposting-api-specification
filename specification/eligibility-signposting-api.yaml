@@ -504,8 +504,7 @@ paths:
 ################################################################################
 components:
     securitySchemes:
-      app-level0:
-          $ref: https://proxygen.ptl.api.platform.nhs.uk/components/securitySchemes/app-level0
+      $ref: "components/security/security.yaml"
 x-nhsd-apim:
     access:
         $ref: "x-nhsd-apim/access.yaml"
