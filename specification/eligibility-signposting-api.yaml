@@ -25,7 +25,7 @@ paths:
         Determines which suggestions a person is eligible for and which they are
         not, including reasons and next steps.
       security:
-        - $ref: "../specification/components/security/security.yaml"
+        - environment-specific-secured: []
       operationId: checkEligibility
       parameters:
         - name: id
@@ -539,7 +539,8 @@ paths:
 ################################################################################
 components:
     securitySchemes:
-      $ref: "components/security/security.yaml"
+      environment-specific-secured:
+        $ref: "components/security/security.yaml"
 x-nhsd-apim:
     access:
         $ref: "x-nhsd-apim/access.yaml"
