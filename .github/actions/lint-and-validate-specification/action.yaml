@@ -31,8 +31,8 @@ runs:
 
     - name: Lint OpenAPI Spec with Spectral
       shell: bash
-      run: spectral lint --ruleset .spectral.yaml build/specification/eligibility-signposting-api.yaml
+        run: spectral lint --ruleset .spectral.yaml build/specification/${{ inputs.apim-env }}/eligibility-signposting-api.yaml
 
     - name: Validate OpenAPI Spec with Swagger CLI
       shell: bash
-      run: swagger-cli validate build/specification/eligibility-signposting-api.yaml
+      run: swagger-cli validate build/specification/${{ inputs.apim-env }}/eligibility-signposting-api.yaml
