@@ -123,7 +123,7 @@ endif
 
 construct-spec: guard-APIM_ENV
 	@ $(MAKE) update-spec-template APIM_ENV=$$APIM_ENV
-	mkdir -p build/specification && \
+	mkdir -p build/specification/$(APIM_ENV) && \
 	npx redocly bundle specification/eligibility-signposting-api.yaml --remove-unused-components --keep-url-references --ext yaml \
 	> build/specification/$(APIM_ENV)/eligibility-signposting-api.yaml
 
