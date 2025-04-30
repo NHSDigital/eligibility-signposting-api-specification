@@ -1,10 +1,6 @@
-type: hosted
+type: external
+url: "TBC"
 healthcheck: /_status
-containers:
-  - name: eligibility-signposting-api
-    image:
-      name: eligibility-signposting-api
-      tag: latest
-    environment:
-      LOG_LEVEL: info
-      NODE_ENV: production
+security:
+  type: mtls
+  secret: eligibility-signposting-api
