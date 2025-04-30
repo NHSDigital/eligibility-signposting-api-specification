@@ -1,0 +1,90 @@
+[project]
+name = "eligibility-signposting-api-specification"
+version = "0.0.1-alpha"
+description = "TODO"
+authors = [
+  #TODO add authors
+]
+readme = "README.md"
+requires-python = ">=3.13"
+repository = "https://github.com/NHSDigital/eligibility-signposting-api-specification"
+homepage = "https://digital.nhs.uk/developer/api-catalogue"
+keywords = ["healthcare", "uk", "nhs", "vaccination", "api"] #TODO add additional keywords
+package_mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+flask = {extras = ["async"], version = "^3.1.0"}
+httpx = "^0.28.1"
+yarl = "^1.18.3"
+pydantic = "^2.10.6"
+asgiref = "^3.8.1"
+boto3 = "^1.37.3"
+botocore = "^1.37.3"
+eval-type-backport = "^0.2.2"
+mangum = "^0.19.0"
+wireup = "^1.0.1"
+python-json-logger = "^3.3.0"
+fhir-resources = "^8.0.0"
+python-dateutil = "^2.9.0"
+pyhamcrest = "^2.1.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.0"
+docopt = "^0.6.2"
+jsonpath-rw = "^1.4.0"
+semver = "^3.0.4"
+gitpython = "^3.1.44"
+pytest = "^8.3.4"
+pytest-asyncio = "^0.26.0"
+pytest-cov = "^6.0.0"
+pytest-nhsd-apim = "^5.0.0"
+aiohttp = "^3.11.12"
+awscli = "^1.37.24"
+awscli-local = "^0.22.0"
+polyfactory = "^2.20.0"
+pyright = "^1.1.394"
+brunns-matchers = "^2.9.0"
+localstack = "^4.1.1"
+pytest-docker = "^3.2.0"
+stamina = "^25.1.0"
+pytest-freezer = "^0.4.9"
+
+[tool.ruff]
+line-length = 120
+exclude = ["docs/", "scripts/"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["COM812", "D"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/eligibility_signposting_api/repos/*" = ["ANN401"]
+"tests/*" = ["ANN", "INP", "S101", "S106"]
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "DEBUG"
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.coverage.run]
+relative_files = true
+branch = true
+source = ["sandbox"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+exclude_lines = [
+  "pragma: no cover",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+  "raise NotImplementedError",
+]

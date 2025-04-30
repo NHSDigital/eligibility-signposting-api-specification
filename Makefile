@@ -7,15 +7,11 @@ MAKE_DIR := $(abspath $(shell pwd))
 
 #Installs dependencies using poetry.
 install-python:
-	poetry install
+	poetry install --no-root
 
 #Installs dependencies using npm.
 install-node:
 	npm install --legacy-peer-deps
-
-#Configures Git Hooks, which are scripts that run given a specified event.
-.git/hooks/pre-commit:
-	cp scripts/pre-commit .git/hooks/pre-commit
 
 #Condensed Target to run all targets above.
 install: install-node install-python .git/hooks/pre-commit
@@ -37,7 +33,7 @@ publish: clean
 	mkdir -p build
 	mkdir -p sandbox/specification
 	npm run publish 2> /dev/null
-	cp build/eligibility-signposting-api.json sandbox/specification/eligibility-signposting-api.json
+	cp build/sandbox/eligibility-signposting-api.json sandbox/specification/eligibility-signposting-api.json
 #Files to loop over in release
 _dist_include="pytest.ini poetry.lock poetry.toml pyproject.toml Makefile build/. tests"
 
@@ -65,6 +61,26 @@ setup-proxygen-credentials: # Copy Proxygen templated credentials to where it ex
 get-spec: # Get the most recent specification live in proxygen
 	$(MAKE) setup-proxygen-credentials
 	proxygen spec get
+
+get-spec-uat: # Get the most recent specification live in proxygen
+	$(MAKE) setup-proxygen-credentials
+	proxygen spec get --uat
+
+publish-spec: # Publish the specification to proxygen
+	$(MAKE) setup-proxygen-credentials
+	proxygen spec publish --specification-file build/prod/eligibility-signposting-api.json
+
+publish-spec-uat: # Publish the specification to proxygen
+	$(MAKE) setup-proxygen-credentials
+	proxygen spec publish --specification-file build/preprod/eligibility-signposting-api.json --uat
+
+delete-spec: # Delete the specification from proxygen
+	$(MAKE) setup-proxygen-credentials
+	proxygen spec delete
+
+delete-spec-uat: # Delete the specification from proxygen
+	$(MAKE) setup-proxygen-credentials
+	proxygen spec delete --uat
 
 # Specification
 
@@ -109,7 +125,7 @@ construct-spec: guard-APIM_ENV
 	@ $(MAKE) update-spec-template APIM_ENV=$$APIM_ENV
 	mkdir -p build/specification && \
 	npx redocly bundle specification/eligibility-signposting-api.yaml --remove-unused-components --keep-url-references --ext yaml \
-	> build/specification/eligibility-signposting-api.yaml
+	> build/specification/$(APIM_ENV)/eligibility-signposting-api.yaml
 
 SPEC_DIR := $(CURDIR)/specification
 POSTMAN_DIR := $(SPEC_DIR)/postman
