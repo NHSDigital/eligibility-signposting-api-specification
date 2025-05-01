@@ -20,6 +20,7 @@ public/
 sandbox/tests
 sandbox/__pycache__
 /specification/tmp/*
+/specification/tmp/working/*
 /sandbox/specification/*
 sandbox/specification/*
 /coverage.xml

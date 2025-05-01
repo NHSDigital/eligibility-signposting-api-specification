@@ -138,8 +138,9 @@ convert-postman: # Create Postman collection from OAS spec
 	mkdir -p $(POSTMAN_DIR)
 	cp $(SPEC_DIR)/eligibility-signposting-api.yaml $(POSTMAN_DIR)/
 	docker build -t portman-converter -f $(POSTMAN_DIR)/Dockerfile $(SPEC_DIR)
-	docker run --rm -v $(SPEC_DIR):/app portman-converter \
+	docker run --rm -u $(shell id -u):$(shell id -g) -v $(SPEC_DIR):/app portman-converter \
 		portman -l /app/eligibility-signposting-api.yaml -o /app/postman/collection.json
+	echo >> $(POSTMAN_DIR)/collection.json
 	rm $(POSTMAN_DIR)/eligibility-signposting-api.yaml
 # ==============================================================================
 
