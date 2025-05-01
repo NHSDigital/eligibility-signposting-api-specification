@@ -25,7 +25,7 @@ Contains APIM extensions to the OpenAPI specification with deployment requiremen
 To build a specification for a specific environment:
 
 1. Make sure you've run the initial setup command `make install-node`.
-2. Set the target environment using the `APIM_ENV` parameter
+2. Set the target environment using the `APIM_ENV` parameter (dev, test, preprod, prod, sandbox)
 3. Run `make construct-spec` from the repository root, which:
    - Updates templates with environment-specific values
    - Uses Redocly to compile the complete specification to `build/specification/$(APIM_ENV)/`
