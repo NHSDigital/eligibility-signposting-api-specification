@@ -1,0 +1,1209 @@
+{
+  "_": {
+    "postman_id": "ba20edf8-d2b0-449e-9fce-c2fca677a75f"
+  },
+  "item": [
+    {
+      "id": "bda40fa4-a13e-480b-b308-5d8ffea5c219",
+      "name": "Eligibility",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    },
+    {
+      "id": "3baf66b1-6fd6-4541-9bcc-4882580840bf",
+      "name": "Signposting",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    },
+    {
+      "id": "2dcd7738-4fb2-40bd-908d-d20e055faf84",
+      "name": "NextActions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    },
+    {
+      "id": "25891a9a-2789-4669-ab95-32606f384701",
+      "name": "Check Eligibility",
+      "request": {
+        "name": "Check Eligibility",
+        "description": {
+          "content": "Determines which suggestions a person is eligible for and which they are not, including reasons and next steps.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "patient-check",
+            ":id"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": true,
+              "description": {
+                "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                "type": "text/plain"
+              },
+              "key": "category",
+              "value": "VACCINATIONS"
+            },
+            {
+              "disabled": true,
+              "description": {
+                "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                "type": "text/plain"
+              },
+              "key": "conditions",
+              "value": "FLU,RSV"
+            },
+            {
+              "disabled": true,
+              "description": {
+                "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                "type": "text/plain"
+              },
+              "key": "includeActions",
+              "value": "Y"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "description": {
+                "content": "(Required) The NHS number of the person to check eligibility for. The primary identifier of a patient, unique within NHS England and Wales. Always 10 digits and must be a [valid NHS number](https://www.datadictionary.nhs.uk/attributes/nhs_number.html).",
+                "type": "text/plain"
+              },
+              "type": "any",
+              "value": "9000000009",
+              "key": "id"
+            }
+          ]
+        },
+        "header": [
+          {
+            "disabled": true,
+            "description": {
+              "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+              "type": "text/plain"
+            },
+            "key": "X-Request-ID",
+            "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+          },
+          {
+            "disabled": true,
+            "description": {
+              "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+              "type": "text/plain"
+            },
+            "key": "X-Correlation-ID",
+            "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+          },
+          {
+            "disabled": true,
+            "description": {
+              "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+              "type": "text/plain"
+            },
+            "key": "NHSD-End-User-Organisation-ODS",
+            "value": "Y12345"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "body": {},
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "type": "any",
+              "value": "apikey",
+              "key": "key"
+            },
+            {
+              "type": "any",
+              "value": "{{apiKey}}",
+              "key": "value"
+            },
+            {
+              "type": "any",
+              "value": "header",
+              "key": "in"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "9a9149f3-e174-4b0d-a723-122e6331ea19",
+          "name": "RSV - Actionable CP Booking",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apikey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"Actionable - Individual is eligible and we suggest that they follow one or more of the provided actions\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_75-79_ongoing\",\n          \"cohortText\": \"You're aged 75 to 79\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"PrimaryButton\",\n          \"actionCode\": \"NationalCPBook\",\n          \"description\": \"Book or Amend an RSV vaccinations appointment\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"AwaitGPContact\",\n          \"description\": \"You can wait for your GP surgery to contact you about getting the RSV vaccine. This may be by letter, text, phone call or email.\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "31ac0790-21bb-476d-96fa-c134d6a4b507",
+          "name": "RSV - Actionable Not CP Booking",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apikey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3002\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"Actionable - Individual is eligible and we suggest that they follow one or more of the provided actions\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_75-79_ongoing\",\n          \"cohortText\": \"You're aged 75 to 79\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"AwaitGPContact\",\n          \"description\": \"You can wait for your GP surgery to contact you about getting the RSV vaccine. This may be by letter, text, phone call or email.\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"InfoCPBook\",\n          \"description\": \"People in some parts of England are able to book for an RSV vaccination in Community Pharmacies.  Unfortunately, your area does not yet offer RSV vaccinations in that way.  You may be able to receive other vaccinations in pharmacies (such as Flu or COVID)\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "e96c6a4d-f77f-4775-90a4-e2520150f08e",
+          "name": "RSV - Eligible, not actionable",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apikey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3003\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"Actionable - Individual is eligible but suggest that they need not take any action at this time\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_75-79_ongoing\",\n          \"cohortText\": \"You're aged 75 to 79\",\n          \"cohortStatus\": \"NotActionable\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AwaitVaccination\",\n          \"ruleText\": \"You are in a setting or organisation that will arrange your vaccination for you.  For example, if you are in a Care Home or a member of some government organisations.\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "4284a77d-b38a-44cd-aeb9-d7606a954917",
+          "name": "RSV - Not Eligible Due to Vaccination",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apikey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3004\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotEligible\",\n      \"statusText\": \"NotEligible - Individual is not currently eligible\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_75-79_ongoing\",\n          \"cohortText\": \"You're aged 75 to 79\",\n          \"cohortStatus\": \"NotEligible\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"F\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"You have already have an RSV vaccination recorded\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "60101a57-018e-40f8-b01f-1ccb2f5c0647",
+          "name": "RSV - Not Eligible Due to not being cohorted",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apikey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3005\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotEligible\",\n      \"statusText\": \"NotEligible - Individual is not currently eligible\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_75-79_ongoing\",\n          \"cohortText\": \"You're aged 75 to 79\",\n          \"cohortStatus\": \"NotEligible\"\n        },\n        {\n          \"cohortCode\": \"rsv_75-79_initial\",\n          \"cohortText\": \"You turned 80 after 1 September 2024, so are eligible for the RSV vaccine until 31 August 2025\",\n          \"cohortStatus\": \"NotEligible\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "b2a046d8-f574-4ac2-ab9c-898f000a3ca8",
+          "name": "RSV - No rules",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apikey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3006\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  }\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "237e32fb-9df9-48dd-a8ef-9c7369a0d02d",
+          "name": "Invalid input data.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              },
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apikey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/fhir+json"
+            }
+          ],
+          "body": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"id\": \"rrt-2959959087381887325-c-geu2-24001-99999999-1\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-11T14:40:00+00:00\"\n  },\n  \"issue\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"value\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The given conditions were not not in the expected format.\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The given conditions were not not in the expected format.\"\n          }\n        ]\n      },\n      \"diagnostics\": \"FLU&COVID should be a single or comma separated list of condition strings with no other punctuation or special characters\",\n      \"location\": [\n        \"parameters/conditions\",\n        \"parameters/conditions\"\n      ]\n    },\n    {\n      \"severity\": \"error\",\n      \"code\": \"value\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The given conditions were not not in the expected format.\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The given conditions were not not in the expected format.\"\n          }\n        ]\n      },\n      \"diagnostics\": \"FLU&COVID should be a single or comma separated list of condition strings with no other punctuation or special characters\",\n      \"location\": [\n        \"parameters/conditions\",\n        \"parameters/conditions\"\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "25ddc8a7-450f-48df-97e1-a19bb7166b7a",
+          "name": "Person not found.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              },
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apikey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/fhir+json"
+            }
+          ],
+          "body": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"id\": \"rrt-2959959087381887325-c-geu2-24001-82918062-1\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-14T11:35:00+00:00\"\n  },\n  \"issue\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"processing\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"RESOURCE_NOT_FOUND\",\n            \"display\": \"The given NHS number was not found in our datasets.  This could be because the number is incorrect or some other reason we cannot process that number.\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"RESOURCE_NOT_FOUND\",\n            \"display\": \"The given NHS number was not found in our datasets.  This could be because the number is incorrect or some other reason we cannot process that number.\"\n          }\n        ]\n      },\n      \"diagnostics\": \"NHS Number 9000000404 was not recognised by the Eligibilty Signposting API\",\n      \"location\": [\n        \"parameters/patient\",\n        \"parameters/patient\"\n      ]\n    },\n    {\n      \"severity\": \"error\",\n      \"code\": \"processing\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"RESOURCE_NOT_FOUND\",\n            \"display\": \"The given NHS number was not found in our datasets.  This could be because the number is incorrect or some other reason we cannot process that number.\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"RESOURCE_NOT_FOUND\",\n            \"display\": \"The given NHS number was not found in our datasets.  This could be because the number is incorrect or some other reason we cannot process that number.\"\n          }\n        ]\n      },\n      \"diagnostics\": \"NHS Number 9000000404 was not recognised by the Eligibilty Signposting API\",\n      \"location\": [\n        \"parameters/patient\",\n        \"parameters/patient\"\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "83e75dfb-0131-4aac-958d-965f3ab06893",
+          "name": "Unrecognised input data. (Unprocessable Content)",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              },
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apikey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/fhir+json"
+            }
+          ],
+          "body": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"id\": \"rrt-2959959087381887325-c-geu2-24001-88888888-1\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-11T14:40:00+00:00\"\n  },\n  \"issue\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"value\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The supplied category was not recognised by the API.\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The supplied category was not recognised by the API.\"\n          }\n        ]\n      },\n      \"diagnostics\": \"HEALTHCHECKS is not a category that is supported by the API\",\n      \"location\": [\n        \"parameters/category\",\n        \"parameters/category\"\n      ]\n    },\n    {\n      \"severity\": \"error\",\n      \"code\": \"value\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The supplied category was not recognised by the API.\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"VALIDATION_ERROR\",\n            \"display\": \"The supplied category was not recognised by the API.\"\n          }\n        ]\n      },\n      \"diagnostics\": \"HEALTHCHECKS is not a category that is supported by the API\",\n      \"location\": [\n        \"parameters/category\",\n        \"parameters/category\"\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "5942e808-a5d9-4109-826b-e7f003400b17",
+          "name": "Internal server error.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/fhir+json"
+              },
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apikey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/fhir+json"
+            }
+          ],
+          "body": "{\n  \"resourceType\": \"OperationOutcome\",\n  \"id\": \"rrt-2959959087381887325-c-geu2-24001-77777777-1\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-10T13:40:00+00:00\"\n  },\n  \"issue\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"processing\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"SERVICE_ERROR\",\n            \"display\": \"An unknown error occurred processing this request. Contact us for assistance diagnosing this issue: https://digital.nhs.uk/developer/help-and-support quoting the id included in this message\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"SERVICE_ERROR\",\n            \"display\": \"An unknown error occurred processing this request. Contact us for assistance diagnosing this issue: https://digital.nhs.uk/developer/help-and-support quoting the id included in this message\"\n          }\n        ]\n      },\n      \"diagnostics\": \"No diagnostics available\",\n      \"location\": [\n        \"parameters/category\",\n        \"parameters/category\"\n      ]\n    },\n    {\n      \"severity\": \"error\",\n      \"code\": \"processing\",\n      \"details\": {\n        \"coding\": [\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"SERVICE_ERROR\",\n            \"display\": \"An unknown error occurred processing this request. Contact us for assistance diagnosing this issue: https://digital.nhs.uk/developer/help-and-support quoting the id included in this message\"\n          },\n          {\n            \"system\": \"https://fhir.nhs.uk/CodeSystem/Spine-ErrorOrWarningCode\",\n            \"code\": \"SERVICE_ERROR\",\n            \"display\": \"An unknown error occurred processing this request. Contact us for assistance diagnosing this issue: https://digital.nhs.uk/developer/help-and-support quoting the id included in this message\"\n          }\n        ]\n      },\n      \"diagnostics\": \"No diagnostics available\",\n      \"location\": [\n        \"parameters/category\",\n        \"parameters/category\"\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        }
+      ],
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "00e0af41-bf6e-4224-87d6-f92cbb6d39d3",
+            "type": "text/javascript",
+            "exec": [
+              "// Validate status 2xx \npm.test(\"[GET]::/patient-check/:id - Status code is 2xx\", function () {\n   pm.response.to.be.success;\n});\n",
+              "// Validate if response header has matching content-type\npm.test(\"[GET]::/patient-check/:id - Content-Type is application/json\", function () {\n   pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\n});\n",
+              "// Validate if response has JSON Body \npm.test(\"[GET]::/patient-check/:id - Response has JSON Body\", function () {\n    pm.response.to.have.jsonBody();\n});\n",
+              "// Response Validation\nconst schema = {\"type\":\"object\",\"properties\":{\"responseId\":{\"type\":\"string\",\"description\":\"GUID assigned when the decisioning evaluation is carried out.  This will be useful if you ever need to request support for a particular request.  This will not change if you receive a cached response.\"},\"meta\":{\"type\":\"object\",\"properties\":{\"lastUpdated\":{\"type\":\"string\",\"description\":\"Timestamp of when the decisioning evaluation is carried out.  This will not change if you receive a cached response.\"}}},\"processedSuggestions\":{\"type\":\"array\",\"description\":\"List of suggestions the person is eligible for.\",\"items\":{\"type\":\"object\",\"properties\":{\"condition\":{\"type\":\"string\",\"description\":\"String representing the vaccine target disease, screening target or other scenario requiring decision based suggestions, that this suggestion relates to\"},\"status\":{\"type\":\"string\",\"description\":\"String representing an overall summary of the persons status for this processedSuggestion\",\"enum\":[\"NotEligible\",\"NotActionable\",\"Actionable\"]},\"statusText\":{\"type\":\"string\"},\"eligibilityCohorts\":{\"type\":\"array\",\"description\":\"Cohorts that drove the eligibility status returned.\",\"items\":{\"type\":\"object\",\"properties\":{\"cohortCode\":{\"type\":\"string\",\"description\":\"Machine readable code signifying the cohort/cohort group that lead to a person's eligibility for this suggestion\"},\"cohortText\":{\"type\":\"string\",\"description\":\"Human readable (render-able) text describing the meaning of a cohort/cohort group that lead to a person's eligibility for this suggestion\"},\"cohortStatus\":{\"type\":\"string\",\"description\":\"String representing the persons status for this processedSuggestion in respect of this particular cohort or cohort group\",\"enum\":[\"NotEligible\",\"NotActionable\",\"Actionable\"]}}}},\"suitabilityRules\":{\"type\":\"array\",\"description\":\"Reasons that the eligibility status was changed from the base eligibility to result in it's status to not be eligible or to be acted on\",\"items\":{\"type\":\"object\",\"properties\":{\"ruleType\":{\"type\":\"string\",\"description\":\"The type of a rule that triggered to amend the status of the suggestion\",\"enum\":[\"F\",\"S\"]},\"ruleCode\":{\"type\":\"string\",\"description\":\"Machine readable code signifying a rule that amended the status of the suggestion\"},\"ruleText\":{\"type\":\"string\",\"description\":\"Human readable (render-able) text describing a rule that amended the status of the suggestion\"}}}},\"actions\":{\"type\":\"array\",\"description\":\"List of actions to be shown to the person.\",\"items\":{\"type\":\"object\",\"properties\":{\"actionType\":{\"type\":\"string\",\"description\":\"Type of action to render.  E.g. A primary button, a link, text etc\"},\"actionCode\":{\"type\":\"string\",\"description\":\"Code representing the action to be taken\"},\"description\":{\"type\":\"string\",\"description\":\"A brief description of the step.\"},\"urlLink\":{\"type\":\"string\",\"description\":\"URL to invoke if action selected.\"}}}}}}}}}\n\n// Validate if response matches JSON schema \npm.test(\"[GET]::/patient-check/:id - Schema is valid\", function() {\n    pm.response.to.have.jsonSchema(schema,{unknownFormats: [\"int32\", \"int64\", \"float\", \"double\"]});\n});\n"
+            ]
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "any",
+      "value": "https://sandbox.api.service.nhs.uk/eligibility-signposting-api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ba20edf8-d2b0-449e-9fce-c2fca677a75f",
+    "name": "Patient Eligibility Signposting API",
+    "version": {
+      "raw": "1.0.9-alpha",
+      "major": 1,
+      "minor": 0,
+      "patch": 9,
+      "prerelease": "alpha",
+      "build": [],
+      "string": "1.0.9-alpha"
+    },
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Overview\n Use this API to access the [Patient Eligibility Signposting Data Product](https://digital.nhs.uk/services/eligibility-signposting) - the nationally curated single source of eligibility status and signposted actions for individuals.  For example, you can request eligibility for one or more vaccination types to understand if NHS England holds information which suggest that the person could or should take further steps toward receiving those vaccinations, and optionally, a list of the steps NHS England would recommend.\n \n Where someone is deemed eligible, they will also be classified as actionable or not actionable. When deemed not actionable, one or more reasons will be returned.  These reasons can range from personal care setting impacts to current lack of availability of vaccines and more.\n \n The API returns most of its data in both code and text form.  Unless agreed with NHS England, where text is provided it should be displayed to the user as-is.\n \n This API currently has a single User Restricted access mode and will operate only in the context of the authenticated individual, you may however request:\n * eligibility for all supported vaccinations\n * eligibility for specified supported vaccinations\n * request that actions be included in the response\n * request that actions not be included in the response\n \n You cannot currently use this API to:\n * request eligibility for proxy people (familial relations etc.)\n * request actions for people considered ineligible\n \n This API is read-only and can return a list of processed suggestions, each relating to a 'condition' (e.g. COVID, RSV, BOWEL, EYE, BREAST etc.), including the following information for each:\n * a code representing the condition (COVID, RSV, BOWEL, EYE, BREAST)\n * an overall status (NotEligible, NotActionable, Actionable)\n * a list of eligibility cohort groups to which the person belongs (when eligible)\n * a list of the cohort groups that could have made the person eligible (when not eligible)\n * a list of rules/reasons that deem a person to be NotActionable\n * a list of actions that should be shown to the consumer\n \n #### Definitions of Overall Status \n \nThe overall status values indicate the following:\n \n* NotEligible - the individual does not currently meet eligibility criteria\n* NotActionable - the individual is eligible but does not need to take any further action at this time\n* Actionable - the individual is eligible and should follow one of the recommended actions provided\n \n### Patients included in the Patient Eligibility Signposting API\n The API will return data for all patients who are in the NHS PDS system that are registered with an English GP practice (or one administered by England) or who we believe to be resident in England. \n \n Patients who are deceased (or thought to be), marked as invalid or sensitive will not be processed by this API.\n \n ## Who can use this API\n This API can only be used where there is a [legal basis](https://digital.nhs.uk/services/eligibility-signposting/legal-basis) to do so. Make sure you have a valid use case before you go too far with your development.  You must demonstrate you have a [valid use case](https://digital.nhs.uk/services/eligibility-signposting/legal-basis) as part of digital onboarding. \n \n You must do this before you can go live (see 'Onboarding' below).\n \n ### Who can access Eligibility Signposting Information\n Patients who receive health and social care or make use of NHS services in England, Wales and the Isle of Man can access their own Eligibility Signposting data through onboarded services.\n \n Health and care organisations in England and the Isle of Man can access our information for legitimate direct care purposes. Legitimate direct care examples include NHS organisations delivering healthcare, local authorities delivering care, third sector and private sector health and care organisations, and developers delivering systems to health and care organisations. \n \n \n ### Existing API users\n To find out which healthcare software development organisations and products are already using this API, see [Patient Eligibility Signposting API - integrated products](https://digital.nhs.uk/services/eligibility-signposting/integrated-products).\n \n ## Access modes\n This API currently has only one access mode:\n * patient access \n \n We are considering the possibility of adding other modes in the future:\n * healthcare worker access \n * restricted access \n \n ### Patient access \n If the end user is a patient then you must use this access mode. Use this access mode to obtain data for that patient.\n \n This access mode is [user-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis), meaning an end user must be present, authenticated and authorised. \n \n The end user must be: \n * a patient who receives health and social care or makes use of NHS services \n * strongly authenticated, using [NHS login](https://digital.nhs.uk/services/nhs-login)\n \n To use this access mode, use one of the following security patterns:\n \n |\tSecurity pattern\t\t                                                                                                                                                                                                          |\tTechnical details\t                                  |\tAdvantages\t                                                | Disadvantages                                           |\n |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ----------------------------------------------------| ------------------------------------------------------------|---------------------------------------------------------|\n |[NHS login - combined authentication and authorisation](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/user-restricted-restful-apis-nhs-login-combined-authentication-and-authorisation) |OAuth 2.0 authorisation code with API key and secret |No need to integrate and onboard separately with NHS login.  |No access to user information.                           |\n |[NHS login - separate authentication and authorisation](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/user-restricted-restful-apis-nhs-login-separate-authentication-and-authorisation) |OAuth 2.0 token exchange with signed JWT             |Gives access to user information.                            |Need to integrate and onboard separately with NHS login. |\n \n Patient access mode users must be authenticated to a high proofing level (P9) and to one of the following [vectors of trust](https://nhsconnect.github.io/nhslogin/vectors-of-trust/): \n * P9.Cp.Cd\n * P9.Cp.Ck\n * P9.Cm\n \n This access mode is available in production ([beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status)).\n \n ### Restricted access\n This access mode is not yet available, if you believe this mode would benefit your use-case, please let us know.\n \n This access mode is [application-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#application-restricted-apis), meaning we authenticate and authorise the calling application but not the end user. \n \n This access mode is not designed to be accessed by an end user. You might use this access mode as part of a back-end process to: \n * retrieve eligibility signposting information into a system in advance of a clinic\n * retrieve eligibility signposting information into a system to be used in a disconnected manner\n \n To use this access mode, use this security pattern:\n * [Application-restricted RESTful API - signed JWT authentication](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/application-restricted-restful-apis-signed-jwt-authentication)\n \n ## Roadmap\n The [Patient Eligibility Signposting API](https://digital.nhs.uk/services/eligibility-signposting/roadmap-and-strategy) roadmap shows the planned changes for the API. \n \n To see our roadmap, or to suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/612352/eligibility-signposting-api-vaccinations).\n \n If you have any other queries, please [contact us](https://digital.nhs.uk/developer/help-and-support).\n \n ## Service level\n \n This API is a silver service, meaning it is operational 24 hours a day, 365 days a year and supported 8am to 6pm, Monday to Friday excluding bank holidays.\n \n For more details, see [service levels](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#service-levels).\n \n ## Rate limits\n \n The default rate limit is 25TPS (Transactions Per Second), per app. If you require a higher rate limit please [contact us](https://digital.nhs.uk/developer/help-and-support). or raise this during the onboarding process.\n \n ## Technology\n This API is [RESTful](https://digital.nhs.uk/developer/guides-and-documentation/our-api-technologies#basic-rest).\n \n ## Network access\n This API is available on the internet and, indirectly, on the [Health and Social Care Network (HSCN)](https://digital.nhs.uk/services/health-and-social-care-network).\n \n For more details see [Network access for APIs](https://digital.nhs.uk/developer/guides-and-documentation/network-access-for-apis).\n \n ## Errors\n We use standard HTTP status codes to show whether an API request succeeded or not. They are usually in the range:\n \n * 200 to 299 if it succeeded, including code 202 if it was accepted by an API that needs to wait for further action\n * 400 to 499 if it failed because of a client error by your application\n * 500 to 599 if it failed because of an error on our server\n \n Errors specific to each API are shown in the Endpoints section, under Response. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#http-status-codes) for more on errors.\n \n Your API-calling application should have a mechanism to automatically try again, for example by giving status information to your end user, before giving up. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#error-handling) for more information about error handling.\n \n ## Open source\n You might find the following [open source](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#open-source) resources useful:\n \n | Resource                  | Description                                                          | Links                                                                          |\n |---------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------|\n | Patient Eligibility Signposting API| Source code including API proxy, sandbox and specification and code.      | [GitHub repo](https://github.com/NHSDigital/eligibility-signposting-api) |\n \n We currently don't have any open source client libraries or sample code for this API. If you think this would be useful, you can [upvote the suggestion on our Interactive Product Backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/107439/client-libraries-and-reference-implementations).\n \n \n \n ## Environments and testing\n \n | Environment       | Base URL                                                               |\n | ----------------- | ---------------------------------------------------------------------- |\n | Sandbox           | `https://sandbox.api.service.nhs.uk/eligibility-signposting/patient-check/{id}`    |\n | Integration test  | `https://int.api.service.nhs.uk/eligibility-signposting/patient-check/{id}`        |\n | Production        | `https://api.service.nhs.uk/eligibility-signposting/patient-check/{id}`            |\n \n ### Sandbox testing\n Our [sandbox environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#sandbox-testing):\n * is for early developer testing\n * only covers a limited set of scenarios\n * is open access, so does not allow you to test authorisation\n \n For details of sandbox test scenarios, or to try out the sandbox using our 'Try this API' feature, see the documentation for each endpoint.\n \n Alternatively, you can try out the sandbox using our Postman collection:\n \n [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/?????????????????????????????????)\n \n ### Integration testing\n Our [integration test environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#integration-testing):\n * is for formal integration testing\n * includes authorisation, with options for user-restricted access (NHS Login) \n ### Production smoke testing\n You must not use real patient data for smoke testing in the production environment.\n \n Rather, use our [production test patient](https://digital.nhs.uk/services/eligibility-signposting/api-test-data#production-smoke-testing).\n \n ## Onboarding\n You need to get your software approved by us before it can go live with this API. We call this onboarding. The onboarding process can sometimes be quite long, so it is worth planning well ahead.\n \n As part of this process, you need to demonstrate your technical conformance to the requirements for this API. \n \n You also need to demonstrate that you can manage risks. This might impact the design of your software. For details, see [Onboarding support information](https://digital.nhs.uk/services/eligibility-signposting/onboarding-support-information).\n \n To understand how our online digital onboarding process works, see [digital onboarding](https://digital.nhs.uk/developer/guides-and-documentation/digital-onboarding). \n \n \n ## Related APIs\n \n The following APIs are related to this API:\n\n",
+      "type": "text/plain"
+    }
+  }
+}

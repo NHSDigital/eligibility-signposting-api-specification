@@ -28,7 +28,7 @@ This will stop the sandbox environment.
 There are a number of examples of responses which can be returned by passing specific NHS Numbers in the patient query parameter:
 
 ```bash
- curl -X GET "http://0.0.0.0:9000/eligibility-check?patient=<patient NHS Number>" -H "Authorization: Bearer sdvsd"
+ curl -X GET "http://0.0.0.0:9000/patient-check/<NHS_NUMBER>
 ```
 
 #### Example scenarios

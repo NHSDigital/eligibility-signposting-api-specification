@@ -1,0 +1,62 @@
+[project]
+name = "eligibility-signposting-api-specification"
+version = "0.0.1-alpha"
+description = "TODO"
+authors = [
+  #TODO add authors
+]
+readme = "README.md"
+requires-python = ">=3.13"
+repository = "https://github.com/NHSDigital/eligibility-signposting-api-specification"
+homepage = "https://digital.nhs.uk/developer/api-catalogue"
+keywords = ["healthcare", "uk", "nhs", "vaccination", "api"] #TODO add additional keywords
+package_mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+yq = "^3.2.3"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.0"
+awscli = "^1.37.24"
+awscli-local = "^0.22.0"
+yq = "^3.2.3"  # Development-only dependency for YAML processing; version chosen for compatibility with project tooling
+
+[tool.ruff]
+line-length = 120
+exclude = ["docs/", "scripts/"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["COM812", "D"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/eligibility_signposting_api/repos/*" = ["ANN401"]
+"tests/*" = ["ANN", "INP", "S101", "S106"]
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "DEBUG"
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.coverage.run]
+relative_files = true
+branch = true
+source = ["sandbox"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+exclude_lines = [
+  "pragma: no cover",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+  "raise NotImplementedError",
+]

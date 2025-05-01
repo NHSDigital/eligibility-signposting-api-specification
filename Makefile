@@ -7,15 +7,11 @@ MAKE_DIR := $(abspath $(shell pwd))
 
 #Installs dependencies using poetry.
 install-python:
-	poetry install
+	poetry install --no-root
 
 #Installs dependencies using npm.
 install-node:
 	npm install --legacy-peer-deps
-
-#Configures Git Hooks, which are scripts that run given a specified event.
-.git/hooks/pre-commit:
-	cp scripts/pre-commit .git/hooks/pre-commit
 
 #Condensed Target to run all targets above.
 install: install-node install-python .git/hooks/pre-commit
@@ -33,11 +29,12 @@ format: ## Format and fix code
 	poetry run ruff check . --fix-only
 
 #Creates the fully expanded OAS spec in json
-publish: clean
+generate-sandbox-spec: clean
 	mkdir -p build
 	mkdir -p sandbox/specification
 	npm run publish 2> /dev/null
-	cp build/eligibility-signposting-api.json sandbox/specification/eligibility-signposting-api.json
+	cp build/specification/sandbox/eligibility-signposting-api.json sandbox/specification/eligibility-signposting-api.json
+
 #Files to loop over in release
 _dist_include="pytest.ini poetry.lock poetry.toml pyproject.toml Makefile build/. tests"
 
@@ -65,6 +62,26 @@ setup-proxygen-credentials: # Copy Proxygen templated credentials to where it ex
 get-spec: # Get the most recent specification live in proxygen
 	$(MAKE) setup-proxygen-credentials
 	proxygen spec get
+
+get-spec-uat: # Get the most recent specification live in proxygen
+	$(MAKE) setup-proxygen-credentials
+	proxygen spec get --uat
+
+publish-spec: # Publish the specification to proxygen
+	$(MAKE) setup-proxygen-credentials
+	proxygen spec publish --specification-file build/prod/eligibility-signposting-api.yaml
+
+publish-spec-uat: # Publish the specification to proxygen
+	$(MAKE) setup-proxygen-credentials
+	proxygen spec publish --specification-file build/preprod/eligibility-signposting-api.yaml --uat
+
+delete-spec: # Delete the specification from proxygen
+	$(MAKE) setup-proxygen-credentials
+	proxygen spec delete
+
+delete-spec-uat: # Delete the specification from proxygen
+	$(MAKE) setup-proxygen-credentials
+	proxygen spec delete --uat
 
 # Specification
 
@@ -107,9 +124,12 @@ endif
 
 construct-spec: guard-APIM_ENV
 	@ $(MAKE) update-spec-template APIM_ENV=$$APIM_ENV
-	mkdir -p build/specification && \
+	mkdir -p build/specification/$(APIM_ENV) && \
 	npx redocly bundle specification/eligibility-signposting-api.yaml --remove-unused-components --keep-url-references --ext yaml \
-	> build/specification/eligibility-signposting-api.yaml
+	> build/specification/$(APIM_ENV)/eligibility-signposting-api.yaml
+ifeq ($(APIM_ENV),sandbox)
+	yq 'del(.components.securitySchemes)' build/specification/sandbox/eligibility-signposting-api.yaml > build/specification/sandbox/eligibility-signposting-api.yaml.tmp && mv build/specification/sandbox/eligibility-signposting-api.yaml.tmp build/specification/sandbox/eligibility-signposting-api.yaml
+endif
 
 SPEC_DIR := $(CURDIR)/specification
 POSTMAN_DIR := $(SPEC_DIR)/postman
@@ -118,8 +138,9 @@ convert-postman: # Create Postman collection from OAS spec
 	mkdir -p $(POSTMAN_DIR)
 	cp $(SPEC_DIR)/eligibility-signposting-api.yaml $(POSTMAN_DIR)/
 	docker build -t portman-converter -f $(POSTMAN_DIR)/Dockerfile $(SPEC_DIR)
-	docker run --rm -v $(SPEC_DIR):/app portman-converter \
+	docker run --rm -u $(shell id -u):$(shell id -g) -v $(SPEC_DIR):/app portman-converter \
 		portman -l /app/eligibility-signposting-api.yaml -o /app/postman/collection.json
+	echo >> $(POSTMAN_DIR)/collection.json
 	rm $(POSTMAN_DIR)/eligibility-signposting-api.yaml
 # ==============================================================================
 

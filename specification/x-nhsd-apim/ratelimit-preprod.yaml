@@ -1,0 +1,3 @@
+proxy:
+  limit: 20
+  timeunit: second
