@@ -3,6 +3,7 @@ Apigee
 Bitwarden
 bot
 Cyber
+dev
 Dependabot
 Gitleaks
 Grype
