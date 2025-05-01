@@ -22,7 +22,6 @@ sandbox/__pycache__
 /specification/tmp/*
 /sandbox/specification/*
 sandbox/specification/*
-/specification/postman
 /coverage.xml
 */package-lock.json
 
