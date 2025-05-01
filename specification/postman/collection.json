@@ -1,10 +1,10 @@
 {
   "_": {
-    "postman_id": "2b6851a0-4a25-4f19-8e31-71b72ad56d3a"
+    "postman_id": "765fb0a3-7069-4d8e-89d6-2dd4260b3b7f"
   },
   "item": [
     {
-      "id": "db838ae3-d446-4afd-aa2e-47a21d01d5a5",
+      "id": "2c810daa-06dd-4837-a50a-6794fb079ac9",
       "name": "Eligibility",
       "description": {
         "content": "",
@@ -14,7 +14,7 @@
       "event": []
     },
     {
-      "id": "c25f6bb7-5333-4207-8ded-3df23bf396a6",
+      "id": "61792835-f2cd-4d98-ae46-15a58f35d8ee",
       "name": "Signposting",
       "description": {
         "content": "",
@@ -24,7 +24,7 @@
       "event": []
     },
     {
-      "id": "753018c2-921c-433f-a54f-fb675a7f2a03",
+      "id": "9cf682ab-195c-491c-8025-854337b620a1",
       "name": "NextActions",
       "description": {
         "content": "",
@@ -34,7 +34,7 @@
       "event": []
     },
     {
-      "id": "753c0076-374d-4199-8a6b-1c5c2b443d29",
+      "id": "e5d359c6-1b62-4c45-9572-890ab001c285",
       "name": "Check Eligibility",
       "request": {
         "name": "Check Eligibility",
@@ -153,7 +153,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "4b343c60-8d07-4557-8a4e-4cbfe96cadd7",
+          "id": "92bdcf84-9f18-4d4a-9571-9f9116f827bb",
           "name": "RSV - Actionable CP Booking",
           "originalRequest": {
             "url": {
@@ -254,7 +254,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "cdade20b-d803-4ac5-ae6c-e9368f37d8cd",
+          "id": "cd94c6c2-7ca5-4f65-b314-6badb6ccb665",
           "name": "RSV - Actionable Not CP Booking",
           "originalRequest": {
             "url": {
@@ -355,7 +355,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "9bbf1ebb-4222-4ef0-b4bb-9008cd42e28f",
+          "id": "166dec80-c984-4200-b001-2b79a2343d0d",
           "name": "RSV - Eligible, not actionable",
           "originalRequest": {
             "url": {
@@ -456,7 +456,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "851126f7-a5e7-4460-91f6-b0ee44b1fd7c",
+          "id": "cba59494-7f6b-41d4-a813-aa00a05a499e",
           "name": "RSV - Not Eligible Due to Vaccination",
           "originalRequest": {
             "url": {
@@ -557,7 +557,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "a7feb6e3-24fc-4dba-80fe-ab8fbe55289e",
+          "id": "b56745c6-807e-4c5b-90c2-30951bfe376a",
           "name": "RSV - Not Eligible Due to not being cohorted",
           "originalRequest": {
             "url": {
@@ -658,7 +658,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "1941a96e-5e16-42dc-ad66-e16e89800f18",
+          "id": "f39353e6-59f5-437a-bcaa-08e58d76b90d",
           "name": "RSV - No rules",
           "originalRequest": {
             "url": {
@@ -759,7 +759,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "1871b3c6-0bcc-45bb-806c-26e4ef1faf65",
+          "id": "5fdedaa4-1548-487b-a382-a87bd6ff0f5e",
           "name": "Invalid input data.",
           "originalRequest": {
             "url": {
@@ -860,7 +860,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "cb2a6e32-e35c-4f7a-b977-b4b447b07527",
+          "id": "e10f97cc-db14-42a1-86d7-990706993a57",
           "name": "Person not found.",
           "originalRequest": {
             "url": {
@@ -961,7 +961,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "d2100187-739b-4726-b055-50fc8bbf7c1c",
+          "id": "b33f55ca-30cf-4747-bbcf-8a997ffdfc5d",
           "name": "Unrecognised input data. (Unprocessable Content)",
           "originalRequest": {
             "url": {
@@ -1062,7 +1062,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "87ea871a-f840-457b-b13b-ae85403a77fb",
+          "id": "08f69049-a1eb-4561-8ddb-6db7aeff6f82",
           "name": "Internal server error.",
           "originalRequest": {
             "url": {
@@ -1164,7 +1164,7 @@
         {
           "listen": "test",
           "script": {
-            "id": "ef5a09dc-18fe-44ec-a08c-91177f66e102",
+            "id": "6cb4bfeb-220f-425d-98a8-0f0a192e15e4",
             "type": "text/javascript",
             "exec": [
               "// Validate status 2xx \npm.test(\"[GET]::/patient-check/:id - Status code is 2xx\", function () {\n   pm.response.to.be.success;\n});\n",
@@ -1184,12 +1184,12 @@
   "variable": [
     {
       "type": "any",
-      "value": "https://sandbox.api.service.nhs.uk/eligibility-signposting",
+      "value": "https://sandbox.api.service.nhs.uk/eligibility-signposting-api",
       "key": "baseUrl"
     }
   ],
   "info": {
-    "_postman_id": "2b6851a0-4a25-4f19-8e31-71b72ad56d3a",
+    "_postman_id": "765fb0a3-7069-4d8e-89d6-2dd4260b3b7f",
     "name": "Patient Eligibility Signposting API",
     "version": {
       "raw": "1.0.9-alpha",
