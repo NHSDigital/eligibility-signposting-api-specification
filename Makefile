@@ -29,11 +29,12 @@ format: ## Format and fix code
 	poetry run ruff check . --fix-only
 
 #Creates the fully expanded OAS spec in json
-publish: clean
+generate-sandbox-spec: clean
 	mkdir -p build
 	mkdir -p sandbox/specification
 	npm run publish 2> /dev/null
-	cp build/sandbox/eligibility-signposting-api.json sandbox/specification/eligibility-signposting-api.json
+	cp build/specification/sandbox/eligibility-signposting-api.json sandbox/specification/eligibility-signposting-api.json
+
 #Files to loop over in release
 _dist_include="pytest.ini poetry.lock poetry.toml pyproject.toml Makefile build/. tests"
 
@@ -68,11 +69,11 @@ get-spec-uat: # Get the most recent specification live in proxygen
 
 publish-spec: # Publish the specification to proxygen
 	$(MAKE) setup-proxygen-credentials
-	proxygen spec publish --specification-file build/prod/eligibility-signposting-api.json
+	proxygen spec publish --specification-file build/prod/eligibility-signposting-api.yaml
 
 publish-spec-uat: # Publish the specification to proxygen
 	$(MAKE) setup-proxygen-credentials
-	proxygen spec publish --specification-file build/preprod/eligibility-signposting-api.json --uat
+	proxygen spec publish --specification-file build/preprod/eligibility-signposting-api.yaml --uat
 
 delete-spec: # Delete the specification from proxygen
 	$(MAKE) setup-proxygen-credentials
@@ -126,6 +127,9 @@ construct-spec: guard-APIM_ENV
 	mkdir -p build/specification/$(APIM_ENV) && \
 	npx redocly bundle specification/eligibility-signposting-api.yaml --remove-unused-components --keep-url-references --ext yaml \
 	> build/specification/$(APIM_ENV)/eligibility-signposting-api.yaml
+ifeq ($(APIM_ENV),sandbox)
+	yq -y 'del(.components.securitySchemes) | select(.components.securitySchemes == {} or .components.securitySchemes == null)' -i build/specification/sandbox/eligibility-signposting-api.yaml
+endif
 
 SPEC_DIR := $(CURDIR)/specification
 POSTMAN_DIR := $(SPEC_DIR)/postman

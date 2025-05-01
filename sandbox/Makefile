@@ -25,7 +25,7 @@ update:
 
 spec:
 	mkdir -p specification
-	make -C .. publish
+	make -C .. generate-sandbox-spec
 
 test:
 	UPSTREAM_HOST=test poetry run pytest
