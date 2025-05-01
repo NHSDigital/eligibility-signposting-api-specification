@@ -29,7 +29,7 @@ To build a specification for a specific environment:
 3. Run `make construct-spec` from the repository root, which:
    - Updates templates with environment-specific values
    - Uses Redocly to compile the complete specification to `build/specification/$(APIM_ENV)/`
-4. For the `sandbox` environment, run `make publish` to convert the specification to JSON and save it to `sandbox/specification/` for immediate use.
+4. For the `sandbox` environment, run `make generate-sandbox-spec` to convert the specification to JSON and save it to `sandbox/specification/` for immediate use.
 
 ### Deploying of Environment-Specific Specifications to Apigee
 
