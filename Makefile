@@ -69,11 +69,11 @@ get-spec-uat: # Get the most recent specification live in proxygen
 
 publish-spec: # Publish the specification to proxygen
 	$(MAKE) setup-proxygen-credentials
-	proxygen spec publish --specification-file build/prod/eligibility-signposting-api.yaml
+	proxygen spec publish build/specification/prod/eligibility-signposting-api.yaml
 
 publish-spec-uat: # Publish the specification to proxygen
 	$(MAKE) setup-proxygen-credentials
-	proxygen spec publish --specification-file build/preprod/eligibility-signposting-api.yaml --uat
+	proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat
 
 delete-spec: # Delete the specification from proxygen
 	$(MAKE) setup-proxygen-credentials
@@ -112,7 +112,7 @@ set-ratelimit: guard-APIM_ENV
 	< specification/x-nhsd-apim/ratelimit-template.yaml > specification/x-nhsd-apim/ratelimit.yaml
 
 update-spec-template: guard-APIM_ENV
-ifeq ($(APIM_ENV), $(filter $(APIM_ENV), sandbox internal-dev int ref prod ))
+ifeq ($(APIM_ENV), $(filter $(APIM_ENV), sandbox internal-dev int ref preprod prod ))
 	@ $(MAKE) set-target APIM_ENV=$$APIM_ENV
 	@ $(MAKE) set-access APIM_ENV=$$APIM_ENV
 	@ $(MAKE) set-security APIM_ENV=$$APIM_ENV
