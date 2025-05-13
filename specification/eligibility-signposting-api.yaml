@@ -11,11 +11,11 @@ tags:
   - name: Signposting
   - name: NextActions
 servers:
-  - url: https://sandbox.api.service.nhs.uk/eligibility-signposting
+  - url: https://sandbox.api.service.nhs.uk/eligibility-signposting-api
     description: Sandbox Server
-  - url: https://int.api.service.nhs.uk/eligibility-signposting
+  - url: https://int.api.service.nhs.uk/eligibility-signposting-api
     description: Integration Server
-  - url: https://api.service.nhs.uk/eligibility-signposting
+  - url: https://api.service.nhs.uk/eligibility-signposting-api
     description: Production Server
 paths:
   /patient-check/{id}:
