@@ -33,18 +33,26 @@ There are a number of examples of responses which can be returned by passing spe
 
 #### Example scenarios
 
-| Patient ID   | Response                                         |
-|--------------|--------------------------------------------------|
-| 50000000001  | RSV - Actionable CP Booking                      |
-| 50000000002  | RSV - Actionable Non-CP Booking                  |
-| 50000000003  | RSV - Eligible, not Actionable                   |
-| 50000000004  | RSV - Not Eligible due to vaccination            |
-| 50000000005  | RSV - Not Eligible due to not being in a cohort  |
-| 50000000006  | RSV - No rules                                   |
-| 90000000400  | Invalid input data                               |
-| 90000000404  | Person not found                                 |
-| 90000000422  | Unrecognised input data. (Unprocessable Content) |
-| 90000000500  | Internal server error                            |
+| Patient ID   | Response                                                                                                                              |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| 50000000001  | RSV - Actionable due to membership of an Age Cohort including suggested actions (with booking)                                        |
+| 50000000002  | RSV - Actionable due to membership of an Age Cohort including suggested action (not booking)                                          |
+| 50000000003  | RSV - Actionable due to membership of an alternative Age Cohort including suggested action (not booking)                              |
+| 50000000004  | RSV - Actionable due to membership of an Age Cohort including suggested action (existing national booking)                            |
+| 50000000005  | RSV - Actionable due to membership of an Age Cohort including suggested actions (not booking)                                         |
+| 50000000006  | RSV - Not Actionable despite to membership of an Age Cohort with reasoning of already vaccinated                                      |
+| 50000000007  | RSV - Not Actionable despite to membership of an Age Cohort with reasoning of no available vaccinations (not available type 1)        |
+| 50000000008  | RSV - No RSV response as no active campaign (not available type 2)                                                                    |
+| 50000000009  | RSV - Not Actionable despite to membership of an Age Cohort with reasoning of dose not yet due                                        |
+| 50000000010  | RSV - Not Actionable despite to membership of an Age Cohort with reasoning of dose not far enough apart                               |
+| 50000000011  | RSV - Not Actionable despite to membership of an Age Cohort with reasoning of vaccination given in current setting (e.g. care home)   |
+| 50000000012  | RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 1 includes unknown cohort)               |
+| 50000000013  | RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 2 includes no cohorts)                   |
+| 50000000014  | RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 2 includes no cohorts)                   |
+| 90000000400  | Invalid input data                                                                                                                    |
+| 90000000404  | Person not found                                                                                                                      |
+| 90000000422  | Unrecognised input data. (Unprocessable Content)                                                                                      |
+| 90000000500  | Internal server error                                                                                                                 |
 
 See [app.py](app.py) for current examples.
 
