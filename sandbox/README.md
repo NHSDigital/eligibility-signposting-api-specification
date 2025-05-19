@@ -32,6 +32,7 @@ There are a number of examples of responses which can be returned by passing spe
 ```
 
 #### Example scenarios
+
 | Patient ID   | Response                                                                                                                              |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | 50000000001  | RSV - Actionable due to membership of an Age Cohort including suggested actions (with booking)                                        |
