@@ -362,7 +362,7 @@ paths:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
                       lastUpdated: "2025-02-12T16:11:22Z"
-                    processedSuggestions:
+                    processedSuggestions: []
                 example_50000000009:
                   summary: RSV - Not Actionable despite to membership of an Age Cohort with reasoning of dose not yet due
                   value:
@@ -445,7 +445,7 @@ paths:
                       - condition: "RSV"
                         status: "NotActionable"
                         statusText: "You are eligible, however no further action needs to be taken at this time"
-                        eligibilityCohorts:
+                        eligibilityCohorts: []
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
