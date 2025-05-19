@@ -41,7 +41,7 @@ We deploy our specifications using the Proxygen CLI. In order to do this, the fo
 2. Activate a poetry environment `poetry env activate` - you may need to run `make install-python` to install poetry etc. first.
 3. Run `make retrieve-proxygen-key` from the root directory to retrieve the private key needed to authenticate with Proxygen.
 4. Run `make setup-proxygen-credentials` from the root directory to set up credentials needed to interact with our API proxy.
-5. Run `proxygen instance deploy <environment> eligibility-signposting-api ./build/specification/eligibility-signposting-api.yaml` to deploy the specification to
+5. Run `proxygen instance deploy <environment> eligibility-signposting-api ./build/specification/<env>/eligibility-signposting-api.yaml` to deploy the specification to
    a chosen environment.
 
 ### Publishing specifications

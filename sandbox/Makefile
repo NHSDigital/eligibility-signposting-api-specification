@@ -25,6 +25,7 @@ update:
 
 spec:
 	mkdir -p specification
+	make -C .. construct-spec APIM_ENV=sandbox
 	make -C .. generate-sandbox-spec
 
 test:
