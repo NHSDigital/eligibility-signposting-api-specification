@@ -127,9 +127,7 @@ construct-spec: guard-APIM_ENV
 	mkdir -p build/specification/$(APIM_ENV) && \
 	npx redocly bundle specification/eligibility-signposting-api.yaml --remove-unused-components --keep-url-references --ext yaml \
 	> build/specification/$(APIM_ENV)/eligibility-signposting-api.yaml
-ifeq ($(APIM_ENV),sandbox)
-	yq 'del(.components.securitySchemes)' build/specification/sandbox/eligibility-signposting-api.yaml > build/specification/sandbox/eligibility-signposting-api.yaml.tmp && mv build/specification/sandbox/eligibility-signposting-api.yaml.tmp build/specification/sandbox/eligibility-signposting-api.yaml
-endif
+
 
 SPEC_DIR := $(CURDIR)/specification
 POSTMAN_DIR := $(SPEC_DIR)/postman
