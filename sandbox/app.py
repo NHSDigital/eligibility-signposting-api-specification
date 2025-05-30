@@ -65,7 +65,7 @@ PATIENT_EXAMPLES = {
     "patient-check/9658220150": "example_5000000011",
     "patient-check/9450114080": "example_5000000012",
     "patient-check/9466447939": "example_5000000013",
-    "patient-check/9657933617": "example_5000000014",    
+    "patient-check/9657933617": "example_5000000014",
     "patient-check/90000000400": "code400",
     "patient-check/90000000404": "code404",
     "patient-check/90000000422": "code422",
