@@ -38,6 +38,20 @@ HOP_BY_HOP_HEADERS = [
 ]
 
 PATIENT_EXAMPLES = {
+    "patient-check/5000000001": "example_50000000001",
+    "patient-check/5000000002": "example_50000000002",
+    "patient-check/5000000003": "example_50000000003",
+    "patient-check/5000000004": "example_50000000004",
+    "patient-check/5000000005": "example_50000000005",
+    "patient-check/5000000006": "example_50000000006",
+    "patient-check/5000000007": "example_50000000007",
+    "patient-check/5000000008": "example_50000000008",
+    "patient-check/5000000009": "example_50000000009",
+    "patient-check/5000000010": "example_50000000010",
+    "patient-check/5000000011": "example_50000000011",
+    "patient-check/5000000012": "example_50000000012",
+    "patient-check/5000000013": "example_50000000013",
+    "patient-check/5000000014": "example_50000000014",    
     "patient-check/50000000001": "example_50000000001",
     "patient-check/50000000002": "example_50000000002",
     "patient-check/50000000003": "example_50000000003",
