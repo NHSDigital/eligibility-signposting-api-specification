@@ -51,7 +51,7 @@ PATIENT_EXAMPLES = {
     "patient-check/5000000011": "example_50000000011",
     "patient-check/5000000012": "example_50000000012",
     "patient-check/5000000013": "example_50000000013",
-    "patient-check/5000000014": "example_50000000014",    
+    "patient-check/5000000014": "example_50000000014",
     "patient-check/50000000001": "example_50000000001",
     "patient-check/50000000002": "example_50000000002",
     "patient-check/50000000003": "example_50000000003",
