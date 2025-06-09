@@ -513,7 +513,7 @@ paths:
                                     example: VALIDATION_ERROR
                                   display:
                                     type: string
-                                    example: The given conditions were not not in the expected format.
+                                    example: The given conditions were not in the expected format.
                         diagnostics:
                           type: string
                           example: 'FLU&COVID should be a single or comma separated list of condition strings with no other punctuation or special characters'
@@ -571,7 +571,7 @@ paths:
                                     example: The given NHS number was not found in our datasets.  This could be because the number is incorrect or some other reason we cannot process that number.
                         diagnostics:
                           type: string
-                          example: 'NHS Number 9000000404 was not recognised by the Eligibilty Signposting API'
+                          example: 'NHS Number 9000000404 was not recognised by the Eligibility Signposting API'
                         location:
                           type: array
                           items:
