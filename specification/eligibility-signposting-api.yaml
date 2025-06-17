@@ -230,6 +230,7 @@ paths:
                           - cohortCode: "rsv_age_rolling"
                             cohortText: "You are aged 75 to 79 years old."
                             cohortStatus: "Actionable"
+                        suitabilityRules: []
                         actions:
                           - actionType: "ButtonAuthLink"
                             actionCode: "BookNBS"
@@ -250,6 +251,7 @@ paths:
                           - cohortCode: "rsv_age_rolling"
                             cohortText: "You are aged 75 to 79 years old."
                             cohortStatus: "Actionable"
+                        suitabilityRules: []
                         actions:
                           - actionType: "CareCardWithText"
                             actionCode: "BookLocal"
@@ -268,6 +270,7 @@ paths:
                           - cohortCode: "rsv_age_catchup"
                             cohortText: "You turned 80 between 2nd September 2024 and 31st August 2025"
                             cohortStatus: "Actionable"
+                        suitabilityRules: []
                         actions:
                           - actionType: "CareCardWithText"
                             actionCode: "BookLocal"
@@ -283,6 +286,7 @@ paths:
                         status: "Actionable"
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts: []
+                        suitabilityRules: []
                         actions:
                           - actionType: "CardWithAuthButton"
                             actionCode: "AmendNBS"
@@ -300,6 +304,7 @@ paths:
                         status: "Actionable"
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts: []
+                        suitabilityRules: []
                         actions:
                           - actionType: "CardWithText"
                             actionCode: "ManageLocal"
@@ -319,6 +324,7 @@ paths:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
                             ruleText: "##You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
+                        actions: []
                 example_50000000007:
                   summary: RSV - Not Actionable despite to membership of an Age Cohort with reasoning of no available vaccinations (not available type 1)
                   value:
@@ -337,6 +343,7 @@ paths:
                           - ruleType: "S"
                             ruleCode: "NotAvailable"
                             ruleText: "Vaccinations are not currently available"
+                        actions: []
                 example_50000000008:
                   summary: RSV - No RSV response as no active campaign (not available type 2)
                   value:
@@ -362,6 +369,7 @@ paths:
                           - ruleType: "S"
                             ruleCode: "NotYetDue"
                             ruleText: "Your next dose is not yet due."
+                        actions: []
                 example_50000000010:
                   summary: RSV - Not Actionable despite to membership of an Age Cohort with reasoning of dose not far enough apart
                   value:
@@ -380,6 +388,7 @@ paths:
                           - ruleType: "S"
                             ruleCode: "TooClose"
                             ruleText: "Your previous vaccination was less than 91 days ago."
+                        actions: []
                 example_50000000011:
                   summary: RSV - Not Actionable despite to membership of an Age Cohort with reasoning of vaccination given in other setting (e.g. care home)
                   value:
@@ -398,6 +407,7 @@ paths:
                           - ruleType: "S"
                             ruleCode: "OtherSetting"
                             ruleText: "##Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
+                        actions: []
                 example_50000000012:
                   summary: RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 1 includes unknown cohort)
                   value:
@@ -416,6 +426,7 @@ paths:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
                             ruleText: "##You've had your RSV vaccination\nBased on our records, you recently had this vaccination.You do not need to do anything."
+                        actions: []
                 example_50000000013:
                   summary: RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 2 includes no cohorts)
                   value:
@@ -431,6 +442,7 @@ paths:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
                             ruleText: "##You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
+                        actions: []
                 example_50000000014:
                   summary: RSV - Not Eligible
                   value:
@@ -448,6 +460,7 @@ paths:
                           - cohortCode: "rsv_age_catchup"
                             cohortText: "You did not turn 80 between 2nd September 2024 and 31st August 2025"
                             cohortStatus: "NotEligible"
+                        suitabilityRules: []
                         actions:
                           - actionType: "CardWithText"
                             actionCode: "HealtchareProInfo"
