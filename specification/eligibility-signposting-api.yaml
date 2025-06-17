@@ -191,7 +191,7 @@ paths:
                                 description: Machine readable code signifying a rule that amended the status of the suggestion
                               ruleText:
                                 type: string
-                                description: Human readable (render-able) text describing a rule that amended the status of the suggestion
+                                description: Human readable (render-able) text describing a rule that amended the status of the suggestion (optionally GFM Markdown)
                         actions:
                           type: array
                           description: List of actions to be shown to the person.
@@ -206,11 +206,15 @@ paths:
                                 description: Code representing the action to be taken
                               description:
                                 type: string
-                                description: A brief description of the step.
+                                description: Human readable (render-able) text describing the suggested action (optionally GFM Markdown)
                               urlLink:
                                 type: string
-                                description: Label and URL to invoke if action selected (bar delimited).
-                                example: "My Link Label|https://mylink.mydomain.tld"
+                                description: URL to invoke if action selected.
+                                example: "https://mylink.mydomain.tld"
+                              urlLabel:
+                                type: string
+                                description: Lable to use for the URL (or button) used to display the link
+                                example: "My Link Label"
               examples:
                 example_50000000001:
                   summary: RSV - Actionable due to membership of an Age Cohort including suggested national booking action (actions requested)
@@ -230,7 +234,8 @@ paths:
                           - actionType: "ButtonAuthLink"
                             actionCode: "BookNBS"
                             description: ""
-                            urlLink: "Continue to booking|http://www.nhs.uk/book-rsv"
+                            urlLink: "http://www.nhs.uk/book-rsv"
+                            urlLabel: "Continue to booking"
                 example_50000000002:
                   summary: RSV - Actionable due to membership of an Age Cohort including suggested action (not national booking)
                   value:
@@ -282,7 +287,8 @@ paths:
                           - actionType: "CardWithAuthButton"
                             actionCode: "AmendNBS"
                             description: "##You have an RSV vaccination appointment\nYou can view, change or cancel your appointment below."
-                            urlLink: "Manage your appointment|http://www.nhs.uk/book-rsv"
+                            urlLink: "http://www.nhs.uk/book-rsv"
+                            urlLabel: "Manage your appointment"
                 example_50000000005:
                   summary: RSV - Actionable due to membership of an Age Cohort including suggested actions (with future local booking)
                   value:
