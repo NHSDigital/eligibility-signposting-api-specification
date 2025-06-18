@@ -6,13 +6,13 @@ list:
 	@grep '^[^#[:space:]].*:' Makefile
 
 build:
-	docker-compose -f docker-compose.yaml build
+	docker compose -f docker-compose.yaml build
 
 up: build
-	docker-compose -f docker-compose.yaml up -d
+	docker compose -f docker-compose.yaml up -d
 
 down:
-	docker-compose -f docker-compose.yaml down
+	docker compose -f docker-compose.yaml down
 
 clean:
 	rm -rf ./node_modules
