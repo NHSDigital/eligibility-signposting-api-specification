@@ -1,1 +1,2 @@
-$ref: https://proxygen.prod.api.platform.nhs.uk/components/securitySchemes/app-level0
+app-level0:
+    $ref: https://proxygen.prod.api.platform.nhs.uk/components/securitySchemes/app-level0

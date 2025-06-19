@@ -65,10 +65,5 @@ Instructions for creation and deployment of the sandbox specification can be fou
 
 To deploy the sandbox Docker image to AWS ECR, we use Proxygen CLI as follows:
 
-1. Follow the instructions in the [specification README](/specification/README.md) to set up Proxygen authentication.
-2. Run `proxygen docker get-login` and copy the command provided in the response.
-3. Run the command to authenticate with our ECR repository.
-4. Build the sandbox container - `make build` in this directory.
-5. Tag the image created using `docker image tag <image id> 958002497996.dkr.ecr.eu-west-2.amazonaws.com/eligibility-signposting-api:latest`. You
-   can see what the image id is by running `docker images` to find what was just built.
-6. Push the docker image to our ECR repository using `docker push 958002497996.dkr.ecr.eu-west-2.amazonaws.com/eligibility-signposting-api:latest`
+1. Run `make build-and-publish-sandbox-image` to build the sandbox image and publish to the docker ECR repository.
+2. Run `make deploy-sandbox-spec` to build and publish the sandbox spec to the sandbox instance on APIM.

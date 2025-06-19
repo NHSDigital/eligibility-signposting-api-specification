@@ -1,1 +1,2 @@
-$ref: https://proxygen.prod.api.platform.nhs.uk/components/securitySchemes/nhs-login-p9
+nhs-login-p9:
+  $ref: https://proxygen.prod.api.platform.nhs.uk/components/securitySchemes/nhs-login-p9

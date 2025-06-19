@@ -112,7 +112,7 @@ set-ratelimit: guard-APIM_ENV
 	< specification/x-nhsd-apim/ratelimit-template.yaml > specification/x-nhsd-apim/ratelimit.yaml
 
 update-spec-template: guard-APIM_ENV
-ifeq ($(APIM_ENV), $(filter $(APIM_ENV), sandbox internal-dev int ref preprod prod ))
+ifeq ($(APIM_ENV), $(filter $(APIM_ENV), sandbox internal-dev test int ref preprod prod ))
 	@ $(MAKE) set-target APIM_ENV=$$APIM_ENV
 	@ $(MAKE) set-access APIM_ENV=$$APIM_ENV
 	@ $(MAKE) set-security APIM_ENV=$$APIM_ENV
@@ -123,10 +123,15 @@ else
 endif
 
 construct-spec: guard-APIM_ENV
-	@ $(MAKE) update-spec-template APIM_ENV=$$APIM_ENV
-	mkdir -p build/specification/$(APIM_ENV) && \
-	npx redocly bundle specification/eligibility-signposting-api.yaml --remove-unused-components --keep-url-references --ext yaml \
-	> build/specification/$(APIM_ENV)/eligibility-signposting-api.yaml
+		@ $(MAKE) update-spec-template APIM_ENV=$$APIM_ENV
+		mkdir -p build/specification/$(APIM_ENV)
+ifeq ($(APIM_ENV), sandbox)
+		sed '/^[[:space:]]*security:/,/^[[:space:]]*-[[:space:]]/c\      security:\n        - app-level0: []' specification/eligibility-signposting-api.yaml > specification/eligibility-signposting-api.generated.yaml && \
+		npx redocly bundle specification/eligibility-signposting-api.generated.yaml --remove-unused-components --keep-url-references --ext yaml > build/specification/$(APIM_ENV)/eligibility-signposting-api.yaml
+		rm specification/eligibility-signposting-api.generated.yaml
+else
+		npx redocly bundle specification/eligibility-signposting-api.yaml --remove-unused-components --keep-url-references --ext yaml > build/specification/$(APIM_ENV)/eligibility-signposting-api.yaml
+endif
 
 
 SPEC_DIR := $(CURDIR)/specification
