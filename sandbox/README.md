@@ -65,5 +65,5 @@ Instructions for creation and deployment of the sandbox specification can be fou
 
 To deploy the sandbox Docker image to AWS ECR, we use Proxygen CLI as follows:
 
-1. Run `make build-and-publish-sandbox-image` to build the sandbox image and publish to the docker ECR repo.
+1. Run `make build-and-publish-sandbox-image` to build the sandbox image and publish to the docker ECR repository.
 2. Run `make deploy-sandbox-spec` to build and publish the sandbox spec to the sandbox instance on APIM.
