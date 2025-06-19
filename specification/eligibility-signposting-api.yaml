@@ -766,8 +766,7 @@ paths:
 ################################################################################
 components:
     securitySchemes:
-        nhs-login-p9:
-            $ref: "components/security/security.yaml"
+        $ref: "components/security/security.yaml"
 x-nhsd-apim:
     access:
         $ref: "x-nhsd-apim/access.yaml"
