@@ -232,7 +232,7 @@ paths:
                             cohortStatus: "Actionable"
                         suitabilityRules: []
                         actions:
-                          - actionType: "ButtonAuthLink"
+                          - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
                             description: ""
                             urlLink: "http://www.nhs.uk/book-rsv"
@@ -253,7 +253,7 @@ paths:
                             cohortStatus: "Actionable"
                         suitabilityRules: []
                         actions:
-                          - actionType: "CareCardWithText"
+                          - actionType: "InfoText"
                             actionCode: "BookLocal"
                             description: "##Getting the vaccine\nYou can get an RSV vaccination at your GP surgery.\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination."
                 example_50000000003:
@@ -272,7 +272,7 @@ paths:
                             cohortStatus: "Actionable"
                         suitabilityRules: []
                         actions:
-                          - actionType: "CareCardWithText"
+                          - actionType: "InfoText"
                             actionCode: "BookLocal"
                             description: "##Getting the vaccine\nYou can get an RSV vaccination at your GP surgery.\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination."
                 example_50000000004:
@@ -288,7 +288,7 @@ paths:
                         eligibilityCohorts: []
                         suitabilityRules: []
                         actions:
-                          - actionType: "CardWithAuthButton"
+                          - actionType: "ButtonWithAuthLink"
                             actionCode: "AmendNBS"
                             description: "##You have an RSV vaccination appointment\nYou can view, change or cancel your appointment below."
                             urlLink: "http://www.nhs.uk/book-rsv"
@@ -462,7 +462,7 @@ paths:
                             cohortStatus: "NotEligible"
                         suitabilityRules: []
                         actions:
-                          - actionType: "CardWithText"
+                          - actionType: "InfoText"
                             actionCode: "HealtchareProInfo"
                             description: "##If you think you need this vaccine\nSpeak to your healthcare professional if you think you should be offered this vaccination."
         '400':
