@@ -774,3 +774,6 @@ x-nhsd-apim:
         $ref: "x-nhsd-apim/target.yaml"
     ratelimiting:
         $ref: "x-nhsd-apim/ratelimit.yaml"
+    target-identity:
+      - name: nhs-login-nhs-number
+        header: "nhs-login-nhs-number"
