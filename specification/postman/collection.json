@@ -1,10 +1,10 @@
 {
   "_": {
-    "postman_id": "ec1841da-e76e-458f-9f4d-81007d427ec4"
+    "postman_id": "95c82c32-cef6-438a-8e6d-caff920cb44b"
   },
   "item": [
     {
-      "id": "c641f85f-fd9d-46b3-bf39-c6660c81b8d5",
+      "id": "315fa366-52af-4551-9055-819620e2a997",
       "name": "Eligibility",
       "description": {
         "content": "",
@@ -14,7 +14,7 @@
       "event": []
     },
     {
-      "id": "4b9cb5a2-23b0-4b6a-8c5a-6acffd405bd3",
+      "id": "0ad45ea6-b80e-4973-beef-c750ca6a094e",
       "name": "Signposting",
       "description": {
         "content": "",
@@ -24,7 +24,7 @@
       "event": []
     },
     {
-      "id": "658af195-e7ef-42c7-91d1-fce191e09ef0",
+      "id": "dd844d7f-df2d-4c40-ae35-9a96cdd9b2ad",
       "name": "NextActions",
       "description": {
         "content": "",
@@ -34,7 +34,7 @@
       "event": []
     },
     {
-      "id": "eb46cf37-1cd0-4a79-8ee2-46c2abc13a6e",
+      "id": "a074f30a-967a-438b-ac4a-06d4650b6473",
       "name": "Check Eligibility",
       "request": {
         "name": "Check Eligibility",
@@ -153,7 +153,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "b7a25394-6b39-430c-942b-8245dcf4f2c4",
+          "id": "151b3704-a358-4d23-acd2-2a46cab74d2a",
           "name": "RSV - Actionable due to membership of an Age Cohort including suggested national booking action (actions requested)",
           "originalRequest": {
             "url": {
@@ -247,14 +247,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"ButtonAuthLink\",\n          \"actionCode\": \"BookNBS\",\n          \"description\": \"\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\",\n          \"urlLabel\": \"Continue to booking\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookNBS\",\n          \"description\": \"\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\",\n          \"urlLabel\": \"Continue to booking\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "c9afb38b-e412-4d30-b6df-1acb19af0acb",
+          "id": "673b7dcd-58b3-4e4d-9d61-2c4309202672",
           "name": "RSV - Actionable due to membership of an Age Cohort including suggested action (not national booking)",
           "originalRequest": {
             "url": {
@@ -348,14 +348,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"CareCardWithText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"##Getting the vaccine\\nYou can get an RSV vaccination at your GP surgery.\\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"##Getting the vaccine\\nYou can get an RSV vaccination at your GP surgery.\\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "a2502693-d537-489c-8e14-a355c63d5be9",
+          "id": "b275bfea-5a44-4ddb-b9dd-cf773b857adb",
           "name": "RSV - Actionable due to membership of an alternative Age Cohort including suggested action (not national booking)",
           "originalRequest": {
             "url": {
@@ -449,14 +449,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_catchup\",\n          \"cohortText\": \"You turned 80 between 2nd September 2024 and 31st August 2025\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"CareCardWithText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"##Getting the vaccine\\nYou can get an RSV vaccination at your GP surgery.\\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_catchup\",\n          \"cohortText\": \"You turned 80 between 2nd September 2024 and 31st August 2025\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"##Getting the vaccine\\nYou can get an RSV vaccination at your GP surgery.\\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "bfd5a860-7458-4d6b-b704-85ac78391cbd",
+          "id": "a154f9bd-3279-47af-8f8b-8c227ab3acd9",
           "name": "RSV - Actionable due to membership of an Age Cohort including suggested action (future national booking)",
           "originalRequest": {
             "url": {
@@ -550,14 +550,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"CardWithAuthButton\",\n          \"actionCode\": \"AmendNBS\",\n          \"description\": \"##You have an RSV vaccination appointment\\nYou can view, change or cancel your appointment below.\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\",\n          \"urlLabel\": \"Manage your appointment\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"AmendNBS\",\n          \"description\": \"##You have an RSV vaccination appointment\\nYou can view, change or cancel your appointment below.\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\",\n          \"urlLabel\": \"Manage your appointment\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "b6da5adc-75af-4376-908e-b03c9e9efebd",
+          "id": "a74ce4c4-b223-4393-b31b-330fdfd81ad6",
           "name": "RSV - Actionable due to membership of an Age Cohort including suggested actions (with future local booking)",
           "originalRequest": {
             "url": {
@@ -658,7 +658,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "4c799b75-d825-4c70-92ab-02bd80306bbc",
+          "id": "c9c2f69e-2496-485c-8c50-b1fb076e74bf",
           "name": "RSV - Not Actionable despite to membership of an Age Cohort with reasoning of already vaccinated (cohorts hidden)",
           "originalRequest": {
             "url": {
@@ -759,7 +759,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "ee3bd124-a23c-41b8-9df0-4756e738381f",
+          "id": "7348139c-e205-4352-9460-4d7023d28cfa",
           "name": "RSV - Not Actionable despite to membership of an Age Cohort with reasoning of no available vaccinations (not available type 1)",
           "originalRequest": {
             "url": {
@@ -860,7 +860,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "47311563-37bd-4762-8598-0589720969a1",
+          "id": "b88eb083-a8fc-4f4f-8c28-f46f9c3e58ae",
           "name": "RSV - No RSV response as no active campaign (not available type 2)",
           "originalRequest": {
             "url": {
@@ -961,7 +961,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "a09fffde-562a-4c86-9b5e-3dfe0d8d77af",
+          "id": "3bafe99e-468a-4bbc-a84a-725ed0760e9a",
           "name": "RSV - Not Actionable despite to membership of an Age Cohort with reasoning of dose not yet due",
           "originalRequest": {
             "url": {
@@ -1062,7 +1062,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "ca0f2b1a-d935-455e-b1cb-ba4bc325347a",
+          "id": "ce18948a-7136-4f87-86ea-50a8b2f37ea0",
           "name": "RSV - Not Actionable despite to membership of an Age Cohort with reasoning of dose not far enough apart",
           "originalRequest": {
             "url": {
@@ -1163,7 +1163,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "d6c54325-bfba-4c1a-85df-cb35bb5bbaaf",
+          "id": "c35aeffd-11b0-47ad-8fd4-d30e2fb69920",
           "name": "RSV - Not Actionable despite to membership of an Age Cohort with reasoning of vaccination given in other setting (e.g. care home)",
           "originalRequest": {
             "url": {
@@ -1264,7 +1264,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "40f476fd-3202-402c-8719-a2b71798ab16",
+          "id": "24891936-a956-4433-bc7b-bf6395ca819b",
           "name": "RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 1 includes unknown cohort)",
           "originalRequest": {
             "url": {
@@ -1365,7 +1365,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "85f9fa04-7733-4b49-b514-a51a48e347d5",
+          "id": "472fa0eb-a949-47a4-9595-081e5a8d2343",
           "name": "RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 2 includes no cohorts)",
           "originalRequest": {
             "url": {
@@ -1466,7 +1466,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "0d1206f0-e2e3-42a9-b748-b39eecb7df29",
+          "id": "69bcaa10-17f2-40c9-8c60-24f22a3a43f0",
           "name": "RSV - Not Eligible",
           "originalRequest": {
             "url": {
@@ -1560,14 +1560,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotEligible\",\n      \"statusText\": \"We do not believe you should have this vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are not aged 75 to 79 years old.\",\n          \"cohortStatus\": \"NotEligible\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_catchup\",\n          \"cohortText\": \"You did not turn 80 between 2nd September 2024 and 31st August 2025\",\n          \"cohortStatus\": \"NotEligible\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"HealtchareProInfo\",\n          \"description\": \"##If you think you need this vaccine\\nSpeak to your healthcare professional if you think you should be offered this vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotEligible\",\n      \"statusText\": \"We do not believe you should have this vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are not aged 75 to 79 years old.\",\n          \"cohortStatus\": \"NotEligible\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_catchup\",\n          \"cohortText\": \"You did not turn 80 between 2nd September 2024 and 31st August 2025\",\n          \"cohortStatus\": \"NotEligible\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HealthcareProInfo\",\n          \"description\": \"##If you think you need this vaccine\\nSpeak to your healthcare professional if you think you should be offered this vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "62a3f342-a792-4d74-9bbc-8e22625b0763",
+          "id": "0603dca0-edce-4ebd-a37d-2af9b8ea261d",
           "name": "Invalid input data.",
           "originalRequest": {
             "url": {
@@ -1668,7 +1668,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "830b1f89-2a4a-4785-ad22-b6d0f2c9b096",
+          "id": "5bcb49f1-9157-4ebc-8e26-b4833265991b",
           "name": "Person not found.",
           "originalRequest": {
             "url": {
@@ -1769,7 +1769,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "15fa5a01-e1ee-496c-b840-b96221df6e79",
+          "id": "ebdc7523-1835-44f9-823e-cebef7567cd5",
           "name": "Unrecognised input data. (Unprocessable Content)",
           "originalRequest": {
             "url": {
@@ -1870,7 +1870,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "a7907ae9-2142-401f-8078-1bbd67ccadb4",
+          "id": "cb72d26d-7678-40fb-bfc2-1a952293767c",
           "name": "Internal server error.",
           "originalRequest": {
             "url": {
@@ -1972,7 +1972,7 @@
         {
           "listen": "test",
           "script": {
-            "id": "78d55bc9-70eb-48fe-a194-8e683daabbe7",
+            "id": "08c6e73d-56ef-4da3-b717-0c4943d4ec4e",
             "type": "text/javascript",
             "exec": [
               "// Validate status 2xx \npm.test(\"[GET]::/patient-check/:id - Status code is 2xx\", function () {\n   pm.response.to.be.success;\n});\n",
@@ -1997,16 +1997,16 @@
     }
   ],
   "info": {
-    "_postman_id": "ec1841da-e76e-458f-9f4d-81007d427ec4",
+    "_postman_id": "95c82c32-cef6-438a-8e6d-caff920cb44b",
     "name": "Patient Eligibility Signposting API",
     "version": {
-      "raw": "1.0.13-alpha",
+      "raw": "1.0.14-alpha",
       "major": 1,
       "minor": 0,
-      "patch": 13,
+      "patch": 14,
       "prerelease": "alpha",
       "build": [],
-      "string": "1.0.13-alpha"
+      "string": "1.0.14-alpha"
     },
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
