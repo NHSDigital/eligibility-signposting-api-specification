@@ -31,10 +31,10 @@ There are a number of examples of responses which can be returned by passing spe
  curl -X GET "http://0.0.0.0:9000/patient-check/<NHS_NUMBER>
 ```
 
-or for sandbox:
+or for sandbox (add a -H "apikey" to the request as well):
 
 ```bash
-  curl -X GET "https://sandbox.api.service.nhs.uk/eligibility-signposting-api/patient-check/1"  -H "accept: application/json" -H "apikey: <your choice>"
+  curl -X GET "https://sandbox.api.service.nhs.uk/eligibility-signposting-api/patient-check/1"  -H "accept: application/json"
 ```
 
 #### Example scenarios
