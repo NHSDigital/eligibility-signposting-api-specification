@@ -26,7 +26,7 @@ proxygen-docker-login: # Login to Proxygen Docker registry
 	proxygen docker get-login | bash
 
 publish-to-docker-repo:
-	proxygen-docker-login
+	make proxygen-docker-login
 	docker push 958002497996.dkr.ecr.eu-west-2.amazonaws.com/eligibility-signposting-api:latest
 
 build-and-publish-sandbox-image:
@@ -35,7 +35,7 @@ build-and-publish-sandbox-image:
 
 deploy-sandbox-spec:
 	make -C .. construct-spec APIM_ENV=sandbox
-	proxygen instance deploy sandbox eligibility-signposting-api ./build/specification/sandbox/eligibility-signposting-api.yaml
+	proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml
 
 up: build
 	docker compose -f docker-compose.yaml up -d

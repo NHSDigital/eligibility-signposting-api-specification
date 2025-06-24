@@ -37,7 +37,7 @@ See the [Proxygen CLI user guide](https://nhsd-confluence.digital.nhs.uk/spaces/
 
 We deploy our specifications using the Proxygen CLI. In order to do this, the following steps need to be performed:
 
-1. Construct the specification for the environment of your choice, following the instructions above. This will be stored in
+1. Construct the specification for the environment of your choice, following the instructions above.
 2. Activate a poetry environment `poetry env activate` - you may need to run `make install-python` to install poetry etc. first.
 3. Run `make retrieve-proxygen-key` from the root directory to retrieve the private key needed to authenticate with Proxygen.
 4. Run `make setup-proxygen-credentials` from the root directory to set up credentials needed to interact with our API proxy.
