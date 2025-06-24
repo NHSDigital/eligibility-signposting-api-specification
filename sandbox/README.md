@@ -31,6 +31,11 @@ There are a number of examples of responses which can be returned by passing spe
  curl -X GET "http://0.0.0.0:9000/patient-check/<NHS_NUMBER>
 ```
 
+or for sandbox:
+```bash
+  curl -X GET "https://sandbox.api.service.nhs.uk/eligibility-signposting-api/patient-check/1"  -H "accept: application/json" -H "apikey: g1112R_ccQ1Ebbb4gtHBP1aaaNM"
+```
+
 #### Example scenarios
 
 | Patient ID   | Response                                                                                                                              |
@@ -66,4 +71,5 @@ Instructions for creation and deployment of the sandbox specification can be fou
 To deploy the sandbox Docker image to AWS ECR, we use Proxygen CLI as follows:
 
 1. Run `make build-and-publish-sandbox-image` to build the sandbox image and publish to the docker ECR repository.
-2. Run `make deploy-sandbox-spec` to build and publish the sandbox spec to the sandbox instance on APIM.
+2. Run `proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml`
+   to build and publish the sandbox spec to the sandbox instance on APIM.

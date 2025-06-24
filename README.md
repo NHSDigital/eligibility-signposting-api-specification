@@ -49,7 +49,8 @@ The following software packages, or their equivalents, are expected to be instal
 - [Docker](https://www.docker.com/) container runtime or a compatible tool, e.g. [Podman](https://podman.io/),
 - [asdf](https://asdf-vm.com/) version manager,
 - [GNU make](https://www.gnu.org/software/make/) 3.82 or later,
-- [npm](https://www.npmjs.com/)
+- [npm](https://www.npmjs.com/) - Java version 17 or higher
+- [gsed]() - for MacOS only
 
 > [!NOTE]<br>
 > The version of GNU make available by default on macOS is earlier than 3.82. You will need to upgrade it or certain `make` tasks will fail. On macOS, you will need [Homebrew](https://brew.sh/) installed, then to install `make`, like so:
