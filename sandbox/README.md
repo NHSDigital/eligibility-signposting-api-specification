@@ -32,6 +32,7 @@ There are a number of examples of responses which can be returned by passing spe
 ```
 
 or for sandbox:
+
 ```bash
   curl -X GET "https://sandbox.api.service.nhs.uk/eligibility-signposting-api/patient-check/1"  -H "accept: application/json" -H "apikey: g1112R_ccQ1Ebbb4gtHBP1aaaNM"
 ```
