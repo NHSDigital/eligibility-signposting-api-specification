@@ -255,7 +255,7 @@ paths:
                         actions:
                           - actionType: "InfoText"
                             actionCode: "BookLocal"
-                            description: "##Getting the vaccine\nYou can get an RSV vaccination at your GP surgery.\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination."
+                            description: "## Getting the vaccine\nYou can get an RSV vaccination at your GP surgery.\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination."
                 example_50000000003:
                   summary: RSV - Actionable due to membership of an alternative Age Cohort including suggested action (not national booking)
                   value:
@@ -274,7 +274,7 @@ paths:
                         actions:
                           - actionType: "InfoText"
                             actionCode: "BookLocal"
-                            description: "##Getting the vaccine\nYou can get an RSV vaccination at your GP surgery.\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination."
+                            description: "## Getting the vaccine\nYou can get an RSV vaccination at your GP surgery.\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination."
                 example_50000000004:
                   summary: RSV - Actionable due to membership of an Age Cohort including suggested action (future national booking)
                   value:
@@ -290,7 +290,7 @@ paths:
                         actions:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "AmendNBS"
-                            description: "##You have an RSV vaccination appointment\nYou can view, change or cancel your appointment below."
+                            description: "## You have an RSV vaccination appointment\nYou can view, change or cancel your appointment below."
                             urlLink: "http://www.nhs.uk/book-rsv"
                             urlLabel: "Manage your appointment"
                 example_50000000005:
@@ -308,7 +308,7 @@ paths:
                         actions:
                           - actionType: "CardWithText"
                             actionCode: "ManageLocal"
-                            description: "##You have an RSV vaccination appointment\nContact your healthcare provider to change or cancel your appointment."
+                            description: "## You have an RSV vaccination appointment\nContact your healthcare provider to change or cancel your appointment."
                 example_50000000006:
                   summary: RSV - Not Actionable despite to membership of an Age Cohort with reasoning of already vaccinated (cohorts hidden)
                   value:
@@ -323,11 +323,11 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "##You've had your RSV vaccination\nWe believe you had your vaccination on 3 April 2025."
+                            ruleText: "## You've had your RSV vaccination\nWe believe you had your vaccination on 3 April 2025."
                         actions:
                           - actionType: "InfoText"
                             actionCode: "CheckCorrect"
-                            description: "##If you think this is incorrect\nIf you have not had this vaccination and you think you should, speak to your healthcare professional."
+                            description: "## If you think this is incorrect\nIf you have not had this vaccination and you think you should, speak to your healthcare professional."
                 example_50000000007:
                   summary: RSV - Not Actionable despite to membership of an Age Cohort with reasoning of no available vaccinations (not available type 1)
                   value:
@@ -409,7 +409,7 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "OtherSetting"
-                            ruleText: "##Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
+                            ruleText: "## Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
                         actions: []
                 example_50000000012:
                   summary: RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 1 includes unknown cohort)
@@ -428,11 +428,11 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "##You've had your RSV vaccination\nWe believe you had your vaccination on 3 April 2025.We believe you had your vaccination on 3 April 2025."
+                            ruleText: "## You've had your RSV vaccination\nWe believe you had your vaccination on 3 April 2025.We believe you had your vaccination on 3 April 2025."
                         actions:
                           - actionType: "InfoText"
                             actionCode: "CheckCorrect"
-                            description: "##If you think this is incorrect\nIf you have not had this vaccination and you think you should, speak to your healthcare professional."
+                            description: "## If you think this is incorrect\nIf you have not had this vaccination and you think you should, speak to your healthcare professional."
                 example_50000000013:
                   summary: RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 2 includes no cohorts)
                   value:
@@ -447,7 +447,7 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "##You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
+                            ruleText: "## You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
                         actions: []
                 example_50000000014:
                   summary: RSV - Not Eligible
@@ -470,7 +470,7 @@ paths:
                         actions:
                           - actionType: "InfoText"
                             actionCode: "HealthcareProInfo"
-                            description: "##If you think you need this vaccine\nSpeak to your healthcare professional if you think you should be offered this vaccination."
+                            description: "## If you think you need this vaccine\nSpeak to your healthcare professional if you think you should be offered this vaccination."
 #############################################################################
                 example_50000000015:
                   summary: RSV - Multiple actions without cohorts
@@ -487,16 +487,16 @@ paths:
                         actions:
                           - actionType: "InfoText"
                             actionCode: "GPAdvice"
-                            description: "##Don't Believe Us\nYou can get get advice about an RSV vaccination at your GP surgery."
+                            description: "## Don't Believe Us\nYou can get get advice about an RSV vaccination at your GP surgery."
                           - actionType: "CardWithText"
                             actionCode: "CheckTheWeb"
-                            description: "##Want Independent Advice\nYou can search for independent advice by using the google.co.uk to search for *uk rsv vaccination bgs saga*."
+                            description: "## Want Independent Advice\nYou can search for independent advice by using the google.co.uk to search for *uk rsv vaccination bgs saga*."
                           - actionType: "InfoText"
                             actionCode: "Disclaimer"
-                            description: "##This is test data\nThese are not real options, but options created to try out the system ~and break it~."
+                            description: "## This is test data\nThese are not real options, but options created to try out the system ~and break it~."
                           - actionType: "CardWithText"
                             actionCode: "BuyOne"
-                            description: "##Privately funded RSV jabs are available\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
+                            description: "## Privately funded RSV jabs are available\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
                 example_50000000016:
                   summary: RSV - Multiple actions with cohorts
                   value:
@@ -518,21 +518,21 @@ paths:
                         actions:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
-                            description: "##Book a jab at a nearby pharmacy\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one, and book a convenient appointment."
+                            description: "## Book a jab at a nearby pharmacy\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one, and book a convenient appointment."
                             urlLink: "http://www.nhs.uk/book-rsv"
                             urlLabel: "Continue to booking"
                           - actionType: "InfoText"
                             actionCode: "GPAdvice"
-                            description: "##Don't Believe Us\nYou can get get advice about an RSV vaccination at your GP surgery."
+                            description: "## Don't Believe Us\nYou can get get advice about an RSV vaccination at your GP surgery."
                           - actionType: "CardWithText"
                             actionCode: "CheckTheWeb"
-                            description: "##Want Independent Advice\nYou can search for independent advice by using the google.co.uk to search for *uk rsv vaccination bgs saga*."
+                            description: "## Want Independent Advice\nYou can search for independent advice by using the google.co.uk to search for *uk rsv vaccination bgs saga*."
                           - actionType: "InfoText"
                             actionCode: "Disclaimer"
-                            description: "##This is test data\nThese are not real options, but options created to try out the system ~and break it~."
+                            description: "## This is test data\nThese are not real options, but options created to try out the system ~and break it~."
                           - actionType: "CardWithText"
                             actionCode: "BuyOne"
-                            description: "##Privately funded RSV jabs are available\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
+                            description: "## Privately funded RSV jabs are available\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookElsewhere"
                             description: ""
@@ -558,13 +558,13 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "##You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
+                            ruleText: "## You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
                           - ruleType: "S"
                             ruleCode: "OtherSetting"
-                            ruleText: "##Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
+                            ruleText: "## Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
                           - ruleType: "S"
                             ruleCode: "NotYetDue"
-                            ruleText: "##Your last dose of the RSV vaccination was too recent\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
+                            ruleText: "## Your last dose of the RSV vaccination was too recent\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions: []
                 example_50000000018:
                   summary: RSV - Multiple suitability rules without cohorts
@@ -580,13 +580,13 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "##You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
+                            ruleText: "## You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
                           - ruleType: "S"
                             ruleCode: "OtherSetting"
-                            ruleText: "##Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
+                            ruleText: "## Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
                           - ruleType: "S"
                             ruleCode: "NotYetDue"
-                            ruleText: "##Your last dose of the RSV vaccination was too recent\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
+                            ruleText: "## Your last dose of the RSV vaccination was too recent\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions: []
                 example_50000000019:
                   summary: RSV - Multiple suitability , multiple actions rules with cohorts
@@ -608,23 +608,23 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "##You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
+                            ruleText: "## You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
                           - ruleType: "S"
                             ruleCode: "OtherSetting"
-                            ruleText: "##Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
+                            ruleText: "## Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
                           - ruleType: "S"
                             ruleCode: "NotYetDue"
-                            ruleText: "##Your last dose of the RSV vaccination was too recent\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
+                            ruleText: "## Your last dose of the RSV vaccination was too recent\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions:
                           - actionType: "InfoText"
                             actionCode: "GPAdvice"
-                            description: "##Don't Believe Us\nYou can get get advice about an RSV vaccination at your GP surgery."
+                            description: "## Don't Believe Us\nYou can get get advice about an RSV vaccination at your GP surgery."
                           - actionType: "CardWithText"
                             actionCode: "BuyOne"
-                            description: "##Privately funded RSV jabs are available\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
+                            description: "## Privately funded RSV jabs are available\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
-                            description: "##Book a jab at a nearby pharmacy\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one and book a convenient appointment."
+                            description: "## Book a jab at a nearby pharmacy\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one and book a convenient appointment."
                             urlLink: "http://www.nhs.uk/book-rsv"
                             urlLabel: "Continue to booking"
                 example_50000000020:
@@ -641,23 +641,23 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "##You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
+                            ruleText: "## You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
                           - ruleType: "S"
                             ruleCode: "OtherSetting"
-                            ruleText: "##Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
+                            ruleText: "## Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
                           - ruleType: "S"
                             ruleCode: "NotYetDue"
-                            ruleText: "##Your last dose of the RSV vaccination was too recent\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
+                            ruleText: "## Your last dose of the RSV vaccination was too recent\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions:
                           - actionType: "InfoText"
                             actionCode: "GPAdvice"
-                            description: "##Don't Believe Us\nYou can get get advice about an RSV vaccination at your GP surgery."
+                            description: "## Don't Believe Us\nYou can get get advice about an RSV vaccination at your GP surgery."
                           - actionType: "CardWithText"
                             actionCode: "BuyOne"
-                            description: "##Privately funded RSV jabs are available\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
+                            description: "## Privately funded RSV jabs are available\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
-                            description: "##Book a jab at a nearby pharmacy\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one and book a convenient appointment."
+                            description: "## Book a jab at a nearby pharmacy\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one and book a convenient appointment."
                             urlLink: "http://www.nhs.uk/book-rsv"
                             urlLabel: "Continue to booking"
                 example_50000000021:
@@ -681,7 +681,7 @@ paths:
                         actions:
                           - actionType: "VideoClipLink"
                             actionCode: "JabInfoVideo"
-                            description: "##View information about the RSV vaccine\nThis video explains what it is and why you should have it."
+                            description: "## View information about the RSV vaccine\nThis video explains what it is and why you should have it."
                             urlLink: "https://www.youtube.com/watch?v=NIkDBejfrGo"
                 example_50000000022:
                   summary: RSV - Unknown action without cohorts
@@ -698,7 +698,7 @@ paths:
                         actions:
                           - actionType: "VideoClipLink"
                             actionCode: "JabInfoVideo"
-                            description: "##View information about the RSV vaccine\nThis video explains what it is and why you should have it."
+                            description: "## View information about the RSV vaccine\nThis video explains what it is and why you should have it."
                             urlLink: "https://www.youtube.com/watch?v=NIkDBejfrGo"
                 example_50000000023:
                   summary: RSV - Unknown suitability rule with cohorts
@@ -720,7 +720,7 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "PreviousAlergicResponse"
-                            ruleText: "##You've had a reaction to vaccinations in the past\nBased on our records, you have had reaction that suggests you should not receive the RSV vaccination through usual channels."
+                            ruleText: "## You've had a reaction to vaccinations in the past\nBased on our records, you have had reaction that suggests you should not receive the RSV vaccination through usual channels."
                         actions: []
                 example_50000000024:
                   summary: RSV - Unknown suitability rule without cohorts
@@ -736,7 +736,7 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "PreviousAlergicResponse"
-                            ruleText: "##You've had a reaction to vaccinations in the past\nBased on our records, you have had reaction that suggests you should not receive the RSV vaccination through usual channels."
+                            ruleText: "## You've had a reaction to vaccinations in the past\nBased on our records, you have had reaction that suggests you should not receive the RSV vaccination through usual channels."
                         actions: []
 #############################################################################
         '400':
@@ -1036,7 +1036,7 @@ paths:
                         location:
                           - "parameters/category"
 ################################################################################
-#                                 Components                                  #
+#                                 Components                                   #
 ################################################################################
 components:
     securitySchemes:
