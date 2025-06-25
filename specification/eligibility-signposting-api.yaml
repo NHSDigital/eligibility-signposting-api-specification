@@ -777,3 +777,7 @@ x-nhsd-apim:
     target-identity:
       - name: nhs-login-nhs-number
         header: "nhs-login-nhs-number"
+    target-attributes:
+      - name: id
+        required: false
+        header: nhsd-application-id
