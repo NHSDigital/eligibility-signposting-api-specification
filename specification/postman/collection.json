@@ -1,10 +1,10 @@
 {
   "_": {
-    "postman_id": "95c82c32-cef6-438a-8e6d-caff920cb44b"
+    "postman_id": "4caa73fa-52b7-40f7-bfdb-dbc9ac514d3a"
   },
   "item": [
     {
-      "id": "315fa366-52af-4551-9055-819620e2a997",
+      "id": "7a26fff3-62ed-49f7-933a-c61aba58304b",
       "name": "Eligibility",
       "description": {
         "content": "",
@@ -14,7 +14,7 @@
       "event": []
     },
     {
-      "id": "0ad45ea6-b80e-4973-beef-c750ca6a094e",
+      "id": "e2a588dc-0e08-482c-ab29-b2b43d105fa7",
       "name": "Signposting",
       "description": {
         "content": "",
@@ -24,7 +24,7 @@
       "event": []
     },
     {
-      "id": "dd844d7f-df2d-4c40-ae35-9a96cdd9b2ad",
+      "id": "009dd6f7-74b7-4de5-be50-9d00ab708c0c",
       "name": "NextActions",
       "description": {
         "content": "",
@@ -34,7 +34,7 @@
       "event": []
     },
     {
-      "id": "a074f30a-967a-438b-ac4a-06d4650b6473",
+      "id": "2e8da27d-035e-4f01-82c2-f8b7170cb541",
       "name": "Check Eligibility",
       "request": {
         "name": "Check Eligibility",
@@ -126,34 +126,14 @@
           }
         ],
         "method": "GET",
-        "body": {},
-        "auth": {
-          "type": "apikey",
-          "apikey": [
-            {
-              "type": "any",
-              "value": "apikey",
-              "key": "key"
-            },
-            {
-              "type": "any",
-              "value": "{{apiKey}}",
-              "key": "value"
-            },
-            {
-              "type": "any",
-              "value": "header",
-              "key": "in"
-            }
-          ]
-        }
+        "body": {}
       },
       "response": [
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "151b3704-a358-4d23-acd2-2a46cab74d2a",
+          "id": "ef274e3b-cb41-4e4c-8471-437c21c9e288",
           "name": "RSV - Actionable due to membership of an Age Cohort including suggested national booking action (actions requested)",
           "originalRequest": {
             "url": {
@@ -226,14 +206,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -254,7 +226,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "673b7dcd-58b3-4e4d-9d61-2c4309202672",
+          "id": "0cc24782-f055-4434-8323-e0bc1e4f7b67",
           "name": "RSV - Actionable due to membership of an Age Cohort including suggested action (not national booking)",
           "originalRequest": {
             "url": {
@@ -327,14 +299,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -348,14 +312,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"##Getting the vaccine\\nYou can get an RSV vaccination at your GP surgery.\\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"## Getting the vaccine\\nYou can get an RSV vaccination at your GP surgery.\\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "b275bfea-5a44-4ddb-b9dd-cf773b857adb",
+          "id": "ed846a3b-c5e9-4c01-a716-36d2e6183f01",
           "name": "RSV - Actionable due to membership of an alternative Age Cohort including suggested action (not national booking)",
           "originalRequest": {
             "url": {
@@ -428,14 +392,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -449,14 +405,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_catchup\",\n          \"cohortText\": \"You turned 80 between 2nd September 2024 and 31st August 2025\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"##Getting the vaccine\\nYou can get an RSV vaccination at your GP surgery.\\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_catchup\",\n          \"cohortText\": \"You turned 80 between 2nd September 2024 and 31st August 2025\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"## Getting the vaccine\\nYou can get an RSV vaccination at your GP surgery.\\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "a154f9bd-3279-47af-8f8b-8c227ab3acd9",
+          "id": "aef2d55d-2ea0-46fd-8aa0-36308c9e28ae",
           "name": "RSV - Actionable due to membership of an Age Cohort including suggested action (future national booking)",
           "originalRequest": {
             "url": {
@@ -529,14 +485,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -550,14 +498,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"AmendNBS\",\n          \"description\": \"##You have an RSV vaccination appointment\\nYou can view, change or cancel your appointment below.\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\",\n          \"urlLabel\": \"Manage your appointment\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"AmendNBS\",\n          \"description\": \"## You have an RSV vaccination appointment\\nYou can view, change or cancel your appointment below.\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\",\n          \"urlLabel\": \"Manage your appointment\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "a74ce4c4-b223-4393-b31b-330fdfd81ad6",
+          "id": "da308411-4f2e-4d0c-9d23-0b4040871094",
           "name": "RSV - Actionable due to membership of an Age Cohort including suggested actions (with future local booking)",
           "originalRequest": {
             "url": {
@@ -630,14 +578,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -651,14 +591,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"ManageLocal\",\n          \"description\": \"##You have an RSV vaccination appointment\\nContact your healthcare provider to change or cancel your appointment.\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"ManageLocal\",\n          \"description\": \"## You have an RSV vaccination appointment\\nContact your healthcare provider to change or cancel your appointment.\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "c9c2f69e-2496-485c-8c50-b1fb076e74bf",
+          "id": "4b6bb5f1-75d4-4ab6-ab00-edd30ab6e74f",
           "name": "RSV - Not Actionable despite to membership of an Age Cohort with reasoning of already vaccinated (cohorts hidden)",
           "originalRequest": {
             "url": {
@@ -731,14 +671,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -752,14 +684,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"##You've had your RSV vaccination\\nBased on our records, you recently had this vaccination. You do not need to do anything.\"\n        }\n      ],\n      \"actions\": []\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"## You've had your RSV vaccination\\nWe believe you had your vaccination on 3 April 2025.\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"CheckCorrect\",\n          \"description\": \"## If you think this is incorrect\\nIf you have not had this vaccination and you think you should, speak to your healthcare professional.\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "7348139c-e205-4352-9460-4d7023d28cfa",
+          "id": "95dcb219-7926-42f2-9dcd-8126c3dcf91d",
           "name": "RSV - Not Actionable despite to membership of an Age Cohort with reasoning of no available vaccinations (not available type 1)",
           "originalRequest": {
             "url": {
@@ -832,14 +764,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -860,7 +784,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "b88eb083-a8fc-4f4f-8c28-f46f9c3e58ae",
+          "id": "19337621-98d0-48a5-8027-ef9b652b90c2",
           "name": "RSV - No RSV response as no active campaign (not available type 2)",
           "originalRequest": {
             "url": {
@@ -933,14 +857,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -961,7 +877,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "3bafe99e-468a-4bbc-a84a-725ed0760e9a",
+          "id": "c36ac772-8a5d-4580-8731-c6c2c4b11d92",
           "name": "RSV - Not Actionable despite to membership of an Age Cohort with reasoning of dose not yet due",
           "originalRequest": {
             "url": {
@@ -1034,14 +950,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -1062,7 +970,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "ce18948a-7136-4f87-86ea-50a8b2f37ea0",
+          "id": "1606d4f0-aba6-4f14-b2cc-ab88321a5f25",
           "name": "RSV - Not Actionable despite to membership of an Age Cohort with reasoning of dose not far enough apart",
           "originalRequest": {
             "url": {
@@ -1135,14 +1043,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -1163,7 +1063,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "c35aeffd-11b0-47ad-8fd4-d30e2fb69920",
+          "id": "8d2ca8f1-31fd-4989-a5c9-11fa1603eed4",
           "name": "RSV - Not Actionable despite to membership of an Age Cohort with reasoning of vaccination given in other setting (e.g. care home)",
           "originalRequest": {
             "url": {
@@ -1236,14 +1136,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -1257,14 +1149,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"NotActionable\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"OtherSetting\",\n          \"ruleText\": \"##Getting the vaccine\\nOur record show you're living in a setting where care is provided.\\nIf you think you should have the RSV vaccine, speak to a member of staff where you live.\"\n        }\n      ],\n      \"actions\": []\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"NotActionable\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"OtherSetting\",\n          \"ruleText\": \"## Getting the vaccine\\nOur record show you're living in a setting where care is provided.\\nIf you think you should have the RSV vaccine, speak to a member of staff where you live.\"\n        }\n      ],\n      \"actions\": []\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "24891936-a956-4433-bc7b-bf6395ca819b",
+          "id": "5ac93c89-c6dc-4b59-9799-82b0f5ba9951",
           "name": "RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 1 includes unknown cohort)",
           "originalRequest": {
             "url": {
@@ -1337,14 +1229,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -1358,14 +1242,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"unknown_cohort_membership\",\n          \"cohortText\": \"Our records do not say why you are eligible\",\n          \"cohortStatus\": \"NotActionable\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"##You've had your RSV vaccination\\nBased on our records, you recently had this vaccination.You do not need to do anything.\"\n        }\n      ],\n      \"actions\": []\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"unknown_cohort_membership\",\n          \"cohortText\": \"Our records do not say why you are eligible\",\n          \"cohortStatus\": \"NotActionable\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"## You've had your RSV vaccination\\nWe believe you had your vaccination on 3 April 2025.We believe you had your vaccination on 3 April 2025.\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"CheckCorrect\",\n          \"description\": \"## If you think this is incorrect\\nIf you have not had this vaccination and you think you should, speak to your healthcare professional.\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "472fa0eb-a949-47a4-9595-081e5a8d2343",
+          "id": "7115646c-cdcd-4758-8fb1-01639887fa31",
           "name": "RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 2 includes no cohorts)",
           "originalRequest": {
             "url": {
@@ -1438,14 +1322,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -1459,14 +1335,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"##You've had your RSV vaccination\\nBased on our records, you recently had this vaccination. You do not need to do anything.\"\n        }\n      ],\n      \"actions\": []\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"## You've had your RSV vaccination\\nBased on our records, you recently had this vaccination. You do not need to do anything.\"\n        }\n      ],\n      \"actions\": []\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "69bcaa10-17f2-40c9-8c60-24f22a3a43f0",
+          "id": "e839276d-7f92-4bda-8401-8a1334884250",
           "name": "RSV - Not Eligible",
           "originalRequest": {
             "url": {
@@ -1539,14 +1415,6 @@
               {
                 "key": "Accept",
                 "value": "application/json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -1560,14 +1428,944 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotEligible\",\n      \"statusText\": \"We do not believe you should have this vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are not aged 75 to 79 years old.\",\n          \"cohortStatus\": \"NotEligible\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_catchup\",\n          \"cohortText\": \"You did not turn 80 between 2nd September 2024 and 31st August 2025\",\n          \"cohortStatus\": \"NotEligible\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HealthcareProInfo\",\n          \"description\": \"##If you think you need this vaccine\\nSpeak to your healthcare professional if you think you should be offered this vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotEligible\",\n      \"statusText\": \"We do not believe you should have this vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are not aged 75 to 79 years old.\",\n          \"cohortStatus\": \"NotEligible\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_catchup\",\n          \"cohortText\": \"You did not turn 80 between 2nd September 2024 and 31st August 2025\",\n          \"cohortStatus\": \"NotEligible\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HealthcareProInfo\",\n          \"description\": \"## If you think you need this vaccine\\nSpeak to your healthcare professional if you think you should be offered this vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "0603dca0-edce-4ebd-a37d-2af9b8ea261d",
+          "id": "57f1139d-9c4b-4a51-91bd-5901750f7e39",
+          "name": "RSV - Multiple actions without cohorts",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotEligible\",\n      \"statusText\": \"We do not believe you can have it\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"GPAdvice\",\n          \"description\": \"## Don't Believe Us\\nYou can get get advice about an RSV vaccination at your GP surgery.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"CheckTheWeb\",\n          \"description\": \"## Want Independent Advice\\nYou can search for independent advice by using the google.co.uk to search for *uk rsv vaccination bgs saga*.\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"Disclaimer\",\n          \"description\": \"## This is test data\\nThese are not real options, but options created to try out the system ~and break it~.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"BuyOne\",\n          \"description\": \"## Privately funded RSV jabs are available\\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies.\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "544f5703-6794-4faa-8be6-687d6789201b",
+          "name": "RSV - Multiple actions with cohorts",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"Actionable\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_in_carehomes\",\n          \"cohortText\": \"You reside in an institution that qualifies you for the vaccine.\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookNBS\",\n          \"description\": \"## Book a jab at a nearby pharmacy\\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one, and book a convenient appointment.\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\",\n          \"urlLabel\": \"Continue to booking\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"GPAdvice\",\n          \"description\": \"## Don't Believe Us\\nYou can get get advice about an RSV vaccination at your GP surgery.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"CheckTheWeb\",\n          \"description\": \"## Want Independent Advice\\nYou can search for independent advice by using the google.co.uk to search for *uk rsv vaccination bgs saga*.\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"Disclaimer\",\n          \"description\": \"## This is test data\\nThese are not real options, but options created to try out the system ~and break it~.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"BuyOne\",\n          \"description\": \"## Privately funded RSV jabs are available\\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookElsewhere\",\n          \"description\": \"\",\n          \"urlLink\": \"http://www.nhs.uk/book-non-nbs-rsv\",\n          \"urlLabel\": \"Continue to other booking\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "3818e9d2-fc90-4507-b732-2242cce0c1fc",
+          "name": "RSV - Multiple suitability rules with cohorts",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"Actionable\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_in_carehomes\",\n          \"cohortText\": \"You reside in an institution that qualifies you for the vaccine.\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"## You've had your RSV vaccination\\nBased on our records, you recently had this vaccination. You do not need to do anything.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"OtherSetting\",\n          \"ruleText\": \"## Getting the vaccine\\nOur record show you're living in a setting where care is provided.\\nIf you think you should have the RSV vaccine, speak to a member of staff where you live.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"NotYetDue\",\n          \"ruleText\": \"## Your last dose of the RSV vaccination was too recent\\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time.\"\n        }\n      ],\n      \"actions\": []\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "40eb5a80-4630-4c4a-9a4e-10cbb1c1de14",
+          "name": "RSV - Multiple suitability rules without cohorts",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"## You've had your RSV vaccination\\nBased on our records, you recently had this vaccination. You do not need to do anything.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"OtherSetting\",\n          \"ruleText\": \"## Getting the vaccine\\nOur record show you're living in a setting where care is provided.\\nIf you think you should have the RSV vaccine, speak to a member of staff where you live.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"NotYetDue\",\n          \"ruleText\": \"## Your last dose of the RSV vaccination was too recent\\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time.\"\n        }\n      ],\n      \"actions\": []\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "a245b597-badb-4224-9640-70275ac2fe1a",
+          "name": "RSV - Multiple suitability , multiple actions rules with cohorts",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"Actionable\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_in_carehomes\",\n          \"cohortText\": \"You reside in an institution that qualifies you for the vaccine.\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"## You've had your RSV vaccination\\nBased on our records, you recently had this vaccination. You do not need to do anything.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"OtherSetting\",\n          \"ruleText\": \"## Getting the vaccine\\nOur record show you're living in a setting where care is provided.\\nIf you think you should have the RSV vaccine, speak to a member of staff where you live.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"NotYetDue\",\n          \"ruleText\": \"## Your last dose of the RSV vaccination was too recent\\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time.\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"GPAdvice\",\n          \"description\": \"## Don't Believe Us\\nYou can get get advice about an RSV vaccination at your GP surgery.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"BuyOne\",\n          \"description\": \"## Privately funded RSV jabs are available\\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookNBS\",\n          \"description\": \"## Book a jab at a nearby pharmacy\\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one and book a convenient appointment.\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\",\n          \"urlLabel\": \"Continue to booking\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "b99898b4-e5c7-4d69-8829-042c97859b21",
+          "name": "RSV - Multiple suitability , multiple actions rules without cohorts",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"## You've had your RSV vaccination\\nBased on our records, you recently had this vaccination. You do not need to do anything.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"OtherSetting\",\n          \"ruleText\": \"## Getting the vaccine\\nOur record show you're living in a setting where care is provided.\\nIf you think you should have the RSV vaccine, speak to a member of staff where you live.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"NotYetDue\",\n          \"ruleText\": \"## Your last dose of the RSV vaccination was too recent\\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time.\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"GPAdvice\",\n          \"description\": \"## Don't Believe Us\\nYou can get get advice about an RSV vaccination at your GP surgery.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"BuyOne\",\n          \"description\": \"## Privately funded RSV jabs are available\\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookNBS\",\n          \"description\": \"## Book a jab at a nearby pharmacy\\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one and book a convenient appointment.\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\",\n          \"urlLabel\": \"Continue to booking\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "3f59fbda-8230-48e8-99e7-3e1ac95b3366",
+          "name": "RSV - Unknown action with cohorts",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"Actionable\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_in_carehomes\",\n          \"cohortText\": \"You reside in an institution that qualifies you for the vaccine.\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"VideoClipLink\",\n          \"actionCode\": \"JabInfoVideo\",\n          \"description\": \"## View information about the RSV vaccine\\nThis video explains what it is and why you should have it.\",\n          \"urlLink\": \"https://www.youtube.com/watch?v=NIkDBejfrGo\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "7fa8dfcc-92d9-4bd1-81d4-9fbf65668dc5",
+          "name": "RSV - Unknown action without cohorts",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"VideoClipLink\",\n          \"actionCode\": \"JabInfoVideo\",\n          \"description\": \"## View information about the RSV vaccine\\nThis video explains what it is and why you should have it.\",\n          \"urlLink\": \"https://www.youtube.com/watch?v=NIkDBejfrGo\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "c8110b49-2297-4291-9f26-a0d8bdb109be",
+          "name": "RSV - Unknown suitability rule with cohorts",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"You are aged 75 to 79 years old.\",\n          \"cohortStatus\": \"Actionable\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_in_carehomes\",\n          \"cohortText\": \"You reside in an institution that qualifies you for the vaccine.\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"PreviousAlergicResponse\",\n          \"ruleText\": \"## You've had a reaction to vaccinations in the past\\nBased on our records, you have had reaction that suggests you should not receive the RSV vaccination through usual channels.\"\n        }\n      ],\n      \"actions\": []\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "84290741-a3ee-4ee1-9cb0-6d201a328722",
+          "name": "RSV - Unknown suitability rule without cohorts",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"PreviousAlergicResponse\",\n          \"ruleText\": \"## You've had a reaction to vaccinations in the past\\nBased on our records, you have had reaction that suggests you should not receive the RSV vaccination through usual channels.\"\n        }\n      ],\n      \"actions\": []\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "d9a554d0-9664-4943-9711-528faec7eb49",
           "name": "Invalid input data.",
           "originalRequest": {
             "url": {
@@ -1640,14 +2438,6 @@
               {
                 "key": "Accept",
                 "value": "application/fhir+json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -1668,7 +2458,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "5bcb49f1-9157-4ebc-8e26-b4833265991b",
+          "id": "3af1d915-2b00-4fec-bb4c-e2c6e267b1ba",
           "name": "Person not found.",
           "originalRequest": {
             "url": {
@@ -1741,14 +2531,6 @@
               {
                 "key": "Accept",
                 "value": "application/fhir+json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -1769,7 +2551,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "ebdc7523-1835-44f9-823e-cebef7567cd5",
+          "id": "0d4aa948-ec91-4a08-acaf-02d5b3b2bc55",
           "name": "Unrecognised input data. (Unprocessable Content)",
           "originalRequest": {
             "url": {
@@ -1842,14 +2624,6 @@
               {
                 "key": "Accept",
                 "value": "application/fhir+json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -1870,7 +2644,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "cb72d26d-7678-40fb-bfc2-1a952293767c",
+          "id": "7b1a66c5-fb96-42ed-a974-e14aa2016a0c",
           "name": "Internal server error.",
           "originalRequest": {
             "url": {
@@ -1943,14 +2717,6 @@
               {
                 "key": "Accept",
                 "value": "application/fhir+json"
-              },
-              {
-                "description": {
-                  "content": "Added as a part of security scheme: apikey",
-                  "type": "text/plain"
-                },
-                "key": "apikey",
-                "value": "<API Key>"
               }
             ],
             "method": "GET",
@@ -1972,7 +2738,7 @@
         {
           "listen": "test",
           "script": {
-            "id": "08c6e73d-56ef-4da3-b717-0c4943d4ec4e",
+            "id": "ca064e0f-2f9e-4419-abf9-8b2146bc0595",
             "type": "text/javascript",
             "exec": [
               "// Validate status 2xx \npm.test(\"[GET]::/patient-check/:id - Status code is 2xx\", function () {\n   pm.response.to.be.success;\n});\n",
@@ -1997,16 +2763,16 @@
     }
   ],
   "info": {
-    "_postman_id": "95c82c32-cef6-438a-8e6d-caff920cb44b",
+    "_postman_id": "4caa73fa-52b7-40f7-bfdb-dbc9ac514d3a",
     "name": "Patient Eligibility Signposting API",
     "version": {
-      "raw": "1.0.14-alpha",
+      "raw": "1.0.15-alpha",
       "major": 1,
       "minor": 0,
-      "patch": 14,
+      "patch": 15,
       "prerelease": "alpha",
       "build": [],
-      "string": "1.0.14-alpha"
+      "string": "1.0.15-alpha"
     },
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
