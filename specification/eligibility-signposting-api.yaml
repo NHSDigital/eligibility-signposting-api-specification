@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Patient Eligibility Signposting API
-  version: 1.0.15-alpha
+  version: 1.0.16-alpha
   description: "## Overview\nUse this API to access the [Patient Eligibility Signposting Data Product](https://digital.nhs.uk/services/eligibility-data-product-elid) - the nationally curated single source of eligibility status and signposted actions for individuals.  For example, you can request eligibility for one or more vaccination types to understand if NHS England holds information which suggest that the person could or should take further steps toward receiving those vaccinations, and optionally, a list of the steps NHS England would recommend.\nWhere someone is deemed eligible, they will also be classified as actionable or not actionable. When deemed not actionable, one or more reasons will be returned.  These reasons can range from personal care setting impacts to current lack of availability of vaccines and more.\nThe API returns most of its data in both code and text form.  Unless agreed in writing with NHS England, where text is provided it should be displayed to the user as-is.\nUse this API to request: \n* eligibility for all supported categories and conditions\n* eligibility for specified supported categories and/or conditions \n* request that actions be included in the response\n* request that actions not be included in the response\nYou cannot currently use this API to: \n* request eligibility for proxy people (familial relations etc.)\n* request actions for people considered ineligible\nThis API is read-only and can return a list of processed suggestions, each relating to a 'condition' (e.g. COVID, RSV, BOWEL, EYE, BREAST etc.), including the following information for each: \n* a code representing the condition (COVID, RSV, BOWEL, EYE, BREAST)\n* an overall status (NotEligible, NotActionable, Actionable) \n* a list of eligibility cohort groups to which the person belongs (when eligible)\n* a list of the cohort groups that could have made the person eligible (when not eligible) \n* a list of rules/reasons that deem a person to be NotActionable\n* a list of actions that should be shown to the consumer\n#### Definitions of overall status\nThe overall status values indicate the following:\n* NotEligible - the individual does not currently meet eligibility criteria\n* NotActionable - the individual is eligible but does not need to take any further action at this time \n* Actionable - the individual is eligible and should follow one of the recommended actions provided\n### Patients included in the Patient Eligibility Signposting API\nThe API will return data for all patients who are in the NHS PDS system that are registered with an English GP practice (or one administered by England) or who we believe to be resident in England.\nPatients who are deceased (or thought to be), marked as invalid or sensitive will not be processed by this API.\n## Who can use this API\nThis API can only be used where there is a [legal basis](https://digital.nhs.uk/services/eligibility-data-product-elid#who-this-service-is-for) to do so. Make sure you have a valid use case before you go too far with your development.  You must demonstrate you have a [valid use case](https://digital.nhs.uk/services/eligibility-data-product-elid#who-this-service-is-for) as part of digital onboarding.\nYou must do this before you can go live (see 'Onboarding' below).\n### Who can access Eligibility Signposting Information\nPatients who receive health and social care or make use of NHS services in England, Wales and the Isle of Man can access their own Eligibility Signposting data through onboarded services.\nHealth and care organisations in England and the Isle of Man can access our information for legitimate direct care purposes. Legitimate direct care examples include NHS organisations delivering healthcare, local authorities delivering care, third sector and private sector health and care organisations, and developers delivering systems to health and care organisations.\n### Existing API users\nTo find out which healthcare software development organisations and products are already using this API, see [Patient Eligibility Signposting API - integrated products](https://digital.nhs.uk/services/eligibility-data-product-elid).\n## Access modes This API currently has only one access mode:\n* patient access (user-restricted)\nWe are considering the possibility of adding other modes in the future: \n* healthcare worker access\n* application restricted access\n### Patient access\nIf the end user is a patient then you must use this access mode. Use this access mode to obtain data for that patient.\nThis access mode is [user-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis), meaning an end user must be present, authenticated and authorised.\nThe end user must be:\n* a patient who receives health and social care or makes use of NHS services \n* strongly authenticated, using [NHS login](https://digital.nhs.uk/services/nhs-login)\nTo use this access mode, you must currently use the following security pattern:\n|\tSecurity pattern\t\t                                                                                                                                                                                                          |\tTechnical details\t                                  |\tAdvantages\t                                                | Disadvantages                                           |\n|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ----------------------------------------------------| ------------------------------------------------------------|---------------------------------------------------------| |[NHS login - separate authentication and authorisation](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/user-restricted-restful-apis-nhs-login-separate-authentication-and-authorisation) |OAuth 2.0 token exchange with signed JWT             |Gives access to user information.                            |Need to integrate and onboard separately with NHS login. |\nPatient access mode users must be authenticated to a high proofing level (P9) and to one of the following [vectors of trust](https://nhsconnect.github.io/nhslogin/vectors-of-trust/):\n* P9.Cp.Cd \n* P9.Cp.Ck\n* P9.Cm\nThis access mode is available in production ([beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status)).\n### Restricted access This access mode is not yet available, if you believe this mode would benefit your use-case, please let us know.\nThis access mode is [application-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#application-restricted-apis), meaning we authenticate and authorise the calling application but not the end user.\nThis access mode is not designed to be accessed by an end user. You might use this access mode as part of a back-end process to:\n* retrieve eligibility signposting information into a system in advance of a clinic \n* retrieve eligibility signposting information into a system to be used in a disconnected manner\nTo use this access mode, use this security pattern:\n* [Application-restricted RESTful API - signed JWT authentication](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/application-restricted-restful-apis-signed-jwt-authentication)\n## Roadmap\nThe [Patient Eligibility Signposting API](https://digital.nhs.uk/services/eligibility-data-product-elid/eligibility-data-product-elid-roadmap) roadmap shows the planned changes for the API.\nTo see our roadmap, or to suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/612352/eligibility-signposting-api-vaccinations).\nIf you have any other queries, please [contact us](https://digital.nhs.uk/developer/help-and-support).\n## Service level\nThis API is a silver service, meaning it is operational 24 hours a day, 365 days a year and supported 8am to 6pm, Monday to Friday excluding bank holidays.\nFor more details, see [service levels](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#service-levels).\n## Rate limits\nThe default rate limit is 25TPS (Transactions Per Second), per app. If you require a higher rate limit please [contact us](https://digital.nhs.uk/developer/help-and-support). or raise this during the onboarding process.\n## Technology\nThis API is [RESTful](https://digital.nhs.uk/developer/guides-and-documentation/our-api-technologies#basic-rest).\nThe error messages returned by this API conform to the FHIR global standard for health care data exchange, specifically to FHIR R4 (v4.0.1). This is to aid consumers that integrate to FHIR based APIS and are in any case not overly complex.\nThere are [libraries and SDKs](https://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#fhir-libraries-and-sdks) available to help with FHIR API integration.\n## Network access\nThis API is available on the internet and, indirectly, on the [Health and Social Care Network (HSCN)](https://digital.nhs.uk/services/health-and-social-care-network).\nFor more details see [Network access for APIs](https://digital.nhs.uk/developer/guides-and-documentation/network-access-for-apis).\n## Errors\nWe use standard HTTP status codes to show whether an API request succeeded or not. They are usually in the range:\n* 200 to 299 if it succeeded, including code 202 if it was accepted by an API that needs to wait for further action \n* 400 to 499 if it failed because of a client error by your application\n* 500 to 599 if it failed because of an error on our server\nErrors specific to each API are shown in the Endpoints section, under Response. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#http-status-codes) for more on errors.\nYour API-calling application should have a mechanism to automatically try again, for example by giving status information to your end user, before giving up. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#error-handling) for more information about error handling.\n## Open source\nYou might find the following [open source](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#open-source) resources useful:\n| Resource                  | Description                                                          | Links                                                                          |\n|---------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------| | Patient Eligibility Signposting API| Source code including API proxy, sandbox and specification and code.      | [GitHub repo](https://github.com/NHSDigital/eligibility-signposting-api) |\nWe currently don't have any open source client libraries or sample code for this API. If you think this would be useful, you can [upvote the suggestion on our Interactive Product Backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/107439/client-libraries-and-reference-implementations).\n\n## Environments and testing\n| Environment       | Base URL                                                               | | ----------------- | ---------------------------------------------------------------------- |\n| Sandbox           | `https://sandbox.api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`    | | Integration test  | `https://int.api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`        |\n| Production        | `https://api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`            |\n### Sandbox testing\nOur [sandbox environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#sandbox-testing):\n* is for early developer testing \n* only covers a limited set of scenarios\n* is open access, so does not allow you to test authorisation\nFor details of sandbox test scenarios, or to try out the sandbox using our 'Try this API' feature, see the documentation for each endpoint.\nAlternatively, you can try out the sandbox using our Postman collection:\n[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/eligibility-signposting-api/eligibility-signposting-api)\n### Integration testing\nOur [integration test environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#integration-testing):\n* is for formal integration testing \n* includes authorisation, with options for user-restricted access (NHS Login)\n### Production smoke testing\nYou must not use real patient data for smoke testing in the production environment.\nRather, use our [production test patient](https://digital.nhs.uk/services/eligibility-signposting/api-test-data#production-smoke-testing).\n## Onboarding\nYou need to get your software approved by us before it can go live with this API. We call this onboarding. The onboarding process can sometimes be quite long, so it is worth planning well ahead.\nAs part of this process, you need to demonstrate your technical conformance to the requirements for this API.\nYou also need to demonstrate that you can manage risks. This might impact the design of your software. For details, see [Onboarding support information](https://digital.nhs.uk/services/eligibility-data-product-elid#how-to-access-this-service).\nTo understand how our online digital onboarding process works, see [digital onboarding](https://digital.nhs.uk/developer/guides-and-documentation/digital-onboarding).\n## Related APIs\nThe following APIs are related to this API:\n"
   contact:
     url: https://developer.nhs.uk/apis/eligibility-signposting-api
@@ -217,7 +217,7 @@ paths:
                                 example: "My Link Label"
               examples:
                 example_50000000001:
-                  summary: RSV - Actionable due to membership of an Age Cohort including suggested national booking action (actions requested)
+                  summary: RSV - 5000000001/9686368973 Actionable due to membership of an Age Cohort including suggested national booking action (actions requested)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -228,7 +228,7 @@ paths:
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_rolling"
-                            cohortText: "You are aged 75 to 79 years old."
+                            cohortText: "are aged 75 to 79 years old."
                             cohortStatus: "Actionable"
                         suitabilityRules: []
                         actions:
@@ -238,7 +238,7 @@ paths:
                             urlLink: "http://www.nhs.uk/book-rsv"
                             urlLabel: "Continue to booking"
                 example_50000000002:
-                  summary: RSV - Actionable due to membership of an Age Cohort including suggested action (not national booking)
+                  summary: RSV - 5000000002/9686368906 Actionable due to membership of an Age Cohort including suggested action (not national booking)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -249,15 +249,15 @@ paths:
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_rolling"
-                            cohortText: "You are aged 75 to 79 years old."
+                            cohortText: "are aged 75 to 79 years old."
                             cohortStatus: "Actionable"
                         suitabilityRules: []
                         actions:
                           - actionType: "InfoText"
                             actionCode: "BookLocal"
-                            description: "## Getting the vaccine\nYou can get an RSV vaccination at your GP surgery.\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination."
+                            description: "## Getting the vaccine\n\nYou can get an RSV vaccination at your GP surgery.\n\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination."
                 example_50000000003:
-                  summary: RSV - Actionable due to membership of an alternative Age Cohort including suggested action (not national booking)
+                  summary: RSV - 5000000003/9658218873 Actionable due to membership of an alternative Age Cohort including suggested action (not national booking)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -268,15 +268,15 @@ paths:
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_catchup"
-                            cohortText: "You turned 80 between 2nd September 2024 and 31st August 2025"
+                            cohortText: "turned 80 between 2nd September 2024 and 31st August 2025"
                             cohortStatus: "Actionable"
                         suitabilityRules: []
                         actions:
                           - actionType: "InfoText"
                             actionCode: "BookLocal"
-                            description: "## Getting the vaccine\nYou can get an RSV vaccination at your GP surgery.\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination."
+                            description: "## Getting the vaccine\n\nYou can get an RSV vaccination at your GP surgery.\n\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination."
                 example_50000000004:
-                  summary: RSV - Actionable due to membership of an Age Cohort including suggested action (future national booking)
+                  summary: RSV - 5000000004/9658218881 Actionable due to membership of an Age Cohort including suggested action (future national booking)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -290,11 +290,11 @@ paths:
                         actions:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "AmendNBS"
-                            description: "## You have an RSV vaccination appointment\nYou can view, change or cancel your appointment below."
+                            description: "## You have an RSV vaccination appointment\n\nYou can view, change or cancel your appointment below."
                             urlLink: "http://www.nhs.uk/book-rsv"
                             urlLabel: "Manage your appointment"
                 example_50000000005:
-                  summary: RSV - Actionable due to membership of an Age Cohort including suggested actions (with future local booking)
+                  summary: RSV - 5000000005/9658218903 Actionable due to membership of an Age Cohort including suggested actions (with future local booking)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -308,9 +308,9 @@ paths:
                         actions:
                           - actionType: "CardWithText"
                             actionCode: "ManageLocal"
-                            description: "## You have an RSV vaccination appointment\nContact your healthcare provider to change or cancel your appointment."
+                            description: "## You have an RSV vaccination appointment\n\nContact your healthcare provider to change or cancel your appointment."
                 example_50000000006:
-                  summary: RSV - Not Actionable despite to membership of an Age Cohort with reasoning of already vaccinated (cohorts hidden)
+                  summary: RSV - 5000000006/9658218989 Not Actionable despite to membership of an Age Cohort with reasoning of already vaccinated (cohorts hidden)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -323,13 +323,13 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "## You've had your RSV vaccination\nWe believe you had your vaccination on 3 April 2025."
+                            ruleText: "## You've had your RSV vaccination\n\nWe believe you had your vaccination on 3 April 2025."
                         actions:
                           - actionType: "InfoText"
                             actionCode: "CheckCorrect"
-                            description: "## If you think this is incorrect\nIf you have not had this vaccination and you think you should, speak to your healthcare professional."
+                            description: "## If you think this is incorrect\n\nIf you have not had this vaccination and you think you should, speak to your healthcare professional."
                 example_50000000007:
-                  summary: RSV - Not Actionable despite to membership of an Age Cohort with reasoning of no available vaccinations (not available type 1)
+                  summary: RSV - 5000000007/9658218997 Not Actionable despite to membership of an Age Cohort with reasoning of no available vaccinations (not available type 1)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -340,7 +340,7 @@ paths:
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_rolling"
-                            cohortText: "You are aged 75 to 79 years old."
+                            cohortText: "are aged 75 to 79 years old."
                             cohortStatus: "NotActionable"
                         suitabilityRules:
                           - ruleType: "S"
@@ -348,14 +348,14 @@ paths:
                             ruleText: "Vaccinations are not currently available"
                         actions: []
                 example_50000000008:
-                  summary: RSV - No RSV response as no active campaign (not available type 2)
+                  summary: RSV - 5000000008/9658219004 No RSV response as no active campaign (not available type 2)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
                       lastUpdated: "2025-02-12T16:11:22Z"
                     processedSuggestions: []
                 example_50000000009:
-                  summary: RSV - Not Actionable despite to membership of an Age Cohort with reasoning of dose not yet due
+                  summary: RSV - 5000000009/9658219012 Not Actionable despite to membership of an Age Cohort with reasoning of dose not yet due
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -366,7 +366,7 @@ paths:
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_rolling"
-                            cohortText: "You are aged 75 to 79 years old."
+                            cohortText: "are aged 75 to 79 years old."
                             cohortStatus: "NotActionable"
                         suitabilityRules:
                           - ruleType: "S"
@@ -374,7 +374,7 @@ paths:
                             ruleText: "Your next dose is not yet due."
                         actions: []
                 example_50000000010:
-                  summary: RSV - Not Actionable despite to membership of an Age Cohort with reasoning of dose not far enough apart
+                  summary: RSV - 5000000010/9658220142 Not Actionable despite to membership of an Age Cohort with reasoning of dose not far enough apart
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -385,7 +385,7 @@ paths:
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_rolling"
-                            cohortText: "You are aged 75 to 79 years old."
+                            cohortText: "are aged 75 to 79 years old."
                             cohortStatus: "NotActionable"
                         suitabilityRules:
                           - ruleType: "S"
@@ -393,7 +393,7 @@ paths:
                             ruleText: "Your previous vaccination was less than 91 days ago."
                         actions: []
                 example_50000000011:
-                  summary: RSV - Not Actionable despite to membership of an Age Cohort with reasoning of vaccination given in other setting (e.g. care home)
+                  summary: RSV - 5000000011/9658220150 Not Actionable despite to membership of an Age Cohort with reasoning of vaccination given in other setting (e.g. care home)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -404,37 +404,15 @@ paths:
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_rolling"
-                            cohortText: "You are aged 75 to 79 years old."
+                            cohortText: "are aged 75 to 79 years old."
                             cohortStatus: "NotActionable"
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "OtherSetting"
-                            ruleText: "## Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
+                            ruleText: "## Getting the vaccine\n\nOur record show you're living in a setting where care is provided.\n\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
                         actions: []
                 example_50000000012:
-                  summary: RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 1 includes unknown cohort)
-                  value:
-                    responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
-                    meta:
-                      lastUpdated: "2025-02-12T16:11:22Z"
-                    processedSuggestions:
-                      - condition: "RSV"
-                        status: "NotActionable"
-                        statusText: "You should have the RSV vaccine"
-                        eligibilityCohorts:
-                          - cohortCode: "unknown_cohort_membership"
-                            cohortText: "Our records do not say why you are eligible"
-                            cohortStatus: "NotActionable"
-                        suitabilityRules:
-                          - ruleType: "S"
-                            ruleCode: "AlreadyVaccinated"
-                            ruleText: "## You've had your RSV vaccination\nWe believe you had your vaccination on 3 April 2025.We believe you had your vaccination on 3 April 2025."
-                        actions:
-                          - actionType: "InfoText"
-                            actionCode: "CheckCorrect"
-                            description: "## If you think this is incorrect\nIf you have not had this vaccination and you think you should, speak to your healthcare professional."
-                example_50000000013:
-                  summary: RSV - Not Actionable despite no cohort membership with reasoning of already vaccinated (type 2 includes no cohorts)
+                  summary: RSV - 5000000012/9450114080 Not Actionable despite no cohort membership with reasoning of already vaccinated
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -447,10 +425,32 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "## You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
-                        actions: []
+                            ruleText: "Based on our records, you had the RSV vaccination on 3 April 2025. You do not need to do anything."
+                        actions:
+                          - actionType: "InfoText"
+                            actionCode: "CheckCorrect"
+                            description: "## If you think this is incorrect\n\nIf you have not had this vaccination and you think you should, speak to your healthcare professional."
+                example_50000000013:
+                  summary: RSV - 5000000013/9466447939 Not Actionable despite no cohort membership with reasoning of already vaccinated (type 2 includes no cohorts)
+                  value:
+                    responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
+                    meta:
+                      lastUpdated: "2025-02-12T16:11:22Z"
+                    processedSuggestions:
+                      - condition: "RSV"
+                        status: "NotActionable"
+                        statusText: "You should have the RSV vaccine"
+                        eligibilityCohorts: []
+                        suitabilityRules:
+                          - ruleType: "S"
+                            ruleCode: "AlreadyVaccinated"
+                            ruleText: "Based on our records, you had the RSV vaccination on 3 April 2025. You do not need to do anything."
+                        actions:
+                          - actionType: "InfoText"
+                            actionCode: "CheckCorrect"
+                            description: "## If you think this is incorrect\n\nIf you have not had this vaccination and you think you should, speak to your healthcare professional."
                 example_50000000014:
-                  summary: RSV - Not Eligible
+                  summary: RSV - 5000000014/9657933617 Not Eligible
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -461,16 +461,16 @@ paths:
                         statusText: "We do not believe you should have this vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_rolling"
-                            cohortText: "You are not aged 75 to 79 years old."
+                            cohortText: "are not aged 75 to 79 years old."
                             cohortStatus: "NotEligible"
                           - cohortCode: "rsv_age_catchup"
-                            cohortText: "You did not turn 80 between 2nd September 2024 and 31st August 2025"
+                            cohortText: "did not turn 80 between 2nd September 2024 and 31st August 2025"
                             cohortStatus: "NotEligible"
                         suitabilityRules: []
                         actions:
                           - actionType: "InfoText"
                             actionCode: "HealthcareProInfo"
-                            description: "## If you think you need this vaccine\nSpeak to your healthcare professional if you think you should be offered this vaccination."
+                            description: "## If you think you need this vaccine\n\nSpeak to your healthcare professional if you think you should be offered this vaccination."
 #############################################################################
                 example_50000000015:
                   summary: RSV - Multiple actions without cohorts
@@ -487,16 +487,16 @@ paths:
                         actions:
                           - actionType: "InfoText"
                             actionCode: "GPAdvice"
-                            description: "## Don't Believe Us\nYou can get get advice about an RSV vaccination at your GP surgery."
+                            description: "## Don't Believe Us\n\nYou can get get advice about an RSV vaccination at your GP surgery."
                           - actionType: "CardWithText"
                             actionCode: "CheckTheWeb"
-                            description: "## Want Independent Advice\nYou can search for independent advice by using the google.co.uk to search for *uk rsv vaccination bgs saga*."
+                            description: "## Want Independent Advice\n\nYou can search for independent advice by using the google.co.uk to search for **uk rsv vaccination bgs saga**."
                           - actionType: "InfoText"
                             actionCode: "Disclaimer"
-                            description: "## This is test data\nThese are not real options, but options created to try out the system ~and break it~."
+                            description: "## This is test data\n\nThese are not real options, but options created to try out the system *and break it*."
                           - actionType: "CardWithText"
                             actionCode: "BuyOne"
-                            description: "## Privately funded RSV jabs are available\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
+                            description: "## Privately funded RSV jabs are available\n\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
                 example_50000000016:
                   summary: RSV - Multiple actions with cohorts
                   value:
@@ -509,30 +509,30 @@ paths:
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_rolling"
-                            cohortText: "You are aged 75 to 79 years old."
+                            cohortText: "are aged 75 to 79 years old."
                             cohortStatus: "Actionable"
                           - cohortCode: "rsv_age_in_carehomes"
-                            cohortText: "You reside in an institution that qualifies you for the vaccine."
+                            cohortText: "reside in an institution that qualifies you for the vaccine."
                             cohortStatus: "Actionable"
                         suitabilityRules: []
                         actions:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
-                            description: "## Book a jab at a nearby pharmacy\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one, and book a convenient appointment."
+                            description: "## Book a jab at a nearby pharmacy\n\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one, and book a convenient appointment."
                             urlLink: "http://www.nhs.uk/book-rsv"
                             urlLabel: "Continue to booking"
                           - actionType: "InfoText"
                             actionCode: "GPAdvice"
-                            description: "## Don't Believe Us\nYou can get get advice about an RSV vaccination at your GP surgery."
+                            description: "## Don't Believe Us\n\nYou can get get advice about an RSV vaccination at your GP surgery."
                           - actionType: "CardWithText"
                             actionCode: "CheckTheWeb"
-                            description: "## Want Independent Advice\nYou can search for independent advice by using the google.co.uk to search for *uk rsv vaccination bgs saga*."
+                            description: "## Want Independent Advice\n\nYou can search for independent advice by using the google.co.uk to search for *uk rsv vaccination bgs saga*."
                           - actionType: "InfoText"
                             actionCode: "Disclaimer"
-                            description: "## This is test data\nThese are not real options, but options created to try out the system ~and break it~."
+                            description: "## This is test data\n\nThese are not real options, but options created to try out the system ~and break it~."
                           - actionType: "CardWithText"
                             actionCode: "BuyOne"
-                            description: "## Privately funded RSV jabs are available\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
+                            description: "## Privately funded RSV jabs are available\n\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookElsewhere"
                             description: ""
@@ -550,21 +550,21 @@ paths:
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_rolling"
-                            cohortText: "You are aged 75 to 79 years old."
+                            cohortText: "are aged 75 to 79 years old."
                             cohortStatus: "Actionable"
                           - cohortCode: "rsv_age_in_carehomes"
-                            cohortText: "You reside in an institution that qualifies you for the vaccine."
+                            cohortText: "reside in an institution that qualifies you for the vaccine."
                             cohortStatus: "Actionable"
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "## You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
+                            ruleText: "## You've had your RSV vaccination\n\nAsBased on our records, you recently had this vaccination. You do not need to do anything."
                           - ruleType: "S"
                             ruleCode: "OtherSetting"
-                            ruleText: "## Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
+                            ruleText: "## Getting the vaccine\n\nOur record show you're living in a setting where care is provided.\n\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
                           - ruleType: "S"
                             ruleCode: "NotYetDue"
-                            ruleText: "## Your last dose of the RSV vaccination was too recent\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
+                            ruleText: "## Your last dose of the RSV vaccination was too recent\n\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions: []
                 example_50000000018:
                   summary: RSV - Multiple suitability rules without cohorts
@@ -580,13 +580,13 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "## You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
+                            ruleText: "## You've had your RSV vaccination\n\nBased on our records, you recently had this vaccination. You do not need to do anything."
                           - ruleType: "S"
                             ruleCode: "OtherSetting"
-                            ruleText: "## Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
+                            ruleText: "## Getting the vaccine\nOur record show you're living in a setting where care is provided.\n\NIf you think you should have the RSV vaccine, speak to a member of staff where you live."
                           - ruleType: "S"
                             ruleCode: "NotYetDue"
-                            ruleText: "## Your last dose of the RSV vaccination was too recent\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
+                            ruleText: "## Your last dose of the RSV vaccination was too recent\n\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions: []
                 example_50000000019:
                   summary: RSV - Multiple suitability , multiple actions rules with cohorts
@@ -600,31 +600,31 @@ paths:
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_rolling"
-                            cohortText: "You are aged 75 to 79 years old."
+                            cohortText: "are aged 75 to 79 years old."
                             cohortStatus: "Actionable"
                           - cohortCode: "rsv_age_in_carehomes"
-                            cohortText: "You reside in an institution that qualifies you for the vaccine."
+                            cohortText: "reside in an institution that qualifies you for the vaccine."
                             cohortStatus: "Actionable"
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "## You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
+                            ruleText: "## You've had your RSV vaccination\n\nBased on our records, you recently had this vaccination. You do not need to do anything."
                           - ruleType: "S"
                             ruleCode: "OtherSetting"
-                            ruleText: "## Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
+                            ruleText: "## Getting the vaccine\n\nOur record show you're living in a setting where care is provided.\n\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
                           - ruleType: "S"
                             ruleCode: "NotYetDue"
-                            ruleText: "## Your last dose of the RSV vaccination was too recent\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
+                            ruleText: "## Your last dose of the RSV vaccination was too recent\n\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions:
                           - actionType: "InfoText"
                             actionCode: "GPAdvice"
-                            description: "## Don't Believe Us\nYou can get get advice about an RSV vaccination at your GP surgery."
+                            description: "## Don't Believe Us\n\nYou can get get advice about an RSV vaccination at your GP surgery."
                           - actionType: "CardWithText"
                             actionCode: "BuyOne"
-                            description: "## Privately funded RSV jabs are available\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
+                            description: "## Privately funded RSV jabs are available\n\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
-                            description: "## Book a jab at a nearby pharmacy\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one and book a convenient appointment."
+                            description: "## Book a jab at a nearby pharmacy\n\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one and book a convenient appointment."
                             urlLink: "http://www.nhs.uk/book-rsv"
                             urlLabel: "Continue to booking"
                 example_50000000020:
@@ -641,23 +641,23 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "AlreadyVaccinated"
-                            ruleText: "## You've had your RSV vaccination\nBased on our records, you recently had this vaccination. You do not need to do anything."
+                            ruleText: "## You've had your RSV vaccination\n\nBased on our records, you recently had this vaccination. You do not need to do anything."
                           - ruleType: "S"
                             ruleCode: "OtherSetting"
-                            ruleText: "## Getting the vaccine\nOur record show you're living in a setting where care is provided.\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
+                            ruleText: "## Getting the vaccine\n\nOur record show you're living in a setting where care is provided.\n\nIf you think you should have the RSV vaccine, speak to a member of staff where you live."
                           - ruleType: "S"
                             ruleCode: "NotYetDue"
-                            ruleText: "## Your last dose of the RSV vaccination was too recent\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
+                            ruleText: "## Your last dose of the RSV vaccination was too recent\n\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions:
                           - actionType: "InfoText"
                             actionCode: "GPAdvice"
-                            description: "## Don't Believe Us\nYou can get get advice about an RSV vaccination at your GP surgery."
+                            description: "## Don't Believe Us\n\nYou can get get advice about an RSV vaccination at your GP surgery."
                           - actionType: "CardWithText"
                             actionCode: "BuyOne"
-                            description: "## Privately funded RSV jabs are available\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
+                            description: "## Privately funded RSV jabs are available\n\nIf you are over 60, you can pay to be vaccinated at many of the UK's leading Pharmacies."
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
-                            description: "## Book a jab at a nearby pharmacy\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one and book a convenient appointment."
+                            description: "## Book a jab at a nearby pharmacy\n\nMany pharmacies can give provide you with the RSV vaccine.  The National Booking System can help you find a nearby one and book a convenient appointment."
                             urlLink: "http://www.nhs.uk/book-rsv"
                             urlLabel: "Continue to booking"
                 example_50000000021:
@@ -672,16 +672,16 @@ paths:
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_rolling"
-                            cohortText: "You are aged 75 to 79 years old."
+                            cohortText: "are aged 75 to 79 years old."
                             cohortStatus: "Actionable"
                           - cohortCode: "rsv_age_in_carehomes"
-                            cohortText: "You reside in an institution that qualifies you for the vaccine."
+                            cohortText: "reside in an institution that qualifies you for the vaccine."
                             cohortStatus: "Actionable"
                         suitabilityRules: []
                         actions:
                           - actionType: "VideoClipLink"
                             actionCode: "JabInfoVideo"
-                            description: "## View information about the RSV vaccine\nThis video explains what it is and why you should have it."
+                            description: "## View information about the RSV vaccine\n\nThis video explains what it is and why you should have it."
                             urlLink: "https://www.youtube.com/watch?v=NIkDBejfrGo"
                 example_50000000022:
                   summary: RSV - Unknown action without cohorts
@@ -698,7 +698,7 @@ paths:
                         actions:
                           - actionType: "VideoClipLink"
                             actionCode: "JabInfoVideo"
-                            description: "## View information about the RSV vaccine\nThis video explains what it is and why you should have it."
+                            description: "## View information about the RSV vaccine\n\nThis video explains what it is and why you should have it."
                             urlLink: "https://www.youtube.com/watch?v=NIkDBejfrGo"
                 example_50000000023:
                   summary: RSV - Unknown suitability rule with cohorts
@@ -712,15 +712,15 @@ paths:
                         statusText: "You should have the RSV vaccine"
                         eligibilityCohorts:
                           - cohortCode: "rsv_age_rolling"
-                            cohortText: "You are aged 75 to 79 years old."
+                            cohortText: "are aged 75 to 79 years old."
                             cohortStatus: "Actionable"
                           - cohortCode: "rsv_age_in_carehomes"
-                            cohortText: "You reside in an institution that qualifies you for the vaccine."
+                            cohortText: "reside in an institution that qualifies you for the vaccine."
                             cohortStatus: "Actionable"
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "PreviousAlergicResponse"
-                            ruleText: "## You've had a reaction to vaccinations in the past\nBased on our records, you have had reaction that suggests you should not receive the RSV vaccination through usual channels."
+                            ruleText: "## You've had a reaction to vaccinations in the past\n\nBased on our records, you have had reaction that suggests you should not receive the RSV vaccination through usual channels."
                         actions: []
                 example_50000000024:
                   summary: RSV - Unknown suitability rule without cohorts
@@ -736,7 +736,7 @@ paths:
                         suitabilityRules:
                           - ruleType: "S"
                             ruleCode: "PreviousAlergicResponse"
-                            ruleText: "## You've had a reaction to vaccinations in the past\nBased on our records, you have had reaction that suggests you should not receive the RSV vaccination through usual channels."
+                            ruleText: "## You've had a reaction to vaccinations in the past\n\nBased on our records, you have had reaction that suggests you should not receive the RSV vaccination through usual channels."
                         actions: []
 #############################################################################
         '400':
