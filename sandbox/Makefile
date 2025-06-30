@@ -35,7 +35,7 @@ build-and-publish-sandbox-image:
 
 deploy-sandbox-spec:
 	make -C .. construct-spec APIM_ENV=sandbox
-	proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml
+	proxygen instance deploy sandbox eligibility-signposting-api ../build/specification/sandbox/eligibility-signposting-api.yaml
 
 up: build
 	docker compose -f docker-compose.yaml up -d
