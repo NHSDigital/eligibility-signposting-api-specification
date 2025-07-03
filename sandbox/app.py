@@ -87,6 +87,11 @@ PATIENT_EXAMPLES = {
     "patient-check/50000000022": "example_50000000022",
     "patient-check/50000000023": "example_50000000023",
     "patient-check/50000000024": "example_50000000024",
+    # Support error scenario invocation
+    "patient-check/90000000400": "code400",
+    "patient-check/90000000404": "code404",
+    "patient-check/90000000422": "code422",
+    "patient-check/90000000500": "code500",
     # VitA Specific NHS Number Mapping
     "patient-check/9686368973": "example_50000000001",
     "patient-check/9686368906": "example_50000000002",
@@ -102,11 +107,10 @@ PATIENT_EXAMPLES = {
     "patient-check/9450114080": "example_50000000012",
     "patient-check/9466447939": "example_50000000013",
     "patient-check/9657933617": "example_50000000014",
-    # Support error scenario invocation
-    "patient-check/90000000400": "code400",
-    "patient-check/90000000404": "code404",
-    "patient-check/90000000422": "code422",
-    "patient-check/90000000500": "code500",
+    "patient-check/9800878378": "code400",
+    "patient-check/9661033404": "code404",
+    "patient-check/9451019030": "code422",
+    "patient-check/9436793375": "code500",
 }
 
 
