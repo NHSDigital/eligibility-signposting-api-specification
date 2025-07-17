@@ -158,6 +158,11 @@ convert-postman: # Create Postman collection from OAS spec
 		portman -l /app/eligibility-signposting-api.yaml -o /app/postman/collection.json
 	echo >> $(POSTMAN_DIR)/collection.json
 	rm $(POSTMAN_DIR)/eligibility-signposting-api.yaml
+
+build-and-publish-sandbox-image: # Build and publish the sandbox Docker image
+	$(MAKE) -C sandbox build-and-publish-sandbox-image
+
+
 # ==============================================================================
 
 ${VERBOSE}.SILENT: \
