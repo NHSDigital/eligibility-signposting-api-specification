@@ -53,7 +53,7 @@ jobs:
 
       - name: Deploy sandbox spec to Proxygen
         run: |
-          proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml
+          proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml --no-confirm
 
       - name: Build and publish sandbox Docker image
         run: |
