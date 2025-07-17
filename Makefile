@@ -14,7 +14,9 @@ install-node:
 	npm install --legacy-peer-deps
 
 #Condensed Target to run all targets above.
-install: install-node install-python .git/hooks/pre-commit
+install: install-node install-python
+
+make-hooks: .git/hooks/pre-commit
 
 #Run the npm linting script (specified in package.json). Used to check the syntax and formatting of files.
 lint:
@@ -156,6 +158,11 @@ convert-postman: # Create Postman collection from OAS spec
 		portman -l /app/eligibility-signposting-api.yaml -o /app/postman/collection.json
 	echo >> $(POSTMAN_DIR)/collection.json
 	rm $(POSTMAN_DIR)/eligibility-signposting-api.yaml
+
+build-and-publish-sandbox-image: # Build and publish the sandbox Docker image
+	$(MAKE) -C sandbox build-and-publish-sandbox-image
+
+
 # ==============================================================================
 
 ${VERBOSE}.SILENT: \

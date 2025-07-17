@@ -27,6 +27,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+
       - name: Install Python and Node dependencies
         run: |
           make install
@@ -50,7 +53,7 @@ jobs:
 
       - name: Deploy sandbox spec to Proxygen
         run: |
-          proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml
+          proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml --no-confirm
 
       - name: Build and publish sandbox Docker image
         run: |
