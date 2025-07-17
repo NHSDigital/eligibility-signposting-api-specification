@@ -14,7 +14,9 @@ install-node:
 	npm install --legacy-peer-deps
 
 #Condensed Target to run all targets above.
-install: install-node install-python .git/hooks/pre-commit
+install: install-node install-python
+
+make-hooks: .git/hooks/pre-commit
 
 #Run the npm linting script (specified in package.json). Used to check the syntax and formatting of files.
 lint:
