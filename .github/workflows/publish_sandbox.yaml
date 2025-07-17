@@ -27,6 +27,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+
       - name: Install Python and Node dependencies
         run: |
           make install
