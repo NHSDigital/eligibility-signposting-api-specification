@@ -1,0 +1,57 @@
+name: Deploy Sandbox API and Docker Image
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+env:
+  APIM_ENV: sandbox
+
+jobs:
+  deploy-sandbox:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Python and Node dependencies
+        run: |
+          make install
+
+      - name: Install proxygen-cli
+        run: |
+          pip install proxygen-cli
+
+      - name: Set up Proxygen credentials
+        env:
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.proxygen
+          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
+          make setup-proxygen-credentials
+
+      - name: Generate sandbox specification
+        run: |
+          make construct-spec APIM_ENV=sandbox
+          make generate-sandbox-spec
+
+      - name: Deploy sandbox spec to Proxygen
+        run: |
+          proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml
+
+      - name: Build and publish sandbox Docker image
+        run: |
+          make build-and-publish-sandbox-image
