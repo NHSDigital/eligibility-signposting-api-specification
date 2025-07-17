@@ -6,7 +6,7 @@ authors = [
   #TODO add authors
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 repository = "https://github.com/NHSDigital/eligibility-signposting-api-specification"
 homepage = "https://digital.nhs.uk/developer/api-catalogue"
 keywords = ["healthcare", "uk", "nhs", "vaccination", "api"] #TODO add additional keywords
@@ -17,7 +17,7 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = "^3.11"
 yq = "^3.2.3"
 
 [tool.poetry.group.dev.dependencies]
