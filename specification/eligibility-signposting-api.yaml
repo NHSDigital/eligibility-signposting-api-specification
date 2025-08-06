@@ -1040,6 +1040,7 @@ components:
   securitySchemes:
     $ref: "components/security/security.yaml"
 x-nhsd-apim:
+  monitoring: true
   access:
     $ref: "x-nhsd-apim/access.yaml"
   target:
