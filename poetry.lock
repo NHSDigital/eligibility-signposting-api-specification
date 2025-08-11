@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.40.41"
+version = "1.42.6"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.40.41-py3-none-any.whl", hash = "sha256:d75cc6c654418ac4d30eb996081033e90024fa7a661db8ab40de4b5a545eaa79"},
-    {file = "awscli-1.40.41.tar.gz", hash = "sha256:553c3a3ba7879be18c5db219f9a710daf90d750044eb604297b25805b05ebc42"},
+    {file = "awscli-1.42.6-py3-none-any.whl", hash = "sha256:87e0ad43fa50c12cc6839e8312904c202ded71be6070129654069738bf25b428"},
+    {file = "awscli-1.42.6.tar.gz", hash = "sha256:b81900dac64df01291dae0e42da5d411b6a24a21c0da391c1fae6ca1e9554d57"},
 ]
 
 [package.dependencies]
-botocore = "1.38.42"
+botocore = "1.40.6"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -54,18 +54,18 @@ ver1 = ["awscli"]
 
 [[package]]
 name = "boto3"
-version = "1.38.40"
+version = "1.40.6"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "boto3-1.38.40-py3-none-any.whl", hash = "sha256:a43cad12c18607ae9addfc0a98366aae5762b1a4880529f82295b21473686433"},
-    {file = "boto3-1.38.40.tar.gz", hash = "sha256:fcef3e08513d276c97d72d5e7ab8f3ce9950170784b9b5cf4fab327cdb577503"},
+    {file = "boto3-1.40.6-py3-none-any.whl", hash = "sha256:7685085b8ea679dd858330834c16364c61c5830edb892c5864fb12ed68798708"},
+    {file = "boto3-1.40.6.tar.gz", hash = "sha256:3f2375b7576de603085d7b7491cf2c4ab5c57d12965a5ce295821cdd4d10e950"},
 ]
 
 [package.dependencies]
-botocore = ">=1.38.40,<1.39.0"
+botocore = ">=1.40.6,<1.41.0"
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.13.0,<0.14.0"
 
@@ -74,14 +74,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.38.42"
+version = "1.40.6"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.38.42-py3-none-any.whl", hash = "sha256:fbbeac30c045b5c19f1c3bb063ea2b6315ce2d6fcb3d898e87d1c1846297961c"},
-    {file = "botocore-1.38.42.tar.gz", hash = "sha256:3a14188e48f6e26be561164373d34150fa9cb39f7ad32cc745dcd3ab05f43683"},
+    {file = "botocore-1.40.6-py3-none-any.whl", hash = "sha256:b253f107617791a29ca81c6f0fca20ac1afdba01869eb43017022bbbb8387f34"},
+    {file = "botocore-1.40.6.tar.gz", hash = "sha256:e132eac967a7526596e31ca571d7f1ef9676c6a9c4f1322446768994ccab64aa"},
 ]
 
 [package.dependencies]
@@ -374,4 +374,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "52cd7c345199cdfd491fd8551655783c3cfec79ce8d61d07189cf12d71dcff84"
+content-hash = "df7858bc92cb9e82fbaaaa4dec56e2d4151ae44b18a7098f576e8078c0089801"
