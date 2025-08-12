@@ -1,0 +1,66 @@
+name: Publish specification
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'preprod'
+        type: choice
+        options:
+          - preprod
+          - prod
+
+env:
+  APIM_ENV: ${{ github.event.inputs.environment || 'preprod' }}
+
+jobs:
+  deploy-sandbox:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Install Python and Node dependencies
+        run: |
+          make install
+
+      - name: Install proxygen-cli
+        run: |
+          pip install proxygen-cli
+
+      - name: Set up Proxygen credentials
+        env:
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.proxygen
+          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
+          make setup-proxygen-credentials
+
+      - name: Generate specification
+        run: |
+          make construct-spec APIM_ENV=${{ env.APIM_ENV }}
+
+      - name: Publish ${{ env.APIM_ENV }} spec to Proxygen
+        run: |
+          if [ "${{ env.APIM_ENV }}" = "preprod" ]; then
+            proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat
+          else
+            proxygen spec publish build/specification/prod/eligibility-signposting-api.yaml
+          fi
+
