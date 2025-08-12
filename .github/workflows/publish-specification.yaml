@@ -16,7 +16,7 @@ env:
   APIM_ENV: ${{ github.event.inputs.environment || 'preprod' }}
 
 jobs:
-  deploy-sandbox:
+  publish-specification:
     runs-on: ubuntu-latest
 
     steps:
