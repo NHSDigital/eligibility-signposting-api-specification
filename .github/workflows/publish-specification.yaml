@@ -16,7 +16,7 @@ env:
   APIM_ENV: ${{ github.event.inputs.environment || 'preprod' }}
 
 jobs:
-  deploy-sandbox:
+  publish-specification:
     runs-on: ubuntu-latest
 
     steps:
@@ -59,8 +59,8 @@ jobs:
       - name: Publish ${{ env.APIM_ENV }} spec to Proxygen
         run: |
           if [ "${{ env.APIM_ENV }}" = "preprod" ]; then
-            proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat
+            proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat --no-confirm
           else
-            proxygen spec publish build/specification/prod/eligibility-signposting-api.yaml
+            proxygen spec publish build/specification/prod/eligibility-signposting-api.yaml --no-confirm
           fi
 
