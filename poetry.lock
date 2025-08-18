@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.10"
+version = "1.42.11"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.10-py3-none-any.whl", hash = "sha256:59dc268cbbcbab33d37ea8ba15e4317a2a8e6a3ee8afdf49e823c533a222e6bb"},
-    {file = "awscli-1.42.10.tar.gz", hash = "sha256:b27a55ddeb41f6d272607bdaa62bfd36d4f144a09af2045aaa8fc98b587bbd1b"},
+    {file = "awscli-1.42.11-py3-none-any.whl", hash = "sha256:aa5fa5c0fce9a79f160e1c08559bddd5961f3bb6328b5b22797dde08a6a8596a"},
+    {file = "awscli-1.42.11.tar.gz", hash = "sha256:5e6886fc088c5d591829d5527ff49c5d46d4ac66dd136edab64586e6778e481e"},
 ]
 
 [package.dependencies]
-botocore = "1.40.10"
+botocore = "1.40.11"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.10"
+version = "1.40.11"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.10-py3-none-any.whl", hash = "sha256:22aff400250a0125be92e0d43011eb42414a64f999d5215827af91d8584b4476"},
-    {file = "botocore-1.40.10.tar.gz", hash = "sha256:db3b14043bc90fe4220edbc2e89e8f5af1d2d4aacc16bab3c30dacd98b0073e3"},
+    {file = "botocore-1.40.11-py3-none-any.whl", hash = "sha256:4beca0c5f92201da1bf1bc0a55038538ad2defded32ab0638cb68f5631dcc665"},
+    {file = "botocore-1.40.11.tar.gz", hash = "sha256:95af22e1b2230bdd5faa9d1c87e8b147028b14b531770a1148bf495967ccba5e"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "f728f9edd08af34e4261682e4b71e1b8477d76ec093681080150ee418a143a65"
+content-hash = "e6306bc6733f7ab3ba67b243bd89a881fafbe6e7bade4ad15c45862a9dada87f"
