@@ -237,7 +237,7 @@ paths:
                             description: "## Get vaccinated at your GP surgery\n\nContact your GP surgery to book an appointment."
                           - actionType: "ButtonWithAuthLinkWithInfoText"
                             actionCode: "BookNBS"
-                            description: "## Book an appointment online at a pharmacy\n\nYou can book an appointment online at a pharmacy that offers the RSV vaccination. You need to be registered with a GP to do this.",
+                            description: "## Book an appointment online at a pharmacy\n\nYou can book an appointment online at a pharmacy that offers the RSV vaccination. You need to be registered with a GP to do this."
                             urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/rsv"
                             urlLabel: "Continue to booking"
                           - actionType: "ActionLinkWithInfoText"
