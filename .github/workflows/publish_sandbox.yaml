@@ -48,7 +48,6 @@ jobs:
 
       - name: Generate sandbox specification
         run: |
-          make construct-spec APIM_ENV=sandbox
           make generate-sandbox-spec
 
       - name: Deploy sandbox spec to Proxygen
