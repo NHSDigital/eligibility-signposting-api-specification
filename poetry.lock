@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.13"
+version = "1.42.17"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.13-py3-none-any.whl", hash = "sha256:64c5085182079743cde348ade7f938b3ff48758efeeb30f305595f16acb4bc7d"},
-    {file = "awscli-1.42.13.tar.gz", hash = "sha256:6876574589f7b800434c108be2ca033ff1bd2cbc1af4293d2eea80b0dd3be1c1"},
+    {file = "awscli-1.42.17-py3-none-any.whl", hash = "sha256:9c5b69eb0ec27e8d13e083535cf415b2c378c20b181359cfecb9bfe40906aad7"},
+    {file = "awscli-1.42.17.tar.gz", hash = "sha256:6a9b073ef0a59c3ebc3b82c469746e70b99de997d42a7976e5220d764842ad44"},
 ]
 
 [package.dependencies]
-botocore = "1.40.13"
+botocore = "1.40.17"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.13"
+version = "1.40.17"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.13-py3-none-any.whl", hash = "sha256:5bf7334d6a0a87a907d607b115710bede2440376cefa8c33b0d99571fb226d87"},
-    {file = "botocore-1.40.13.tar.gz", hash = "sha256:d7003526a9169e8ab3566db2227cf0b85d9e689e9ff97f2803c629a8e4624fb5"},
+    {file = "botocore-1.40.17-py3-none-any.whl", hash = "sha256:603951935c1a741ae70236bf15725c5293074f28503e7029ad0e24ece476a342"},
+    {file = "botocore-1.40.17.tar.gz", hash = "sha256:769cd04a6a612f2d48b5f456c676fd81733fab682870952f7e2887260ea6a2bc"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "4e29cb614f18235bf5d6a17a0f0a9b67c3891fc9acdba6630969459d8a0286da"
+content-hash = "ff4657b01193f1494eeee41ac4c2a83a0f073fe4b1289b94def16a6bf2cb8031"
