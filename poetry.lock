@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.13"
+version = "1.42.19"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.13-py3-none-any.whl", hash = "sha256:64c5085182079743cde348ade7f938b3ff48758efeeb30f305595f16acb4bc7d"},
-    {file = "awscli-1.42.13.tar.gz", hash = "sha256:6876574589f7b800434c108be2ca033ff1bd2cbc1af4293d2eea80b0dd3be1c1"},
+    {file = "awscli-1.42.19-py3-none-any.whl", hash = "sha256:3a6d16d912306cfcfdb0abdc7cee591a1a4f5908db3cfdd8628f0973ec193928"},
+    {file = "awscli-1.42.19.tar.gz", hash = "sha256:192fa8bfc890d6e4a1c199741f5cbe0b577f2965fffd8dc183ae9ce1e33ebd47"},
 ]
 
 [package.dependencies]
-botocore = "1.40.13"
+botocore = "1.40.19"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.13"
+version = "1.40.19"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.13-py3-none-any.whl", hash = "sha256:5bf7334d6a0a87a907d607b115710bede2440376cefa8c33b0d99571fb226d87"},
-    {file = "botocore-1.40.13.tar.gz", hash = "sha256:d7003526a9169e8ab3566db2227cf0b85d9e689e9ff97f2803c629a8e4624fb5"},
+    {file = "botocore-1.40.19-py3-none-any.whl", hash = "sha256:6a7c2ceaf8ed3321cf4bc15420dad4e778263d3b480c86f7fd9da982e1deaa64"},
+    {file = "botocore-1.40.19.tar.gz", hash = "sha256:becc101b3047ec4cffa6c86bab747b8312db20529ee0132fe77007092a9c9f85"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "4e29cb614f18235bf5d6a17a0f0a9b67c3891fc9acdba6630969459d8a0286da"
+content-hash = "cd6eec96a5f2e307dd7d7b71ea7ae03f88df182321858b5b4b4134e515b96ee2"
