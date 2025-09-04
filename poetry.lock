@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.13"
+version = "1.42.23"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.13-py3-none-any.whl", hash = "sha256:64c5085182079743cde348ade7f938b3ff48758efeeb30f305595f16acb4bc7d"},
-    {file = "awscli-1.42.13.tar.gz", hash = "sha256:6876574589f7b800434c108be2ca033ff1bd2cbc1af4293d2eea80b0dd3be1c1"},
+    {file = "awscli-1.42.23-py3-none-any.whl", hash = "sha256:8d49f44aa218bcf9a9784c69a56d412e78fa54211958d577fc5b6c3e1022bd6b"},
+    {file = "awscli-1.42.23.tar.gz", hash = "sha256:b5f9505f5f2d463939b5cf5368060f32a62b9f0617314b64bfe3f1a472ca50fe"},
 ]
 
 [package.dependencies]
-botocore = "1.40.13"
+botocore = "1.40.23"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.13"
+version = "1.40.23"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.13-py3-none-any.whl", hash = "sha256:5bf7334d6a0a87a907d607b115710bede2440376cefa8c33b0d99571fb226d87"},
-    {file = "botocore-1.40.13.tar.gz", hash = "sha256:d7003526a9169e8ab3566db2227cf0b85d9e689e9ff97f2803c629a8e4624fb5"},
+    {file = "botocore-1.40.23-py3-none-any.whl", hash = "sha256:487cced8f9346f7d1038e9158c56b6ecf6d839dd43e345bc730053c8cf321ed3"},
+    {file = "botocore-1.40.23.tar.gz", hash = "sha256:de07cceaf9b142c183e165d303a0eee289c34d63f63e6b7a640406d6bacfb646"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "4e29cb614f18235bf5d6a17a0f0a9b67c3891fc9acdba6630969459d8a0286da"
+content-hash = "e60c509bbcd41ab9c9093b9bfcdf3ba0fce6cf43c8b5fe2b46725e4a66da789c"
