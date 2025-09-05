@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.13"
+version = "1.42.24"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.13-py3-none-any.whl", hash = "sha256:64c5085182079743cde348ade7f938b3ff48758efeeb30f305595f16acb4bc7d"},
-    {file = "awscli-1.42.13.tar.gz", hash = "sha256:6876574589f7b800434c108be2ca033ff1bd2cbc1af4293d2eea80b0dd3be1c1"},
+    {file = "awscli-1.42.24-py3-none-any.whl", hash = "sha256:090f851f2cf905b02b75ec36e93d13c1ed7a0dedee1af96fba71698d83688f6a"},
+    {file = "awscli-1.42.24.tar.gz", hash = "sha256:56bfc92c95f3f5c3273d14ce3c23ca745abdcca416b0da38ed4bf99a8dac7553"},
 ]
 
 [package.dependencies]
-botocore = "1.40.13"
+botocore = "1.40.24"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.13"
+version = "1.40.24"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.13-py3-none-any.whl", hash = "sha256:5bf7334d6a0a87a907d607b115710bede2440376cefa8c33b0d99571fb226d87"},
-    {file = "botocore-1.40.13.tar.gz", hash = "sha256:d7003526a9169e8ab3566db2227cf0b85d9e689e9ff97f2803c629a8e4624fb5"},
+    {file = "botocore-1.40.24-py3-none-any.whl", hash = "sha256:d566840f2291bb5df1c0903ad385c61c865927d562d41dcf6468c9cee4cc313a"},
+    {file = "botocore-1.40.24.tar.gz", hash = "sha256:af2b49e52950a12229440d7c297aaad0a7b75fd1c4f8700b164948b207a08cf0"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "4e29cb614f18235bf5d6a17a0f0a9b67c3891fc9acdba6630969459d8a0286da"
+content-hash = "1961ab139a291306cd7635eb11992e6b808f24d8d6812ca16b7d4e988a512a8b"
