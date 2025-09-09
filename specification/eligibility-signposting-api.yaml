@@ -483,7 +483,7 @@ paths:
                             actionCode: "HealthcareProInfo"
                             description: "## If you think you need this vaccine\n\nSpeak to your healthcare professional if you think you should be offered this vaccination."
                 example_50000000015:
-                  summary: RSV - 5000000015 Multiple actions without cohorts
+                  summary: RSV - 5000000015/9735549018 Multiple actions without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -508,7 +508,7 @@ paths:
                             actionCode: "LoremIpsumTest4"
                             description: "## Etiam venenatis erat at diam varius.\n\nEtiam ullamcorper venenatis mi, at scelerisque velit vulputate id. Fusce ex arcu, tincidunt vel purus nec, volutpat aliquam odio."
                 example_50000000016:
-                  summary: RSV - 5000000016 Multiple actions with cohorts
+                  summary: RSV - 5000000016/9735549026 Multiple actions with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -549,7 +549,7 @@ paths:
                             urlLink: "http://www.nhs.uk/book-non-nbs-rsv"
                             urlLabel: "Continue to other booking (test 2)"
                 example_50000000017:
-                  summary: RSV - 5000000017 Multiple suitability rules with cohorts
+                  summary: RSV - 5000000017/9735549034 Multiple suitability rules with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -577,7 +577,7 @@ paths:
                             ruleText: "## Your last dose of the RSV vaccination was too recent\n\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions: []
                 example_50000000018:
-                  summary: RSV - 5000000018 Multiple suitability rules without cohorts
+                  summary: RSV - 5000000018/9735549042 Multiple suitability rules without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -599,7 +599,7 @@ paths:
                             ruleText: "## Your last dose of the RSV vaccination was too recent\n\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions: []
                 example_50000000019:
-                  summary: RSV - 5000000019 Multiple suitability , multiple actions rules with cohorts
+                  summary: RSV - 5000000019/9735549050 Multiple suitability , multiple actions rules with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -638,7 +638,7 @@ paths:
                             urlLink: "http://www.nhs.uk/book-rsv"
                             urlLabel: "Continue to booking"
                 example_50000000020:
-                  summary: RSV - 5000000020 Multiple suitability , multiple actions rules without cohorts
+                  summary: RSV - 5000000020/9735549069 Multiple suitability , multiple actions rules without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -671,7 +671,7 @@ paths:
                             urlLink: "http://www.nhs.uk/book-rsv"
                             urlLabel: "Continue to booking (test)"
                 example_50000000021:
-                  summary: RSV - 5000000021 Unknown action with cohorts
+                  summary: RSV - 5000000021/9735549077 Unknown action with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -694,7 +694,7 @@ paths:
                             description: "## (Test link no button) View information about the RSV vaccine\n\nThis video explains what it is and why you should have it."
                             urlLink: "https://www.youtube.com/watch?v=SCMgFsDrR-k"
                 example_50000000022:
-                  summary: RSV - 5000000022 Unknown action without cohorts
+                  summary: RSV - 5000000022/9735549085 Unknown action without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -711,7 +711,7 @@ paths:
                             description: "## (Test link no button) View information about the RSV vaccine\n\nThis video explains what it is and why you should have it."
                             urlLink: "https://www.youtube.com/watch?v=SCMgFsDrR-k"
                 example_50000000023:
-                  summary: RSV - 5000000023 Unknown suitability rule with cohorts
+                  summary: RSV - 5000000023/9735549093 Unknown suitability rule with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -733,7 +733,7 @@ paths:
                             ruleText: "## Test suitability rule\n\nNeque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
                         actions: []
                 example_50000000024:
-                  summary: RSV - 5000000024 Unknown suitability rule without cohorts
+                  summary: RSV - 5000000024/9735549107 Unknown suitability rule without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
