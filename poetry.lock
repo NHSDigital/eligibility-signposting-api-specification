@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.31"
+version = "1.42.32"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.31-py3-none-any.whl", hash = "sha256:a438de3486e1f5fa9e9f01975d34abe3faaa572349a57a24b9a188f1982ee06a"},
-    {file = "awscli-1.42.31.tar.gz", hash = "sha256:d0eba656d50d430c0b426e08c2ec53ab06884761de93867ee478c598caca8b61"},
+    {file = "awscli-1.42.32-py3-none-any.whl", hash = "sha256:fb6763badc27d5470d5a4c6f604a38880b493432e58a94f67bc61259e06b6435"},
+    {file = "awscli-1.42.32.tar.gz", hash = "sha256:c6bc74497781eef7d0bf5a34b9f091ee7fcc566010c0f97c812a75873124b165"},
 ]
 
 [package.dependencies]
-botocore = "1.40.31"
+botocore = "1.40.32"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.31"
+version = "1.40.32"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.31-py3-none-any.whl", hash = "sha256:4033a00f8c6a4b5c3acb30af9283963123917227a437e5fc165189d07bd3cf8a"},
-    {file = "botocore-1.40.31.tar.gz", hash = "sha256:9496b91bbe40ed01d341dc8f6ff0492d7f546e80f1a862b00ec5bc9045fa3324"},
+    {file = "botocore-1.40.32-py3-none-any.whl", hash = "sha256:a7cc409648aaf08a7d1aab76c675818868a0b76745b9deb478f91c1d8898aa8a"},
+    {file = "botocore-1.40.32.tar.gz", hash = "sha256:e027adff8d6e177b396dff68340dafa7548b84aeb2cff149d84844d56ad29bae"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "9aa270efbd97726db1eeb2a07b76f7448800df2e86f417402b8e1225f84da920"
+content-hash = "67c1827d7dc77ea961bc943684d750f55f5378cd003e3dafbc5f5848769ad627"
