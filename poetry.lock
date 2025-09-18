@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.31"
+version = "1.42.33"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.31-py3-none-any.whl", hash = "sha256:a438de3486e1f5fa9e9f01975d34abe3faaa572349a57a24b9a188f1982ee06a"},
-    {file = "awscli-1.42.31.tar.gz", hash = "sha256:d0eba656d50d430c0b426e08c2ec53ab06884761de93867ee478c598caca8b61"},
+    {file = "awscli-1.42.33-py3-none-any.whl", hash = "sha256:8cbc294b0e83f001ec1efe3ffd89dd6179bbbcb439d39b96853e8861515bf6f4"},
+    {file = "awscli-1.42.33.tar.gz", hash = "sha256:6bae8a01983a7b90d17d8baab0b65d2e1bc13d9818fa813db464ff6d3d8ee179"},
 ]
 
 [package.dependencies]
-botocore = "1.40.31"
+botocore = "1.40.33"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.31"
+version = "1.40.33"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.31-py3-none-any.whl", hash = "sha256:4033a00f8c6a4b5c3acb30af9283963123917227a437e5fc165189d07bd3cf8a"},
-    {file = "botocore-1.40.31.tar.gz", hash = "sha256:9496b91bbe40ed01d341dc8f6ff0492d7f546e80f1a862b00ec5bc9045fa3324"},
+    {file = "botocore-1.40.33-py3-none-any.whl", hash = "sha256:b9a33758913410ca0d81f30dfd9f00c4ff22c72c38fdf679864011afc73d99fd"},
+    {file = "botocore-1.40.33.tar.gz", hash = "sha256:307e0cb55f4b7307bfd2090fd1c9ca14e1febece5b928144ccc0f78adfd2d864"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "9aa270efbd97726db1eeb2a07b76f7448800df2e86f417402b8e1225f84da920"
+content-hash = "e830ecbdf0a76bbdc73b30ccedf4e442e529c45a1da4312a7d741c2f91190a41"
