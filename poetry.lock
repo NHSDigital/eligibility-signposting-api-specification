@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.31"
+version = "1.42.34"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.31-py3-none-any.whl", hash = "sha256:a438de3486e1f5fa9e9f01975d34abe3faaa572349a57a24b9a188f1982ee06a"},
-    {file = "awscli-1.42.31.tar.gz", hash = "sha256:d0eba656d50d430c0b426e08c2ec53ab06884761de93867ee478c598caca8b61"},
+    {file = "awscli-1.42.34-py3-none-any.whl", hash = "sha256:5a4988860562584a18a024025fc99d85900abdcccb34f48a3b287383ed838c9a"},
+    {file = "awscli-1.42.34.tar.gz", hash = "sha256:1675a170d8099f70dbc5b610f715f5cb01a33f61e49471358a2c6289b15a0cea"},
 ]
 
 [package.dependencies]
-botocore = "1.40.31"
+botocore = "1.40.34"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.31"
+version = "1.40.34"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.31-py3-none-any.whl", hash = "sha256:4033a00f8c6a4b5c3acb30af9283963123917227a437e5fc165189d07bd3cf8a"},
-    {file = "botocore-1.40.31.tar.gz", hash = "sha256:9496b91bbe40ed01d341dc8f6ff0492d7f546e80f1a862b00ec5bc9045fa3324"},
+    {file = "botocore-1.40.34-py3-none-any.whl", hash = "sha256:b46d27550ed7e2ac7d5e2ce0ab7a95b7296076e64bc8a3c496e41ea1fc9abd4b"},
+    {file = "botocore-1.40.34.tar.gz", hash = "sha256:681b3751c430aa1d70c7117efec4faeeb745acd8646d1657456e282a3a400d3b"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "9aa270efbd97726db1eeb2a07b76f7448800df2e86f417402b8e1225f84da920"
+content-hash = "13b83e1edfc380dc2fff3538b834047fcaa50de62fff2ddde10b0ea7b9d50fdb"
