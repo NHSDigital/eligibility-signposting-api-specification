@@ -7,9 +7,10 @@ Adapted from https://stackoverflow.com/a/36601467
 import logging
 import os
 import sys
+from http import HTTPStatus
 
 import requests  # pyright: ignore [reportMissingModuleSource]
-from flask import Flask, Request, Response, request  # pyright: ignore [reportMissingImports]
+from flask import Flask, Request, Response, request, make_response  # pyright: ignore [reportMissingImports]
 
 # Configure logging to output to stdout
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
@@ -155,13 +156,31 @@ def parse_prefer_header_value(prefer_header_value: str) -> str:
     return ""
 
 
-@app.route("/_status", methods=["GET"])
+@app.route("/patient-check/_status", methods=["GET"])
 def health_check() -> Response:
     """
     Health-check endpoint to verify the application is running.
     Returns a 200 OK status with a simple JSON response.
     """
-    return Response('{"status": "ok"}', status=200, mimetype="application/json")
+    status_json = {
+        "status": "pass",
+        "version": "",
+        "revision": "",
+        "releaseId": "",
+        "commitId": "",
+        "checks": {
+            "healthcheckService:status": [
+                {
+                    "status": "pass",
+                    "timeout": False,
+                    "responseCode": 200,
+                    "outcome": "<html><h1>Ok</h1></html>",
+                    "links": {"self": f"https://default-eligibility-signposting-api-live/patient-check/_status"},
+                }
+            ]
+        },
+    }
+    return make_response(status_json, HTTPStatus.OK, {"Content-Type": "application/json"})
 
 
 @app.route("/", defaults={"path": ""})
