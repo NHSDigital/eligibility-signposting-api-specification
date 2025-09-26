@@ -95,9 +95,11 @@ PATIENT_EXAMPLES = {
     "patient-check/90000000500": "code500",
     # VitA Specific NHS Number Mapping
     "patient-check/9686368973": "example_50000000001",
+    "patient-check/9735548852": "example_50000000001",
     "patient-check/9686368906": "example_50000000002",
     "patient-check/9658218873": "example_50000000003",
     "patient-check/9658218881": "example_50000000004",
+    "patient-check/9735548844": "example_50000000004",
     "patient-check/9658218903": "example_50000000005",
     "patient-check/9658218989": "example_50000000006",
     "patient-check/9658218997": "example_50000000007",
