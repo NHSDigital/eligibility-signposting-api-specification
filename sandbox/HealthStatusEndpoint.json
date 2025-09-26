@@ -1,5 +1,5 @@
 {
-    "/_status": {
+    "/patient-check/_status": {
       "get": {
         "operationId": "healthcheck",
         "summary": "healthcheck endpoint",

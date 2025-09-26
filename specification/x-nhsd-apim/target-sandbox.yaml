@@ -1,5 +1,5 @@
 type: hosted
-healthcheck: /_status
+healthcheck: /patient-check/_status
 containers:
   - name: eligibility-signposting-api
     image:
