@@ -238,7 +238,7 @@ paths:
                           - actionType: "ButtonWithAuthLinkWithInfoText"
                             actionCode: "BookNBSInfoText"
                             description: "## Book an appointment online at a pharmacy\n\nYou can book an appointment online at a pharmacy that offers the RSV vaccination. You need to be registered with a GP to do this."
-                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/rsv"
+                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Continue to booking"
                           - actionType: "ActionLinkWithInfoText"
                             actionCode: "WalkIn"
@@ -302,7 +302,7 @@ paths:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "AmendNBS"
                             description: "## You have an RSV vaccination appointment booked\n\nYou can view, change or cancel your appointment below."
-                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/rsv"
+                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Manage your appointment"
                 example_50000000005:
                   summary: RSV - 5000000005/9658218903 Actionable due to membership of an Age Cohort including suggested actions (with future local booking)
@@ -529,7 +529,7 @@ paths:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
                             description: "## Lorem ipsum dolor sit amet, consectetur adipiscing elit\n\nFusce imperdiet dictum quam, a consequat leo posuere sed. Vestibulum id sodales odio. Curabitur at egestas lectus, ac mattis risus. In sit amet dapibus sem."
-                            urlLink: "http://www.nhs.uk/book-rsv"
+                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Continue to booking (test 1)"
                           - actionType: "InfoText"
                             actionCode: "LoremIpsumTest"
@@ -635,7 +635,7 @@ paths:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
                             description: "## Book a jab at a nearby pharmacy\n\nMany pharmacies can provide you with the RSV vaccine.  The National Booking System can help you find a nearby one, and book a convenient appointment."
-                            urlLink: "http://www.nhs.uk/book-rsv"
+                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Continue to booking"
                 example_50000000020:
                   summary: RSV - 5000000020/9735549069 Multiple suitability , multiple actions rules without cohorts
@@ -668,7 +668,7 @@ paths:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
                             description: "## Lorem ipsum dolor sit amet, consectetur adipiscing elit\n\nFusce imperdiet dictum quam, a consequat leo posuere sed. Vestibulum id sodales odio. Curabitur at egestas lectus, ac mattis risus. In sit amet dapibus sem."
-                            urlLink: "http://www.nhs.uk/book-rsv"
+                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Continue to booking (test)"
                 example_50000000021:
                   summary: RSV - 5000000021/9735549077 Unknown action with cohorts
