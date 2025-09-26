@@ -1,6 +1,6 @@
 type: external
 url: "preprod.eligibility-signposting-api.nhs.uk"
-healthcheck: /_status
+healthcheck: /patient-check/_status
 security:
   type: mtls
   secret: eligibility-signposting-api

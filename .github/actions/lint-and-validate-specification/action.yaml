@@ -13,16 +13,16 @@ runs:
       with:
         node-version: "20"
 
-    - name: Install dependencies
+    - name: Install system dependencies
       shell: bash
       run: |
         sudo apt-get update
         sudo apt-get install -y make
 
-    - name: Install Spectral, Swagger CLI, and Redocly CLI
+    - name: Install CLI tools locally
       shell: bash
       run: |
-        npm install -g @stoplight/spectral-cli swagger-cli @redocly/cli
+        npm ci
 
     - name: Construct OpenAPI Spec
       shell: bash
@@ -32,8 +32,9 @@ runs:
     - name: Lint OpenAPI Spec with Spectral
       shell: bash
       run: |
-          spectral lint --ruleset .spectral.yaml build/specification/${{ inputs.apim-env }}/eligibility-signposting-api.yaml
+        npx spectral lint --ruleset .spectral.yaml build/specification/${{ inputs.apim-env }}/eligibility-signposting-api.yaml
 
     - name: Validate OpenAPI Spec with Swagger CLI
       shell: bash
-      run: swagger-cli validate build/specification/${{ inputs.apim-env }}/eligibility-signposting-api.yaml
+      run: |
+        npx swagger-cli validate build/specification/${{ inputs.apim-env }}/eligibility-signposting-api.yaml
