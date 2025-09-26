@@ -10,7 +10,7 @@ import sys
 from http import HTTPStatus
 
 import requests  # pyright: ignore [reportMissingModuleSource]
-from flask import Flask, Request, Response, request, make_response  # pyright: ignore [reportMissingImports]
+from flask import Flask, Request, Response, make_response, request  # pyright: ignore [reportMissingImports]
 
 # Configure logging to output to stdout
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
@@ -177,7 +177,7 @@ def health_check() -> Response:
                     "timeout": False,
                     "responseCode": 200,
                     "outcome": "<html><h1>Ok</h1></html>",
-                    "links": {"self": f"https://default-eligibility-signposting-api-live/patient-check/_status"},
+                    "links": {"self": "https://default-eligibility-signposting-api-live/patient-check/_status"},
                 }
             ]
         },
