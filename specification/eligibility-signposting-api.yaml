@@ -238,7 +238,7 @@ paths:
                           - actionType: "ButtonWithAuthLinkWithInfoText"
                             actionCode: "BookNBSInfoText"
                             description: "## Book an appointment online at a pharmacy\n\nYou can book an appointment online at a pharmacy that offers the RSV vaccination. You need to be registered with a GP to do this."
-                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/rsv"
+                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Continue to booking"
                           - actionType: "ActionLinkWithInfoText"
                             actionCode: "WalkIn"
@@ -302,7 +302,7 @@ paths:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "AmendNBS"
                             description: "## You have an RSV vaccination appointment booked\n\nYou can view, change or cancel your appointment below."
-                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/rsv"
+                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Manage your appointment"
                 example_50000000005:
                   summary: RSV - 5000000005/9658218903 Actionable due to membership of an Age Cohort including suggested actions (with future local booking)
