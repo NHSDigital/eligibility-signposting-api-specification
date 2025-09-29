@@ -7,9 +7,10 @@ Adapted from https://stackoverflow.com/a/36601467
 import logging
 import os
 import sys
+from http import HTTPStatus
 
 import requests  # pyright: ignore [reportMissingModuleSource]
-from flask import Flask, Request, Response, request  # pyright: ignore [reportMissingImports]
+from flask import Flask, Request, Response, make_response, request  # pyright: ignore [reportMissingImports]
 
 # Configure logging to output to stdout
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
@@ -94,9 +95,11 @@ PATIENT_EXAMPLES = {
     "patient-check/90000000500": "code500",
     # VitA Specific NHS Number Mapping
     "patient-check/9686368973": "example_50000000001",
+    "patient-check/9735548852": "example_50000000001",
     "patient-check/9686368906": "example_50000000002",
     "patient-check/9658218873": "example_50000000003",
     "patient-check/9658218881": "example_50000000004",
+    "patient-check/9735548844": "example_50000000004",
     "patient-check/9658218903": "example_50000000005",
     "patient-check/9658218989": "example_50000000006",
     "patient-check/9658218997": "example_50000000007",
@@ -107,6 +110,16 @@ PATIENT_EXAMPLES = {
     "patient-check/9450114080": "example_50000000012",
     "patient-check/9466447939": "example_50000000013",
     "patient-check/9657933617": "example_50000000014",
+    "patient-check/9735549018": "example_50000000015",
+    "patient-check/9735549026": "example_50000000016",
+    "patient-check/9735549034": "example_50000000017",
+    "patient-check/9735549042": "example_50000000018",
+    "patient-check/9735549050": "example_50000000019",
+    "patient-check/9735549069": "example_50000000020",
+    "patient-check/9735549077": "example_50000000021",
+    "patient-check/9735549085": "example_50000000022",
+    "patient-check/9735549093": "example_50000000023",
+    "patient-check/9735549107": "example_50000000024",
     "patient-check/9800878378": "code400",
     "patient-check/9661033404": "code404",
     "patient-check/9451019030": "code422",
@@ -145,13 +158,31 @@ def parse_prefer_header_value(prefer_header_value: str) -> str:
     return ""
 
 
-@app.route("/_status", methods=["GET"])
+@app.route("/patient-check/_status", methods=["GET"])
 def health_check() -> Response:
     """
     Health-check endpoint to verify the application is running.
     Returns a 200 OK status with a simple JSON response.
     """
-    return Response('{"status": "ok"}', status=200, mimetype="application/json")
+    status_json = {
+        "status": "pass",
+        "version": "",
+        "revision": "",
+        "releaseId": "",
+        "commitId": "",
+        "checks": {
+            "healthcheckService:status": [
+                {
+                    "status": "pass",
+                    "timeout": False,
+                    "responseCode": 200,
+                    "outcome": "<html><h1>Ok</h1></html>",
+                    "links": {"self": "https://default-eligibility-signposting-api-live/patient-check/_status"},
+                }
+            ]
+        },
+    }
+    return make_response(status_json, HTTPStatus.OK, {"Content-Type": "application/json"})
 
 
 @app.route("/", defaults={"path": ""})

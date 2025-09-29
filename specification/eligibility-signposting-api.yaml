@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Patient Eligibility Signposting API
-  version: 1.0.21-alpha
+  version: 1.0.22-alpha
   description: "## Overview\nUse this API to access the [Eligibility Data Product](https://digital.nhs.uk/services/eligibility-data-product-elid) - the nationally curated single source of vaccination eligibility status and signposted next actions for individuals. You can request it to see if NHS England's data deems a person as eligible or not eligible for a vaccination, along with our reasoning. If a person is eligible for a vaccination, they'll be marked as either actionable, meaning they can proceed immediately in taking our recommended action i.e booking an appointment online or contacting their GP, or not actionable, meaning they can't take any action yet i.e. there is a local vaccine shortage or their vaccination will be arranged directly by someone else. Unless you have written permission from NHS England to change it, any descriptive text provided through the Eligibility Signposting API must be displayed to your user exactly as written.\nUse this API to request: \n* eligibility for all supported vaccination types\n* derived reason for eligibility status \n* recommended actions the individual should take based on multiple factors\n\nYou cannot currently use this API to: \n* request eligibility for proxy people (familial relations etc.)\n\nThis API is read-only and can return a list of processed suggestions, each relating to a 'condition' (e.g. COVID, Flu, RSV etc.), including the following information for each: \n* a code representing the condition (COVID, RSV, FLU etc.)\n* an overall status (NotEligible, NotActionable, Actionable) \n* a list of eligibility cohort groups to which the person belongs (when eligible)\n* a list of the cohort groups that could have made the person eligible (when not eligible) \n* a list of rules/reasons that deem a person to be NotActionable\n* a list of actions that should be shown to the consumer\n#### Definitions of overall status\nThe overall status values indicate the following:\n* NotEligible - the individual does not currently meet eligibility criteria\n* NotActionable - the individual is eligible but does not need to take any further action at this time \n* Actionable - the individual is eligible and should follow one of the recommended actions provided\n### Patients included in the Patient Eligibility Signposting API\nThe API will return data for all patients who are in the NHS PDS system that are registered with an English GP practice (or one administered by England) or who we believe to be resident in England.\nPatients who are deceased (or thought to be), marked as invalid or sensitive will not be processed by this API.\n## Who can use this API\nThis API can only be used where there is a [legal basis](https://digital.nhs.uk/services/eligibility-data-product-elid#who-this-service-is-for) to do so. Make sure you have a valid use case before you go too far with your development.  You must demonstrate you have a [valid use case](https://digital.nhs.uk/services/eligibility-data-product-elid#who-this-service-is-for) as part of digital onboarding.\nYou must do this before you can go live (see 'Onboarding' below).\n### Who can access Eligibility Signposting Information\nPatients who receive health and social care or make use of NHS services in England, Wales and the Isle of Man can access their own Eligibility Signposting data through onboarded services.\nHealth and care organisations in England and the Isle of Man can access our information for legitimate direct care purposes. Legitimate direct care examples include NHS organisations delivering healthcare, local authorities delivering care, third sector and private sector health and care organisations, and developers delivering systems to health and care organisations.\n### Existing API users\nTo find out which healthcare software development organisations and products are already using this API, see [Patient Eligibility Signposting API - integrated products](https://digital.nhs.uk/services/eligibility-data-product-elid).\n## Access modes\nThis API currently has only one access mode:\n* patient access (user-restricted)\n\nWe are considering the possibility of adding other modes in the future: \n* healthcare worker access\n* application restricted access\n### Patient access\nIf the end user is a patient then you must use this access mode. Use this access mode to obtain data for that patient.\nThis access mode is [user-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis), meaning an end user must be present, authenticated and authorised.\nThe end user must be:\n* a patient who receives health and social care or makes use of NHS services \n* strongly authenticated, using [NHS login](https://digital.nhs.uk/services/nhs-login)\nTo use this access mode, you must currently use the following security pattern:\n\n|\tSecurity pattern\t\t                                                                                                                                                                                                          |\tTechnical details\t                                  |\tAdvantages\t                                                | Disadvantages                                           |\n|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ----------------------------------------------------| ------------------------------------------------------------|---------------------------------------------------------|\n|[NHS login - separate authentication and authorisation](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/user-restricted-restful-apis-nhs-login-separate-authentication-and-authorisation) |OAuth 2.0 token exchange with signed JWT             |Gives access to user information.                            |Need to integrate and onboard separately with NHS login. |\nPatient access mode users must be authenticated to a high proofing level (P9) and to one of the following [vectors of trust](https://nhsconnect.github.io/nhslogin/vectors-of-trust/):\n* P9.Cp.Cd \n* P9.Cp.Ck\n* P9.Cm\nThis access mode is available in production ([beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status)).\n### Restricted access\nThis access mode is not yet available, if you believe this mode would benefit your use-case, please let us know.\nThis access mode is [application-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#application-restricted-apis), meaning we authenticate and authorise the calling application but not the end user.\nThis access mode is not designed to be accessed by an end user. You might use this access mode as part of a back-end process to:\n* retrieve eligibility signposting information into a system in advance of a clinic \n* retrieve eligibility signposting information into a system to be used in a disconnected manner\n\nTo use this access mode, use this security pattern:\n* [Application-restricted RESTful API - signed JWT authentication](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/application-restricted-restful-apis-signed-jwt-authentication)\n## Roadmap\nThe [Patient Eligibility Signposting API](https://digital.nhs.uk/services/eligibility-data-product-elid/eligibility-data-product-elid-roadmap) roadmap shows the planned changes for the API.\nTo see our roadmap, or to suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/612352/eligibility-signposting-api-vaccinations).\nIf you have any other queries, please [contact us](https://digital.nhs.uk/developer/help-and-support).\n## Service level\nThis API is a silver service, meaning it is operational 24 hours a day, 365 days a year and supported 8am to 6pm, Monday to Friday excluding bank holidays.\nFor more details, see [service levels](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#service-levels).\n## Rate limits\nThe default rate limit is 25TPS (Transactions Per Second), per app. If you require a higher rate limit please [contact us](https://digital.nhs.uk/developer/help-and-support). or raise this during the onboarding process.\n## Technology\nThis API is [RESTful](https://digital.nhs.uk/developer/guides-and-documentation/our-api-technologies#basic-rest).\nThe error messages returned by this API conform to the FHIR global standard for health care data exchange, specifically to FHIR R4 (v4.0.1). This is to aid consumers that integrate to FHIR based APIS and are in any case not overly complex.\nThere are [libraries and SDKs](https://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#fhir-libraries-and-sdks) available to help with FHIR API integration.\n## Network access\nThis API is available on the internet and, indirectly, on the [Health and Social Care Network (HSCN)](https://digital.nhs.uk/services/health-and-social-care-network).\nFor more details see [Network access for APIs](https://digital.nhs.uk/developer/guides-and-documentation/network-access-for-apis).\n## Errors\nWe use standard HTTP status codes to show whether an API request succeeded or not. They are usually in the range:\n* 200 to 299 if it succeeded, including code 202 if it was accepted by an API that needs to wait for further action \n* 400 to 499 if it failed because of a client error by your application\n* 500 to 599 if it failed because of an error on our server\nErrors specific to each API are shown in the Endpoints section, under Response. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#http-status-codes) for more on errors.\nYour API-calling application should have a mechanism to automatically try again, for example by giving status information to your end user, before giving up. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#error-handling) for more information about error handling.\n## Open source\nYou might find the following [open source](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#open-source) resources useful:\n| Resource                  | Description                                                          | Links                                                                          |\n|---------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------|\n| Patient Eligibility Signposting API| Source code including API proxy, sandbox and specification and code.      | [GitHub repo](https://github.com/NHSDigital/eligibility-signposting-api) |\nWe currently don't have any open source client libraries or sample code for this API. If you think this would be useful, you can [upvote the suggestion on our Interactive Product Backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/107439/client-libraries-and-reference-implementations).\n\n## Environments and testing\n| Environment       | Base URL                                                               |\n| ----------------- | ---------------------------------------------------------------------- |\n| Sandbox           | `https://sandbox.api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`    |\n| Integration test  | `https://int.api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`        |\n| Production        | `https://api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`            |\n### Sandbox testing\nOur [sandbox environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#sandbox-testing):\n* is for early developer testing \n* only covers a limited set of scenarios\n* is open access, so does not allow you to test authorisation\n\nFor details of sandbox test scenarios, or to try out the sandbox using our 'Try this API' feature, see the documentation for each endpoint.\n\nAlternatively, you can try out the sandbox using our Postman collection:\n[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/eligibility-signposting-api/eligibility-signposting-api)\n### Integration testing\nOur [integration test environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#integration-testing):\n* is for formal integration testing \n* includes authorisation, with options for user-restricted access (NHS Login)\n### Production smoke testing\nYou must not use real patient data for smoke testing in the production environment.\nRather, use our [production test patient](https://digital.nhs.uk/services/eligibility-signposting/api-test-data#production-smoke-testing).\n## Onboarding\nYou need to get your software approved by us before it can go live with this API. We call this onboarding. The onboarding process can sometimes be quite long, so it is worth planning well ahead.\nAs part of this process, you need to demonstrate your technical conformance to the requirements for this API.\nYou also need to demonstrate that you can manage risks. This might impact the design of your software. For details, see [Onboarding support information](https://digital.nhs.uk/services/eligibility-data-product-elid#how-to-access-this-service).\nTo understand how our online digital onboarding process works, see [digital onboarding](https://digital.nhs.uk/developer/guides-and-documentation/digital-onboarding).\n## Related APIs\nThe following APIs are related to this API:\n"
   contact:
     url: https://developer.nhs.uk/apis/eligibility-signposting-api
@@ -238,7 +238,7 @@ paths:
                           - actionType: "ButtonWithAuthLinkWithInfoText"
                             actionCode: "BookNBSInfoText"
                             description: "## Book an appointment online at a pharmacy\n\nYou can book an appointment online at a pharmacy that offers the RSV vaccination. You need to be registered with a GP to do this."
-                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/rsv"
+                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Continue to booking"
                           - actionType: "ActionLinkWithInfoText"
                             actionCode: "WalkIn"
@@ -302,7 +302,7 @@ paths:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "AmendNBS"
                             description: "## You have an RSV vaccination appointment booked\n\nYou can view, change or cancel your appointment below."
-                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/rsv"
+                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Manage your appointment"
                 example_50000000005:
                   summary: RSV - 5000000005/9658218903 Actionable due to membership of an Age Cohort including suggested actions (with future local booking)
@@ -483,7 +483,7 @@ paths:
                             actionCode: "HealthcareProInfo"
                             description: "## If you think you need this vaccine\n\nSpeak to your healthcare professional if you think you should be offered this vaccination."
                 example_50000000015:
-                  summary: RSV - 5000000015 Multiple actions without cohorts
+                  summary: RSV - 5000000015/9735549018 Multiple actions without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -508,7 +508,7 @@ paths:
                             actionCode: "LoremIpsumTest4"
                             description: "## Etiam venenatis erat at diam varius.\n\nEtiam ullamcorper venenatis mi, at scelerisque velit vulputate id. Fusce ex arcu, tincidunt vel purus nec, volutpat aliquam odio."
                 example_50000000016:
-                  summary: RSV - 5000000016 Multiple actions with cohorts
+                  summary: RSV - 5000000016/9735549026 Multiple actions with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -529,7 +529,7 @@ paths:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
                             description: "## Lorem ipsum dolor sit amet, consectetur adipiscing elit\n\nFusce imperdiet dictum quam, a consequat leo posuere sed. Vestibulum id sodales odio. Curabitur at egestas lectus, ac mattis risus. In sit amet dapibus sem."
-                            urlLink: "http://www.nhs.uk/book-rsv"
+                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Continue to booking (test 1)"
                           - actionType: "InfoText"
                             actionCode: "LoremIpsumTest"
@@ -549,7 +549,7 @@ paths:
                             urlLink: "http://www.nhs.uk/book-non-nbs-rsv"
                             urlLabel: "Continue to other booking (test 2)"
                 example_50000000017:
-                  summary: RSV - 5000000017 Multiple suitability rules with cohorts
+                  summary: RSV - 5000000017/9735549034 Multiple suitability rules with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -577,7 +577,7 @@ paths:
                             ruleText: "## Your last dose of the RSV vaccination was too recent\n\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions: []
                 example_50000000018:
-                  summary: RSV - 5000000018 Multiple suitability rules without cohorts
+                  summary: RSV - 5000000018/9735549042 Multiple suitability rules without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -599,7 +599,7 @@ paths:
                             ruleText: "## Your last dose of the RSV vaccination was too recent\n\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions: []
                 example_50000000019:
-                  summary: RSV - 5000000019 Multiple suitability , multiple actions rules with cohorts
+                  summary: RSV - 5000000019/9735549050 Multiple suitability , multiple actions rules with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -635,10 +635,10 @@ paths:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
                             description: "## Book a jab at a nearby pharmacy\n\nMany pharmacies can provide you with the RSV vaccine.  The National Booking System can help you find a nearby one, and book a convenient appointment."
-                            urlLink: "http://www.nhs.uk/book-rsv"
+                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Continue to booking"
                 example_50000000020:
-                  summary: RSV - 5000000020 Multiple suitability , multiple actions rules without cohorts
+                  summary: RSV - 5000000020/9735549069 Multiple suitability , multiple actions rules without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -668,10 +668,10 @@ paths:
                           - actionType: "ButtonWithAuthLink"
                             actionCode: "BookNBS"
                             description: "## Lorem ipsum dolor sit amet, consectetur adipiscing elit\n\nFusce imperdiet dictum quam, a consequat leo posuere sed. Vestibulum id sodales odio. Curabitur at egestas lectus, ac mattis risus. In sit amet dapibus sem."
-                            urlLink: "http://www.nhs.uk/book-rsv"
+                            urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Continue to booking (test)"
                 example_50000000021:
-                  summary: RSV - 5000000021 Unknown action with cohorts
+                  summary: RSV - 5000000021/9735549077 Unknown action with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -694,7 +694,7 @@ paths:
                             description: "## (Test link no button) View information about the RSV vaccine\n\nThis video explains what it is and why you should have it."
                             urlLink: "https://www.youtube.com/watch?v=SCMgFsDrR-k"
                 example_50000000022:
-                  summary: RSV - 5000000022 Unknown action without cohorts
+                  summary: RSV - 5000000022/9735549085 Unknown action without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -711,7 +711,7 @@ paths:
                             description: "## (Test link no button) View information about the RSV vaccine\n\nThis video explains what it is and why you should have it."
                             urlLink: "https://www.youtube.com/watch?v=SCMgFsDrR-k"
                 example_50000000023:
-                  summary: RSV - 5000000023 Unknown suitability rule with cohorts
+                  summary: RSV - 5000000023/9735549093 Unknown suitability rule with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
@@ -733,7 +733,7 @@ paths:
                             ruleText: "## Test suitability rule\n\nNeque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
                         actions: []
                 example_50000000024:
-                  summary: RSV - 5000000024 Unknown suitability rule without cohorts
+                  summary: RSV - 5000000024/9735549107 Unknown suitability rule without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
