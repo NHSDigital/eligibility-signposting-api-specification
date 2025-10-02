@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.42"
+version = "1.42.43"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.42-py3-none-any.whl", hash = "sha256:d33eaa041eeb0e91c3b350b6d642de7c60c7ec252895a89bf1077a4b0bc92c0c"},
-    {file = "awscli-1.42.42.tar.gz", hash = "sha256:3924a1d1cef0e79fa77ced138ded610c4eb50e6fb55387ac31f53afaefe7c3f0"},
+    {file = "awscli-1.42.43-py3-none-any.whl", hash = "sha256:857c9aa96d7fd3a6df59bd0e569e698d5fd434e235c3a2c81b551808a925f8d7"},
+    {file = "awscli-1.42.43.tar.gz", hash = "sha256:bbf5fa704befb1dbe03d726ab4a2732b5690f016183275198c1adb54362293f3"},
 ]
 
 [package.dependencies]
-botocore = "1.40.42"
+botocore = "1.40.43"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.42"
+version = "1.40.43"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.42-py3-none-any.whl", hash = "sha256:2682a4120be21234036003a806206b6b3963ba53a495d0a57d40d67fce4497a9"},
-    {file = "botocore-1.40.42.tar.gz", hash = "sha256:41bea751685fb2a51b4fc6be329a0cd0a285dbeb0686a21099e87ef146664bc0"},
+    {file = "botocore-1.40.43-py3-none-any.whl", hash = "sha256:1639f38999fc0cf42c92c5c83c5fbe189a4857a86f55b842be868e3283c6d3bb"},
+    {file = "botocore-1.40.43.tar.gz", hash = "sha256:d87412dc1ea785df156f412627d3417c9f9eb45601fd0846d8fe96fe3c78b630"},
 ]
 
 [package.dependencies]
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "b29f11962dd7746f197b3632d976e3566a2f9695ee5fbd27bc48e4b8bc360c6c"
+content-hash = "a66754eca660ad6eea768ce112931d5a0bfdd41b6f63264a0117bf57071b4d2f"
