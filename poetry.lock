@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.43"
+version = "1.42.45"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.43-py3-none-any.whl", hash = "sha256:857c9aa96d7fd3a6df59bd0e569e698d5fd434e235c3a2c81b551808a925f8d7"},
-    {file = "awscli-1.42.43.tar.gz", hash = "sha256:bbf5fa704befb1dbe03d726ab4a2732b5690f016183275198c1adb54362293f3"},
+    {file = "awscli-1.42.45-py3-none-any.whl", hash = "sha256:d28b41b63521cd3d31509966949e8808bfad4212b00f388e2144227edaa737a6"},
+    {file = "awscli-1.42.45.tar.gz", hash = "sha256:9c984e0cf80c635426a41c1258a6bd9d582307e89c54e60077587667275dc713"},
 ]
 
 [package.dependencies]
-botocore = "1.40.43"
+botocore = "1.40.45"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.43"
+version = "1.40.45"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.43-py3-none-any.whl", hash = "sha256:1639f38999fc0cf42c92c5c83c5fbe189a4857a86f55b842be868e3283c6d3bb"},
-    {file = "botocore-1.40.43.tar.gz", hash = "sha256:d87412dc1ea785df156f412627d3417c9f9eb45601fd0846d8fe96fe3c78b630"},
+    {file = "botocore-1.40.45-py3-none-any.whl", hash = "sha256:9abf473d8372ade8442c0d4634a9decb89c854d7862ffd5500574eb63ab8f240"},
+    {file = "botocore-1.40.45.tar.gz", hash = "sha256:cf8b743527a2a7e108702d24d2f617e93c6dc7ae5eb09aadbe866f15481059df"},
 ]
 
 [package.dependencies]
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "a66754eca660ad6eea768ce112931d5a0bfdd41b6f63264a0117bf57071b4d2f"
+content-hash = "7ad2284dcceb650c875639a3290ce9c25c617bf4afe1e682dc3dc65b91bc5e3d"
