@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.43"
+version = "1.42.46"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.43-py3-none-any.whl", hash = "sha256:857c9aa96d7fd3a6df59bd0e569e698d5fd434e235c3a2c81b551808a925f8d7"},
-    {file = "awscli-1.42.43.tar.gz", hash = "sha256:bbf5fa704befb1dbe03d726ab4a2732b5690f016183275198c1adb54362293f3"},
+    {file = "awscli-1.42.46-py3-none-any.whl", hash = "sha256:c888d8f7930819d1754b0f62fa3d6805e1e00cc7c5eea60aca1b1bbfbb87ae33"},
+    {file = "awscli-1.42.46.tar.gz", hash = "sha256:65722917aa3e47d7f0dec8a3db7488ce8a5385e60f2c9951ad978fa528246737"},
 ]
 
 [package.dependencies]
-botocore = "1.40.43"
+botocore = "1.40.46"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.43"
+version = "1.40.46"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.43-py3-none-any.whl", hash = "sha256:1639f38999fc0cf42c92c5c83c5fbe189a4857a86f55b842be868e3283c6d3bb"},
-    {file = "botocore-1.40.43.tar.gz", hash = "sha256:d87412dc1ea785df156f412627d3417c9f9eb45601fd0846d8fe96fe3c78b630"},
+    {file = "botocore-1.40.46-py3-none-any.whl", hash = "sha256:d2c8e0d9ba804d6fd9b942db0aa3e6cfbdd9aab86581b472ee97809b6e5103e0"},
+    {file = "botocore-1.40.46.tar.gz", hash = "sha256:4b0c0efdba788117ef365bf930c0be7300fa052e5e195ea3ed53ab278fc6d7b1"},
 ]
 
 [package.dependencies]
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "a66754eca660ad6eea768ce112931d5a0bfdd41b6f63264a0117bf57071b4d2f"
+content-hash = "ba298ba323b32fe725d401b271492b26b6b619a1d1a83a57c01b00a1b8256ade"
