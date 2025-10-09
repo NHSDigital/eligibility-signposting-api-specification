@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.43"
+version = "1.42.48"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.43-py3-none-any.whl", hash = "sha256:857c9aa96d7fd3a6df59bd0e569e698d5fd434e235c3a2c81b551808a925f8d7"},
-    {file = "awscli-1.42.43.tar.gz", hash = "sha256:bbf5fa704befb1dbe03d726ab4a2732b5690f016183275198c1adb54362293f3"},
+    {file = "awscli-1.42.48-py3-none-any.whl", hash = "sha256:46a13d779ff050c098a6d1499c98f2c8f3f1cca0af38f437fb1520ef6fd4e81d"},
+    {file = "awscli-1.42.48.tar.gz", hash = "sha256:f5c074e853b885c28bc73639b2a1b1481cae28147498687cd5943b362623b772"},
 ]
 
 [package.dependencies]
-botocore = "1.40.43"
+botocore = "1.40.48"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.43"
+version = "1.40.48"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.43-py3-none-any.whl", hash = "sha256:1639f38999fc0cf42c92c5c83c5fbe189a4857a86f55b842be868e3283c6d3bb"},
-    {file = "botocore-1.40.43.tar.gz", hash = "sha256:d87412dc1ea785df156f412627d3417c9f9eb45601fd0846d8fe96fe3c78b630"},
+    {file = "botocore-1.40.48-py3-none-any.whl", hash = "sha256:34795305bb5aa670befcbdc936fd144a0af5db5323d78e7245dbd6aa246bf3db"},
+    {file = "botocore-1.40.48.tar.gz", hash = "sha256:18bed348ce707aa896065b424f36a0b8d542fa6810e9165618e105b1abf34e7e"},
 ]
 
 [package.dependencies]
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "a66754eca660ad6eea768ce112931d5a0bfdd41b6f63264a0117bf57071b4d2f"
+content-hash = "db101be12a7526e2cdd5277f54f6e72951d13615f5fbe2a4e7bbf22da5ee10a5"
