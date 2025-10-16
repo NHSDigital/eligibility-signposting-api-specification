@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.43"
+version = "1.42.53"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.43-py3-none-any.whl", hash = "sha256:857c9aa96d7fd3a6df59bd0e569e698d5fd434e235c3a2c81b551808a925f8d7"},
-    {file = "awscli-1.42.43.tar.gz", hash = "sha256:bbf5fa704befb1dbe03d726ab4a2732b5690f016183275198c1adb54362293f3"},
+    {file = "awscli-1.42.53-py3-none-any.whl", hash = "sha256:9aa4dd6ba4debd9d271c8b34529d2e97b723664355195f23b84a7c8efb1e0674"},
+    {file = "awscli-1.42.53.tar.gz", hash = "sha256:a169ad2152c6f8c4afcdc6f286af47f8d9aa139f6ed9362869c5c9ec6b6b8cd7"},
 ]
 
 [package.dependencies]
-botocore = "1.40.43"
+botocore = "1.40.53"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.43"
+version = "1.40.53"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.43-py3-none-any.whl", hash = "sha256:1639f38999fc0cf42c92c5c83c5fbe189a4857a86f55b842be868e3283c6d3bb"},
-    {file = "botocore-1.40.43.tar.gz", hash = "sha256:d87412dc1ea785df156f412627d3417c9f9eb45601fd0846d8fe96fe3c78b630"},
+    {file = "botocore-1.40.53-py3-none-any.whl", hash = "sha256:840322b0af4be7a6e2effddb4eb388053c25af0618f627f37d8b03cc1edbc928"},
+    {file = "botocore-1.40.53.tar.gz", hash = "sha256:4ebb9e6648c4896d3f0cdda5ff30b5de9a83aeb591be89a16f98cc5ee3cd371c"},
 ]
 
 [package.dependencies]
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "a66754eca660ad6eea768ce112931d5a0bfdd41b6f63264a0117bf57071b4d2f"
+content-hash = "9bafd3e9e4d458ebd890f27caf4569974add60a99d7b5a89ce7a6b0a8498be33"
