@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.63"
+version = "1.42.64"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.63-py3-none-any.whl", hash = "sha256:92cb027e8d7137eb26e381ea76662656b0e42d452acb880d4dba77d74368ded3"},
-    {file = "awscli-1.42.63.tar.gz", hash = "sha256:73b9745a35561347b74d895379b6f50c965c341870a1e10c596abbd9455df067"},
+    {file = "awscli-1.42.64-py3-none-any.whl", hash = "sha256:989a7c0810ecc416b474d3ffa4f6a037d926accc28a7030c9cb3f512f8c512ce"},
+    {file = "awscli-1.42.64.tar.gz", hash = "sha256:8df09151cfbbf3d5965e323be36fa861f532ff46d7818c04358157ffd91089a8"},
 ]
 
 [package.dependencies]
-botocore = "1.40.63"
+botocore = "1.40.64"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.63"
+version = "1.40.64"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.63-py3-none-any.whl", hash = "sha256:83657b3ee487268fccc9ba022cba572ba657b9ece8cddd1fa241e2c6a49c8c14"},
-    {file = "botocore-1.40.63.tar.gz", hash = "sha256:0324552c3c800e258cbcb8c22b495a2e2e0260a7408d08016196e46fa0d1b587"},
+    {file = "botocore-1.40.64-py3-none-any.whl", hash = "sha256:6902b3dadfba1fbacc9648171bef3942530d8f823ff2bdb0e585a332323f89fc"},
+    {file = "botocore-1.40.64.tar.gz", hash = "sha256:a13af4009f6912eafe32108f6fa584fb26e24375149836c2bcaaaaec9a7a9e58"},
 ]
 
 [package.dependencies]
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "85e127d19a928916f55b8c87e9c8ec60147657964af737c3f335a0b5cd232eeb"
+content-hash = "b629efbb554fcdb7a70dfafd7f17e0a765b5d3bc5cee9aa99bc325a677679d1f"
