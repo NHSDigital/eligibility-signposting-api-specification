@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.63"
+version = "1.42.66"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.63-py3-none-any.whl", hash = "sha256:92cb027e8d7137eb26e381ea76662656b0e42d452acb880d4dba77d74368ded3"},
-    {file = "awscli-1.42.63.tar.gz", hash = "sha256:73b9745a35561347b74d895379b6f50c965c341870a1e10c596abbd9455df067"},
+    {file = "awscli-1.42.66-py3-none-any.whl", hash = "sha256:b0c7760113d92b751f3915e74b153f06ff2c9870d80481071f700bc63a398e1f"},
+    {file = "awscli-1.42.66.tar.gz", hash = "sha256:c7ced2f5742090d55dfe737f1052309321906d47f48cec619cd19e33833b252d"},
 ]
 
 [package.dependencies]
-botocore = "1.40.63"
+botocore = "1.40.66"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.63"
+version = "1.40.66"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.63-py3-none-any.whl", hash = "sha256:83657b3ee487268fccc9ba022cba572ba657b9ece8cddd1fa241e2c6a49c8c14"},
-    {file = "botocore-1.40.63.tar.gz", hash = "sha256:0324552c3c800e258cbcb8c22b495a2e2e0260a7408d08016196e46fa0d1b587"},
+    {file = "botocore-1.40.66-py3-none-any.whl", hash = "sha256:98d5766e17e72110b1d08ab510a8475a6597c59d9560235e2d28ae1a4b043b92"},
+    {file = "botocore-1.40.66.tar.gz", hash = "sha256:e49a55ad54426c4ea853a59ff9d8243023a90c935782d4c287e9b3424883c3fa"},
 ]
 
 [package.dependencies]
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "85e127d19a928916f55b8c87e9c8ec60147657964af737c3f335a0b5cd232eeb"
+content-hash = "1ae768e5615fe93d58e3ee6e1ebfd08a984905c7b664a6860c7557c8357db42f"
