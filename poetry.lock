@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.63"
+version = "1.42.70"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.63-py3-none-any.whl", hash = "sha256:92cb027e8d7137eb26e381ea76662656b0e42d452acb880d4dba77d74368ded3"},
-    {file = "awscli-1.42.63.tar.gz", hash = "sha256:73b9745a35561347b74d895379b6f50c965c341870a1e10c596abbd9455df067"},
+    {file = "awscli-1.42.70-py3-none-any.whl", hash = "sha256:ced7cfaa2ecfbe6121313cfd7a8c90609935af48f6281b3bd4f973e3ff42c7ba"},
+    {file = "awscli-1.42.70.tar.gz", hash = "sha256:8a500a282a17165deb60952f9cf8e1d961d5b2254ac1bfb9c6a011f3c9b15076"},
 ]
 
 [package.dependencies]
-botocore = "1.40.63"
+botocore = "1.40.70"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.63"
+version = "1.40.70"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.63-py3-none-any.whl", hash = "sha256:83657b3ee487268fccc9ba022cba572ba657b9ece8cddd1fa241e2c6a49c8c14"},
-    {file = "botocore-1.40.63.tar.gz", hash = "sha256:0324552c3c800e258cbcb8c22b495a2e2e0260a7408d08016196e46fa0d1b587"},
+    {file = "botocore-1.40.70-py3-none-any.whl", hash = "sha256:4a394ad25f5d9f1ef0bed610365744523eeb5c22de6862ab25d8c93f9f6d295c"},
+    {file = "botocore-1.40.70.tar.gz", hash = "sha256:61b1f2cecd54d1b28a081116fa113b97bf4e17da57c62ae2c2751fe4c528af1f"},
 ]
 
 [package.dependencies]
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "85e127d19a928916f55b8c87e9c8ec60147657964af737c3f335a0b5cd232eeb"
+content-hash = "1b2ae3fffeda2b007bb652bd8122759a4a5b511b0d18d9d8d6de34e6dc25e80b"
