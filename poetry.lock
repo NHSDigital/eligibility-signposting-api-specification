@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.63"
+version = "1.42.76"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.63-py3-none-any.whl", hash = "sha256:92cb027e8d7137eb26e381ea76662656b0e42d452acb880d4dba77d74368ded3"},
-    {file = "awscli-1.42.63.tar.gz", hash = "sha256:73b9745a35561347b74d895379b6f50c965c341870a1e10c596abbd9455df067"},
+    {file = "awscli-1.42.76-py3-none-any.whl", hash = "sha256:8a8ee644b00e5bacf019fde8061eda02264ebe43aefeb9ad40859cac10cb0e1e"},
+    {file = "awscli-1.42.76.tar.gz", hash = "sha256:8d898ce1fa4e69381df6bd40cfe61dce29608a0d4b18ab8bffcbc292a855e79d"},
 ]
 
 [package.dependencies]
-botocore = "1.40.63"
+botocore = "1.40.76"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.63"
+version = "1.40.76"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.63-py3-none-any.whl", hash = "sha256:83657b3ee487268fccc9ba022cba572ba657b9ece8cddd1fa241e2c6a49c8c14"},
-    {file = "botocore-1.40.63.tar.gz", hash = "sha256:0324552c3c800e258cbcb8c22b495a2e2e0260a7408d08016196e46fa0d1b587"},
+    {file = "botocore-1.40.76-py3-none-any.whl", hash = "sha256:fe425d386e48ac64c81cbb4a7181688d813df2e2b4c78b95ebe833c9e868c6f4"},
+    {file = "botocore-1.40.76.tar.gz", hash = "sha256:2b16024d68b29b973005adfb5039adfe9099ebe772d40a90ca89f2e165c495dc"},
 ]
 
 [package.dependencies]
@@ -91,7 +91,7 @@ python-dateutil = ">=2.1,<3.0.0"
 urllib3 = {version = ">=1.25.4,<2.2.0 || >2.2.0,<3", markers = "python_version >= \"3.10\""}
 
 [package.extras]
-crt = ["awscrt (==0.27.6)"]
+crt = ["awscrt (==0.28.4)"]
 
 [[package]]
 name = "colorama"
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "85e127d19a928916f55b8c87e9c8ec60147657964af737c3f335a0b5cd232eeb"
+content-hash = "08af6e0ac340d52a6a762cf3a12a3800afaa3e1d54b0b60e3e2020b88ed9ecf3"
