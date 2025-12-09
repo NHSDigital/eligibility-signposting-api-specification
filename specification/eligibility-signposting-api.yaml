@@ -1062,16 +1062,8 @@ x-nhsd-apim:
   target-identity:
     - name: nhs-login-nhs-number
       header: "nhs-login-nhs-number"
-    - name: id_token-subject
-      header: "app-auth-id-token-subject"
-    - name: id_token
+    - name: id-token
       header: "app-auth-id-token"
-    - name: auth_type
-      header: "app-auth-type"
-    - name: auth_user_id
-      header: "app-auth-user-id"
-    - name: id_token-id-assurance-level
-      header: "app-auth-id-token-id-assurance-level"
   target-attributes:
     - name: id
       required: false
