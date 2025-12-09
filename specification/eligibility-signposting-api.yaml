@@ -26,6 +26,7 @@ paths:
         not, including reasons and next steps.
       security:
         - nhs-login-p9: []
+        - app-level3: []
       operationId: checkEligibility
       parameters:
         - name: id
