@@ -1,5 +1,5 @@
 type: external
-url: "test.eligibility-signposting-api.nhs.uk"
+url: "https://test.eligibility-signposting-api.nhs.uk"
 healthcheck: /patient-check/_status
 security:
   type: mtls
