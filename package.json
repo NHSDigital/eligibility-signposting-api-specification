@@ -15,7 +15,7 @@
     "apigeetool": "^0.16.5",
     "license-checker": "^25.0.1",
     "minimist": "^1.2.2",
-    "@redocly/cli": "^2.9.0",
+    "@redocly/cli": "^2.14.2",
     "@stoplight/spectral-cli": "^6.15.0",
     "swagger-cli": "^4.0.4"
   }
