@@ -17,23 +17,23 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.42.63"
+version = "1.44.11"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.42.63-py3-none-any.whl", hash = "sha256:92cb027e8d7137eb26e381ea76662656b0e42d452acb880d4dba77d74368ded3"},
-    {file = "awscli-1.42.63.tar.gz", hash = "sha256:73b9745a35561347b74d895379b6f50c965c341870a1e10c596abbd9455df067"},
+    {file = "awscli-1.44.11-py3-none-any.whl", hash = "sha256:e745da527adc71be0c96909d3357d4eae7eb3871f91ea892090ba1367b42fe51"},
+    {file = "awscli-1.44.11.tar.gz", hash = "sha256:9cc1830bb112be6bdf8582b1dadb76a4a021e1d318164292d215698b43bb5663"},
 ]
 
 [package.dependencies]
-botocore = "1.40.63"
+botocore = "1.42.21"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
 rsa = ">=3.1.2,<4.8"
-s3transfer = ">=0.14.0,<0.15.0"
+s3transfer = ">=0.16.0,<0.17.0"
 
 [[package]]
 name = "awscli-local"
@@ -55,34 +55,34 @@ ver1 = ["awscli"]
 
 [[package]]
 name = "boto3"
-version = "1.40.31"
+version = "1.42.21"
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "boto3-1.40.31-py3-none-any.whl", hash = "sha256:61d5f9975c54ff919a24ff9d472c6c09c8a443a083fe56d30c04fc22d22ac42b"},
-    {file = "boto3-1.40.31.tar.gz", hash = "sha256:8c5f1270f09431694412f326cfb5ac9786d41ea3bc6ac54cbb7161d40afc660d"},
+    {file = "boto3-1.42.21-py3-none-any.whl", hash = "sha256:1885f252d715a5810bb4e0c5bbebfa8e9018b025febf5be3d58540626e7b43d2"},
+    {file = "boto3-1.42.21.tar.gz", hash = "sha256:9b92943d253bc837323079fe88460e741cb2eb80abaebcb558b2446bdb4049d6"},
 ]
 
 [package.dependencies]
-botocore = ">=1.40.31,<1.41.0"
+botocore = ">=1.42.21,<1.43.0"
 jmespath = ">=0.7.1,<2.0.0"
-s3transfer = ">=0.14.0,<0.15.0"
+s3transfer = ">=0.16.0,<0.17.0"
 
 [package.extras]
 crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.40.63"
+version = "1.42.21"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.40.63-py3-none-any.whl", hash = "sha256:83657b3ee487268fccc9ba022cba572ba657b9ece8cddd1fa241e2c6a49c8c14"},
-    {file = "botocore-1.40.63.tar.gz", hash = "sha256:0324552c3c800e258cbcb8c22b495a2e2e0260a7408d08016196e46fa0d1b587"},
+    {file = "botocore-1.42.21-py3-none-any.whl", hash = "sha256:6b59973a3ba8c3cfd5123f2656fef2339beee9f6483b8bc12bb00c5453ea2c6d"},
+    {file = "botocore-1.42.21.tar.gz", hash = "sha256:db8f99d186156da42feb4fd2098017383d9b155097290cc53da7258f6e652c39"},
 ]
 
 [package.dependencies]
@@ -91,7 +91,7 @@ python-dateutil = ">=2.1,<3.0.0"
 urllib3 = {version = ">=1.25.4,<2.2.0 || >2.2.0,<3", markers = "python_version >= \"3.10\""}
 
 [package.extras]
-crt = ["awscrt (==0.27.6)"]
+crt = ["awscrt (==0.29.2)"]
 
 [[package]]
 name = "colorama"
@@ -282,14 +282,14 @@ files = [
 
 [[package]]
 name = "s3transfer"
-version = "0.14.0"
+version = "0.16.0"
 description = "An Amazon S3 Transfer Manager"
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "s3transfer-0.14.0-py3-none-any.whl", hash = "sha256:ea3b790c7077558ed1f02a3072fb3cb992bbbd253392f4b6e9e8976941c7d456"},
-    {file = "s3transfer-0.14.0.tar.gz", hash = "sha256:eff12264e7c8b4985074ccce27a3b38a485bb7f7422cc8046fee9be4983e4125"},
+    {file = "s3transfer-0.16.0-py3-none-any.whl", hash = "sha256:18e25d66fed509e3868dc1572b3f427ff947dd2c56f844a5bf09481ad3f3b2fe"},
+    {file = "s3transfer-0.16.0.tar.gz", hash = "sha256:8e990f13268025792229cd52fa10cb7163744bf56e719e0b9cb925ab79abf920"},
 ]
 
 [package.dependencies]
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "85e127d19a928916f55b8c87e9c8ec60147657964af737c3f335a0b5cd232eeb"
+content-hash = "a1564654e8447a88f83b4cd95ace163a3c87676fd7690ba97c924c160f04f2a1"
