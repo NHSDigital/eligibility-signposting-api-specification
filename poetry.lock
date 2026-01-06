@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.11"
+version = "1.44.12"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.11-py3-none-any.whl", hash = "sha256:e745da527adc71be0c96909d3357d4eae7eb3871f91ea892090ba1367b42fe51"},
-    {file = "awscli-1.44.11.tar.gz", hash = "sha256:9cc1830bb112be6bdf8582b1dadb76a4a021e1d318164292d215698b43bb5663"},
+    {file = "awscli-1.44.12-py3-none-any.whl", hash = "sha256:a5d57b1af5537bec317a2548f883eccfc6679d20cfea02d4cb307daed48ce5e4"},
+    {file = "awscli-1.44.12.tar.gz", hash = "sha256:1d9e310fa8b34842b427efaa830131b839379d052b193595ecc9fa8ef3c7fc52"},
 ]
 
 [package.dependencies]
-botocore = "1.42.21"
+botocore = "1.42.22"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.21"
+version = "1.42.22"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.21-py3-none-any.whl", hash = "sha256:6b59973a3ba8c3cfd5123f2656fef2339beee9f6483b8bc12bb00c5453ea2c6d"},
-    {file = "botocore-1.42.21.tar.gz", hash = "sha256:db8f99d186156da42feb4fd2098017383d9b155097290cc53da7258f6e652c39"},
+    {file = "botocore-1.42.22-py3-none-any.whl", hash = "sha256:a1dfebcf9dec52a74ad7f28bc6c895e7c43216cac63748eb1216054fb0c3a7fe"},
+    {file = "botocore-1.42.22.tar.gz", hash = "sha256:635c9213a448885a1cf735f1a950b83adaced0860b8159fc26d1242abc042443"},
 ]
 
 [package.dependencies]
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "a1564654e8447a88f83b4cd95ace163a3c87676fd7690ba97c924c160f04f2a1"
+content-hash = "5a7679176d90e25d0e3efcce058f01ac9849f2bd381bc037974bbfbb82c62b98"
