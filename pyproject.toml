@@ -22,7 +22,7 @@ yq = "^3.2.3"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.14.3"
-awscli = "^1.44.11"
+awscli = "^1.44.13"
 awscli-local = "^0.22.2"
 yq = "^3.2.3"  # Development-only dependency for YAML processing; version chosen for compatibility with project tooling
 
