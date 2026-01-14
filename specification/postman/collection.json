@@ -1,10 +1,10 @@
 {
   "_": {
-    "postman_id": "957eaf98-6166-426f-936a-8a53a86269ea"
+    "postman_id": "187635ff-788d-4c2d-bd97-f41567e0992b"
   },
   "item": [
     {
-      "id": "f69029bb-edb1-4a80-92ed-a2d43e4db603",
+      "id": "7071ea4a-e311-4b64-9b5a-6362b139d744",
       "name": "Eligibility",
       "description": {
         "content": "",
@@ -14,7 +14,7 @@
       "event": []
     },
     {
-      "id": "b5b42586-540d-46f5-acd8-dfcc43575b03",
+      "id": "bb40ce74-e688-4d49-891a-014bea6b1779",
       "name": "Signposting",
       "description": {
         "content": "",
@@ -24,7 +24,7 @@
       "event": []
     },
     {
-      "id": "4b27e985-d17d-4dfe-9e87-573d015d6304",
+      "id": "f0362340-2313-4fa3-be68-bd9996f97324",
       "name": "NextActions",
       "description": {
         "content": "",
@@ -34,7 +34,7 @@
       "event": []
     },
     {
-      "id": "7044354d-0168-4c6f-b062-829dff219300",
+      "id": "c647ed6d-d852-44cf-8ce6-80d0e8fe9b47",
       "name": "Check Eligibility",
       "request": {
         "name": "Check Eligibility",
@@ -133,7 +133,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "6e93c05f-70c8-4933-a8ed-fc9190081f4b",
+          "id": "d5182055-0d0d-4a23-8bc9-2e974df910a0",
           "name": "RSV - 5000000001/9686368973 Actionable due to membership of an Age Cohort including suggested national booking action (actions requested)",
           "originalRequest": {
             "url": {
@@ -219,14 +219,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"are aged 75 to 79\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"## Get vaccinated at your GP surgery\\n\\nContact your GP surgery to book an appointment.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLinkWithInfoText\",\n          \"actionCode\": \"BookNBSInfoText\",\n          \"description\": \"## Book an appointment online at a pharmacy\\n\\nYou can book an appointment online at a pharmacy that offers the RSV vaccination. You need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/rsv\",\n          \"urlLabel\": \"Continue to booking\"\n        },\n        {\n          \"actionType\": \"ActionLinkWithInfoText\",\n          \"actionCode\": \"WalkIn\",\n          \"description\": \"## Get vaccinated without an appointment\\n\\nYou can get an RSV vaccination at some pharmacies without needing an appointment.\\n\\nYou do not need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/service-search/vaccination-and-booking-services/find-a-pharmacy-where-you-can-get-a-free-rsv-vaccination\",\n          \"urlLabel\": \"Find a pharmacy where you can get a free RSV vaccination\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HelpSupportInfo\",\n          \"description\": \"## If you think this is incorrect\\n\\nIf you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"are aged 75 to 79\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"## Get vaccinated at your GP surgery\\n\\nContact your GP surgery to book an appointment.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLinkWithInfoText\",\n          \"actionCode\": \"BookNBSInfoText\",\n          \"description\": \"## Book an appointment online at a pharmacy\\n\\nYou can book an appointment online at a pharmacy that offers the RSV vaccination. You need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv\",\n          \"urlLabel\": \"Continue to booking\"\n        },\n        {\n          \"actionType\": \"ActionLinkWithInfoText\",\n          \"actionCode\": \"WalkIn\",\n          \"description\": \"## Get vaccinated without an appointment\\n\\nYou can get an RSV vaccination at some pharmacies without needing an appointment.\\n\\nYou do not need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/service-search/vaccination-and-booking-services/find-a-pharmacy-where-you-can-get-a-free-rsv-vaccination\",\n          \"urlLabel\": \"Find a pharmacy where you can get a free RSV vaccination\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HelpSupportInfo\",\n          \"description\": \"## If you think this is incorrect\\n\\nIf you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "58491a13-7ee4-4334-bc7c-eefea7989a57",
+          "id": "078504bc-3ebb-487e-b2eb-0615f92590c5",
           "name": "RSV - 5000000002/9686368906 Actionable due to membership of an Age Cohort including suggested action (not national booking)",
           "originalRequest": {
             "url": {
@@ -319,7 +319,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "223039ed-c889-4bef-ac68-6bd4c80386e2",
+          "id": "5c2343e3-4498-4acf-908f-147c907381de",
           "name": "RSV - 5000000003/9658218873 Actionable due to membership of an alternative Age Cohort including suggested action (not national booking)",
           "originalRequest": {
             "url": {
@@ -412,7 +412,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "63e6058b-f6a2-43aa-830f-3df13bd57a5d",
+          "id": "8ea783f9-a0c1-4314-a987-ffb2e9f93471",
           "name": "RSV - 5000000004/9658218881 Actionable due to membership of an Age Cohort including suggested action (future national booking)",
           "originalRequest": {
             "url": {
@@ -498,14 +498,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"AmendNBS\",\n          \"description\": \"## You have an RSV vaccination appointment booked\\n\\nYou can view, change or cancel your appointment below.\",\n          \"urlLink\": \"https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/rsv\",\n          \"urlLabel\": \"Manage your appointment\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"AmendNBS\",\n          \"description\": \"## You have an RSV vaccination appointment booked\\n\\nYou can view, change or cancel your appointment below.\",\n          \"urlLink\": \"https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv\",\n          \"urlLabel\": \"Manage your appointment\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "45496c0c-5ad3-42ad-8b91-0105c7868bc1",
+          "id": "bfb21b93-fe47-41f1-be76-dec02e270581",
           "name": "RSV - 5000000005/9658218903 Actionable due to membership of an Age Cohort including suggested actions (with future local booking)",
           "originalRequest": {
             "url": {
@@ -598,7 +598,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "319340a3-66b4-4161-9f63-79b8c244905f",
+          "id": "ed8e52e3-de7d-48c4-8e5f-656e6ecb6023",
           "name": "RSV - 5000000006/9658218989 Not Actionable despite to membership of an Age Cohort with reasoning of already vaccinated (cohorts hidden)",
           "originalRequest": {
             "url": {
@@ -691,7 +691,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "fea4e460-9137-4fce-9131-15b03c6228e8",
+          "id": "c3e19ee9-0295-4f01-9b59-c7befbe807e1",
           "name": "RSV - 5000000007/9658218997 Not Actionable despite to membership of an Age Cohort with reasoning of no available vaccinations (not available type 1)",
           "originalRequest": {
             "url": {
@@ -784,7 +784,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "94b7e5b0-9aba-46b4-8b95-806c5920e772",
+          "id": "b96c526c-6411-4f12-81c3-0205b7289273",
           "name": "RSV - 5000000008/9658219004 No RSV response as no active campaign (not available type 2)",
           "originalRequest": {
             "url": {
@@ -877,7 +877,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "f20538d6-eca7-4450-94b9-6a38f05c0a77",
+          "id": "87bb7d3e-a0b1-40e6-b431-1751e461c127",
           "name": "RSV - 5000000009/9658219012 Not Actionable despite to membership of an Age Cohort with reasoning of dose not yet due",
           "originalRequest": {
             "url": {
@@ -970,7 +970,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "ea75b8cb-3ad5-472a-b93a-dc97a4330d7e",
+          "id": "2ad3d0f6-85b0-4d42-aece-d68ef50e4342",
           "name": "RSV - 5000000010/9658220142 Not Actionable despite to membership of an Age Cohort with reasoning of dose not far enough apart",
           "originalRequest": {
             "url": {
@@ -1063,7 +1063,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "940c6b1d-f551-4ed3-8303-23c4c26978ee",
+          "id": "d8669441-b0e6-4821-90d8-81eed4f694df",
           "name": "RSV - 5000000011/9658220150 Not Actionable despite to membership of an Age Cohort with reasoning of vaccination given in other setting (e.g. care home)",
           "originalRequest": {
             "url": {
@@ -1156,7 +1156,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "433d2517-3d7a-42ee-bc41-ac0f397d48e8",
+          "id": "4581c961-0b2d-4a8e-9459-61dde26b92ac",
           "name": "RSV - 5000000012/9450114080 Not Actionable despite no cohort membership with reasoning of already vaccinated",
           "originalRequest": {
             "url": {
@@ -1249,7 +1249,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "a1711c32-8402-4872-9218-f9c69391a1ca",
+          "id": "2c75148f-8a32-4666-ba43-47bf1a984313",
           "name": "RSV - 5000000013/9466447939 Not Actionable despite no cohort membership with reasoning of already vaccinated (type 2 includes no cohorts)",
           "originalRequest": {
             "url": {
@@ -1342,7 +1342,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "7d958537-9f93-45a9-b153-b1329ec989c9",
+          "id": "589ea879-9421-4d0a-a20f-8b9bf7f45460",
           "name": "RSV - 5000000014/9657933617 Not Eligible",
           "originalRequest": {
             "url": {
@@ -1435,7 +1435,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "36090bab-e097-4a20-a1c2-f7284ae69136",
+          "id": "095e7324-95a8-47b3-b768-0988bd8cc589",
           "name": "RSV - 5000000015/9735549018 Multiple actions without cohorts",
           "originalRequest": {
             "url": {
@@ -1528,7 +1528,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "432f8ac8-93b1-4af3-b403-a95db5e7554c",
+          "id": "bd09f414-528d-4e29-91e0-f03ea5367f9c",
           "name": "RSV - 5000000016/9735549026 Multiple actions with cohorts",
           "originalRequest": {
             "url": {
@@ -1614,14 +1614,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"are aged 75 to 79\",\n          \"cohortStatus\": \"Actionable\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_in_carehomes\",\n          \"cohortText\": \"lorem ipsum dolor sit amet, consectetur adipiscing elit\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookNBS\",\n          \"description\": \"## Lorem ipsum dolor sit amet, consectetur adipiscing elit\\n\\nFusce imperdiet dictum quam, a consequat leo posuere sed. Vestibulum id sodales odio. Curabitur at egestas lectus, ac mattis risus. In sit amet dapibus sem.\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\",\n          \"urlLabel\": \"Continue to booking (test 1)\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"LoremIpsumTest\",\n          \"description\": \"## In tristique enim sed diam blandit blandit.\\n\\nDonec dignissim dui et tincidunt pretium. Nulla id arcu tristique nisl sodales aliquet sed sit amet elit.\\n\\nAliquam metus diam, pretium non tellus eu, mollis scelerisque turpis. Donec mollis, lorem nec efficitur dapibus, metus dui ultricies nibh, vel tempor est sapien ut lectus.\\n\\nMorbi lacus massa, tristique sit amet faucibus at, laoreet quis ante. Nulla sollicitudin tellus leo, vel dignissim nisi imperdiet at. Praesent mollis eu orci vel malesuada. In quis congue quam, ac efficitur est.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"LoremIpsumTest2\",\n          \"description\": \"## Lorem ipsum\\n\\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non libero eu lacus **finibus** gravida.\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"LoremIpsumTest3\",\n          \"description\": \"## Donec quis blandit libero.\\n\\nNulla sollicitudin tellus leo, vel dignissim nisi imperdiet at. Praesent mollis eu orci vel ***malesuada***. In quis congue quam, ac *efficitur* est.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"LoremIpsumTest4\",\n          \"description\": \"## Etiam venenatis erat at diam varius.\\n\\nEtiam ullamcorper venenatis mi, at scelerisque velit vulputate id. Fusce ex arcu, tincidunt vel purus nec, volutpat aliquam odio.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookElsewhere\",\n          \"description\": \"\",\n          \"urlLink\": \"http://www.nhs.uk/book-non-nbs-rsv\",\n          \"urlLabel\": \"Continue to other booking (test 2)\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"are aged 75 to 79\",\n          \"cohortStatus\": \"Actionable\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_in_carehomes\",\n          \"cohortText\": \"lorem ipsum dolor sit amet, consectetur adipiscing elit\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookNBS\",\n          \"description\": \"## Lorem ipsum dolor sit amet, consectetur adipiscing elit\\n\\nFusce imperdiet dictum quam, a consequat leo posuere sed. Vestibulum id sodales odio. Curabitur at egestas lectus, ac mattis risus. In sit amet dapibus sem.\",\n          \"urlLink\": \"https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv\",\n          \"urlLabel\": \"Continue to booking (test 1)\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"LoremIpsumTest\",\n          \"description\": \"## In tristique enim sed diam blandit blandit.\\n\\nDonec dignissim dui et tincidunt pretium. Nulla id arcu tristique nisl sodales aliquet sed sit amet elit.\\n\\nAliquam metus diam, pretium non tellus eu, mollis scelerisque turpis. Donec mollis, lorem nec efficitur dapibus, metus dui ultricies nibh, vel tempor est sapien ut lectus.\\n\\nMorbi lacus massa, tristique sit amet faucibus at, laoreet quis ante. Nulla sollicitudin tellus leo, vel dignissim nisi imperdiet at. Praesent mollis eu orci vel malesuada. In quis congue quam, ac efficitur est.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"LoremIpsumTest2\",\n          \"description\": \"## Lorem ipsum\\n\\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non libero eu lacus **finibus** gravida.\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"LoremIpsumTest3\",\n          \"description\": \"## Donec quis blandit libero.\\n\\nNulla sollicitudin tellus leo, vel dignissim nisi imperdiet at. Praesent mollis eu orci vel ***malesuada***. In quis congue quam, ac *efficitur* est.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"LoremIpsumTest4\",\n          \"description\": \"## Etiam venenatis erat at diam varius.\\n\\nEtiam ullamcorper venenatis mi, at scelerisque velit vulputate id. Fusce ex arcu, tincidunt vel purus nec, volutpat aliquam odio.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookElsewhere\",\n          \"description\": \"\",\n          \"urlLink\": \"http://www.nhs.uk/book-non-nbs-rsv\",\n          \"urlLabel\": \"Continue to other booking (test 2)\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "e4e69b20-e2c6-4210-9c07-1230bab853fa",
+          "id": "e7c2fc15-06f8-4a90-9484-58787bdcede3",
           "name": "RSV - 5000000017/9735549034 Multiple suitability rules with cohorts",
           "originalRequest": {
             "url": {
@@ -1714,7 +1714,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "ea637565-3f6c-4fb7-a8f2-1d1940b06ce1",
+          "id": "fd63be86-8e0f-4ff5-9271-52305e376cc5",
           "name": "RSV - 5000000018/9735549042 Multiple suitability rules without cohorts",
           "originalRequest": {
             "url": {
@@ -1807,7 +1807,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "9db48cc8-8111-497b-b9e4-45ed40ee94fc",
+          "id": "2955e5ce-3a7c-400d-b42c-0e2ca4978d09",
           "name": "RSV - 5000000019/9735549050 Multiple suitability , multiple actions rules with cohorts",
           "originalRequest": {
             "url": {
@@ -1893,14 +1893,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"are aged 75 to 79\",\n          \"cohortStatus\": \"Actionable\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_in_carehomes\",\n          \"cohortText\": \"lorem ipsum dolor sit amet, consectetur adipiscing elit\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"## You've had your RSV vaccination\\n\\nWe believe you had the RSV vaccination on 3 April 2025.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"OtherSetting\",\n          \"ruleText\": \"## Getting the vaccine\\n\\nWe believe you're living in a setting where care is provided.\\n\\nSpeak to a member of staff where you live about getting the RSV vaccine.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"NotYetDue\",\n          \"ruleText\": \"## Your last dose of the RSV vaccination was too recent\\n\\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time.\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"LoremIpsumTest\",\n          \"description\": \"## In tristique enim sed diam blandit blandit.\\n\\nDonec dignissim dui et tincidunt pretium. Nulla id arcu tristique nisl sodales aliquet sed sit amet elit.\\n\\nAliquam metus diam, pretium non tellus eu, mollis scelerisque turpis. Donec mollis, lorem nec efficitur dapibus, metus dui ultricies nibh, vel tempor est sapien ut lectus.\\n\\nMorbi lacus massa, tristique sit amet faucibus at, laoreet quis ante. Nulla sollicitudin tellus leo, vel dignissim nisi imperdiet at. Praesent mollis eu orci vel malesuada. In quis congue quam, ac efficitur est.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"LoremIpsumTest4\",\n          \"description\": \"## Etiam venenatis erat at diam varius.\\n\\nEtiam ullamcorper venenatis mi, at scelerisque velit vulputate id. Fusce ex arcu, tincidunt vel purus nec, volutpat aliquam odio.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookNBS\",\n          \"description\": \"## Book a jab at a nearby pharmacy\\n\\nMany pharmacies can provide you with the RSV vaccine.  The National Booking System can help you find a nearby one, and book a convenient appointment.\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\",\n          \"urlLabel\": \"Continue to booking\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"are aged 75 to 79\",\n          \"cohortStatus\": \"Actionable\"\n        },\n        {\n          \"cohortCode\": \"rsv_age_in_carehomes\",\n          \"cohortText\": \"lorem ipsum dolor sit amet, consectetur adipiscing elit\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"## You've had your RSV vaccination\\n\\nWe believe you had the RSV vaccination on 3 April 2025.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"OtherSetting\",\n          \"ruleText\": \"## Getting the vaccine\\n\\nWe believe you're living in a setting where care is provided.\\n\\nSpeak to a member of staff where you live about getting the RSV vaccine.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"NotYetDue\",\n          \"ruleText\": \"## Your last dose of the RSV vaccination was too recent\\n\\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time.\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"LoremIpsumTest\",\n          \"description\": \"## In tristique enim sed diam blandit blandit.\\n\\nDonec dignissim dui et tincidunt pretium. Nulla id arcu tristique nisl sodales aliquet sed sit amet elit.\\n\\nAliquam metus diam, pretium non tellus eu, mollis scelerisque turpis. Donec mollis, lorem nec efficitur dapibus, metus dui ultricies nibh, vel tempor est sapien ut lectus.\\n\\nMorbi lacus massa, tristique sit amet faucibus at, laoreet quis ante. Nulla sollicitudin tellus leo, vel dignissim nisi imperdiet at. Praesent mollis eu orci vel malesuada. In quis congue quam, ac efficitur est.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"LoremIpsumTest4\",\n          \"description\": \"## Etiam venenatis erat at diam varius.\\n\\nEtiam ullamcorper venenatis mi, at scelerisque velit vulputate id. Fusce ex arcu, tincidunt vel purus nec, volutpat aliquam odio.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookNBS\",\n          \"description\": \"## Book a jab at a nearby pharmacy\\n\\nMany pharmacies can provide you with the RSV vaccine.  The National Booking System can help you find a nearby one, and book a convenient appointment.\",\n          \"urlLink\": \"https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv\",\n          \"urlLabel\": \"Continue to booking\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "44b32b6c-6d43-47d6-91e3-cbbe7a3befb9",
+          "id": "ab25c608-3991-4616-89a4-1c3bf569c583",
           "name": "RSV - 5000000020/9735549069 Multiple suitability , multiple actions rules without cohorts",
           "originalRequest": {
             "url": {
@@ -1986,14 +1986,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"## You've had your RSV vaccination\\n\\nWe believe you had the RSV vaccination on 3 April 2025.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"OtherSetting\",\n          \"ruleText\": \"## Getting the vaccine\\n\\nWe believe you're living in a setting where care is provided.\\n\\nSpeak to a member of staff where you live about getting the RSV vaccine.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"NotYetDue\",\n          \"ruleText\": \"## Your last dose of the RSV vaccination was too recent\\n\\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time.\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"LoremIpsumTest\",\n          \"description\": \"## In tristique enim sed diam blandit blandit.\\n\\nDonec dignissim dui et tincidunt pretium. Nulla id arcu tristique nisl sodales aliquet sed sit amet elit.\\n\\nAliquam metus diam, pretium non tellus eu, mollis scelerisque turpis. Donec mollis, lorem nec efficitur dapibus, metus dui ultricies nibh, vel tempor est sapien ut lectus.\\n\\nMorbi lacus massa, tristique sit amet faucibus at, laoreet quis ante. Nulla sollicitudin tellus leo, vel dignissim nisi imperdiet at. Praesent mollis eu orci vel malesuada. In quis congue quam, ac efficitur est.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"LoremIpsumTest4\",\n          \"description\": \"## Etiam venenatis erat at diam varius.\\n\\nEtiam ullamcorper venenatis mi, at scelerisque velit vulputate id. Fusce ex arcu, tincidunt vel purus nec, volutpat aliquam odio.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookNBS\",\n          \"description\": \"## Lorem ipsum dolor sit amet, consectetur adipiscing elit\\n\\nFusce imperdiet dictum quam, a consequat leo posuere sed. Vestibulum id sodales odio. Curabitur at egestas lectus, ac mattis risus. In sit amet dapibus sem.\",\n          \"urlLink\": \"http://www.nhs.uk/book-rsv\",\n          \"urlLabel\": \"Continue to booking (test)\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"RSV\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the RSV vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"## You've had your RSV vaccination\\n\\nWe believe you had the RSV vaccination on 3 April 2025.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"OtherSetting\",\n          \"ruleText\": \"## Getting the vaccine\\n\\nWe believe you're living in a setting where care is provided.\\n\\nSpeak to a member of staff where you live about getting the RSV vaccine.\"\n        },\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"NotYetDue\",\n          \"ruleText\": \"## Your last dose of the RSV vaccination was too recent\\n\\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time.\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"LoremIpsumTest\",\n          \"description\": \"## In tristique enim sed diam blandit blandit.\\n\\nDonec dignissim dui et tincidunt pretium. Nulla id arcu tristique nisl sodales aliquet sed sit amet elit.\\n\\nAliquam metus diam, pretium non tellus eu, mollis scelerisque turpis. Donec mollis, lorem nec efficitur dapibus, metus dui ultricies nibh, vel tempor est sapien ut lectus.\\n\\nMorbi lacus massa, tristique sit amet faucibus at, laoreet quis ante. Nulla sollicitudin tellus leo, vel dignissim nisi imperdiet at. Praesent mollis eu orci vel malesuada. In quis congue quam, ac efficitur est.\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"LoremIpsumTest4\",\n          \"description\": \"## Etiam venenatis erat at diam varius.\\n\\nEtiam ullamcorper venenatis mi, at scelerisque velit vulputate id. Fusce ex arcu, tincidunt vel purus nec, volutpat aliquam odio.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"BookNBS\",\n          \"description\": \"## Lorem ipsum dolor sit amet, consectetur adipiscing elit\\n\\nFusce imperdiet dictum quam, a consequat leo posuere sed. Vestibulum id sodales odio. Curabitur at egestas lectus, ac mattis risus. In sit amet dapibus sem.\",\n          \"urlLink\": \"https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv\",\n          \"urlLabel\": \"Continue to booking (test)\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "d75a7a02-c009-43c7-b97c-a848482c1996",
+          "id": "a0776d38-dcb4-4370-9a70-3d2be85974ee",
           "name": "RSV - 5000000021/9735549077 Unknown action with cohorts",
           "originalRequest": {
             "url": {
@@ -2086,7 +2086,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "6ec9cb5e-75c4-448f-a33b-22d4c828a9c1",
+          "id": "823efcf9-a90e-4b52-b6a9-545b9e8fd8fc",
           "name": "RSV - 5000000022/9735549085 Unknown action without cohorts",
           "originalRequest": {
             "url": {
@@ -2179,7 +2179,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "b5448fe9-77d0-42a0-ab3f-9c8e6ba6cf09",
+          "id": "edd7c31f-95f6-43a0-a7ef-06dd996eb11a",
           "name": "RSV - 5000000023/9735549093 Unknown suitability rule with cohorts",
           "originalRequest": {
             "url": {
@@ -2272,7 +2272,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "76071270-692a-4cc1-b77a-483ce419b4ba",
+          "id": "5f94fb0d-a89b-4de4-a35f-6deb76b37b23",
           "name": "RSV - 5000000024/9735549107 Unknown suitability rule without cohorts",
           "originalRequest": {
             "url": {
@@ -2365,7 +2365,1030 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "735973ca-f080-4089-a354-2dc384e5b1ff",
+          "id": "588a372e-73cc-4edd-8c5d-d54929de958e",
+          "name": "COVID - 5000000101 Actionable due to membership of an Age Cohort including suggested national booking actions",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"covid_age\",\n          \"cohortText\": \"are aged 75 or over (including those who will be 75 by 31 January 2026)\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"### Getting the vaccine\\n\\nYou can get a COVID-19 vaccination at your GP surgery.\\n\\nYour GP surgery may contact you about getting the COVID-19 vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLinkWithInfoText\",\n          \"actionCode\": \"BookNBSInfoText\",\n          \"description\": \"### Book an appointment online at a pharmacy\\n\\nYou can book an appointment online at a pharmacy that offers the COVID-19 vaccination. You need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/book-covid-19-vaccination/\",\n          \"urlLabel\": \"Continue to booking\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"119\",\n          \"description\": \"### Book over the phone\\n\\nYou can call [119](tel:119) free of charge to book over the phone if you cannot book online.\\n\\n You can speak to a translator if you need to.\"\n        },\n        {\n          \"actionType\": \"ActionLinkWithInfoText\",\n          \"actionCode\": \"WalkIn\",\n          \"description\": \"### Get vaccinated without an appointment\\n\\nYou can get an COVID-19 vaccination at some pharmacies without needing an appointment.\\n\\nYou do not need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/find-a-walk-in-covid-19-vaccination-site/\",\n          \"urlLabel\": \"Find a pharmacy where you can get a free COVID-19 vaccination\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HelpSupportInfo\",\n          \"description\": \"## If you think this is incorrect\\n\\nIf you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "a989fcca-708a-435f-bbd0-7e09a476d11c",
+          "name": "COVID - 5000000102 Actionable due to membership of multiple cohorts (age and clinical risk) including suggested national booking actions",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"covid_age\",\n          \"cohortText\": \"are aged 75 or over (including those who will be 75 by 31 January 2026)\",\n          \"cohortStatus\": \"Actionable\"\n        },\n        {\n          \"cohortCode\": \"covid_clinical_risk\",\n          \"cohortText\": \"are aged 16 or over and immunosuppressed\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"### Getting the vaccine\\n\\nYou can get a COVID-19 vaccination at your GP surgery.\\n\\nYour GP surgery may contact you about getting the COVID-19 vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLinkWithInfoText\",\n          \"actionCode\": \"BookNBSInfoText\",\n          \"description\": \"### Book an appointment online at a pharmacy\\n\\nYou can book an appointment online at a pharmacy that offers the COVID-19 vaccination. You need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/book-covid-19-vaccination/\",\n          \"urlLabel\": \"Continue to booking\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"119\",\n          \"description\": \"### Book over the phone\\n\\nYou can call [119](tel:119) free of charge to book over the phone if you cannot book online.\\n\\n You can speak to a translator if you need to.\"\n        },\n        {\n          \"actionType\": \"ActionLinkWithInfoText\",\n          \"actionCode\": \"WalkIn\",\n          \"description\": \"### Get vaccinated without an appointment\\n\\nYou can get an COVID-19 vaccination at some pharmacies without needing an appointment.\\n\\nYou do not need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/find-a-walk-in-covid-19-vaccination-site/\",\n          \"urlLabel\": \"Find a pharmacy where you can get a free COVID-19 vaccination\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HelpSupportInfo\",\n          \"description\": \"## If you think this is incorrect\\n\\nIf you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "10c7f9ba-a858-480c-89b3-4f7099619cf6",
+          "name": "COVID - 5000000103 Actionable due to membership of care home residents Cohort including suggested national actions",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"covid_care_home_resident\",\n          \"cohortText\": \"are a resident of a care home for older adults\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"### Getting the vaccine\\n\\nYou can get a COVID-19 vaccination at your GP surgery.\\n\\nYour GP surgery may contact you about getting the COVID-19 vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLinkWithInfoText\",\n          \"actionCode\": \"BookNBSInfoText\",\n          \"description\": \"### Book an appointment online at a pharmacy\\n\\nYou can book an appointment online at a pharmacy that offers the COVID-19 vaccination. You need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/book-covid-19-vaccination/\",\n          \"urlLabel\": \"Continue to booking\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"119\",\n          \"description\": \"### Book over the phone\\n\\nYou can call [119](tel:119) free of charge to book over the phone if you cannot book online.\\n\\n You can speak to a translator if you need to.\"\n        },\n        {\n          \"actionType\": \"ActionLinkWithInfoText\",\n          \"actionCode\": \"WalkIn\",\n          \"description\": \"### Get vaccinated without an appointment\\n\\nYou can get an COVID-19 vaccination at some pharmacies without needing an appointment.\\n\\nYou do not need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/find-a-walk-in-covid-19-vaccination-site/\",\n          \"urlLabel\": \"Find a pharmacy where you can get a free COVID-19 vaccination\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HelpSupportInfo\",\n          \"description\": \"## If you think this is incorrect\\n\\nIf you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "6b9fd170-d279-4ef8-8cda-c1cc0ac66279",
+          "name": "COVID - 5000000104 Actionable due to membership of an eligible cohort with future national booking",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"ButtonWithAuthLink\",\n          \"actionCode\": \"AmendNBS\",\n          \"description\": \"## You have a COVID-19 vaccination appointment booked\\n\\nYou can view, change or cancel your appointment below.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/book-covid-19-vaccination/\",\n          \"urlLabel\": \"Manage your appointment\"\n        },\n        {\n          \"actionType\": \"DataValue\",\n          \"actionCode\": \"FutureBookingDate\",\n          \"description\": \"20260201\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "950f2bf2-7c10-4798-b355-6ca75b6e1efe",
+          "name": "COVID - 5000000105 Actionable due to membership of an eligible cohort with future local booking",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"DataValue\",\n          \"actionCode\": \"FutureBookingDate\",\n          \"description\": \"20260201\"\n        },\n        {\n          \"actionType\": \"CardWithText\",\n          \"actionCode\": \"ManageLocal\",\n          \"description\": \"## You have an COVID-19 vaccination appointment booked\\n\\nTo change or cancel your appointment, contact the provider you booked with.\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "ce167273-d9c4-4cf6-8753-1a72c9a4098e",
+          "name": "COVID - 5000000106 Not Actionable as already vaccinated",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"AlreadyVaccinated\",\n          \"ruleText\": \"## You've had your COVID-19 vaccination\\n\\nWe believe you were vaccinated against COVID-19 on 3 April 2025\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"DataValue\",\n          \"actionCode\": \"DateOfLastVaccination\",\n          \"description\": \"20251123\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"CheckCorrect\",\n          \"description\": \"## If you think this is incorrect\\n\\nIf you have not had this vaccination and think you should, speak to your healthcare professional.\\n\\nFor anything else please see our [help and support page](https://www.nhs.uk/nhs-app/nhs-app-help-and-support/).\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "202cf90a-60a4-4606-a5ea-4c0216be6070",
+          "name": "COVID - 5000000107 Not Actionable due to no current campaign (type 1)",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"COVID-19 Vaccinations are currently closed.\",\n      \"eligibilityCohorts\": [],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"NoCurrentCampaign\",\n          \"ruleText\": \"There is no current COVID-19 vaccination campaign\"\n        }\n      ],\n      \"actions\": []\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "27aefdfc-d7b0-419a-8a0b-fe2f3a801836",
+          "name": "COVID - 5000000108 Not actionable due to no current campaign (type 2)",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": []\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "d6a579b2-b57a-49ea-8e72-5086d28609fe",
+          "name": "COVID - 5000000110 Not Actionable despite membership of an eligible cohort as too close to previous vaccination",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"covid_age\",\n          \"cohortText\": \"are aged 75 or over (including those who will be 75 by 31 January 2026)\",\n          \"cohortStatus\": \"NotActionable\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"TooClose\",\n          \"ruleText\": \"Your previous vaccination was less than 91 days ago. You were last vaccinated on 3 January 2026.\"\n        }\n      ],\n      \"actions\": [\n        {\n          \"actionType\": \"DataValue\",\n          \"actionCode\": \"DateOfNextEarliestVaccination\",\n          \"description\": \"20260201\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "a0dda863-5b41-49e8-85b9-a7d1df377a02",
+          "name": "COVID - 5000000111 Not Actionable as vaccination will be given in other setting (e.g. care home)",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"NotActionable\",\n      \"statusText\": \"You should have the COVID vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"rsv_age_rolling\",\n          \"cohortText\": \"are aged 75 to 79\",\n          \"cohortStatus\": \"NotActionable\"\n        },\n        {\n          \"cohortCode\": \"covid_care_home_resident\",\n          \"cohortText\": \"are a resident of a care home for older adults\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [\n        {\n          \"ruleType\": \"S\",\n          \"ruleCode\": \"OtherSetting\",\n          \"ruleText\": \"## Getting the vaccine\\n\\nWe believe you're living in a setting where care is provided.\\n\\nSpeak to a member of staff where you live about getting the COVID vaccine.\"\n        }\n      ],\n      \"actions\": []\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "6d8e363c-3788-4a23-8791-96ffae1f9625",
+          "name": "COVID - 5000000114 Not Eligible",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "patient-check",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The category for which the caller is checking eligibility suggestions. If not provided, eligibility for all supported categories will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "category",
+                  "value": "VACCINATIONS"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "The diseases or conditions for which the caller is checking eligibility suggestions in a comma separated list. If not provided, eligibility for all supported diseases will be checked.",
+                    "type": "text/plain"
+                  },
+                  "key": "conditions",
+                  "value": "FLU,RSV"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "When Y is passed in, the API response will include zero or more actions as applicable.  Passing in N will result in no actions being calculated or returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "includeActions",
+                  "value": "Y"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "A globally unique identifier (GUID) for the request, which we use to de-duplicate repeated requests and to trace the request if you contact our helpdesk.\n\nMust be a universally unique identifier (UUID) (ideally version 4).\n\nMirrored back in a response header.\n\nIf you re-send a failed request, use the same value in this header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Request-ID",
+                "value": "60E0B220-8136-4CA5-AE46-1D97EF59D068"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "An optional ID which you can use to track transactions across multiple systems. It can take any value, but we recommend avoiding `.` characters.\n\nMirrored back in a response header.\n",
+                  "type": "text/plain"
+                },
+                "key": "X-Correlation-ID",
+                "value": "11C46F5F-CDEF-4865-94B2-0EE0EDCC26DA"
+              },
+              {
+                "disabled": true,
+                "description": {
+                  "content": "The ODS code of the user.\n\nMandatory for client applications which service multiple end user organisations (EUO). This will allow the calls to be attributed to the correct EUO.\n",
+                  "type": "text/plain"
+                },
+                "key": "NHSD-End-User-Organisation-ODS",
+                "value": "Y12345"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"NotEligible\",\n      \"statusText\": \"We do not believe you can have it\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"covid_age\",\n          \"cohortText\": \"are not aged 75 or over by 31 January 2026\",\n          \"cohortStatus\": \"NotEligible\"\n        },\n        {\n          \"cohortCode\": \"covid_clinical_risk\",\n          \"cohortText\": \"are not aged 16 or over and immunosuppressed\",\n          \"cohortStatus\": \"NotEligible\"\n        },\n        {\n          \"cohortCode\": \"covid_clinical_risk\",\n          \"cohortText\": \"are not aged under 16 and immunosuppressed\",\n          \"cohortStatus\": \"NotEligible\"\n        },\n        {\n          \"cohortCode\": \"covid_care_home_resident\",\n          \"cohortText\": \"are not a resident of a care home for older adults\",\n          \"cohortStatus\": \"NotEligible\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HealthcareProInfo\",\n          \"description\": \"## If you think you need this vaccine\\n\\nSpeak to your healthcare professional if you think you should be offered this vaccination.\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": []
+        },
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "7b847440-373b-457c-813c-e6450cb0b04e",
           "name": "Invalid input data.",
           "originalRequest": {
             "url": {
@@ -2458,7 +3481,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "d7deaa73-1855-406a-81ef-b1807e177042",
+          "id": "95808657-873b-45fa-8f37-8a56f74155ad",
           "name": "Person not found.",
           "originalRequest": {
             "url": {
@@ -2551,7 +3574,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "1034d309-946d-4660-886e-08582df2f9ce",
+          "id": "2f98d3ef-13e7-4e18-a5e9-d61a6386a0a2",
           "name": "Unrecognised input data. (Unprocessable Content)",
           "originalRequest": {
             "url": {
@@ -2644,7 +3667,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "2af462a3-9a2f-43d1-b96d-f133c79c8560",
+          "id": "167d9d70-59e2-4b5c-ad1c-362736064d66",
           "name": "Internal server error.",
           "originalRequest": {
             "url": {
@@ -2738,7 +3761,7 @@
         {
           "listen": "test",
           "script": {
-            "id": "ca9e95e4-c78a-489b-a9e4-07590a66ec8c",
+            "id": "492d983d-17d3-4a43-b7ca-4b51ee18a741",
             "type": "text/javascript",
             "exec": [
               "// Validate status 2xx \npm.test(\"[GET]::/patient-check/:id - Status code is 2xx\", function () {\n   pm.response.to.be.success;\n});\n",
@@ -2763,20 +3786,20 @@
     }
   ],
   "info": {
-    "_postman_id": "957eaf98-6166-426f-936a-8a53a86269ea",
+    "_postman_id": "187635ff-788d-4c2d-bd97-f41567e0992b",
     "name": "Patient Eligibility Signposting API",
     "version": {
-      "raw": "1.0.22-alpha",
+      "raw": "1.0.25-alpha",
       "major": 1,
       "minor": 0,
-      "patch": 22,
+      "patch": 25,
       "prerelease": "alpha",
       "build": [],
-      "string": "1.0.22-alpha"
+      "string": "1.0.25-alpha"
     },
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
-      "content": "## Overview\nUse this API to access the [Eligibility Data Product](https://digital.nhs.uk/services/eligibility-data-product-elid) - the nationally curated single source of vaccination eligibility status and signposted next actions for individuals. You can request it to see if NHS England's data deems a person as eligible or not eligible for a vaccination, along with our reasoning. If a person is eligible for a vaccination, they'll be marked as either actionable, meaning they can proceed immediately in taking our recommended action i.e booking an appointment online or contacting their GP, or not actionable, meaning they can't take any action yet i.e. there is a local vaccine shortage or their vaccination will be arranged directly by someone else. Unless you have written permission from NHS England to change it, any descriptive text provided through the Eligibility Signposting API must be displayed to your user exactly as written.\nUse this API to request: \n* eligibility for all supported vaccination types\n* derived reason for eligibility status \n* recommended actions the individual should take based on multiple factors\n\nYou cannot currently use this API to: \n* request eligibility for proxy people (familial relations etc.)\n\nThis API is read-only and can return a list of processed suggestions, each relating to a 'condition' (e.g. COVID, Flu, RSV etc.), including the following information for each: \n* a code representing the condition (COVID, RSV, FLU etc.)\n* an overall status (NotEligible, NotActionable, Actionable) \n* a list of eligibility cohort groups to which the person belongs (when eligible)\n* a list of the cohort groups that could have made the person eligible (when not eligible) \n* a list of rules/reasons that deem a person to be NotActionable\n* a list of actions that should be shown to the consumer\n#### Definitions of overall status\nThe overall status values indicate the following:\n* NotEligible - the individual does not currently meet eligibility criteria\n* NotActionable - the individual is eligible but does not need to take any further action at this time \n* Actionable - the individual is eligible and should follow one of the recommended actions provided\n### Patients included in the Patient Eligibility Signposting API\nThe API will return data for all patients who are in the NHS PDS system that are registered with an English GP practice (or one administered by England) or who we believe to be resident in England.\nPatients who are deceased (or thought to be), marked as invalid or sensitive will not be processed by this API.\n## Who can use this API\nThis API can only be used where there is a [legal basis](https://digital.nhs.uk/services/eligibility-data-product-elid#who-this-service-is-for) to do so. Make sure you have a valid use case before you go too far with your development.  You must demonstrate you have a [valid use case](https://digital.nhs.uk/services/eligibility-data-product-elid#who-this-service-is-for) as part of digital onboarding.\nYou must do this before you can go live (see 'Onboarding' below).\n### Who can access Eligibility Signposting Information\nPatients who receive health and social care or make use of NHS services in England, Wales and the Isle of Man can access their own Eligibility Signposting data through onboarded services.\nHealth and care organisations in England and the Isle of Man can access our information for legitimate direct care purposes. Legitimate direct care examples include NHS organisations delivering healthcare, local authorities delivering care, third sector and private sector health and care organisations, and developers delivering systems to health and care organisations.\n### Existing API users\nTo find out which healthcare software development organisations and products are already using this API, see [Patient Eligibility Signposting API - integrated products](https://digital.nhs.uk/services/eligibility-data-product-elid).\n## Access modes\nThis API currently has only one access mode:\n* patient access (user-restricted)\n\nWe are considering the possibility of adding other modes in the future: \n* healthcare worker access\n* application restricted access\n### Patient access\nIf the end user is a patient then you must use this access mode. Use this access mode to obtain data for that patient.\nThis access mode is [user-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis), meaning an end user must be present, authenticated and authorised.\nThe end user must be:\n* a patient who receives health and social care or makes use of NHS services \n* strongly authenticated, using [NHS login](https://digital.nhs.uk/services/nhs-login)\nTo use this access mode, you must currently use the following security pattern:\n\n|\tSecurity pattern\t\t                                                                                                                                                                                                          |\tTechnical details\t                                  |\tAdvantages\t                                                | Disadvantages                                           |\n|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ----------------------------------------------------| ------------------------------------------------------------|---------------------------------------------------------|\n|[NHS login - separate authentication and authorisation](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/user-restricted-restful-apis-nhs-login-separate-authentication-and-authorisation) |OAuth 2.0 token exchange with signed JWT             |Gives access to user information.                            |Need to integrate and onboard separately with NHS login. |\nPatient access mode users must be authenticated to a high proofing level (P9) and to one of the following [vectors of trust](https://nhsconnect.github.io/nhslogin/vectors-of-trust/):\n* P9.Cp.Cd \n* P9.Cp.Ck\n* P9.Cm\nThis access mode is available in production ([beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status)).\n### Restricted access\nThis access mode is not yet available, if you believe this mode would benefit your use-case, please let us know.\nThis access mode is [application-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#application-restricted-apis), meaning we authenticate and authorise the calling application but not the end user.\nThis access mode is not designed to be accessed by an end user. You might use this access mode as part of a back-end process to:\n* retrieve eligibility signposting information into a system in advance of a clinic \n* retrieve eligibility signposting information into a system to be used in a disconnected manner\n\nTo use this access mode, use this security pattern:\n* [Application-restricted RESTful API - signed JWT authentication](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/application-restricted-restful-apis-signed-jwt-authentication)\n## Roadmap\nThe [Patient Eligibility Signposting API](https://digital.nhs.uk/services/eligibility-data-product-elid/eligibility-data-product-elid-roadmap) roadmap shows the planned changes for the API.\nTo see our roadmap, or to suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/612352/eligibility-signposting-api-vaccinations).\nIf you have any other queries, please [contact us](https://digital.nhs.uk/developer/help-and-support).\n## Service level\nThis API is a silver service, meaning it is operational 24 hours a day, 365 days a year and supported 8am to 6pm, Monday to Friday excluding bank holidays.\nFor more details, see [service levels](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#service-levels).\n## Rate limits\nThe default rate limit is 25TPS (Transactions Per Second), per app. If you require a higher rate limit please [contact us](https://digital.nhs.uk/developer/help-and-support). or raise this during the onboarding process.\n## Technology\nThis API is [RESTful](https://digital.nhs.uk/developer/guides-and-documentation/our-api-technologies#basic-rest).\nThe error messages returned by this API conform to the FHIR global standard for health care data exchange, specifically to FHIR R4 (v4.0.1). This is to aid consumers that integrate to FHIR based APIS and are in any case not overly complex.\nThere are [libraries and SDKs](https://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#fhir-libraries-and-sdks) available to help with FHIR API integration.\n## Network access\nThis API is available on the internet and, indirectly, on the [Health and Social Care Network (HSCN)](https://digital.nhs.uk/services/health-and-social-care-network).\nFor more details see [Network access for APIs](https://digital.nhs.uk/developer/guides-and-documentation/network-access-for-apis).\n## Errors\nWe use standard HTTP status codes to show whether an API request succeeded or not. They are usually in the range:\n* 200 to 299 if it succeeded, including code 202 if it was accepted by an API that needs to wait for further action \n* 400 to 499 if it failed because of a client error by your application\n* 500 to 599 if it failed because of an error on our server\nErrors specific to each API are shown in the Endpoints section, under Response. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#http-status-codes) for more on errors.\nYour API-calling application should have a mechanism to automatically try again, for example by giving status information to your end user, before giving up. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#error-handling) for more information about error handling.\n## Open source\nYou might find the following [open source](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#open-source) resources useful:\n| Resource                  | Description                                                          | Links                                                                          |\n|---------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------|\n| Patient Eligibility Signposting API| Source code including API proxy, sandbox and specification and code.      | [GitHub repo](https://github.com/NHSDigital/eligibility-signposting-api) |\nWe currently don't have any open source client libraries or sample code for this API. If you think this would be useful, you can [upvote the suggestion on our Interactive Product Backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/107439/client-libraries-and-reference-implementations).\n\n## Environments and testing\n| Environment       | Base URL                                                               |\n| ----------------- | ---------------------------------------------------------------------- |\n| Sandbox           | `https://sandbox.api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`    |\n| Integration test  | `https://int.api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`        |\n| Production        | `https://api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`            |\n### Sandbox testing\nOur [sandbox environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#sandbox-testing):\n* is for early developer testing \n* only covers a limited set of scenarios\n* is open access, so does not allow you to test authorisation\n\nFor details of sandbox test scenarios, or to try out the sandbox using our 'Try this API' feature, see the documentation for each endpoint.\n\nAlternatively, you can try out the sandbox using our Postman collection:\n[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/eligibility-signposting-api/eligibility-signposting-api)\n### Integration testing\nOur [integration test environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#integration-testing):\n* is for formal integration testing \n* includes authorisation, with options for user-restricted access (NHS Login)\n### Production smoke testing\nYou must not use real patient data for smoke testing in the production environment.\nRather, use our [production test patient](https://digital.nhs.uk/services/eligibility-signposting/api-test-data#production-smoke-testing).\n## Onboarding\nYou need to get your software approved by us before it can go live with this API. We call this onboarding. The onboarding process can sometimes be quite long, so it is worth planning well ahead.\nAs part of this process, you need to demonstrate your technical conformance to the requirements for this API.\nYou also need to demonstrate that you can manage risks. This might impact the design of your software. For details, see [Onboarding support information](https://digital.nhs.uk/services/eligibility-data-product-elid#how-to-access-this-service).\nTo understand how our online digital onboarding process works, see [digital onboarding](https://digital.nhs.uk/developer/guides-and-documentation/digital-onboarding).\n## Related APIs\nThe following APIs are related to this API:\n",
+      "content": "## Overview\nUse this API to access the [Eligibility Data Product](https://digital.nhs.uk/services/eligibility-data-product-elid) - the nationally curated single source of vaccination eligibility status and signposted next actions for individuals. You can request it to see if NHS England's data deems a person as eligible or not eligible for a vaccination, along with our reasoning. If a person is eligible for a vaccination, they'll be marked as either actionable, meaning they can proceed immediately in taking our recommended action i.e booking an appointment online or contacting their GP, or not actionable, meaning they can't take any action yet i.e. there is a local vaccine shortage or their vaccination will be arranged directly by someone else. Unless you have written permission from NHS England to change it, any descriptive text provided through the Eligibility Signposting API must be displayed to your user exactly as written.\nUse this API to request: \n* eligibility for all supported vaccination types\n* derived reason for eligibility status \n* recommended actions the individual should take based on multiple factors\n\nYou cannot currently use this API to: \n* request eligibility for proxy people (familial relations etc.)\n\nThis API is read-only and can return a list of processed suggestions, each relating to a 'condition' (e.g. COVID, Flu, RSV etc.), including the following information for each: \n* a code representing the condition (COVID, RSV, FLU etc.)\n* an overall status (NotEligible, NotActionable, Actionable) \n* a list of eligibility cohort groups to which the person belongs (when eligible)\n* a list of the cohort groups that could have made the person eligible (when not eligible) \n* a list of rules/reasons that deem a person to be NotActionable\n* a list of actions that should be shown to the consumer\n#### Definitions of overall status\nThe overall status values indicate the following:\n* NotEligible - the individual does not currently meet eligibility criteria\n* NotActionable - the individual is eligible but does not need to take any further action at this time \n* Actionable - the individual is eligible and should follow one of the recommended actions provided\n### Patients included in the Patient Eligibility Signposting API\nThe API will return data for all patients who are in the NHS PDS system that are registered with an English GP practice (or one administered by England) or who we believe to be resident in England.\nPatients who are deceased (or thought to be), marked as invalid or sensitive will not be processed by this API.\n## Who can use this API\nThis API can only be used where there is a [legal basis](https://digital.nhs.uk/services/eligibility-data-product-elid#who-this-service-is-for) to do so. Make sure you have a valid use case before you go too far with your development.  You must demonstrate you have a [valid use case](https://digital.nhs.uk/services/eligibility-data-product-elid#who-this-service-is-for) as part of digital onboarding.\nYou must do this before you can go live (see 'Onboarding' below).\n### Who can access Eligibility Signposting Information\nPatients who receive health and social care or make use of NHS services in England, Wales and the Isle of Man can access their own Eligibility Signposting data through onboarded services.\nHealth and care organisations in England and the Isle of Man can access our information for legitimate direct care purposes. Legitimate direct care examples include NHS organisations delivering healthcare, local authorities delivering care, third sector and private sector health and care organisations, and developers delivering systems to health and care organisations.\n### Existing API users\nTo find out which healthcare software development organisations and products are already using this API, see [Patient Eligibility Signposting API - integrated products](https://digital.nhs.uk/services/eligibility-data-product-elid).\n## Access modes\nThis API currently has only one access mode:\n* patient access (user-restricted)\n\nWe are considering the possibility of adding other modes in the future: \n* healthcare worker access\n* application restricted access\n### Patient access\nIf the end user is a patient then you must use this access mode. Use this access mode to obtain data for that patient.\nThis access mode is [user-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis), meaning an end user must be present, authenticated and authorised.\nThe end user must be:\n* a patient who receives health and social care or makes use of NHS services \n* strongly authenticated, using [NHS login](https://digital.nhs.uk/services/nhs-login)\nTo use this access mode, you must currently use the following security pattern:\n\n|\tSecurity pattern\t\t                                                                                                                                                                                                          |\tTechnical details\t                                  |\tAdvantages\t                                                | Disadvantages                                           |\n|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ----------------------------------------------------| ------------------------------------------------------------|---------------------------------------------------------|\n|[NHS login - separate authentication and authorisation](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/user-restricted-restful-apis-nhs-login-separate-authentication-and-authorisation) |OAuth 2.0 token exchange with signed JWT             |Gives access to user information.                            |Need to integrate and onboard separately with NHS login. |\nPatient access mode users must be authenticated to a high proofing level (P9) and to one of the following [vectors of trust](https://nhsconnect.github.io/nhslogin/vectors-of-trust/):\n* P9.Cp.Cd \n* P9.Cp.Ck\n* P9.Cm\nThis access mode is available in production ([beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status)).\n### Restricted access\nThis access mode is not yet available, if you believe this mode would benefit your use-case, please let us know.\nThis access mode is [application-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#application-restricted-apis), meaning we authenticate and authorise the calling application but not the end user.\nThis access mode is not designed to be accessed by an end user. You might use this access mode as part of a back-end process to:\n* retrieve eligibility signposting information into a system in advance of a clinic \n* retrieve eligibility signposting information into a system to be used in a disconnected manner\n\nTo use this access mode, use this security pattern:\n* [Application-restricted RESTful API - signed JWT authentication](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/application-restricted-restful-apis-signed-jwt-authentication)\n## Roadmap\nThe [Patient Eligibility Signposting API](https://digital.nhs.uk/services/eligibility-data-product-elid/eligibility-data-product-elid-roadmap) roadmap shows the planned changes for the API.\nTo see our roadmap, or to suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/612352/eligibility-signposting-api-vaccinations).\nIf you have any other queries, please [contact us](https://digital.nhs.uk/developer/help-and-support).\n## Service level\nThis API is a silver service, meaning it is operational 24 hours a day, 365 days a year and supported 8am to 6pm, Monday to Friday excluding bank holidays.\nFor more details, see [service levels](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#service-levels).\n## Rate limits\nThe default rate limit is 25TPS (Transactions Per Second), per app. If you require a higher rate limit please [contact us](https://digital.nhs.uk/developer/help-and-support). or raise this during the onboarding process.\n## Technology\nThis API is [RESTful](https://digital.nhs.uk/developer/guides-and-documentation/our-api-technologies#basic-rest).\nThe error messages returned by this API conform to the FHIR global standard for health care data exchange, specifically to FHIR R4 (v4.0.1). This is to aid consumers that integrate to FHIR based APIS and are in any case not overly complex.\nThere are [libraries and SDKs](https://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#fhir-libraries-and-sdks) available to help with FHIR API integration.\n## Network access\nThis API is available on the internet and, indirectly, on the [Health and Social Care Network (HSCN)](https://digital.nhs.uk/services/health-and-social-care-network).\nFor more details see [Network access for APIs](https://digital.nhs.uk/developer/guides-and-documentation/network-access-for-apis).\n## Errors\nWe use standard HTTP status codes to show whether an API request succeeded or not. They are usually in the range:\n* 200 to 299 if it succeeded, including code 202 if it was accepted by an API that needs to wait for further action \n* 400 to 499 if it failed because of a client error by your application\n* 500 to 599 if it failed because of an error on our server\nErrors specific to each API are shown in the Endpoints section, under Response. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#http-status-codes) for more on errors.\nYour API-calling application should have a mechanism to automatically try again, for example by giving status information to your end user, before giving up. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#error-handling) for more information about error handling.\n## Open source\nYou might find the following [open source](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#open-source) resources useful:\n| Resource                  | Description                                                          | Links                                                                          |\n|---------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------|\n| Patient Eligibility Signposting API| Source code including API proxy, sandbox and specification and code.      | [GitHub repo](https://github.com/NHSDigital/eligibility-signposting-api) |\nWe currently don't have any open source client libraries or sample code for this API. If you think this would be useful, you can [upvote the suggestion on our Interactive Product Backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/107439/client-libraries-and-reference-implementations).\n\n## Environments and testing\n| Environment       | Base URL                                                               |\n| ----------------- | ---------------------------------------------------------------------- |\n| Sandbox           | `https://sandbox.api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`    |\n| Integration test  | `https://int.api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`        |\n| Production        | `https://api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`            |\n### Sandbox testing\nOur [sandbox environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#sandbox-testing):\n* is for early developer testing \n* only covers a limited set of scenarios\n* is open access, so does not allow you to test authorisation\n\nFor details of sandbox test scenarios, or to try out the sandbox using our 'Try this API' feature, see the documentation for each endpoint.\nInformation on test data can be found [here](https://digital.nhs.uk/developer/api-catalogue/eligibility-signposting/eligibility-signposting-api-test-data).\n\nAlternatively, you can try out the sandbox using our Postman collection:\n[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/eligibility-signposting-api/eligibility-signposting-api)\n### Integration testing\nOur [integration test environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#integration-testing):\n* is for formal integration testing \n* includes authorisation, with options for user-restricted access (NHS Login)\n\nInformation on test data can be found [here](https://digital.nhs.uk/developer/api-catalogue/eligibility-signposting/eligibility-signposting-api-test-data).\n### Production smoke testing\nYou must not use real patient data for smoke testing in the production environment.\nRather, use our [production test patient](https://digital.nhs.uk/developer/api-catalogue/eligibility-signposting/eligibility-signposting-api-test-data#production-smoke-testing).\n## Onboarding\nYou need to get your software approved by us before it can go live with this API. We call this onboarding. The onboarding process can sometimes be quite long, so it is worth planning well ahead.\nAs part of this process, you need to demonstrate your technical conformance to the requirements for this API.\nYou also need to demonstrate that you can manage risks. This might impact the design of your software. For details, see [Onboarding support information](https://digital.nhs.uk/services/eligibility-data-product-elid#how-to-access-this-service).\nTo understand how our online digital onboarding process works, see [digital onboarding](https://digital.nhs.uk/developer/guides-and-documentation/digital-onboarding).\n## Related APIs\nThe following APIs are related to this API:\n",
       "type": "text/plain"
     }
   }
