@@ -1,10 +1,10 @@
 {
   "_": {
-    "postman_id": "187635ff-788d-4c2d-bd97-f41567e0992b"
+    "postman_id": "be7be990-3e65-4369-9616-f083fa605774"
   },
   "item": [
     {
-      "id": "7071ea4a-e311-4b64-9b5a-6362b139d744",
+      "id": "b616ace4-2b81-416d-b2e7-65a4072c3024",
       "name": "Eligibility",
       "description": {
         "content": "",
@@ -14,7 +14,7 @@
       "event": []
     },
     {
-      "id": "bb40ce74-e688-4d49-891a-014bea6b1779",
+      "id": "9bcafc39-4a51-4348-9d84-e34475d08bee",
       "name": "Signposting",
       "description": {
         "content": "",
@@ -24,7 +24,7 @@
       "event": []
     },
     {
-      "id": "f0362340-2313-4fa3-be68-bd9996f97324",
+      "id": "5267cf2e-0ab4-4564-a8ac-9f1c80a529ec",
       "name": "NextActions",
       "description": {
         "content": "",
@@ -34,7 +34,7 @@
       "event": []
     },
     {
-      "id": "c647ed6d-d852-44cf-8ce6-80d0e8fe9b47",
+      "id": "5a593076-e369-4568-a04f-917777999f1a",
       "name": "Check Eligibility",
       "request": {
         "name": "Check Eligibility",
@@ -133,7 +133,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "d5182055-0d0d-4a23-8bc9-2e974df910a0",
+          "id": "83ed0c08-cb63-4129-a6d8-6083a9be21e3",
           "name": "RSV - 5000000001/9686368973 Actionable due to membership of an Age Cohort including suggested national booking action (actions requested)",
           "originalRequest": {
             "url": {
@@ -226,7 +226,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "078504bc-3ebb-487e-b2eb-0615f92590c5",
+          "id": "adf9638b-076c-42a8-8d62-2bda98d2fa31",
           "name": "RSV - 5000000002/9686368906 Actionable due to membership of an Age Cohort including suggested action (not national booking)",
           "originalRequest": {
             "url": {
@@ -319,7 +319,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "5c2343e3-4498-4acf-908f-147c907381de",
+          "id": "a128ca7a-8082-40fc-b0a4-e64ae41bcfd1",
           "name": "RSV - 5000000003/9658218873 Actionable due to membership of an alternative Age Cohort including suggested action (not national booking)",
           "originalRequest": {
             "url": {
@@ -412,7 +412,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "8ea783f9-a0c1-4314-a987-ffb2e9f93471",
+          "id": "b1b32c18-84c8-4505-97c0-0dd203c169c5",
           "name": "RSV - 5000000004/9658218881 Actionable due to membership of an Age Cohort including suggested action (future national booking)",
           "originalRequest": {
             "url": {
@@ -505,7 +505,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "bfb21b93-fe47-41f1-be76-dec02e270581",
+          "id": "965f3fa4-9d5d-46be-9fd5-c3a2efb0288c",
           "name": "RSV - 5000000005/9658218903 Actionable due to membership of an Age Cohort including suggested actions (with future local booking)",
           "originalRequest": {
             "url": {
@@ -598,7 +598,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "ed8e52e3-de7d-48c4-8e5f-656e6ecb6023",
+          "id": "e420b663-1a36-4ee1-b48c-e489dc0df4b1",
           "name": "RSV - 5000000006/9658218989 Not Actionable despite to membership of an Age Cohort with reasoning of already vaccinated (cohorts hidden)",
           "originalRequest": {
             "url": {
@@ -691,7 +691,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "c3e19ee9-0295-4f01-9b59-c7befbe807e1",
+          "id": "589c732a-8035-4d34-91ed-ea75028a1bfb",
           "name": "RSV - 5000000007/9658218997 Not Actionable despite to membership of an Age Cohort with reasoning of no available vaccinations (not available type 1)",
           "originalRequest": {
             "url": {
@@ -784,7 +784,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "b96c526c-6411-4f12-81c3-0205b7289273",
+          "id": "fde43c6f-f8fd-4c69-9547-b0dabb1eb50c",
           "name": "RSV - 5000000008/9658219004 No RSV response as no active campaign (not available type 2)",
           "originalRequest": {
             "url": {
@@ -877,7 +877,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "87bb7d3e-a0b1-40e6-b431-1751e461c127",
+          "id": "50408ace-b6ee-438f-a938-03520207844b",
           "name": "RSV - 5000000009/9658219012 Not Actionable despite to membership of an Age Cohort with reasoning of dose not yet due",
           "originalRequest": {
             "url": {
@@ -970,7 +970,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "2ad3d0f6-85b0-4d42-aece-d68ef50e4342",
+          "id": "dc535c85-bb8b-41c2-88ba-07c6b453a7b7",
           "name": "RSV - 5000000010/9658220142 Not Actionable despite to membership of an Age Cohort with reasoning of dose not far enough apart",
           "originalRequest": {
             "url": {
@@ -1063,7 +1063,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "d8669441-b0e6-4821-90d8-81eed4f694df",
+          "id": "6de4fd59-1676-45af-9015-a7f99c2c9c1a",
           "name": "RSV - 5000000011/9658220150 Not Actionable despite to membership of an Age Cohort with reasoning of vaccination given in other setting (e.g. care home)",
           "originalRequest": {
             "url": {
@@ -1156,7 +1156,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "4581c961-0b2d-4a8e-9459-61dde26b92ac",
+          "id": "9dde5995-b071-4680-9270-9c4d6c870045",
           "name": "RSV - 5000000012/9450114080 Not Actionable despite no cohort membership with reasoning of already vaccinated",
           "originalRequest": {
             "url": {
@@ -1249,7 +1249,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "2c75148f-8a32-4666-ba43-47bf1a984313",
+          "id": "bb1e80d0-1772-464a-992a-17989993395c",
           "name": "RSV - 5000000013/9466447939 Not Actionable despite no cohort membership with reasoning of already vaccinated (type 2 includes no cohorts)",
           "originalRequest": {
             "url": {
@@ -1342,7 +1342,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "589ea879-9421-4d0a-a20f-8b9bf7f45460",
+          "id": "129b68cc-9721-405a-a267-5a37bf2b3cc1",
           "name": "RSV - 5000000014/9657933617 Not Eligible",
           "originalRequest": {
             "url": {
@@ -1435,7 +1435,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "095e7324-95a8-47b3-b768-0988bd8cc589",
+          "id": "dc6a2fb4-021a-429f-a3f3-a3ece945d9f0",
           "name": "RSV - 5000000015/9735549018 Multiple actions without cohorts",
           "originalRequest": {
             "url": {
@@ -1528,7 +1528,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "bd09f414-528d-4e29-91e0-f03ea5367f9c",
+          "id": "2b41866e-963f-48d2-8024-edf6245a9432",
           "name": "RSV - 5000000016/9735549026 Multiple actions with cohorts",
           "originalRequest": {
             "url": {
@@ -1621,7 +1621,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "e7c2fc15-06f8-4a90-9484-58787bdcede3",
+          "id": "b021366b-155b-489b-94f3-da4caaddf083",
           "name": "RSV - 5000000017/9735549034 Multiple suitability rules with cohorts",
           "originalRequest": {
             "url": {
@@ -1714,7 +1714,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "fd63be86-8e0f-4ff5-9271-52305e376cc5",
+          "id": "694a0d76-82f3-4905-b891-7bbfe3d7ee51",
           "name": "RSV - 5000000018/9735549042 Multiple suitability rules without cohorts",
           "originalRequest": {
             "url": {
@@ -1807,7 +1807,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "2955e5ce-3a7c-400d-b42c-0e2ca4978d09",
+          "id": "c92a1e82-e7eb-41eb-a9de-2259a322c0e3",
           "name": "RSV - 5000000019/9735549050 Multiple suitability , multiple actions rules with cohorts",
           "originalRequest": {
             "url": {
@@ -1900,7 +1900,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "ab25c608-3991-4616-89a4-1c3bf569c583",
+          "id": "be3beed5-6cdd-4a14-99dc-dc0441e69a56",
           "name": "RSV - 5000000020/9735549069 Multiple suitability , multiple actions rules without cohorts",
           "originalRequest": {
             "url": {
@@ -1993,7 +1993,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "a0776d38-dcb4-4370-9a70-3d2be85974ee",
+          "id": "23ae3261-50aa-44f3-8e76-9726fc71d81b",
           "name": "RSV - 5000000021/9735549077 Unknown action with cohorts",
           "originalRequest": {
             "url": {
@@ -2086,7 +2086,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "823efcf9-a90e-4b52-b6a9-545b9e8fd8fc",
+          "id": "c4d50d62-47d1-4e26-912f-74e3f6efaf6c",
           "name": "RSV - 5000000022/9735549085 Unknown action without cohorts",
           "originalRequest": {
             "url": {
@@ -2179,7 +2179,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "edd7c31f-95f6-43a0-a7ef-06dd996eb11a",
+          "id": "0f5d4a4d-1034-48e4-9b5d-3f521e641200",
           "name": "RSV - 5000000023/9735549093 Unknown suitability rule with cohorts",
           "originalRequest": {
             "url": {
@@ -2272,7 +2272,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "5f94fb0d-a89b-4de4-a35f-6deb76b37b23",
+          "id": "5ee5e931-5c77-45d3-a7ec-7a88209a50a9",
           "name": "RSV - 5000000024/9735549107 Unknown suitability rule without cohorts",
           "originalRequest": {
             "url": {
@@ -2365,7 +2365,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "588a372e-73cc-4edd-8c5d-d54929de958e",
+          "id": "51106fe3-0900-4972-b59f-bd06799b5e20",
           "name": "COVID - 5000000101 Actionable due to membership of an Age Cohort including suggested national booking actions",
           "originalRequest": {
             "url": {
@@ -2451,14 +2451,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"covid_age\",\n          \"cohortText\": \"are aged 75 or over (including those who will be 75 by 31 January 2026)\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"### Getting the vaccine\\n\\nYou can get a COVID-19 vaccination at your GP surgery.\\n\\nYour GP surgery may contact you about getting the COVID-19 vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLinkWithInfoText\",\n          \"actionCode\": \"BookNBSInfoText\",\n          \"description\": \"### Book an appointment online at a pharmacy\\n\\nYou can book an appointment online at a pharmacy that offers the COVID-19 vaccination. You need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/book-covid-19-vaccination/\",\n          \"urlLabel\": \"Continue to booking\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"119\",\n          \"description\": \"### Book over the phone\\n\\nYou can call [119](tel:119) free of charge to book over the phone if you cannot book online.\\n\\n You can speak to a translator if you need to.\"\n        },\n        {\n          \"actionType\": \"ActionLinkWithInfoText\",\n          \"actionCode\": \"WalkIn\",\n          \"description\": \"### Get vaccinated without an appointment\\n\\nYou can get an COVID-19 vaccination at some pharmacies without needing an appointment.\\n\\nYou do not need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/find-a-walk-in-covid-19-vaccination-site/\",\n          \"urlLabel\": \"Find a pharmacy where you can get a free COVID-19 vaccination\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HelpSupportInfo\",\n          \"description\": \"## If you think this is incorrect\\n\\nIf you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"covid_age\",\n          \"cohortText\": \"are aged 75 or over (including those who will be 75 by 31 January 2026)\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"### Getting the vaccine\\n\\nYou can get a COVID-19 vaccination at your GP surgery.\\n\\nYour GP surgery may contact you about getting the COVID-19 vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLinkWithInfoText\",\n          \"actionCode\": \"BookNBSInfoText\",\n          \"description\": \"### Book an appointment online at a pharmacy\\n\\nYou can book an appointment online at a pharmacy that offers the COVID-19 vaccination. You need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/book-covid-19-vaccination/\",\n          \"urlLabel\": \"Continue to booking\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"119\",\n          \"description\": \"### Book over the phone\\n\\nYou can call [119](tel:119) free of charge to book over the phone if you cannot book online.\\nYou can speak to a translator if you need to.\"\n        },\n        {\n          \"actionType\": \"ActionLinkWithInfoText\",\n          \"actionCode\": \"WalkIn\",\n          \"description\": \"### Get vaccinated without an appointment\\n\\nYou can get an COVID-19 vaccination at some pharmacies without needing an appointment.\\n\\nYou do not need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/find-a-walk-in-covid-19-vaccination-site/\",\n          \"urlLabel\": \"Find a pharmacy where you can get a free COVID-19 vaccination\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HelpSupportInfo\",\n          \"description\": \"## If you think this is incorrect\\n\\nIf you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "a989fcca-708a-435f-bbd0-7e09a476d11c",
+          "id": "3306e8bc-e22d-44a3-9b2f-0d3911eac4ca",
           "name": "COVID - 5000000102 Actionable due to membership of multiple cohorts (age and clinical risk) including suggested national booking actions",
           "originalRequest": {
             "url": {
@@ -2544,14 +2544,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"covid_age\",\n          \"cohortText\": \"are aged 75 or over (including those who will be 75 by 31 January 2026)\",\n          \"cohortStatus\": \"Actionable\"\n        },\n        {\n          \"cohortCode\": \"covid_clinical_risk\",\n          \"cohortText\": \"are aged 16 or over and immunosuppressed\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"### Getting the vaccine\\n\\nYou can get a COVID-19 vaccination at your GP surgery.\\n\\nYour GP surgery may contact you about getting the COVID-19 vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLinkWithInfoText\",\n          \"actionCode\": \"BookNBSInfoText\",\n          \"description\": \"### Book an appointment online at a pharmacy\\n\\nYou can book an appointment online at a pharmacy that offers the COVID-19 vaccination. You need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/book-covid-19-vaccination/\",\n          \"urlLabel\": \"Continue to booking\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"119\",\n          \"description\": \"### Book over the phone\\n\\nYou can call [119](tel:119) free of charge to book over the phone if you cannot book online.\\n\\n You can speak to a translator if you need to.\"\n        },\n        {\n          \"actionType\": \"ActionLinkWithInfoText\",\n          \"actionCode\": \"WalkIn\",\n          \"description\": \"### Get vaccinated without an appointment\\n\\nYou can get an COVID-19 vaccination at some pharmacies without needing an appointment.\\n\\nYou do not need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/find-a-walk-in-covid-19-vaccination-site/\",\n          \"urlLabel\": \"Find a pharmacy where you can get a free COVID-19 vaccination\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HelpSupportInfo\",\n          \"description\": \"## If you think this is incorrect\\n\\nIf you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"covid_age\",\n          \"cohortText\": \"are aged 75 or over (including those who will be 75 by 31 January 2026)\",\n          \"cohortStatus\": \"Actionable\"\n        },\n        {\n          \"cohortCode\": \"covid_clinical_risk\",\n          \"cohortText\": \"are aged 16 or over and immunosuppressed\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"### Getting the vaccine\\n\\nYou can get a COVID-19 vaccination at your GP surgery.\\n\\nYour GP surgery may contact you about getting the COVID-19 vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLinkWithInfoText\",\n          \"actionCode\": \"BookNBSInfoText\",\n          \"description\": \"### Book an appointment online at a pharmacy\\n\\nYou can book an appointment online at a pharmacy that offers the COVID-19 vaccination. You need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/book-covid-19-vaccination/\",\n          \"urlLabel\": \"Continue to booking\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"119\",\n          \"description\": \"### Book over the phone\\n\\nYou can call [119](tel:119) free of charge to book over the phone if you cannot book online.\\nYou can speak to a translator if you need to.\"\n        },\n        {\n          \"actionType\": \"ActionLinkWithInfoText\",\n          \"actionCode\": \"WalkIn\",\n          \"description\": \"### Get vaccinated without an appointment\\n\\nYou can get an COVID-19 vaccination at some pharmacies without needing an appointment.\\n\\nYou do not need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/find-a-walk-in-covid-19-vaccination-site/\",\n          \"urlLabel\": \"Find a pharmacy where you can get a free COVID-19 vaccination\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HelpSupportInfo\",\n          \"description\": \"## If you think this is incorrect\\n\\nIf you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "10c7f9ba-a858-480c-89b3-4f7099619cf6",
+          "id": "9688f518-b6bc-4428-8de6-7f311b59b6ed",
           "name": "COVID - 5000000103 Actionable due to membership of care home residents Cohort including suggested national actions",
           "originalRequest": {
             "url": {
@@ -2637,14 +2637,14 @@
               "value": "application/json"
             }
           ],
-          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"covid_care_home_resident\",\n          \"cohortText\": \"are a resident of a care home for older adults\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"### Getting the vaccine\\n\\nYou can get a COVID-19 vaccination at your GP surgery.\\n\\nYour GP surgery may contact you about getting the COVID-19 vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLinkWithInfoText\",\n          \"actionCode\": \"BookNBSInfoText\",\n          \"description\": \"### Book an appointment online at a pharmacy\\n\\nYou can book an appointment online at a pharmacy that offers the COVID-19 vaccination. You need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/book-covid-19-vaccination/\",\n          \"urlLabel\": \"Continue to booking\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"119\",\n          \"description\": \"### Book over the phone\\n\\nYou can call [119](tel:119) free of charge to book over the phone if you cannot book online.\\n\\n You can speak to a translator if you need to.\"\n        },\n        {\n          \"actionType\": \"ActionLinkWithInfoText\",\n          \"actionCode\": \"WalkIn\",\n          \"description\": \"### Get vaccinated without an appointment\\n\\nYou can get an COVID-19 vaccination at some pharmacies without needing an appointment.\\n\\nYou do not need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/find-a-walk-in-covid-19-vaccination-site/\",\n          \"urlLabel\": \"Find a pharmacy where you can get a free COVID-19 vaccination\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HelpSupportInfo\",\n          \"description\": \"## If you think this is incorrect\\n\\nIf you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).\"\n        }\n      ]\n    }\n  ]\n}",
+          "body": "{\n  \"responseId\": \"1a233ba5-e1eb-4080-a086-2962f6fc3473\",\n  \"meta\": {\n    \"lastUpdated\": \"2025-02-12T16:11:22Z\"\n  },\n  \"processedSuggestions\": [\n    {\n      \"condition\": \"COVID\",\n      \"status\": \"Actionable\",\n      \"statusText\": \"You should have the COVID-19 vaccine\",\n      \"eligibilityCohorts\": [\n        {\n          \"cohortCode\": \"covid_care_home_resident\",\n          \"cohortText\": \"are a resident of a care home for older adults\",\n          \"cohortStatus\": \"Actionable\"\n        }\n      ],\n      \"suitabilityRules\": [],\n      \"actions\": [\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"BookLocal\",\n          \"description\": \"### Getting the vaccine\\n\\nYou can get a COVID-19 vaccination at your GP surgery.\\n\\nYour GP surgery may contact you about getting the COVID-19 vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination.\"\n        },\n        {\n          \"actionType\": \"ButtonWithAuthLinkWithInfoText\",\n          \"actionCode\": \"BookNBSInfoText\",\n          \"description\": \"### Book an appointment online at a pharmacy\\n\\nYou can book an appointment online at a pharmacy that offers the COVID-19 vaccination. You need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/book-covid-19-vaccination/\",\n          \"urlLabel\": \"Continue to booking\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"119\",\n          \"description\": \"### Book over the phone\\n\\nYou can call [119](tel:119) free of charge to book over the phone if you cannot book online.\\nYou can speak to a translator if you need to.\"\n        },\n        {\n          \"actionType\": \"ActionLinkWithInfoText\",\n          \"actionCode\": \"WalkIn\",\n          \"description\": \"### Get vaccinated without an appointment\\n\\nYou can get an COVID-19 vaccination at some pharmacies without needing an appointment.\\n\\nYou do not need to be registered with a GP to do this.\",\n          \"urlLink\": \"https://www.nhs.uk/nhs-services/vaccination-and-booking-services/find-a-walk-in-covid-19-vaccination-site/\",\n          \"urlLabel\": \"Find a pharmacy where you can get a free COVID-19 vaccination\"\n        },\n        {\n          \"actionType\": \"InfoText\",\n          \"actionCode\": \"HelpSupportInfo\",\n          \"description\": \"## If you think this is incorrect\\n\\nIf you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).\"\n        }\n      ]\n    }\n  ]\n}",
           "cookie": []
         },
         {
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "6b9fd170-d279-4ef8-8cda-c1cc0ac66279",
+          "id": "a0293e53-81b1-46fb-a6cf-d968bd454543",
           "name": "COVID - 5000000104 Actionable due to membership of an eligible cohort with future national booking",
           "originalRequest": {
             "url": {
@@ -2737,7 +2737,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "950f2bf2-7c10-4798-b355-6ca75b6e1efe",
+          "id": "15a8eade-e284-4d2e-92fe-25ef3d943355",
           "name": "COVID - 5000000105 Actionable due to membership of an eligible cohort with future local booking",
           "originalRequest": {
             "url": {
@@ -2830,7 +2830,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "ce167273-d9c4-4cf6-8753-1a72c9a4098e",
+          "id": "576cbf5e-77d4-4c28-89f6-b48980388f5b",
           "name": "COVID - 5000000106 Not Actionable as already vaccinated",
           "originalRequest": {
             "url": {
@@ -2923,7 +2923,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "202cf90a-60a4-4606-a5ea-4c0216be6070",
+          "id": "1ab7611d-2d7c-46d9-b49d-87da40320f71",
           "name": "COVID - 5000000107 Not Actionable due to no current campaign (type 1)",
           "originalRequest": {
             "url": {
@@ -3016,7 +3016,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "27aefdfc-d7b0-419a-8a0b-fe2f3a801836",
+          "id": "3325c08b-f87e-4472-9fec-6549069e5810",
           "name": "COVID - 5000000108 Not actionable due to no current campaign (type 2)",
           "originalRequest": {
             "url": {
@@ -3109,7 +3109,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "d6a579b2-b57a-49ea-8e72-5086d28609fe",
+          "id": "41062ada-02f8-4e38-a191-d2406d3a5b26",
           "name": "COVID - 5000000110 Not Actionable despite membership of an eligible cohort as too close to previous vaccination",
           "originalRequest": {
             "url": {
@@ -3202,7 +3202,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "a0dda863-5b41-49e8-85b9-a7d1df377a02",
+          "id": "0e097997-8b22-4d4a-862a-e570c5576b25",
           "name": "COVID - 5000000111 Not Actionable as vaccination will be given in other setting (e.g. care home)",
           "originalRequest": {
             "url": {
@@ -3295,7 +3295,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "6d8e363c-3788-4a23-8791-96ffae1f9625",
+          "id": "5a823930-13df-41a6-95ed-3f2334db42b6",
           "name": "COVID - 5000000114 Not Eligible",
           "originalRequest": {
             "url": {
@@ -3388,7 +3388,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "7b847440-373b-457c-813c-e6450cb0b04e",
+          "id": "4b3b0b34-54cb-43a6-ba9a-8f6883a9a650",
           "name": "Invalid input data.",
           "originalRequest": {
             "url": {
@@ -3481,7 +3481,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "95808657-873b-45fa-8f37-8a56f74155ad",
+          "id": "bd8e00f8-41d3-4c7d-9192-6c3b32b2c5f2",
           "name": "Person not found.",
           "originalRequest": {
             "url": {
@@ -3574,7 +3574,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "2f98d3ef-13e7-4e18-a5e9-d61a6386a0a2",
+          "id": "8fcd1d3e-6d64-44fc-b028-20909c55d6cc",
           "name": "Unrecognised input data. (Unprocessable Content)",
           "originalRequest": {
             "url": {
@@ -3667,7 +3667,7 @@
           "_": {
             "postman_previewlanguage": "json"
           },
-          "id": "167d9d70-59e2-4b5c-ad1c-362736064d66",
+          "id": "c19e4797-4ab0-45c2-b207-e91320230970",
           "name": "Internal server error.",
           "originalRequest": {
             "url": {
@@ -3761,7 +3761,7 @@
         {
           "listen": "test",
           "script": {
-            "id": "492d983d-17d3-4a43-b7ca-4b51ee18a741",
+            "id": "5297f79c-9d9e-43bf-8866-12ce3e52b44f",
             "type": "text/javascript",
             "exec": [
               "// Validate status 2xx \npm.test(\"[GET]::/patient-check/:id - Status code is 2xx\", function () {\n   pm.response.to.be.success;\n});\n",
@@ -3786,7 +3786,7 @@
     }
   ],
   "info": {
-    "_postman_id": "187635ff-788d-4c2d-bd97-f41567e0992b",
+    "_postman_id": "be7be990-3e65-4369-9616-f083fa605774",
     "name": "Patient Eligibility Signposting API",
     "version": {
       "raw": "1.0.25-alpha",

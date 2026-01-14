@@ -793,7 +793,7 @@ paths:
 
                               You can call [119](tel:119) free of charge to book over the phone if you cannot book online.
 
-                               You can speak to a translator if you need to.
+                              You can speak to a translator if you need to.
                           - actionType: ActionLinkWithInfoText
                             actionCode: WalkIn
                             description: >-
@@ -860,7 +860,7 @@ paths:
 
                               You can call [119](tel:119) free of charge to book over the phone if you cannot book online.
 
-                               You can speak to a translator if you need to.
+                              You can speak to a translator if you need to.
                           - actionType: ActionLinkWithInfoText
                             actionCode: WalkIn
                             description: >-
@@ -923,7 +923,7 @@ paths:
 
                               You can call [119](tel:119) free of charge to book over the phone if you cannot book online.
 
-                               You can speak to a translator if you need to.
+                              You can speak to a translator if you need to.
                           - actionType: ActionLinkWithInfoText
                             actionCode: WalkIn
                             description: >-
