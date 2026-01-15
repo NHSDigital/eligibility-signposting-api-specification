@@ -152,7 +152,8 @@ def get_prism_prompt_for_example(patient_examples: dict, request: Request) -> st
     Given the whole request, return the `Prefer:` header value if a specific
     example is desired. Otherwise, return `None`.
     """
-    for patient_id, example in patient_examples.items():
+    sorted_examples = sorted(patient_examples.items(), key=lambda x: len(x[0]), reverse=True)
+    for patient_id, example in sorted_examples:
         if patient_id in request.full_path:
             return example
     return None
