@@ -8,6 +8,7 @@ Dependabot
 Gitleaks
 Grype
 idempotence
+Makefile
 npm
 OAuth
 Octokit
@@ -15,6 +16,7 @@ onboarding
 Podman
 preprod
 Proxygen
+proxygen
 Python
 Redocly
 sed
