@@ -8,6 +8,8 @@ Dependabot
 Gitleaks
 Grype
 idempotence
+lxml
+Makefile
 npm
 OAuth
 Octokit
