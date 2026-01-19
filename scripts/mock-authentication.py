@@ -261,7 +261,7 @@ class NHSAPIAuth:
             raise
 
     def call_api(self, api_url: str, private_key_path: str, method: str = 'GET',
-                 headers: Optional[Dict] = None, **kwargs) -> requests.Response:
+                headers: Optional[Dict] = None, **kwargs) -> requests.Response:
         """
         Call an NHS API with authentication
 
@@ -300,25 +300,25 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Generate key pair and JWKS
-  %(prog)s generate-keys --api-key YOUR_API_KEY --env int
+    # Generate key pair and JWKS
+    %(prog)s generate-keys --api-key YOUR_API_KEY --env int
 
-  # Get access token
-  %(prog)s get-token --api-key YOUR_API_KEY --env int --private-key int-1.pem
+    # Get access token
+    %(prog)s get-token --api-key YOUR_API_KEY --env int --private-key int-1.pem
 
   # Call an API
   %(prog)s call-api --api-key YOUR_API_KEY --env sandbox --private-key int-1.pem \\
-      --url https://sandbox.api.service.nhs.uk/hello-world/hello/application
+        --url https://sandbox.api.service.nhs.uk/hello-world/hello/application
 
-  # Call an API with NHS number
-  %(prog)s call-api --api-key YOUR_API_KEY --env int --private-key int-1.pem \\
-      --url https://int.api.service.nhs.uk/eligibility-signposting-api/patient-check/123 \\
-      --nhs-number 123
+    # Call an API with NHS number
+    %(prog)s call-api --api-key YOUR_API_KEY --env int --private-key int-1.pem \\
+        --url https://int.api.service.nhs.uk/eligibility-signposting-api/patient-check/123 \\
+        --nhs-number 123
 
-  # Call an API with custom headers
-  %(prog)s call-api --api-key YOUR_API_KEY --env int --private-key int-1.pem \\
-      --url https://int.api.service.nhs.uk/some-api/endpoint \\
-      --header "X-Custom-Header: value" --header "Another-Header: value2"
+    # Call an API with custom headers
+    %(prog)s call-api --api-key YOUR_API_KEY --env int --private-key int-1.pem \\
+        --url https://int.api.service.nhs.uk/some-api/endpoint \\
+        --header "X-Custom-Header: value" --header "Another-Header: value2"
         """
     )
 
@@ -337,10 +337,10 @@ Examples:
     token_parser = subparsers.add_parser('get-token', help='Get access token')
     token_parser.add_argument('--api-key', required=True, help='Your API key')
     token_parser.add_argument('--env', choices=['dev', 'int', 'prod'], default='int',
-                              help='Environment (default: int)')
+                                help='Environment (default: int)')
     token_parser.add_argument('--kid', help='Key identifier (default: {env}-1)')
     token_parser.add_argument('--private-key', required=True,
-                              help='Path to private key PEM file')
+                                help='Path to private key PEM file')
 
     # Call API command
     api_parser = subparsers.add_parser('call-api', help='Call an API endpoint')
@@ -416,7 +416,7 @@ Examples:
                     print(f"Warning: Ignoring invalid header format: {header}")
 
         response = auth.call_api(args.url, args.private_key, args.method,
-                                 headers=additional_headers if additional_headers else None)
+                                headers=additional_headers if additional_headers else None)
 
         print("\n" + "="*70)
         print("RESPONSE:")
