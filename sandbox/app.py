@@ -63,6 +63,17 @@ PATIENT_EXAMPLES = {
     "patient-check/5000000022": "example_50000000022",
     "patient-check/5000000023": "example_50000000023",
     "patient-check/5000000024": "example_50000000024",
+    "patient-check/5000000101": "example_50000000101",
+    "patient-check/5000000102": "example_50000000102",
+    "patient-check/5000000103": "example_50000000103",
+    "patient-check/5000000104": "example_50000000104",
+    "patient-check/5000000105": "example_50000000105",
+    "patient-check/5000000106": "example_50000000106",
+    "patient-check/5000000107": "example_50000000107",
+    "patient-check/5000000108": "example_50000000108",
+    "patient-check/5000000110": "example_50000000110",
+    "patient-check/5000000111": "example_50000000111",
+    "patient-check/5000000114": "example_50000000114",
     # Incorrectly sized mock NHS Numbers (retained for backward compatabliity)
     "patient-check/50000000001": "example_50000000001",
     "patient-check/50000000002": "example_50000000002",
@@ -88,6 +99,17 @@ PATIENT_EXAMPLES = {
     "patient-check/50000000022": "example_50000000022",
     "patient-check/50000000023": "example_50000000023",
     "patient-check/50000000024": "example_50000000024",
+    "patient-check/50000000101": "example_50000000101",
+    "patient-check/50000000102": "example_50000000102",
+    "patient-check/50000000103": "example_50000000103",
+    "patient-check/50000000104": "example_50000000104",
+    "patient-check/50000000105": "example_50000000105",
+    "patient-check/50000000106": "example_50000000106",
+    "patient-check/50000000107": "example_50000000107",
+    "patient-check/50000000108": "example_50000000108",
+    "patient-check/50000000110": "example_50000000110",
+    "patient-check/50000000111": "example_50000000111",
+    "patient-check/50000000114": "example_50000000114",
     # Support error scenario invocation
     "patient-check/90000000400": "code400",
     "patient-check/90000000404": "code404",
@@ -141,7 +163,8 @@ def get_prism_prompt_for_example(patient_examples: dict, request: Request) -> st
     Given the whole request, return the `Prefer:` header value if a specific
     example is desired. Otherwise, return `None`.
     """
-    for patient_id, example in patient_examples.items():
+    sorted_examples = sorted(patient_examples.items(), key=lambda x: len(x[0]), reverse=True)
+    for patient_id, example in sorted_examples:
         if patient_id in request.full_path:
             return example
     return None
