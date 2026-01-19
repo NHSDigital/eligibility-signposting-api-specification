@@ -328,31 +328,34 @@ Examples:
     gen_parser = subparsers.add_parser('generate-keys', help='Generate RSA key pair and JWKS')
     gen_parser.add_argument('--api-key', required=True, help='Your API key')
     gen_parser.add_argument('--env', choices=['dev', 'int', 'prod'], default='int',
-                           help='Environment (default: int)')
+                            help='Environment (default: int)')
     gen_parser.add_argument('--kid', help='Key identifier (default: {env}-1)')
-    gen_parser.add_argument('--output-dir', default='.', help='Output directory (default: current)')
+    gen_parser.add_argument('--output-dir', default='.',
+                            help='Output directory (default: current)')
 
     # Get token command
     token_parser = subparsers.add_parser('get-token', help='Get access token')
     token_parser.add_argument('--api-key', required=True, help='Your API key')
     token_parser.add_argument('--env', choices=['dev', 'int', 'prod'], default='int',
-                             help='Environment (default: int)')
+                              help='Environment (default: int)')
     token_parser.add_argument('--kid', help='Key identifier (default: {env}-1)')
-    token_parser.add_argument('--private-key', required=True, help='Path to private key PEM file')
+    token_parser.add_argument('--private-key', required=True,
+                              help='Path to private key PEM file')
 
     # Call API command
     api_parser = subparsers.add_parser('call-api', help='Call an API endpoint')
     api_parser.add_argument('--api-key', required=True, help='Your API key')
     api_parser.add_argument('--env', choices=['dev', 'int', 'prod', 'sandbox'], default='int',
-                           help='Environment (default: int)')
+                            help='Environment (default: int)')
     api_parser.add_argument('--kid', help='Key identifier (default: {env}-1)')
-    api_parser.add_argument('--private-key', required=True, help='Path to private key PEM file')
+    api_parser.add_argument('--private-key', required=True,
+                            help='Path to private key PEM file')
     api_parser.add_argument('--url', required=True, help='API endpoint URL')
     api_parser.add_argument('--method', default='GET', help='HTTP method (default: GET)')
     api_parser.add_argument('--nhs-number', dest='nhs_number', metavar='NHS_NUMBER',
-                           help='NHS number to include in nhs-login-nhs-number header')
+                            help='NHS number to include in nhs-login-nhs-number header')
     api_parser.add_argument('--header', action='append', dest='headers',
-                           help='Additional headers in format "Name: Value" (can be used multiple times)')
+                            help='Additional headers in format "Name: Value" (can be used multiple times)')
 
     args = parser.parse_args()
 
@@ -413,7 +416,7 @@ Examples:
                     print(f"Warning: Ignoring invalid header format: {header}")
 
         response = auth.call_api(args.url, args.private_key, args.method,
-                                headers=additional_headers if additional_headers else None)
+                                 headers=additional_headers if additional_headers else None)
 
         print("\n" + "="*70)
         print("RESPONSE:")
