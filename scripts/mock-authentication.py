@@ -306,8 +306,8 @@ Examples:
     # Get access token
     %(prog)s get-token --api-key YOUR_API_KEY --env int --private-key int-1.pem
 
-  # Call an API
-  %(prog)s call-api --api-key YOUR_API_KEY --env sandbox --private-key int-1.pem \\
+    # Call an API
+    %(prog)s call-api --api-key YOUR_API_KEY --env sandbox --private-key int-1.pem \\
         --url https://sandbox.api.service.nhs.uk/hello-world/hello/application
 
     # Call an API with NHS number
