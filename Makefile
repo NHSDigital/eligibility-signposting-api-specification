@@ -120,7 +120,7 @@ ifeq ($(APIM_ENV), $(filter $(APIM_ENV), sandbox internal-dev test int ref prepr
 	@ $(MAKE) set-security APIM_ENV=$$APIM_ENV
 	@ $(MAKE) set-ratelimit APIM_ENV=$$APIM_ENV
 else
-	@ echo ERROR: $$APIM_ENV is not a valid environment. Please use one of [sandbox, internal-dev, int, ref, prod]
+	@ echo ERROR: $$APIM_ENV is not a valid environment. Please use one of [sandbox, internal-dev, int, ref, preprod, prod]
 	@ exit 1;
 endif
 
