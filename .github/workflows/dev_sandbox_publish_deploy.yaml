@@ -97,6 +97,6 @@ jobs:
           payload: |
             status: "${{ job.status }}"
             link: "https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
-            author: "${{ github.actor }}"
-            title: "Pushed to main"
+            triggered_by: "${{ github.actor }}"
+            environment: "Specification updated in Dev & Sandbox"
             version: "${{ needs.metadata.outputs.version }}"
