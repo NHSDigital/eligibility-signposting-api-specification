@@ -6,6 +6,23 @@ on:
       - main
 
 jobs:
+  metadata:
+    name: "Set CI/CD metadata"
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    outputs:
+      version: ${{ steps.variables.outputs.version }}
+    steps:
+      - name: "Set CI/CD variables"
+        id: variables
+        run: |
+          echo "version=spec-$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
+
+      - name: "List variables"
+        run: |
+          echo "Deploying to: DEV & Sandbox"
+          echo "VERSION=${{ steps.variables.outputs.version }}"
+
   dev:
     runs-on: ubuntu-latest
     steps:
@@ -22,6 +39,7 @@ jobs:
       - run: make deploy-spec APIM_ENV=dev
 
   sandbox:
+    needs: dev
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -36,3 +54,49 @@ jobs:
       - run: make generate-sandbox-spec
       - run: make deploy-sandbox-spec
       - run: make build-and-publish-sandbox-image
+
+  publish_postman:
+    needs: sandbox
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install dependencies
+        run: make install
+      - name: Generate Postman Collection
+        run: make convert-postman
+      - name: Publish Postman Collection
+        env:
+          POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
+        run: |
+          curl --fail -X PUT \
+            https://api.getpostman.com/collections/{{YOUR_COLLECTION_UID}} \
+            -H "X-Api-Key: $POSTMAN_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d @specification/postman/collection.json
+
+  publish:
+    needs: publish_postman
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Tag the dev & sandbox deployment"
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git tag ${{ needs.metadata.outputs.version }}
+          git push origin ${{ needs.metadata.outputs.version }}
+
+  notify_slack:
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Notify Slack on PR merge"
+        uses: slackapi/slack-github-action@v2.1.1
+        with:
+          webhook: ${{ secrets.SLACK_WORKFLOW_WEBHOOK_URL }}
+          webhook-type: webhook-trigger
+          payload: |
+            status: "${{ job.status }}"
+            link: "https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
+            author: "${{ github.actor }}"
+            title: "Pushed to main"
+            version: "${{ needs.metadata.outputs.version }}"
