@@ -1,0 +1,39 @@
+name: Deploy to Preprod
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Tag to promote (e.g. spec-{timestamp})"
+        default: latest
+        required: true
+
+jobs:
+  preprod:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set tag to deploy
+        id: set_tag
+        run: |
+          if [ "${{ github.event.inputs.ref }}" = "latest" ]; then
+            TAG=$(git tag --list 'spec-*' --sort=-v:refname | head -n 1)
+            echo "Using latest tag: $TAG"
+            echo "tag=$TAG" >> $GITHUB_OUTPUT
+          else
+            echo "tag=${{ github.event.inputs.ref }}" >> $GITHUB_OUTPUT
+          fi
+      - name: Checkout tag
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ steps.set_tag.outputs.tag }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - run: make install
+      - run: make construct-spec APIM_ENV=preprod
+      - run: make publish-spec APIM_ENV=preprod
+      - run: make deploy-spec APIM_ENV=preprod
