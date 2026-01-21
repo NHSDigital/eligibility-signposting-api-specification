@@ -72,7 +72,7 @@ jobs:
 #          proxygen instance deploy internal-dev eligibility-signposting-api build/specification/internal-dev/eligibility-signposting-api.yaml --no-confirm
 
   sandbox:
-#    needs: dev
+    needs: metadata
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -122,9 +122,25 @@ jobs:
     needs: sandbox
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - name: Install dependencies
-        run: make install
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Install Python and Node dependencies
+        run: |
+          make install
       - name: Generate Postman Collection
         run: make convert-postman
       - name: Publish Postman Collection
