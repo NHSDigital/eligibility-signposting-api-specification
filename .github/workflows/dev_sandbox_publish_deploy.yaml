@@ -1,0 +1,38 @@
+name: Deploy to Dev and Sandbox
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dev:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - run: make install
+      - run: make construct-spec APIM_ENV=dev
+      - run: make publish-spec APIM_ENV=dev
+      - run: make deploy-spec APIM_ENV=dev
+
+  sandbox:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - run: make install
+      - run: make construct-spec APIM_ENV=sandbox
+      - run: make generate-sandbox-spec
+      - run: make deploy-sandbox-spec
+      - run: make build-and-publish-sandbox-image

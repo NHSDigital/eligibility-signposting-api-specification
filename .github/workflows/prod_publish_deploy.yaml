@@ -1,0 +1,20 @@
+name: Deploy to Prod
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - run: make install
+      - run: make construct-spec APIM_ENV=prod
+      - run: make publish-spec APIM_ENV=prod
+      - run: make deploy-spec APIM_ENV=prod
