@@ -148,7 +148,7 @@ jobs:
           POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
         run: |
           curl --fail -X PUT \
-            https://api.getpostman.com/collections/{{YOUR_COLLECTION_UID}} \
+            https://api.getpostman.com/collections/44595835-573a42db-b7a5-4b69-9f62-696b6df3f12f \
             -H "X-Api-Key: $POSTMAN_API_KEY" \
             -H "Content-Type: application/json" \
             -d @specification/postman/collection.json
