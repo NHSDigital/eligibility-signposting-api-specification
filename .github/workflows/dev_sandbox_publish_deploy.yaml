@@ -24,36 +24,98 @@ jobs:
           echo "VERSION=${{ steps.variables.outputs.version }}"
 
   dev:
+    needs: metadata
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      - uses: actions/setup-node@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
-      - run: make install
-      - run: make construct-spec APIM_ENV=dev
-      - run: make publish-spec APIM_ENV=dev
-      - run: make deploy-spec APIM_ENV=dev
+
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Install Python and Node dependencies
+        run: |
+          make install
+
+      - name: Install proxygen-cli
+        run: |
+          pip install proxygen-cli
+
+      - name: Set up Proxygen credentials
+        env:
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.proxygen
+          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
+          make setup-proxygen-credentials
+      - name: Generate specification
+        run: |
+          make construct-spec APIM_ENV=dev
+
+      - name: Publish dev spec to Proxygen
+        run: |
+            proxygen spec publish build/specification/dev/eligibility-signposting-api.yaml --no-confirm
+
+      - name: Deploy dev spec to Proxygen
+        run: |
+          proxygen instance deploy dev eligibility-signposting-api build/specification/dev/eligibility-signposting-api.yaml --no-confirm
 
   sandbox:
     needs: dev
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      - uses: actions/setup-node@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
-      - run: make install
-      - run: make construct-spec APIM_ENV=sandbox
-      - run: make generate-sandbox-spec
-      - run: make deploy-sandbox-spec
-      - run: make build-and-publish-sandbox-image
+
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Install Python and Node dependencies
+        run: |
+          make install
+
+      - name: Install proxygen-cli
+        run: |
+          pip install proxygen-cli
+
+      - name: Set up Proxygen credentials
+        env:
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.proxygen
+          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
+          make setup-proxygen-credentials
+      - name: Generate specification
+        run: |
+          make construct-spec APIM_ENV=sandbox
+
+      - name: Publish sandbox spec to Proxygen
+        run: |
+          proxygen spec publish build/specification/sandbox/eligibility-signposting-api.yaml --no-confirm
+
+      - name: Deploy sandbox spec to Proxygen
+        run: |
+          proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml --no-confirm
 
   publish_postman:
     needs: sandbox
