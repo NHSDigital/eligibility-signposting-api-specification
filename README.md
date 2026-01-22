@@ -63,7 +63,7 @@ There is a minimalist sandbox environment in `sandbox` with an accompanying [REA
 ## Specification
 
 The OpenAPI specification is stored in `specification`. In that folder, there is an accompanying [README](specification/README.md) with instructions on how to produce an environment-specific specification and publish
-it using Proxygen CLI.
+it using proxygen CLI.
 
 ## Deployment
 
