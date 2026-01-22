@@ -154,8 +154,8 @@ jobs:
             -H "Content-Type: application/json" \
             -d @wrapped_collection.json
 
-  publish:
-    needs: publish_postman
+  tag_deployment:
+    needs: [metadata, publish_postman]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -168,7 +168,7 @@ jobs:
           git push origin ${{ needs.metadata.outputs.version }}
 
   notify_slack:
-    needs: publish
+    needs: tag_deployment
     runs-on: ubuntu-latest
     steps:
       - name: "Notify Slack on PR merge"
