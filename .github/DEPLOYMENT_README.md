@@ -1,17 +1,17 @@
 # GitHub Workflows for eligibility-signposting-api-specification
 
-This directory contains GitHub Actions workflows that automate CI/CD processes for the eligibility-signposting-api-specification project. These workflows manage deployment, tagging, and notifications for different environments (Dev, Sandbox, Preprod, Prod) and integrate with external tools like Proxygen and Postman.
+This directory contains GitHub Actions workflows that automate CI/CD processes for the eligibility-signposting-api-specification project. These workflows manage deployment, tagging, and notifications for different environments (dev, sandbox, Preprod, Prod) and integrate with external tools like proxygen and Postman.
 
 ## Workflows Overview
 
 ### 1. dev_sandbox_publish_deploy.yaml
 
 - **Triggers:** On push to `main` branch.
-- **Environments:** Dev (APIM: internal dev), Sandbox.
+- **Environments:** dev, sandbox.
 - **Steps:**
   - Sets a version tag based on the current timestamp.
   - Installs dependencies (Python, Node.js, Poetry, proxygen-cli).
-  - Generates and publishes OpenAPI specs to Proxygen for Dev and Sandbox.
+  - Generates and publishes OpenAPI specs to proxygen for dev and sandbox.
   - Publishes the Postman collection to Postman.
   - Tags the deployment in Git (Example tag: spec-20260122155331).
   - Notifies a Slack channel on completion.
@@ -24,8 +24,8 @@ This directory contains GitHub Actions workflows that automate CI/CD processes f
 - **Steps:**
   - Checks out the specified tag.
   - Installs dependencies.
-  - Generates and publishes the OpenAPI spec to Proxygen for Preprod.
-  - Deploys the spec to the Preprod Proxygen instance.
+  - Generates and publishes the OpenAPI spec to proxygen for Preprod.
+  - Deploys the spec to the Preprod proxygen instance.
 
 ### 3. prod_publish_deploy.yaml
 
@@ -35,17 +35,17 @@ This directory contains GitHub Actions workflows that automate CI/CD processes f
 - **Steps:**
   - Checks out the specified tag.
   - Installs dependencies.
-  - Generates and publishes the OpenAPI spec to Proxygen for Prod.
-  - Deploys the spec to the Prod Proxygen instance.
+  - Generates and publishes the OpenAPI spec to proxygen for Prod.
+  - Deploys the spec to the Prod proxygen instance.
   - Creates a GitHub Release for the deployed tag.
 
 ## How to Use
 
-### Dev & Sandbox Deployment
+### dev & sandbox Deployment
 
 - Push changes to the `main` branch.
 - The workflow will automatically:
-  - Deploy to Dev and Sandbox.
+  - Deploy to dev and sandbox.
   - Publish the Postman collection.
   - Tag the deployment.
   - Notify Slack.
