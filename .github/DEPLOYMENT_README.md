@@ -1,6 +1,6 @@
 # GitHub Workflows for eligibility-signposting-api-specification
 
-This directory contains GitHub Actions workflows that automate CI/CD processes for the eligibility-signposting-api-specification project. These workflows manage deployment, tagging, and notifications for different environments (dev, sandbox, Preprod, Prod) and integrate with external tools like proxygen and Postman.
+This directory contains GitHub Actions workflows that automate CI/CD processes for the eligibility-signposting-api-specification project. These workflows manage deployment, tagging, and notifications for different environments (dev, sandbox, preprod, prod) and integrate with external tools like proxygen and Postman.
 
 ## Workflows Overview
 
@@ -20,12 +20,12 @@ This directory contains GitHub Actions workflows that automate CI/CD processes f
 
 - **Triggers:** Manually via GitHub UI (`workflow_dispatch`).
 - **Inputs:** Tag to promote (defaults to latest).
-- **Environment:** Preprod.
+- **Environment:** preprod.
 - **Steps:**
   - Checks out the specified tag.
   - Installs dependencies.
-  - Generates and publishes the OpenAPI spec to proxygen for Preprod.
-  - Deploys the spec to the Preprod proxygen instance.
+  - Generates and publishes the OpenAPI spec to proxygen for preprod.
+  - Deploys the spec to the preprod proxygen instance.
 
 ### 3. prod_publish_deploy.yaml
 
@@ -41,7 +41,7 @@ This directory contains GitHub Actions workflows that automate CI/CD processes f
 
 ## How to Use
 
-### dev & sandbox Deployment
+### dev & sandbox deployment
 
 - Push changes to the `main` branch.
 - The workflow will automatically:
@@ -50,15 +50,15 @@ This directory contains GitHub Actions workflows that automate CI/CD processes f
   - Tag the deployment.
   - Notify Slack.
 
-### Preprod Deployment
+### preprod deployment
 
 - Go to the **Actions** tab in GitHub.
-- Select **Deploy to Preprod** workflow.
+- Select **Deploy to preprod** workflow.
 - Click **Run workflow**.
 - Enter the tag to promote (or use the default `latest`).
-- The workflow will deploy the specified tag to Preprod.
+- The workflow will deploy the specified tag to preprod.
 
-### Prod Deployment
+### prod deployment
 
 - Go to the **Actions** tab in GitHub.
 - Select **Deploy to Prod** workflow.

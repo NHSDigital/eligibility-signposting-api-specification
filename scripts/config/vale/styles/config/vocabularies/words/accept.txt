@@ -25,7 +25,5 @@ Terraform
 toolchain
 Trufflehog
 uat
-Dev
-Preprod
 proxygen
 APIM
