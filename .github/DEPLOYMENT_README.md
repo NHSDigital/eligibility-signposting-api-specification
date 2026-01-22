@@ -7,7 +7,7 @@ This directory contains GitHub Actions workflows that automate CI/CD processes f
 ### 1. dev_sandbox_publish_deploy.yaml
 
 - **Triggers:** On push to `main` branch.
-- **Environments:** Dev (internal-dev), Sandbox.
+- **Environments:** Dev (APIM: internal dev), Sandbox.
 - **Steps:**
   - Sets a version tag based on the current timestamp.
   - Installs dependencies (Python, Node.js, Poetry, proxygen-cli).
