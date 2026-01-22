@@ -1,4 +1,4 @@
-name: Publish specification
+name: (Deprecated) Publish specification
 
 on:
   workflow_dispatch:
