@@ -24,55 +24,57 @@ jobs:
           echo "Deploying to: DEV & Sandbox"
           echo "VERSION=${{ steps.variables.outputs.version }}"
 
-#  dev:
-#    needs: metadata
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout repository
-#        uses: actions/checkout@v6
-#
-#      - name: Set up Python 3.11
-#        uses: actions/setup-python@v6
-#        with:
-#          python-version: '3.11'
-#
-#      - name: Set up Node.js
-#        uses: actions/setup-node@v6
-#        with:
-#          node-version: '20'
-#
-#      - name: Install Poetry
-#        run: curl -sSL https://install.python-poetry.org | python3 -
-#
-#      - name: Install Python and Node dependencies
-#        run: |
-#          make install
-#
-#      - name: Install proxygen-cli
-#        run: |
-#          pip install proxygen-cli
-#
-#      - name: Set up Proxygen credentials
-#        env:
-#          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
-#        run: |
-#          mkdir -p ~/.proxygen
-#          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
-#          make setup-proxygen-credentials
-#      - name: Generate specification
-#        run: |
-#          make construct-spec APIM_ENV=internal-dev
-#
-#      - name: Publish internal-dev spec to Proxygen
-#        run: |
-#          proxygen spec publish build/specification/internal-dev/eligibility-signposting-api.yaml --no-confirm
-#
-#      - name: Deploy internal-dev spec to Proxygen
-#        run: |
-#          proxygen instance deploy internal-dev eligibility-signposting-api build/specification/internal-dev/eligibility-signposting-api.yaml --no-confirm
+  internal-dev:
+    name: "Publish spec & deploy to dev"
+    needs: metadata
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Install Python and Node dependencies
+        run: |
+          make install
+
+      - name: Install proxygen-cli
+        run: |
+          pip install proxygen-cli
+
+      - name: Set up Proxygen credentials
+        env:
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.proxygen
+          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
+          make setup-proxygen-credentials
+      - name: Generate specification
+        run: |
+          make construct-spec APIM_ENV=internal-dev
+
+      - name: Publish internal-dev spec to Proxygen
+        run: |
+          proxygen spec publish build/specification/internal-dev/eligibility-signposting-api.yaml --no-confirm
+
+      - name: Deploy internal-dev spec to Proxygen
+        run: |
+          proxygen instance deploy internal-dev eligibility-signposting-api build/specification/internal-dev/eligibility-signposting-api.yaml --no-confirm
 
   sandbox:
-    needs: metadata
+    name: "Publish spec & deploy to sandbox"
+    needs: internal-dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -119,6 +121,7 @@ jobs:
           proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml --no-confirm
 
   publish_postman:
+    name: "Publish to Postman"
     needs: sandbox
     runs-on: ubuntu-latest
     steps:
@@ -155,6 +158,7 @@ jobs:
             -d @wrapped_collection.json
 
   tag_deployment:
+    name: "Tag Dev & Sandbox deployment"
     needs: [metadata, publish_postman]
     runs-on: ubuntu-latest
     steps:
@@ -168,6 +172,7 @@ jobs:
           git push origin ${{ needs.metadata.outputs.version }}
 
   notify_slack:
+    name: "Notify Slack"
     needs: tag_deployment
     runs-on: ubuntu-latest
     steps:
