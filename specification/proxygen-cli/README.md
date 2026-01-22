@@ -7,7 +7,7 @@ to deploy our OAS specification to different environments, deploy a sandbox back
 
 ### Install Proxygen-CLI
 
-The `proxygen-cli` package currently requires Python v3.9 or greater, but not v3.13.
+The `proxygen-cli` package currently requires Python v3.9 or greater. Note: While `proxygen-cli` v2.x technically supports Python 3.13, its dependency constraints still require lxml <5.0, which is incompatible with Python 3.13. For Python 3.13 users, install `proxygen-cli` in a separate virtual environment using Python 3.11 or 3.12 until this is resolved upstream.
 
 ```bash
 pyenv install 3.11.1

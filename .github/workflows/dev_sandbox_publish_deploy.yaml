@@ -1,0 +1,164 @@
+name: Deploy to Dev and Sandbox
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  metadata:
+    name: "Set CI/CD metadata"
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    outputs:
+      version: ${{ steps.variables.outputs.version }}
+    steps:
+      - name: "Set CI/CD variables"
+        id: variables
+        run: |
+          echo "version=spec-$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
+
+      - name: "List variables"
+        run: |
+          echo "Deploying to: DEV & Sandbox"
+          echo "VERSION=${{ steps.variables.outputs.version }}"
+
+  dev:
+    needs: metadata
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Install Python and Node dependencies
+        run: |
+          make install
+
+      - name: Install proxygen-cli
+        run: |
+          pip install proxygen-cli
+
+      - name: Set up Proxygen credentials
+        env:
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.proxygen
+          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
+          make setup-proxygen-credentials
+      - name: Generate specification
+        run: |
+          make construct-spec APIM_ENV=internal-dev
+
+      - name: Publish internal-dev spec to Proxygen
+        run: |
+          proxygen spec publish build/specification/internal-dev/eligibility-signposting-api.yaml --no-confirm
+
+      - name: Deploy internal-dev spec to Proxygen
+        run: |
+          proxygen instance deploy internal-dev eligibility-signposting-api build/specification/internal-dev/eligibility-signposting-api.yaml --no-confirm
+
+  sandbox:
+    needs: dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Install Python and Node dependencies
+        run: |
+          make install
+
+      - name: Install proxygen-cli
+        run: |
+          pip install proxygen-cli
+
+      - name: Set up Proxygen credentials
+        env:
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.proxygen
+          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
+          make setup-proxygen-credentials
+      - name: Generate specification
+        run: |
+          make construct-spec APIM_ENV=sandbox
+
+      - name: Publish sandbox spec to Proxygen
+        run: |
+          proxygen spec publish build/specification/sandbox/eligibility-signposting-api.yaml --no-confirm
+
+      - name: Deploy sandbox spec to Proxygen
+        run: |
+          proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml --no-confirm
+
+  publish_postman:
+    needs: sandbox
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install dependencies
+        run: make install
+      - name: Generate Postman Collection
+        run: make convert-postman
+      - name: Publish Postman Collection
+        env:
+          POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
+        run: |
+          curl --fail -X PUT \
+            https://api.getpostman.com/collections/{{YOUR_COLLECTION_UID}} \
+            -H "X-Api-Key: $POSTMAN_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d @specification/postman/collection.json
+
+  publish:
+    needs: publish_postman
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Tag the dev & sandbox deployment"
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git tag ${{ needs.metadata.outputs.version }}
+          git push origin ${{ needs.metadata.outputs.version }}
+
+  notify_slack:
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Notify Slack on PR merge"
+        uses: slackapi/slack-github-action@v2.1.1
+        with:
+          webhook: ${{ secrets.SLACK_WORKFLOW_WEBHOOK_URL }}
+          webhook-type: webhook-trigger
+          payload: |
+            status: "${{ job.status }}"
+            link: "https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
+            triggered_by: "${{ github.actor }}"
+            environment: "Specification updated in Dev & Sandbox"
+            version: "${{ needs.metadata.outputs.version }}"

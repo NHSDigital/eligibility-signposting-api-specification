@@ -1,0 +1,42 @@
+name: Deploy to Prod
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Tag to promote (e.g. spec-{timestamp})"
+        required: true
+
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout tag
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.ref }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - run: make install
+      - run: make construct-spec APIM_ENV=prod
+      - run: make publish-spec APIM_ENV=prod
+      - run: make deploy-spec APIM_ENV=prod
+
+  create_release:
+    needs: prod
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ inputs.ref }}
+          release_name: Release ${{ inputs.ref }}
+          draft: false
+          prerelease: false

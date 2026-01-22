@@ -28,7 +28,7 @@ This will stop the sandbox environment.
 There are a number of examples of responses which can be returned by passing specific NHS Numbers in the patient query parameter:
 
 ```bash
- curl -X GET "http://0.0.0.0:9000/patient-check/<NHS_NUMBER>
+ curl -X GET "http://0.0.0.0:9000/patient-check/50000000101" -H "apikey:1"
 ```
 
 or for sandbox:
