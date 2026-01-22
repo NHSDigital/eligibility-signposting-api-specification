@@ -1,5 +1,5 @@
 type: external
-url: "preprod.eligibility-signposting-api.nhs.uk"
+url: "https://preprod.eligibility-signposting-api.nhs.uk"
 healthcheck: /patient-check/_status
 security:
   type: mtls

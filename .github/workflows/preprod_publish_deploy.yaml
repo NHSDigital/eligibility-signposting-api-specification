@@ -12,7 +12,6 @@ jobs:
   preprod:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
       - name: Set tag to deploy
         id: set_tag
         run: |
@@ -27,13 +26,35 @@ jobs:
         uses: actions/checkout@v6
         with:
           ref: ${{ steps.set_tag.outputs.tag }}
-      - uses: actions/setup-python@v6
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      - uses: actions/setup-node@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
-      - run: make install
-      - run: make construct-spec APIM_ENV=preprod
-      - run: make publish-spec APIM_ENV=preprod
-      - run: make deploy-spec APIM_ENV=preprod
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+      - name: Install Python and Node dependencies
+        run: |
+          make install
+      - name: Install proxygen-cli
+        run: |
+          pip install proxygen-cli
+      - name: Set up Proxygen credentials
+        env:
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.proxygen
+          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
+          make setup-proxygen-credentials
+      - name: Generate specification
+        run: |
+          make construct-spec APIM_ENV=preprod
+      - name: Publish preprod spec to Proxygen
+        run: |
+          proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat --no-confirm
+      - name: Deploy preprod spec to Proxygen
+        run: |
+          proxygen instance deploy preprod eligibility-signposting-api build/specification/preprod/eligibility-signposting-api.yaml --no-confirm

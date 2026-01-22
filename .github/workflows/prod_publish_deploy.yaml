@@ -11,21 +11,52 @@ jobs:
   prod:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - name: Set tag to deploy
+        id: set_tag
+        run: |
+          if [ "${{ github.event.inputs.ref }}" = "latest" ]; then
+            TAG=$(git tag --list 'spec-*' --sort=-v:refname | head -n 1)
+            echo "Using latest tag: $TAG"
+            echo "tag=$TAG" >> $GITHUB_OUTPUT
+          else
+            echo "tag=${{ github.event.inputs.ref }}" >> $GITHUB_OUTPUT
+          fi
       - name: Checkout tag
         uses: actions/checkout@v6
         with:
-          ref: ${{ inputs.ref }}
-      - uses: actions/setup-python@v6
+          ref: ${{ steps.set_tag.outputs.tag }}
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      - uses: actions/setup-node@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
-      - run: make install
-      - run: make construct-spec APIM_ENV=prod
-      - run: make publish-spec APIM_ENV=prod
-      - run: make deploy-spec APIM_ENV=prod
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+      - name: Install Python and Node dependencies
+        run: |
+          make install
+      - name: Install proxygen-cli
+        run: |
+          pip install proxygen-cli
+      - name: Set up Proxygen credentials
+        env:
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.proxygen
+          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
+          make setup-proxygen-credentials
+      - name: Generate specification
+        run: |
+          make construct-spec APIM_ENV=prod
+      - name: Publish prod spec to Proxygen
+        run: |
+          proxygen spec publish build/specification/prod/eligibility-signposting-api.yaml --no-confirm
+      - name: Deploy prod spec to Proxygen
+        run: |
+          proxygen instance deploy prod eligibility-signposting-api build/specification/prod/eligibility-signposting-api.yaml --no-confirm
 
   create_release:
     needs: prod
@@ -38,5 +69,7 @@ jobs:
         with:
           tag_name: ${{ inputs.ref }}
           release_name: Release ${{ inputs.ref }}
+          body: |
+            Auto-release created during production deployment.
           draft: false
           prerelease: false
