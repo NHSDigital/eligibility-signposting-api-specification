@@ -24,7 +24,7 @@ jobs:
           echo "Deploying to: DEV & Sandbox"
           echo "VERSION=${{ steps.variables.outputs.version }}"
 
-  internal-dev:
+  dev:
     name: "Publish spec & deploy to dev"
     needs: metadata
     runs-on: ubuntu-latest
@@ -62,19 +62,19 @@ jobs:
           make setup-proxygen-credentials
       - name: Generate specification
         run: |
-          make construct-spec APIM_ENV=internal-dev
+          make construct-spec APIM_ENV=dev
 
-      - name: Publish internal-dev spec to Proxygen
+      - name: Publish dev spec to Proxygen
         run: |
-          proxygen spec publish build/specification/internal-dev/eligibility-signposting-api.yaml --no-confirm
+          proxygen spec publish build/specification/dev/eligibility-signposting-api.yaml --no-confirm
 
-      - name: Deploy internal-dev spec to Proxygen
+      - name: Deploy dev spec to Proxygen
         run: |
-          proxygen instance deploy internal-dev eligibility-signposting-api build/specification/internal-dev/eligibility-signposting-api.yaml --no-confirm
+          proxygen instance deploy dev eligibility-signposting-api build/specification/dev/eligibility-signposting-api.yaml --no-confirm
 
   sandbox:
     name: "Publish spec & deploy to sandbox"
-    needs: internal-dev
+    needs: dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
