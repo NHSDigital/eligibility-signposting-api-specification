@@ -158,6 +158,8 @@ jobs:
     needs: publish_postman
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
       - name: "Tag the dev & sandbox deployment"
         run: |
           git config user.name "github-actions"
