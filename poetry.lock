@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.20"
+version = "1.44.23"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.20-py3-none-any.whl", hash = "sha256:5eabf33997ee6c78216211b6176e5d0c990e306c22a119190006baa31cf6f2c9"},
-    {file = "awscli-1.44.20.tar.gz", hash = "sha256:4bdb0729bc3d1c6878a11989c3c9c37b6f23a64d8784fc2f62f04f986910bc95"},
+    {file = "awscli-1.44.23-py3-none-any.whl", hash = "sha256:a0ea001bbf2e978a4081a9915bb18080642583ad889b5007df2275c5022a04a0"},
+    {file = "awscli-1.44.23.tar.gz", hash = "sha256:89bf1f8ba00b1d7ecacf25b976ee84daac763bc0685e5bee1828dd08f56e22c9"},
 ]
 
 [package.dependencies]
-botocore = "1.42.30"
+botocore = "1.42.33"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.30"
+version = "1.42.33"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.30-py3-none-any.whl", hash = "sha256:97070a438cac92430bb7b65f8ebd7075224f4a289719da4ee293d22d1e98db02"},
-    {file = "botocore-1.42.30.tar.gz", hash = "sha256:9bf1662b8273d5cc3828a49f71ca85abf4e021011c1f0a71f41a2ea5769a5116"},
+    {file = "botocore-1.42.33-py3-none-any.whl", hash = "sha256:156a1ead55c38709730c543eb8085c36098b7baf272fedc67cc4a543ae4b4cf6"},
+    {file = "botocore-1.42.33.tar.gz", hash = "sha256:ecf48db73605a592b6c7f8f29e517d9eb6cf0c7e004a1fdbd9c192afc7b42b03"},
 ]
 
 [package.dependencies]
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "d0fa55cc40312c0d22413b89703a087e5b06c6ea3089fc804dcb4cad3057fd29"
+content-hash = "ab2ece343546548ce4d98646da8b471d3ea02b7b07d1cb5650bea7097430d2b2"
