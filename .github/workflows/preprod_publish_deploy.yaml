@@ -62,7 +62,7 @@ jobs:
           proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat --no-confirm
       - name: Get list of environments
         run: |
-          ENVS=$(proxygen environment list --format json | jq -r '.[].name')
+          ENVS=$(proxygen instance list --format json | jq -r '.[].name')
           echo "envs=$ENVS" >> $GITHUB_OUTPUT
       - name: Deploy preprod spec to Proxygen
         run: |
