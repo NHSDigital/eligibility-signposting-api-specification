@@ -58,18 +58,16 @@ retrieve-proxygen-key: # Obtain the 'machine user' credentials from AWS SSM (Dev
 	aws ssm get-parameter --name /proxygen/private_key_temp --with-decryption | jq ".Parameter.Value" --raw-output \
 	> ~/.proxygen/eligibility-signposting-api.pem
 
-# setup-proxygen-credentials: # Copy Proxygen templated credentials to where it expected them
-# 	cd specification && cp -r .proxygen ~
-#
-# setup-proxygen-credentials-ptl: # Copy Proxygen templated credentials to where it expected them
-# 	cd specification && cp -r .proxygen/credentials-ptl.yaml ~/.proxygen/credentials.yaml && \
-# 	cp .proxygen/settings-ptl.yaml ~/.proxygen/settings.yaml
-# 	proxygen credentials list
-#
-# setup-proxygen-credentials-prod: # Copy Proxygen templated credentials to where it expected them
-# 	cd specification && cp -r .proxygen/credentials-prod.yaml ~/.proxygen/credentials.yaml && \
-# 	cp .proxygen/settings-ptl.yaml ~/.proxygen/settings.yaml
-# 	proxygen credentials list
+# retrieve-proxygen-key: # Obtain the 'machine user' credentials from AWS SSM (Development environment)
+# 	mkdir -p ~/.proxygen && \
+# 	aws ssm get-parameter --name /proxygen/private_key_temp_$(ENV) --with-decryption | jq ".Parameter.Value" --raw-output \
+# 	> ~/.proxygen/eligibility-signposting-api-$(ENV).pem
+
+retrieve-proxygen-key-ptl:
+	$(MAKE) retrieve-proxygen-key ENV=ptl
+
+retrieve-proxygen-key-prod:
+	$(MAKE) retrieve-proxygen-key ENV=prod
 
 setup-proxygen-credentials:
 	cd specification && \
@@ -83,27 +81,27 @@ setup-proxygen-credentials-prod:
 	$(MAKE) setup-proxygen-credentials ENV=prod
 
 get-spec: # Get the most recent specification live in proxygen
-	$(MAKE) setup-proxygen-credentials
+	$(MAKE) setup-proxygen-credentials-prod
 	proxygen spec get
 
 get-spec-uat: # Get the most recent specification live in proxygen
-	$(MAKE) setup-proxygen-credentials
+	$(MAKE) setup-proxygen-credentials-ptl
 	proxygen spec get --uat
 
 publish-spec: # Publish the specification to proxygen
-	$(MAKE) setup-proxygen-credentials
+	$(MAKE) setup-proxygen-credentials-prod
 	proxygen spec publish build/specification/prod/eligibility-signposting-api.yaml
 
 publish-spec-uat: # Publish the specification to proxygen
-	$(MAKE) setup-proxygen-credentials
+	$(MAKE) setup-proxygen-credentials-ptl
 	proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat
 
 delete-spec: # Delete the specification from proxygen
-	$(MAKE) setup-proxygen-credentials
+	$(MAKE) setup-proxygen-credentials-prod
 	proxygen spec delete
 
 delete-spec-uat: # Delete the specification from proxygen
-	$(MAKE) setup-proxygen-credentials
+	$(MAKE) setup-proxygen-credentials-ptl
 	proxygen spec delete --uat
 
 # Specification
