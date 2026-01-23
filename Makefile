@@ -58,8 +58,29 @@ retrieve-proxygen-key: # Obtain the 'machine user' credentials from AWS SSM (Dev
 	aws ssm get-parameter --name /proxygen/private_key_temp --with-decryption | jq ".Parameter.Value" --raw-output \
 	> ~/.proxygen/eligibility-signposting-api.pem
 
-setup-proxygen-credentials: # Copy Proxygen templated credentials to where it expected them
-	cd specification && cp -r .proxygen ~
+# setup-proxygen-credentials: # Copy Proxygen templated credentials to where it expected them
+# 	cd specification && cp -r .proxygen ~
+#
+# setup-proxygen-credentials-ptl: # Copy Proxygen templated credentials to where it expected them
+# 	cd specification && cp -r .proxygen/credentials-ptl.yaml ~/.proxygen/credentials.yaml && \
+# 	cp .proxygen/settings-ptl.yaml ~/.proxygen/settings.yaml
+# 	proxygen credentials list
+#
+# setup-proxygen-credentials-prod: # Copy Proxygen templated credentials to where it expected them
+# 	cd specification && cp -r .proxygen/credentials-prod.yaml ~/.proxygen/credentials.yaml && \
+# 	cp .proxygen/settings-ptl.yaml ~/.proxygen/settings.yaml
+# 	proxygen credentials list
+
+setup-proxygen-credentials:
+	cd specification && \
+	cp .proxygen/credentials-$(ENV).yaml ~/.proxygen/credentials.yaml && \
+	cp .proxygen/settings-$(ENV).yaml ~/.proxygen/settings.yaml
+
+setup-proxygen-credentials-ptl:
+	$(MAKE) setup-proxygen-credentials ENV=ptl
+
+setup-proxygen-credentials-prod:
+	$(MAKE) setup-proxygen-credentials ENV=prod
 
 get-spec: # Get the most recent specification live in proxygen
 	$(MAKE) setup-proxygen-credentials
