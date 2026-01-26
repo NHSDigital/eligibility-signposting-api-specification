@@ -53,58 +53,67 @@ config:: # Configure development environment (main) @Configuration
 #### Proxygen ####
 ##################
 
-retrieve-proxygen-key: # Obtain the 'machine user' credentials from AWS SSM (Development environment)
-	mkdir -p ~/.proxygen && \
-	aws ssm get-parameter --name /proxygen/private_key_temp --with-decryption | jq ".Parameter.Value" --raw-output \
-	> ~/.proxygen/eligibility-signposting-api.pem
+# retrieve-proxygen-key: # Obtain the 'machine user' credentials from AWS SSM (Development environment)
+# 	mkdir -p ~/.proxygen && \
+# 	aws ssm get-parameter --name /proxygen/private_key_temp --with-decryption | jq ".Parameter.Value" --raw-output \
+# 	> ~/.proxygen/eligibility-signposting-api.pem
 
 # retrieve-proxygen-key: # Obtain the 'machine user' credentials from AWS SSM (Development environment)
 # 	mkdir -p ~/.proxygen && \
 # 	aws ssm get-parameter --name /proxygen/private_key_temp_$(ENV) --with-decryption | jq ".Parameter.Value" --raw-output \
 # 	> ~/.proxygen/eligibility-signposting-api-$(ENV).pem
+#
+# retrieve-proxygen-key-ptl:
+# 	$(MAKE) retrieve-proxygen-key ENV=ptl
+#
+# retrieve-proxygen-key-prod:
+# 	$(MAKE) retrieve-proxygen-key ENV=prod
 
-retrieve-proxygen-key-ptl:
-	$(MAKE) retrieve-proxygen-key ENV=ptl
+# Verify current AWS account login and retrieve the proxygen key
+# from AWS SSM for the specified environment
+retrieve-proxygen-key: guard-ENV
+	@ ./scripts/check-aws-account.sh $(ENV)
+	mkdir -p ~/.proxygen
+	aws ssm get-parameter --name /proxygen/private_key_temp --with-decryption \
+	| jq -r ".Parameter.Value" \
+	> ~/.proxygen/eligibility-signposting-api-$(ENV).pem && \
+	echo "Retrieved proxygen key for '$(ENV)' environment"
 
-retrieve-proxygen-key-prod:
-	$(MAKE) retrieve-proxygen-key ENV=prod
-
-setup-proxygen-credentials:
-	cd specification && \
+# Copy proxygen credentials for the specified environment to `~/.proxygen/`
+# This location required location for local proxygen usage
+setup-proxygen-credentials: guard-ENV
+	@ cd specification && \
 	cp .proxygen/credentials-$(ENV).yaml ~/.proxygen/credentials.yaml && \
-	cp .proxygen/settings-$(ENV).yaml ~/.proxygen/settings.yaml
-
-setup-proxygen-credentials-ptl:
-	$(MAKE) setup-proxygen-credentials ENV=ptl
-
-setup-proxygen-credentials-prod:
-	$(MAKE) setup-proxygen-credentials ENV=prod
+	cp .proxygen/settings-$(ENV).yaml ~/.proxygen/settings.yaml && \
+	echo "Set up proxygen credentials for the '$(ENV)' environment"
 
 get-spec: # Get the most recent specification live in proxygen
-	$(MAKE) setup-proxygen-credentials-prod
+	$(MAKE) setup-proxygen-credentials ENV=prod
 	proxygen spec get
 
 get-spec-uat: # Get the most recent specification live in proxygen
-	$(MAKE) setup-proxygen-credentials-ptl
+	$(MAKE) setup-proxygen-credentials ENV=ptl
 	proxygen spec get --uat
 
 publish-spec: # Publish the specification to proxygen
-	$(MAKE) setup-proxygen-credentials-prod
+	$(MAKE) setup-proxygen-credentials ENV=prod
 	proxygen spec publish build/specification/prod/eligibility-signposting-api.yaml
 
 publish-spec-uat: # Publish the specification to proxygen
-	$(MAKE) setup-proxygen-credentials-ptl
+	$(MAKE) setup-proxygen-credentials ENV=ptl
 	proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat
 
 delete-spec: # Delete the specification from proxygen
-	$(MAKE) setup-proxygen-credentials-prod
+	$(MAKE) setup-proxygen-credentials ENV=prod
 	proxygen spec delete
 
 delete-spec-uat: # Delete the specification from proxygen
-	$(MAKE) setup-proxygen-credentials-ptl
+	$(MAKE) setup-proxygen-credentials ENV=ptl
 	proxygen spec delete --uat
 
-# Specification
+#####################
+### Specification ###
+#####################
 
 guard-%:
 	@ if [ "${${*}}" = "" ]; then \
