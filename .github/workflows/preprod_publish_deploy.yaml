@@ -12,6 +12,8 @@ jobs:
   preprod:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
       - name: Set tag to deploy
         id: set_tag
         run: |
@@ -57,4 +59,4 @@ jobs:
           proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat --no-confirm
       - name: Deploy preprod spec to Proxygen
         run: |
-          proxygen instance deploy preprod eligibility-signposting-api build/specification/preprod/eligibility-signposting-api.yaml --no-confirm
+          proxygen instance deploy int eligibility-signposting-api build/specification/preprod/eligibility-signposting-api.yaml --no-confirm
