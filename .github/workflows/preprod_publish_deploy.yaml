@@ -7,9 +7,6 @@ on:
         description: "Tag to promote (e.g. spec-{timestamp})"
         default: latest
         required: true
-  push:
-    branches:
-      - ELI-338
 
 jobs:
   preprod:
@@ -60,9 +57,6 @@ jobs:
       - name: Publish preprod spec to Proxygen
         run: |
           proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat --no-confirm
-      - name: Get list of environments
-        run: |
-          proxygen instance list | awk 'NR>2 {print $1}' | paste -sd "," -
       - name: Deploy preprod spec to Proxygen
         run: |
           proxygen instance deploy int eligibility-signposting-api build/specification/preprod/eligibility-signposting-api.yaml --no-confirm
