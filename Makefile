@@ -53,22 +53,6 @@ config:: # Configure development environment (main) @Configuration
 #### Proxygen ####
 ##################
 
-# retrieve-proxygen-key: # Obtain the 'machine user' credentials from AWS SSM (Development environment)
-# 	mkdir -p ~/.proxygen && \
-# 	aws ssm get-parameter --name /proxygen/private_key_temp --with-decryption | jq ".Parameter.Value" --raw-output \
-# 	> ~/.proxygen/eligibility-signposting-api.pem
-
-# retrieve-proxygen-key: # Obtain the 'machine user' credentials from AWS SSM (Development environment)
-# 	mkdir -p ~/.proxygen && \
-# 	aws ssm get-parameter --name /proxygen/private_key_temp_$(ENV) --with-decryption | jq ".Parameter.Value" --raw-output \
-# 	> ~/.proxygen/eligibility-signposting-api-$(ENV).pem
-#
-# retrieve-proxygen-key-ptl:
-# 	$(MAKE) retrieve-proxygen-key ENV=ptl
-#
-# retrieve-proxygen-key-prod:
-# 	$(MAKE) retrieve-proxygen-key ENV=prod
-
 # Verify current AWS account login and retrieve the proxygen key
 # from AWS SSM for the specified environment
 retrieve-proxygen-key: guard-ENV
