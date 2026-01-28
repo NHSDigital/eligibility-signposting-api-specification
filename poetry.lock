@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.20"
+version = "1.44.26"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.20-py3-none-any.whl", hash = "sha256:5eabf33997ee6c78216211b6176e5d0c990e306c22a119190006baa31cf6f2c9"},
-    {file = "awscli-1.44.20.tar.gz", hash = "sha256:4bdb0729bc3d1c6878a11989c3c9c37b6f23a64d8784fc2f62f04f986910bc95"},
+    {file = "awscli-1.44.26-py3-none-any.whl", hash = "sha256:0181c9c77395882b99a8391f83021c58466400e02852141664c33c75b88dc88e"},
+    {file = "awscli-1.44.26.tar.gz", hash = "sha256:012afa90cb9c068211c6b6b3ebc04771dcd130a320d1e66491c8d7737f380c85"},
 ]
 
 [package.dependencies]
-botocore = "1.42.30"
+botocore = "1.42.36"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.30"
+version = "1.42.36"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.30-py3-none-any.whl", hash = "sha256:97070a438cac92430bb7b65f8ebd7075224f4a289719da4ee293d22d1e98db02"},
-    {file = "botocore-1.42.30.tar.gz", hash = "sha256:9bf1662b8273d5cc3828a49f71ca85abf4e021011c1f0a71f41a2ea5769a5116"},
+    {file = "botocore-1.42.36-py3-none-any.whl", hash = "sha256:2cfae4c482e5e87bd835ab4289b711490c161ba57e852c06b65a03e7c25e08eb"},
+    {file = "botocore-1.42.36.tar.gz", hash = "sha256:2ebd89cc75927944e2cee51b7adce749f38e0cb269a758a6464a27f8bcca65fb"},
 ]
 
 [package.dependencies]
@@ -376,4 +376,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "d0fa55cc40312c0d22413b89703a087e5b06c6ea3089fc804dcb4cad3057fd29"
+content-hash = "82b7994a6e6a45b1d03738ffb927cb4c2f4601e4d9af3fc1754c2be274f95cc7"
