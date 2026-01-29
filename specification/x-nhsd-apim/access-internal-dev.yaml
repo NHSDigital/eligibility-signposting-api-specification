@@ -1,6 +1,6 @@
-- title: Eligibility Signposting API (Dev Environment)
+- title: Eligibility Signposting API (Dev Environment) NHS Login P9
   grants:
     nhs-login-p9: []
-- title: Eligibility Signposting API (Dev Environment) app Level 3 Access
+- title: Eligibility Signposting API (Dev Environment) App Level 3
   grants:
     app-level3: []
