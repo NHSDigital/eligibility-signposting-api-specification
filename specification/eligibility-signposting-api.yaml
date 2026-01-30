@@ -1439,6 +1439,7 @@ components:
   securitySchemes:
     $ref: "components/security/security.yaml"
 x-nhsd-apim:
+  productidcheck: true
   monitoring: true
   access:
     $ref: "x-nhsd-apim/access.yaml"
