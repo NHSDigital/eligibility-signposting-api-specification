@@ -58,7 +58,8 @@ config:: # Configure development environment (main) @Configuration
 retrieve-proxygen-key: guard-ENV
 	@ ./scripts/check-aws-account.sh $(ENV)
 	mkdir -p ~/.proxygen
-	aws ssm get-parameter --name /proxygen/private_key_temp --with-decryption \
+	@ AWS_ENV=$$([ "$(ENV)" = "ptl" ] && echo "preprod" || echo "$(ENV)"); \
+	aws ssm get-parameter --name /$$AWS_ENV/proxygen/private_key --with-decryption \
 	| jq -r ".Parameter.Value" \
 	> ~/.proxygen/eligibility-signposting-api-$(ENV).pem && \
 	echo "Retrieved proxygen key for '$(ENV)' environment"
