@@ -45,19 +45,12 @@ jobs:
           pip install proxygen-cli
 
       - name: Set up Proxygen credentials
+        env:
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY_PROD }}
         run: |
           mkdir -p ~/.proxygen
-
-          if [ "${{ env.APIM_ENV }}" = "preprod" ]; then
-            ENV_PARAM="ptl"
-            PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY_PTL }}
-          else
-            ENV_PARAM="${{ env.APIM_ENV }}"
-            PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY_PROD }}
-          fi
-
-          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api-${ENV_PARAM}.pem
-          make setup-proxygen-credentials ENV=${ENV_PARAM}
+          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
+          make setup-proxygen-credentials ENV=prod
 
       - name: Generate specification
         run: |

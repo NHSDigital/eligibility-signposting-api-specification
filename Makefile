@@ -53,16 +53,29 @@ config:: # Configure development environment (main) @Configuration
 #### Proxygen ####
 ##################
 
+# Proxygen key only exists in our 'dev' AWS Parameter Store
+PROXYGEN_ENV ?= dev
+
+# Specs are published in the APIM 'prod' environment
+APIM_ENV ?= prod
+
+# retrieve-proxygen-key: # Obtain the 'machine user' credentials from AWS SSM (Development environment)
+# 	mkdir -p ~/.proxygen && \
+# 	aws ssm get-parameter --name /proxygen/private_key_temp --with-decryption | jq ".Parameter.Value" --raw-output \
+# 	> ~/.proxygen/eligibility-signposting-api.pem
+#
+# setup-proxygen-credentials: # Copy Proxygen templated credentials to where it expected them
+# 	cd specification && cp -r .proxygen ~
+
 # Verify current AWS account login and retrieve the proxygen key
-# from AWS SSM for the specified environment
-retrieve-proxygen-key: guard-ENV
-	@ ./scripts/check-aws-account.sh $(ENV)
+# from AWS SSM Parameter Store
+retrieve-proxygen-key:
+	@ ./scripts/check-aws-account.sh $(PROXYGEN_ENV)
 	mkdir -p ~/.proxygen
-	@ AWS_ENV=$$([ "$(ENV)" = "ptl" ] && echo "preprod" || echo "$(ENV)"); \
-	aws ssm get-parameter --name /$$AWS_ENV/proxygen/private_key --with-decryption \
+	aws ssm get-parameter --name /$$PROXYGEN_ENV/proxygen/private_key --with-decryption \
 	| jq -r ".Parameter.Value" \
-	> ~/.proxygen/eligibility-signposting-api-$(ENV).pem && \
-	echo "Retrieved proxygen key for '$(ENV)' environment"
+	> ~/.proxygen/eligibility-signposting-api-$(APIM_ENV).pem && \
+	echo "Retrieved proxygen key for APIM '$(APIM_ENV)' environment"
 
 # Copy proxygen credentials for the specified environment to `~/.proxygen/`
 # This location required location for local proxygen usage
@@ -70,14 +83,14 @@ setup-proxygen-credentials: guard-ENV
 	@ cd specification && \
 	cp .proxygen/credentials-$(ENV).yaml ~/.proxygen/credentials.yaml && \
 	cp .proxygen/settings-$(ENV).yaml ~/.proxygen/settings.yaml && \
-	echo "Set up proxygen credentials for the '$(ENV)' environment"
+	echo "Set up proxygen credentials for the APIM '$(ENV)' environment"
 
 get-spec: # Get the most recent specification live in proxygen
 	$(MAKE) setup-proxygen-credentials ENV=prod
 	proxygen spec get
 
 get-spec-uat: # Get the most recent specification live in proxygen
-	$(MAKE) setup-proxygen-credentials ENV=ptl
+	$(MAKE) setup-proxygen-credentials ENV=prod
 	proxygen spec get --uat
 
 publish-spec: # Publish the specification to proxygen
@@ -85,7 +98,7 @@ publish-spec: # Publish the specification to proxygen
 	proxygen spec publish build/specification/prod/eligibility-signposting-api.yaml
 
 publish-spec-uat: # Publish the specification to proxygen
-	$(MAKE) setup-proxygen-credentials ENV=ptl
+	$(MAKE) setup-proxygen-credentials ENV=prod
 	proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat
 
 delete-spec: # Delete the specification from proxygen
@@ -93,7 +106,7 @@ delete-spec: # Delete the specification from proxygen
 	proxygen spec delete
 
 delete-spec-uat: # Delete the specification from proxygen
-	$(MAKE) setup-proxygen-credentials ENV=ptl
+	$(MAKE) setup-proxygen-credentials ENV=prod
 	proxygen spec delete --uat
 
 #####################
