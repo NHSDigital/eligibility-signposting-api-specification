@@ -757,7 +757,7 @@ paths:
                       lastUpdated: 2025-02-12T16:11:22Z
                     processedSuggestions:
                       - condition: RSV
-                        status: Not Actionable
+                        status: NotActionable
                         statusText: You should have the RSV vaccine
                         eligibilityCohorts: []
                         suitabilityRules:
