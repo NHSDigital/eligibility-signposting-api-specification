@@ -60,10 +60,7 @@ jobs:
         run: |
           if [ "${{ env.APIM_ENV }}" = "preprod" ]; then
             proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat --no-confirm
-          elif [ "${{ env.APIM_ENV }}" = "prod" ]; then
-            proxygen spec publish build/specification/prod/eligibility-signposting-api.yaml --no-confirm
           else
-            echo "Error: Environment '${{ env.APIM_ENV }}' is not supported for publishing. Only 'preprod' and 'prod' are allowed."
-            exit 1
+            proxygen spec publish build/specification/prod/eligibility-signposting-api.yaml --no-confirm
           fi
 
