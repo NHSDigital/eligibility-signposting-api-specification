@@ -27,7 +27,7 @@ jobs:
     name: "Publish spec & deploy to dev"
     needs: metadata
     runs-on: ubuntu-latest
-    if: false  # Temporarily skip this job
+    if: false  # Skip this job
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -70,7 +70,7 @@ jobs:
 
   sandbox:
     name: "Publish spec & deploy to sandbox"
-    needs: internal-dev
+    needs: metadata  # Changed from internal-dev to metadata
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
