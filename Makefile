@@ -53,21 +53,15 @@ config:: # Configure development environment (main) @Configuration
 #### Proxygen ####
 ##################
 
-# Proxygen key only exists in our 'dev' AWS Parameter Store
-PROXYGEN_ENV ?= dev
-
-# Specs are published in the APIM 'prod' environment
-APIM_ENV ?= prod
-
 # Verify current AWS account login and retrieve the proxygen key
 # from AWS SSM Parameter Store
-retrieve-proxygen-key:
-	@ ./scripts/check-aws-account.sh $(PROXYGEN_ENV)
+retrieve-proxygen-key: guard-ENV
+	@ ./scripts/check-aws-account.sh
 	mkdir -p ~/.proxygen
-	aws ssm get-parameter --name /$$PROXYGEN_ENV/proxygen/private_key --with-decryption \
+	aws ssm get-parameter --name /$$ENV/proxygen/private_key --with-decryption \
 	| jq -r ".Parameter.Value" \
-	> ~/.proxygen/eligibility-signposting-api-$(APIM_ENV).pem && \
-	echo "Retrieved proxygen key for APIM '$(APIM_ENV)' environment"
+	> ~/.proxygen/eligibility-signposting-api-$(ENV).pem && \
+	echo "Retrieved proxygen key for APIM '$(ENV)' environment"
 
 # Copy proxygen credentials for the specified environment to `~/.proxygen/`
 # This location required location for local proxygen usage
