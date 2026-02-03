@@ -3,7 +3,7 @@ name: Deploy to Dev and Sandbox
 on:
   push:
     branches:
-      - main
+      - feature/rgjb-eli-604-rotate_proxygen_key_in_ptl_and_prod
 
 jobs:
   metadata:
@@ -27,6 +27,7 @@ jobs:
     name: "Publish spec & deploy to dev"
     needs: metadata
     runs-on: ubuntu-latest
+    if: false  # Temporarily skip this job
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
