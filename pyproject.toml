@@ -10,7 +10,9 @@ requires-python = ">=3.11"
 repository = "https://github.com/NHSDigital/eligibility-signposting-api-specification"
 homepage = "https://digital.nhs.uk/developer/api-catalogue"
 keywords = ["healthcare", "uk", "nhs", "vaccination", "api"] #TODO add additional keywords
-package_mode = false
+
+[tool.poetry]
+package-mode = false
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

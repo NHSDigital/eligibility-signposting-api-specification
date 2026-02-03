@@ -27,6 +27,7 @@ jobs:
     name: "Publish spec & deploy to dev"
     needs: metadata
     runs-on: ubuntu-latest
+    if: false  # Temporarily skip this job
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -54,11 +55,11 @@ jobs:
 
       - name: Set up Proxygen credentials
         env:
-          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY_PTL }}
         run: |
           mkdir -p ~/.proxygen
           echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
-          make setup-proxygen-credentials
+          make setup-proxygen-credentials ENV=ptl
       - name: Generate specification
         run: |
           make construct-spec APIM_ENV=internal-dev
@@ -98,11 +99,11 @@ jobs:
 
       - name: Set up Proxygen credentials
         env:
-          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY_PROD }}
         run: |
           mkdir -p ~/.proxygen
           echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
-          make setup-proxygen-credentials
+          make setup-proxygen-credentials ENV=prod
       - name: Generate specification
         run: |
           make construct-spec APIM_ENV=sandbox
