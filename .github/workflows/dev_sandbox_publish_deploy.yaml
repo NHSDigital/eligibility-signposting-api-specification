@@ -58,7 +58,7 @@ jobs:
         run: |
           mkdir -p ~/.proxygen
           echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
-          make setup-proxygen-credentials
+          make setup-proxygen-credentials ENV=ptl
       - name: Generate specification
         run: |
           make construct-spec APIM_ENV=internal-dev
@@ -102,7 +102,7 @@ jobs:
         run: |
           mkdir -p ~/.proxygen
           echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
-          make setup-proxygen-credentials
+          make setup-proxygen-credentials ENV=prod
       - name: Generate specification
         run: |
           make construct-spec APIM_ENV=sandbox
