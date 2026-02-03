@@ -3,7 +3,8 @@ name: Deploy to Dev and Sandbox
 on:
   push:
     branches:
-      - main
+      - feature/rgjb-eli-604-rotate_proxygen_key_in_ptl_and_prod
+
 
 jobs:
   metadata:
@@ -102,7 +103,7 @@ jobs:
           PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY_PROD }}
         run: |
           mkdir -p ~/.proxygen
-          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
+          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api-prod.pem
           make setup-proxygen-credentials ENV=prod
       - name: Generate specification
         run: |
