@@ -59,14 +59,6 @@ PROXYGEN_ENV ?= dev
 # Specs are published in the APIM 'prod' environment
 APIM_ENV ?= prod
 
-# retrieve-proxygen-key: # Obtain the 'machine user' credentials from AWS SSM (Development environment)
-# 	mkdir -p ~/.proxygen && \
-# 	aws ssm get-parameter --name /proxygen/private_key_temp --with-decryption | jq ".Parameter.Value" --raw-output \
-# 	> ~/.proxygen/eligibility-signposting-api.pem
-#
-# setup-proxygen-credentials: # Copy Proxygen templated credentials to where it expected them
-# 	cd specification && cp -r .proxygen ~
-
 # Verify current AWS account login and retrieve the proxygen key
 # from AWS SSM Parameter Store
 retrieve-proxygen-key:
