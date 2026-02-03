@@ -63,10 +63,6 @@ jobs:
         run: |
           make construct-spec APIM_ENV=internal-dev
 
-      - name: Publish internal-dev spec to Proxygen
-        run: |
-          proxygen spec publish build/specification/internal-dev/eligibility-signposting-api.yaml --no-confirm
-
       - name: Deploy internal-dev spec to Proxygen
         run: |
           proxygen instance deploy internal-dev eligibility-signposting-api build/specification/internal-dev/eligibility-signposting-api.yaml --no-confirm
