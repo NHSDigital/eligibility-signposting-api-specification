@@ -1,10 +1,7 @@
-name: Deploy Sandbox API and Docker Image
+name: (Deprecated) Deploy Sandbox API and Docker Image
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 env:
   APIM_ENV: sandbox
