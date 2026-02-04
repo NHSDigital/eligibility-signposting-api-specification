@@ -104,17 +104,20 @@ jobs:
           mkdir -p ~/.proxygen
           echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api-prod.pem
           make setup-proxygen-credentials ENV=prod
+
       - name: Generate specification
         run: |
           make construct-spec APIM_ENV=sandbox
-
-      - name: Publish sandbox spec to Proxygen
-        run: |
-          proxygen spec publish build/specification/sandbox/eligibility-signposting-api.yaml --no-confirm
+          make generate-sandbox-spec
 
       - name: Deploy sandbox spec to Proxygen
         run: |
           proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml --no-confirm
+
+      - name: Build and publish sandbox Docker image
+        run: |
+          make build-and-publish-sandbox-image
+
 
   publish_postman:
     name: "Publish to Postman"
