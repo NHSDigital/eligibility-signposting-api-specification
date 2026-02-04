@@ -3,7 +3,7 @@ name: Deploy to Dev and Sandbox
 on:
   push:
     branches:
-      - feature/rgjb-eli-604-rotate_proxygen_key_in_ptl_and_prod
+      - main
 
 
 jobs:
