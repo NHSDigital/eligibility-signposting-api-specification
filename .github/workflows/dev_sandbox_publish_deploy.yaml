@@ -102,7 +102,7 @@ jobs:
           PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY_PROD }}
         run: |
           mkdir -p ~/.proxygen
-          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
+          echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api-prod.pem
           make setup-proxygen-credentials ENV=prod
       - name: Generate specification
         run: |
