@@ -1,4 +1,5 @@
 SHELL := /bin/bash
+ENV ?= prod
 dirname := $(notdir $(patsubst %/,%,$(CURDIR)))
 project_name = eligibility-signposting-api
 
@@ -22,7 +23,7 @@ build-and-tag:
 		make tag-service-image
 
 proxygen-docker-login: # Login to Proxygen Docker registry
-	make -C .. setup-proxygen-credentials
+	make -C .. setup-proxygen-credentials ENV=$(ENV)
 	proxygen docker get-login | bash
 
 publish-to-docker-repo:
