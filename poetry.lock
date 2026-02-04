@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.30"
+version = "1.44.31"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.30-py3-none-any.whl", hash = "sha256:f840bbbfed45c4115390b1ebe23c596078531c0af5ce7d45ef34cf0f72c9f47c"},
-    {file = "awscli-1.44.30.tar.gz", hash = "sha256:dee4937eb2f81aab7e66362d789ffec5fbfea664bf609d420dcbcfbdca588adf"},
+    {file = "awscli-1.44.31-py3-none-any.whl", hash = "sha256:07881981cb191db7ae2242ba113518b5577522acd7c722fea18cd623c223e8d3"},
+    {file = "awscli-1.44.31.tar.gz", hash = "sha256:90bd06f747be0130001f44532546f3b2374cdda3bb3028366c99e696fafb915d"},
 ]
 
 [package.dependencies]
-botocore = "1.42.40"
+botocore = "1.42.41"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.40"
+version = "1.42.41"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.40-py3-none-any.whl", hash = "sha256:b115cdfece8162cb30f387fdff2ee4693713744c97ebb4b89742e53675dc521c"},
-    {file = "botocore-1.42.40.tar.gz", hash = "sha256:6cfa07cf35ad477daef4920324f6d81b8d3a10a35baeafaa5fca22fb3ad225e2"},
+    {file = "botocore-1.42.41-py3-none-any.whl", hash = "sha256:567530f7d4da668af891c1259fb80c01578ab8d9f1098127cc250451a46fb54f"},
+    {file = "botocore-1.42.41.tar.gz", hash = "sha256:0698967741d873d819134bea1ffe9c35decc00c741f49a42885dbd7ad8198fbc"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "d603bfe05d8710c694a9ce22da156e4025f2814d0fa5f821bd32f85c4baff140"
+content-hash = "8afe182253c66a1289af13ce1caa14a66ae3eb1b839fac85e3f362abf514b2c8"
