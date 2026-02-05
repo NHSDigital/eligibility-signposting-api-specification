@@ -110,13 +110,14 @@ jobs:
           make construct-spec APIM_ENV=sandbox
           make generate-sandbox-spec
 
+      - name: Build and publish sandbox Docker image
+        run: |
+          make build-and-publish-sandbox-image
+
       - name: Deploy sandbox spec to Proxygen
         run: |
           proxygen instance deploy sandbox eligibility-signposting-api build/specification/sandbox/eligibility-signposting-api.yaml --no-confirm
 
-      - name: Build and publish sandbox Docker image
-        run: |
-          make build-and-publish-sandbox-image
 
 
   publish_postman:
