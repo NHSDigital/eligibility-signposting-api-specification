@@ -167,6 +167,8 @@ def get_prism_prompt_for_example(patient_examples: dict, request: Request) -> st
     for patient_id, example in sorted_examples:
         if patient_id in request.full_path:
             return example
+        if request.full_path.find("patient-check/") > -1:
+            return "example_" + request.full_path[request.full_path.find("patient-check/")+14:]
     return None
 
 
