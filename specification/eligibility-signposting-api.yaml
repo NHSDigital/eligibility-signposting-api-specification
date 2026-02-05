@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Patient Eligibility Signposting API
-  version: 1.0.27-alpha
+  version: 1.0.28-alpha
   description: "## Overview\nUse this API to access the [Eligibility Data Product](https://digital.nhs.uk/services/eligibility-data-product-elid) - the nationally curated single source of vaccination eligibility status and signposted next actions for individuals. You can request it to see if NHS England's data deems a person as eligible or not eligible for a vaccination, along with our reasoning. If a person is eligible for a vaccination, they'll be marked as either actionable, meaning they can proceed immediately in taking our recommended action i.e booking an appointment online or contacting their GP, or not actionable, meaning they can't take any action yet i.e. there is a local vaccine shortage or their vaccination will be arranged directly by someone else. Unless you have written permission from NHS England to change it, any descriptive text provided through the Eligibility Signposting API must be displayed to your user exactly as written.\nUse this API to request: \n* eligibility for all supported vaccination types\n* derived reason for eligibility status \n* recommended actions the individual should take based on multiple factors\n\nYou cannot currently use this API to: \n* request eligibility for proxy people (familial relations etc.)\n\nThis API is read-only and can return a list of processed suggestions, each relating to a 'condition' (e.g. COVID, Flu, RSV etc.), including the following information for each: \n* a code representing the condition (COVID, RSV, FLU etc.)\n* an overall status (NotEligible, NotActionable, Actionable) \n* a list of eligibility cohort groups to which the person belongs (when eligible)\n* a list of the cohort groups that could have made the person eligible (when not eligible) \n* a list of rules/reasons that deem a person to be NotActionable\n* a list of actions that should be shown to the consumer\n#### Definitions of overall status\nThe overall status values indicate the following:\n* NotEligible - the individual does not currently meet eligibility criteria\n* NotActionable - the individual is eligible but does not need to take any further action at this time \n* Actionable - the individual is eligible and should follow one of the recommended actions provided\n### Patients included in the Patient Eligibility Signposting API\nThe API will return data for all patients who are in the NHS PDS system that are registered with an English GP practice (or one administered by England) or who we believe to be resident in England.\nPatients who are deceased (or thought to be), marked as invalid or sensitive will not be processed by this API.\n## Who can use this API\nThis API can only be used where there is a [legal basis](https://digital.nhs.uk/services/eligibility-data-product-elid#who-this-service-is-for) to do so. Make sure you have a valid use case before you go too far with your development.  You must demonstrate you have a [valid use case](https://digital.nhs.uk/services/eligibility-data-product-elid#who-this-service-is-for) as part of digital onboarding.\nYou must do this before you can go live (see 'Onboarding' below).\n### Who can access Eligibility Signposting Information\nPatients who receive health and social care or make use of NHS services in England, Wales and the Isle of Man can access their own Eligibility Signposting data through onboarded services.\nHealth and care organisations in England and the Isle of Man can access our information for legitimate direct care purposes. Legitimate direct care examples include NHS organisations delivering healthcare, local authorities delivering care, third sector and private sector health and care organisations, and developers delivering systems to health and care organisations.\n### Existing API users\nTo find out which healthcare software development organisations and products are already using this API, see [Patient Eligibility Signposting API - integrated products](https://digital.nhs.uk/services/eligibility-data-product-elid).\n## Access modes\nThis API currently currently supports access modes:\n* patient access (user-restricted)\n* application restricted access\n\nWe are considering the possibility of adding other modes in the future: \n* healthcare worker access\n### Patient access\nIf the end user is a patient then you must use this access mode. Use this access mode to obtain data for that patient.\nThis access mode is [user-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#user-restricted-apis), meaning an end user must be present, authenticated and authorised.\nThe end user must be:\n* a patient who receives health and social care or makes use of NHS services \n* strongly authenticated, using [NHS login](https://digital.nhs.uk/services/nhs-login)\nTo use this access mode, you must currently use the following security pattern:\n\n|\tSecurity pattern\t\t                                                                                                                                                                                                          |\tTechnical details\t                                  |\tAdvantages\t                                                | Disadvantages                                           |\n|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ----------------------------------------------------| ------------------------------------------------------------|---------------------------------------------------------|\n|[NHS login - separate authentication and authorisation](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/user-restricted-restful-apis-nhs-login-separate-authentication-and-authorisation) |OAuth 2.0 token exchange with signed JWT             |Gives access to user information.                            |Need to integrate and onboard separately with NHS login. |\nPatient access mode users must be authenticated to a high proofing level (P9) and to one of the following [vectors of trust](https://nhsconnect.github.io/nhslogin/vectors-of-trust/):\n* P9.Cp.Cd \n* P9.Cp.Ck\n* P9.Cm\n\nThis access mode is available in production ([beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status)).\n### Restricted access\nThis access mode is [application-restricted](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation#application-restricted-apis), meaning we authenticate and authorise the calling application but not the end user.\nThis access mode is not designed to be accessed by an end user. You might use this access mode as part of a back-end process to:\n* retrieve eligibility signposting information into a system in advance of a clinic \n* retrieve eligibility signposting information into a system to be used in a disconnected manner\n\nTo use this access mode, use this security pattern:\n* [Application-restricted RESTful API - signed JWT authentication](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation/application-restricted-restful-apis-signed-jwt-authentication)\n\nThis access mode is available in production ([beta](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#api-status)).\n## Roadmap\nThe [Patient Eligibility Signposting API](https://digital.nhs.uk/services/eligibility-data-product-elid/eligibility-data-product-elid-roadmap) roadmap shows the planned changes for the API.\nTo see our roadmap, or to suggest, comment or vote on features for this API, see our [interactive product backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/612352/eligibility-signposting-api-vaccinations).\nIf you have any other queries, please [contact us](https://digital.nhs.uk/developer/help-and-support).\n## Service level\nThis API is a silver service, meaning it is operational 24 hours a day, 365 days a year and supported 8am to 6pm, Monday to Friday excluding bank holidays.\nFor more details, see [service levels](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#service-levels).\n## Rate limits\nThe default rate limit is 25TPS (Transactions Per Second), per app. If you require a higher rate limit please [contact us](https://digital.nhs.uk/developer/help-and-support). or raise this during the onboarding process.\n## Technology\nThis API is [RESTful](https://digital.nhs.uk/developer/guides-and-documentation/our-api-technologies#basic-rest).\nThe error messages returned by this API conform to the FHIR global standard for health care data exchange, specifically to FHIR R4 (v4.0.1). This is to aid consumers that integrate to FHIR based APIS and are in any case not overly complex.\nThere are [libraries and SDKs](https://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#fhir-libraries-and-sdks) available to help with FHIR API integration.\n## Network access\nThis API is available on the internet and, indirectly, on the [Health and Social Care Network (HSCN)](https://digital.nhs.uk/services/health-and-social-care-network).\nFor more details see [Network access for APIs](https://digital.nhs.uk/developer/guides-and-documentation/network-access-for-apis).\n## Errors\nWe use standard HTTP status codes to show whether an API request succeeded or not. They are usually in the range:\n* 200 to 299 if it succeeded, including code 202 if it was accepted by an API that needs to wait for further action \n* 400 to 499 if it failed because of a client error by your application\n* 500 to 599 if it failed because of an error on our server\nErrors specific to each API are shown in the Endpoints section, under Response. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#http-status-codes) for more on errors.\nYour API-calling application should have a mechanism to automatically try again, for example by giving status information to your end user, before giving up. See our [reference guide](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#error-handling) for more information about error handling.\n## Open source\nYou might find the following [open source](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#open-source) resources useful:\n| Resource                  | Description                                                          | Links                                                                          |\n|---------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------|\n| Patient Eligibility Signposting API| Source code including API proxy, sandbox and specification and code.      | [GitHub repo](https://github.com/NHSDigital/eligibility-signposting-api) |\nWe currently don't have any open source client libraries or sample code for this API. If you think this would be useful, you can [upvote the suggestion on our Interactive Product Backlog](https://nhs-digital-api-management.featureupvote.com/suggestions/107439/client-libraries-and-reference-implementations).\n\n## Environments and testing\n| Environment       | Base URL                                                               |\n| ----------------- | ---------------------------------------------------------------------- |\n| Sandbox           | `https://sandbox.api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`    |\n| Integration test  | `https://int.api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`        |\n| Production        | `https://api.service.nhs.uk/eligibility-signposting-api/patient-check/{id}`            |\n### Sandbox testing\nOur [sandbox environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#sandbox-testing):\n* is for early developer testing \n* only covers a limited set of scenarios\n* is open access, so does not allow you to test authorisation\n\nFor details of sandbox test scenarios, or to try out the sandbox using our 'Try this API' feature, see the documentation for each endpoint.\nInformation on test data can be found [here](https://digital.nhs.uk/developer/api-catalogue/eligibility-signposting/eligibility-signposting-api-test-data).\n\nAlternatively, you can try out the sandbox using our Postman collection:\n[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/eligibility-signposting-api/eligibility-signposting-api)\n### Integration testing\nOur [integration test environment](https://digital.nhs.uk/developer/guides-and-documentation/testing#integration-testing):\n* is for formal integration testing \n* includes authorisation, with options for user-restricted access (NHS Login)\n\nInformation on test data can be found [here](https://digital.nhs.uk/developer/api-catalogue/eligibility-signposting/eligibility-signposting-api-test-data).\n### Production smoke testing\nYou must not use real patient data for smoke testing in the production environment.\nRather, use our [production test patient](https://digital.nhs.uk/developer/api-catalogue/eligibility-signposting/eligibility-signposting-api-test-data#production-smoke-testing).\n## Onboarding\nYou need to get your software approved by us before it can go live with this API. We call this onboarding. The onboarding process can sometimes be quite long, so it is worth planning well ahead.\nAs part of this process, you need to demonstrate your technical conformance to the requirements for this API.\nYou also need to demonstrate that you can manage risks. This might impact the design of your software. For details, see [Onboarding support information](https://digital.nhs.uk/services/eligibility-data-product-elid#how-to-access-this-service).\nTo understand how our online digital onboarding process works, see [digital onboarding](https://digital.nhs.uk/developer/guides-and-documentation/digital-onboarding).\n## Related APIs\nThe following APIs are related to this API:\n"
   contact:
     url: https://developer.nhs.uk/apis/eligibility-signposting-api
@@ -217,7 +217,7 @@ paths:
                                 description: Lable to use for the URL (or button) used to display the link
                                 example: "My Link Label"
               examples:
-                example_50000000001:
+                example_5000000001:
                   summary: RSV - 5000000001/9686368973 Actionable due to membership of an Age Cohort including suggested national booking action (actions requested)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -249,7 +249,7 @@ paths:
                           - actionType: "InfoText"
                             actionCode: "HelpSupportInfo"
                             description: "## If you think this is incorrect\n\nIf you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid)."
-                example_50000000002:
+                example_5000000002:
                   summary: RSV - 5000000002/9686368906 Actionable due to membership of an Age Cohort including suggested action (not national booking)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -268,7 +268,7 @@ paths:
                           - actionType: "InfoText"
                             actionCode: "BookLocal"
                             description: "## Getting the vaccine\n\nYou can get an RSV vaccination at your GP surgery.\n\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination."
-                example_50000000003:
+                example_5000000003:
                   summary: RSV - 5000000003/9658218873 Actionable due to membership of an alternative Age Cohort including suggested action (not national booking)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -287,7 +287,7 @@ paths:
                           - actionType: "InfoText"
                             actionCode: "BookLocal"
                             description: "## Getting the vaccine\n\nYou can get an RSV vaccination at your GP surgery.\n\nYour GP surgery may contact you about getting the RSV vaccine. This may be by letter, text, phone call, email or through the NHS App. You do not need to wait to be contacted before booking your vaccination."
-                example_50000000004:
+                example_5000000004:
                   summary: RSV - 5000000004/9658218881 Actionable due to membership of an Age Cohort including suggested action (future national booking)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -305,7 +305,7 @@ paths:
                             description: "## You have an RSV vaccination appointment booked\n\nYou can view, change or cancel your appointment below."
                             urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Manage your appointment"
-                example_50000000005:
+                example_5000000005:
                   summary: RSV - 5000000005/9658218903 Actionable due to membership of an Age Cohort including suggested actions (with future local booking)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -321,7 +321,7 @@ paths:
                           - actionType: "CardWithText"
                             actionCode: "ManageLocal"
                             description: "## You have an RSV vaccination appointment booked\n\nTo change or cancel your appointment, contact the provider you booked with."
-                example_50000000006:
+                example_5000000006:
                   summary: RSV - 5000000006/9658218989 Not Actionable despite to membership of an Age Cohort with reasoning of already vaccinated (cohorts hidden)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -340,7 +340,7 @@ paths:
                           - actionType: "InfoText"
                             actionCode: "CheckCorrect"
                             description: "## If you think this is incorrect\n\nIf you have not had this vaccination and think you should, speak to your healthcare professional.\n\nFor anything else please see our [help and support page](https://www.nhs.uk/nhs-app/nhs-app-help-and-support/)."
-                example_50000000007:
+                example_5000000007:
                   summary: RSV - 5000000007/9658218997 Not Actionable despite to membership of an Age Cohort with reasoning of no available vaccinations (not available type 1)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -359,14 +359,14 @@ paths:
                             ruleCode: "NotAvailable"
                             ruleText: "Vaccinations are not currently available"
                         actions: []
-                example_50000000008:
+                example_5000000008:
                   summary: RSV - 5000000008/9658219004 No RSV response as no active campaign (not available type 2)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
                     meta:
                       lastUpdated: "2025-02-12T16:11:22Z"
                     processedSuggestions: []
-                example_50000000009:
+                example_5000000009:
                   summary: RSV - 5000000009/9658219012 Not Actionable despite to membership of an Age Cohort with reasoning of dose not yet due
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -385,7 +385,7 @@ paths:
                             ruleCode: "NotYetDue"
                             ruleText: "Your next dose is not yet due."
                         actions: []
-                example_50000000010:
+                example_5000000010:
                   summary: RSV - 5000000010/9658220142 Not Actionable despite to membership of an Age Cohort with reasoning of dose not far enough apart
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -404,7 +404,7 @@ paths:
                             ruleCode: "TooClose"
                             ruleText: "Your previous vaccination was less than 91 days ago."
                         actions: []
-                example_50000000011:
+                example_5000000011:
                   summary: RSV - 5000000011/9658220150 Not Actionable despite to membership of an Age Cohort with reasoning of vaccination given in other setting (e.g. care home)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -423,7 +423,7 @@ paths:
                             ruleCode: "OtherSetting"
                             ruleText: "## Getting the vaccine\n\nWe believe you're living in a setting where care is provided.\n\nSpeak to a member of staff where you live about getting the RSV vaccine."
                         actions: []
-                example_50000000012:
+                example_5000000012:
                   summary: RSV - 5000000012/9450114080 Not Actionable despite no cohort membership with reasoning of already vaccinated
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -442,7 +442,7 @@ paths:
                           - actionType: "InfoText"
                             actionCode: "CheckCorrect"
                             description: "## If you think this is incorrect\n\nIf you have not had this vaccination and think you should, speak to your healthcare professional.\n\nFor anything else please see our [help and support page](https://www.nhs.uk/nhs-app/nhs-app-help-and-support/)."
-                example_50000000013:
+                example_5000000013:
                   summary: RSV - 5000000013/9466447939 Not Actionable despite no cohort membership with reasoning of already vaccinated (type 2 includes no cohorts)
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -461,7 +461,7 @@ paths:
                           - actionType: "InfoText"
                             actionCode: "CheckCorrect"
                             description: "## If you think this is incorrect\n\nIf you have not had this vaccination and think you should, speak to your healthcare professional.\n\nFor anything else please see our [help and support page](https://www.nhs.uk/nhs-app/nhs-app-help-and-support/)."
-                example_50000000014:
+                example_5000000014:
                   summary: RSV - 5000000014/9657933617 Not Eligible
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -483,7 +483,7 @@ paths:
                           - actionType: "InfoText"
                             actionCode: "HealthcareProInfo"
                             description: "## If you think you need this vaccine\n\nSpeak to your healthcare professional if you think you should be offered this vaccination."
-                example_50000000015:
+                example_5000000015:
                   summary: RSV - 5000000015/9735549018 Multiple actions without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -508,7 +508,7 @@ paths:
                           - actionType: "CardWithText"
                             actionCode: "LoremIpsumTest4"
                             description: "## Etiam venenatis erat at diam varius.\n\nEtiam ullamcorper venenatis mi, at scelerisque velit vulputate id. Fusce ex arcu, tincidunt vel purus nec, volutpat aliquam odio."
-                example_50000000016:
+                example_5000000016:
                   summary: RSV - 5000000016/9735549026 Multiple actions with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -549,7 +549,7 @@ paths:
                             description: ""
                             urlLink: "http://www.nhs.uk/book-non-nbs-rsv"
                             urlLabel: "Continue to other booking (test 2)"
-                example_50000000017:
+                example_5000000017:
                   summary: RSV - 5000000017/9735549034 Multiple suitability rules with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -577,7 +577,7 @@ paths:
                             ruleCode: "NotYetDue"
                             ruleText: "## Your last dose of the RSV vaccination was too recent\n\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions: []
-                example_50000000018:
+                example_5000000018:
                   summary: RSV - 5000000018/9735549042 Multiple suitability rules without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -599,7 +599,7 @@ paths:
                             ruleCode: "NotYetDue"
                             ruleText: "## Your last dose of the RSV vaccination was too recent\n\nBased on our records, not enough time has passed since you last had this vaccination. You do not need to do anything at this time."
                         actions: []
-                example_50000000019:
+                example_5000000019:
                   summary: RSV - 5000000019/9735549050 Multiple suitability , multiple actions rules with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -638,7 +638,7 @@ paths:
                             description: "## Book a jab at a nearby pharmacy\n\nMany pharmacies can provide you with the RSV vaccine.  The National Booking System can help you find a nearby one, and book a convenient appointment."
                             urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Continue to booking"
-                example_50000000020:
+                example_5000000020:
                   summary: RSV - 5000000020/9735549069 Multiple suitability , multiple actions rules without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -671,7 +671,7 @@ paths:
                             description: "## Lorem ipsum dolor sit amet, consectetur adipiscing elit\n\nFusce imperdiet dictum quam, a consequat leo posuere sed. Vestibulum id sodales odio. Curabitur at egestas lectus, ac mattis risus. In sit amet dapibus sem."
                             urlLink: "https://f.nhswebsite-integration.nhs.uk/nbs/nhs-app/vita/rsv"
                             urlLabel: "Continue to booking (test)"
-                example_50000000021:
+                example_5000000021:
                   summary: RSV - 5000000021/9735549077 Unknown action with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -694,7 +694,7 @@ paths:
                             actionCode: "JabInfoVideo"
                             description: "## (Test link no button) View information about the RSV vaccine\n\nThis video explains what it is and why you should have it."
                             urlLink: "https://www.youtube.com/watch?v=SCMgFsDrR-k"
-                example_50000000022:
+                example_5000000022:
                   summary: RSV - 5000000022/9735549085 Unknown action without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -711,7 +711,7 @@ paths:
                             actionCode: "JabInfoVideo"
                             description: "## (Test link no button) View information about the RSV vaccine\n\nThis video explains what it is and why you should have it."
                             urlLink: "https://www.youtube.com/watch?v=SCMgFsDrR-k"
-                example_50000000023:
+                example_5000000023:
                   summary: RSV - 5000000023/9735549093 Unknown suitability rule with cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -733,7 +733,7 @@ paths:
                             ruleCode: "PreviousAllergicResponse"
                             ruleText: "## Test suitability rule\n\nNeque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
                         actions: []
-                example_50000000024:
+                example_5000000024:
                   summary: RSV - 5000000024/9735549107 Unknown suitability rule without cohorts
                   value:
                     responseId: "1a233ba5-e1eb-4080-a086-2962f6fc3473"
@@ -749,7 +749,7 @@ paths:
                             ruleCode: "PreviousAlergicResponse"
                             ruleText: "## Test suitability rule\n\nNeque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
                         actions: []
-                example_50000000025:
+                example_5000000025:
                   summary: RSV - 5000000025 Under 75 vaccinated in past 28 weeks
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
@@ -774,7 +774,7 @@ paths:
                             actionCode: DateOfNextEarliestVaccination
                             description: >-
                               20260607
-                example_50000000026:
+                example_5000000026:
                   summary: RSV - 5000000026 Not Actionable - already vaccinated with last vaccination date
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
@@ -808,7 +808,7 @@ paths:
 
 
                               For anything else please see our [help and support page](https://www.nhs.uk/nhs-app/nhs-app-help-and-support/).
-                example_50000000101:
+                example_5000000101:
                   summary: COVID - 5000000101 Actionable due to membership of an Age Cohort including suggested national booking actions
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
@@ -872,7 +872,7 @@ paths:
 
 
                               If you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).
-                example_50000000102:
+                example_5000000102:
                   summary: COVID - 5000000102 Actionable due to membership of multiple cohorts (age and clinical risk) including suggested national booking actions
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
@@ -939,7 +939,7 @@ paths:
 
 
                               If you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).
-                example_50000000103:
+                example_5000000103:
                   summary: COVID - 5000000103 Actionable due to membership of care home residents Cohort including suggested national actions
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
@@ -1002,7 +1002,7 @@ paths:
 
 
                               If you have already had this vaccination or your personal details are wrong, visit our [help and support page](https://digital.nhs.uk/services/eligibility-data-product-elid).
-                example_50000000104:
+                example_5000000104:
                   summary: COVID - 5000000104 Actionable due to membership of an eligible cohort with future national booking
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
@@ -1028,7 +1028,7 @@ paths:
                             actionCode: FutureBookingDate
                             description: >-
                               20260201
-                example_50000000105:
+                example_5000000105:
                   summary: COVID - 5000000105 Actionable due to membership of an eligible cohort with future local booking
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
@@ -1052,7 +1052,7 @@ paths:
 
 
                               To change or cancel your appointment, contact the provider you booked with.
-                example_50000000106:
+                example_5000000106:
                   summary: COVID - 5000000106 Not Actionable as already vaccinated
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
@@ -1086,7 +1086,7 @@ paths:
 
 
                               For anything else please see our [help and support page](https://www.nhs.uk/nhs-app/nhs-app-help-and-support/).
-                example_50000000107:
+                example_5000000107:
                   summary: COVID - 5000000107 Not Actionable due to no current campaign (type 1)
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
@@ -1102,14 +1102,14 @@ paths:
                             ruleCode: NoCurrentCampaign
                             ruleText: There is no current COVID-19 vaccination campaign
                         actions: [ ]
-                example_50000000108:
+                example_5000000108:
                   summary: COVID - 5000000108 Not actionable due to no current campaign (type 2)
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
                     meta:
                       lastUpdated: 2025-02-12T16:11:22Z
                     processedSuggestions: [ ]
-                example_50000000110:
+                example_5000000110:
                   summary: COVID - 5000000110 Not Actionable despite membership of an eligible cohort as too close to previous vaccination
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
@@ -1137,7 +1137,7 @@ paths:
                             actionCode: DateOfNextEarliestVaccination
                             description: >-
                               20260424
-                example_50000000111:
+                example_5000000111:
                   summary: COVID - 5000000111 Not Actionable as vaccination will be given in other setting (e.g. care home)
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
@@ -1167,7 +1167,7 @@ paths:
 
                               Speak to a member of staff where you live about getting the COVID vaccine.
                         actions: [ ]
-                example_50000000114:
+                example_5000000114:
                   summary: COVID - 5000000114 Not Eligible
                   value:
                     responseId: 1a233ba5-e1eb-4080-a086-2962f6fc3473
