@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.31"
+version = "1.44.33"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.31-py3-none-any.whl", hash = "sha256:07881981cb191db7ae2242ba113518b5577522acd7c722fea18cd623c223e8d3"},
-    {file = "awscli-1.44.31.tar.gz", hash = "sha256:90bd06f747be0130001f44532546f3b2374cdda3bb3028366c99e696fafb915d"},
+    {file = "awscli-1.44.33-py3-none-any.whl", hash = "sha256:ce376e5fcfdbf481f649136fba749cb47f05a5f1547b55e6d96da0ebecd6970b"},
+    {file = "awscli-1.44.33.tar.gz", hash = "sha256:eda92f2208bbcde38950b57f1743462d33868cec7ed3ef33888502296d7e8dc2"},
 ]
 
 [package.dependencies]
-botocore = "1.42.41"
+botocore = "1.42.43"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.41"
+version = "1.42.43"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.41-py3-none-any.whl", hash = "sha256:567530f7d4da668af891c1259fb80c01578ab8d9f1098127cc250451a46fb54f"},
-    {file = "botocore-1.42.41.tar.gz", hash = "sha256:0698967741d873d819134bea1ffe9c35decc00c741f49a42885dbd7ad8198fbc"},
+    {file = "botocore-1.42.43-py3-none-any.whl", hash = "sha256:1c0e30f62e274978ac3bcab253e3a859febea634b72b5e343589db7d17f83cd6"},
+    {file = "botocore-1.42.43.tar.gz", hash = "sha256:41d04ead0b0862eec21f841811fb5764fe370a2df9b319e0d5297325c50fba1b"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "8afe182253c66a1289af13ce1caa14a66ae3eb1b839fac85e3f362abf514b2c8"
+content-hash = "d172ecb07423018e43b54499eb511cca90d6231aa28604e4efed1abebecbe6ae"
