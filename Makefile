@@ -60,39 +60,36 @@ retrieve-proxygen-key: guard-ENV
 	mkdir -p ~/.proxygen
 	aws ssm get-parameter --name /$$ENV/proxygen/private_key --with-decryption \
 	| jq -r ".Parameter.Value" \
-	> ~/.proxygen/eligibility-signposting-api-$(ENV).pem && \
+	> ~/.proxygen/eligibility-signposting-api.pem && \
 	echo "Retrieved proxygen key for APIM '$(ENV)' environment"
 
 # Copy proxygen credentials for the specified environment to `~/.proxygen/`
 # This location required location for local proxygen usage
-setup-proxygen-credentials: guard-ENV
-	@ cd specification && \
-	cp .proxygen/credentials-$(ENV).yaml ~/.proxygen/credentials.yaml && \
-	cp .proxygen/settings-$(ENV).yaml ~/.proxygen/settings.yaml && \
-	echo "Set up proxygen credentials for the APIM '$(ENV)' environment"
+setup-proxygen-credentials:
+	@ cd specification && cp -r .proxygen ~
 
 get-spec: # Get the most recent specification live in proxygen
-	$(MAKE) setup-proxygen-credentials ENV=prod
+	$(MAKE) setup-proxygen-credentials
 	proxygen spec get
 
 get-spec-uat: # Get the most recent specification live in proxygen
-	$(MAKE) setup-proxygen-credentials ENV=prod
+	$(MAKE) setup-proxygen-credentials
 	proxygen spec get --uat
 
 publish-spec: # Publish the specification to proxygen
-	$(MAKE) setup-proxygen-credentials ENV=prod
+	$(MAKE) setup-proxygen-credentials
 	proxygen spec publish build/specification/prod/eligibility-signposting-api.yaml
 
 publish-spec-uat: # Publish the specification to proxygen
-	$(MAKE) setup-proxygen-credentials ENV=prod
+	$(MAKE) setup-proxygen-credentials
 	proxygen spec publish build/specification/preprod/eligibility-signposting-api.yaml --uat
 
 delete-spec: # Delete the specification from proxygen
-	$(MAKE) setup-proxygen-credentials ENV=prod
+	$(MAKE) setup-proxygen-credentials
 	proxygen spec delete
 
 delete-spec-uat: # Delete the specification from proxygen
-	$(MAKE) setup-proxygen-credentials ENV=prod
+	$(MAKE) setup-proxygen-credentials
 	proxygen spec delete --uat
 
 #####################
