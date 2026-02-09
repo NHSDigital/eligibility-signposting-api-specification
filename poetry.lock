@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.31"
+version = "1.44.34"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.31-py3-none-any.whl", hash = "sha256:07881981cb191db7ae2242ba113518b5577522acd7c722fea18cd623c223e8d3"},
-    {file = "awscli-1.44.31.tar.gz", hash = "sha256:90bd06f747be0130001f44532546f3b2374cdda3bb3028366c99e696fafb915d"},
+    {file = "awscli-1.44.34-py3-none-any.whl", hash = "sha256:d57c4aaf96d79f90172d1fa75fed0ffeaa0991f28091ed636e0a1351530d0d0e"},
+    {file = "awscli-1.44.34.tar.gz", hash = "sha256:fd025b052b0dd98ff01ef5697a7888eaf7baf3103a7ea2f979c0fcbca1e673e2"},
 ]
 
 [package.dependencies]
-botocore = "1.42.41"
+botocore = "1.42.44"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.41"
+version = "1.42.44"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.41-py3-none-any.whl", hash = "sha256:567530f7d4da668af891c1259fb80c01578ab8d9f1098127cc250451a46fb54f"},
-    {file = "botocore-1.42.41.tar.gz", hash = "sha256:0698967741d873d819134bea1ffe9c35decc00c741f49a42885dbd7ad8198fbc"},
+    {file = "botocore-1.42.44-py3-none-any.whl", hash = "sha256:ba406b9243a20591ee87d53abdb883d46416705cebccb639a7f1c923f9dd82df"},
+    {file = "botocore-1.42.44.tar.gz", hash = "sha256:47ba27360f2afd2c2721545d8909217f7be05fdee16dd8fc0b09589535a0701c"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "8afe182253c66a1289af13ce1caa14a66ae3eb1b839fac85e3f362abf514b2c8"
+content-hash = "e30481b42f3c1e54bbd1cca1c7f3c91eb0ce5ec560d9a2d2e45350851c5af220"
