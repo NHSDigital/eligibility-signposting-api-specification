@@ -55,13 +55,13 @@ config:: # Configure development environment (main) @Configuration
 
 # Verify current AWS account login and retrieve the proxygen key
 # from AWS SSM Parameter Store
-retrieve-proxygen-key: guard-ENV
+retrieve-proxygen-key:
 	@ ./scripts/check-aws-account.sh
 	mkdir -p ~/.proxygen
-	aws ssm get-parameter --name /$$ENV/proxygen/private_key --with-decryption \
+	aws ssm get-parameter --name /prod/proxygen/private_key --with-decryption \
 	| jq -r ".Parameter.Value" \
 	> ~/.proxygen/eligibility-signposting-api.pem && \
-	echo "Retrieved proxygen key for APIM '$(ENV)' environment"
+	echo "Retrieved proxygen key for APIM 'Prod' environment"
 
 # Copy proxygen credentials for the specified environment to `~/.proxygen/`
 # This location required location for local proxygen usage
