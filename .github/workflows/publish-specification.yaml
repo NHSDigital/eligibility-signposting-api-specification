@@ -1,4 +1,4 @@
-name: Publish specification
+name: (Deprecated) Publish specification
 
 on:
   workflow_dispatch:
@@ -46,7 +46,7 @@ jobs:
 
       - name: Set up Proxygen credentials
         env:
-          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY }}
+          PROXYGEN_PRIVATE_KEY: ${{ secrets.PROXYGEN_PRIVATE_KEY_PROD }}
         run: |
           mkdir -p ~/.proxygen
           echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem

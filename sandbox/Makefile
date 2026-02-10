@@ -1,4 +1,5 @@
 SHELL := /bin/bash
+
 dirname := $(notdir $(patsubst %/,%,$(CURDIR)))
 project_name = eligibility-signposting-api
 

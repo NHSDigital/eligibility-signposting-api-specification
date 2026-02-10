@@ -53,13 +53,20 @@ config:: # Configure development environment (main) @Configuration
 #### Proxygen ####
 ##################
 
-retrieve-proxygen-key: # Obtain the 'machine user' credentials from AWS SSM (Development environment)
-	mkdir -p ~/.proxygen && \
-	aws ssm get-parameter --name /proxygen/private_key_temp --with-decryption | jq ".Parameter.Value" --raw-output \
-	> ~/.proxygen/eligibility-signposting-api.pem
+# Verify current AWS account login and retrieve the proxygen key
+# from AWS SSM Parameter Store
+retrieve-proxygen-key:
+	@ ./scripts/check-aws-account.sh
+	mkdir -p ~/.proxygen
+	aws ssm get-parameter --name /prod/proxygen/private_key --with-decryption \
+	| jq -r ".Parameter.Value" \
+	> ~/.proxygen/eligibility-signposting-api.pem && \
+	echo "Retrieved proxygen key for APIM 'Prod' environment"
 
-setup-proxygen-credentials: # Copy Proxygen templated credentials to where it expected them
-	cd specification && cp -r .proxygen ~
+# Copy proxygen credentials for the specified environment to `~/.proxygen/`
+# This location required location for local proxygen usage
+setup-proxygen-credentials:
+	@ cd specification && cp -r .proxygen ~
 
 get-spec: # Get the most recent specification live in proxygen
 	$(MAKE) setup-proxygen-credentials
@@ -85,7 +92,9 @@ delete-spec-uat: # Delete the specification from proxygen
 	$(MAKE) setup-proxygen-credentials
 	proxygen spec delete --uat
 
-# Specification
+#####################
+### Specification ###
+#####################
 
 guard-%:
 	@ if [ "${${*}}" = "" ]; then \
@@ -114,13 +123,13 @@ set-ratelimit: guard-APIM_ENV
 	< specification/x-nhsd-apim/ratelimit-template.yaml > specification/x-nhsd-apim/ratelimit.yaml
 
 update-spec-template: guard-APIM_ENV
-ifeq ($(APIM_ENV), $(filter $(APIM_ENV), sandbox internal-dev test int ref preprod prod ))
+ifeq ($(APIM_ENV), $(filter $(APIM_ENV), sandbox internal-dev test int ref preprod prod dev))
 	@ $(MAKE) set-target APIM_ENV=$$APIM_ENV
 	@ $(MAKE) set-access APIM_ENV=$$APIM_ENV
 	@ $(MAKE) set-security APIM_ENV=$$APIM_ENV
 	@ $(MAKE) set-ratelimit APIM_ENV=$$APIM_ENV
 else
-	@ echo ERROR: $$APIM_ENV is not a valid environment. Please use one of [sandbox, internal-dev, int, ref, prod]
+	@ echo ERROR: $$APIM_ENV is not a valid environment. Please use one of [sandbox, internal-dev, test, int, ref, preprod, prod, dev]
 	@ exit 1;
 endif
 

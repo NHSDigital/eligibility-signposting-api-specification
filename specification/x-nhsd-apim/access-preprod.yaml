@@ -1,4 +1,6 @@
-- title: Eligibility Signposting API (Pre Production Environment)
+- title: Eligibility Signposting API (Pre Production Environment) NHS Login P9
   grants:
     nhs-login-p9: []
+- title: Eligibility Signposting API (Pre Production Environment) App Level 3
+  grants:
     app-level3: []

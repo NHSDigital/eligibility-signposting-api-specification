@@ -1,5 +1,5 @@
 type: external
-url: "TBC"
+url: "https://dev.eligibility-signposting-api.nhs.uk"
 healthcheck: /patient-check/_status
 security:
   type: mtls
