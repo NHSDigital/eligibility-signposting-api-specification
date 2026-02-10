@@ -41,7 +41,7 @@ jobs:
         run: |
           mkdir -p ~/.proxygen
           echo "$PROXYGEN_PRIVATE_KEY" > ~/.proxygen/eligibility-signposting-api.pem
-          make setup-proxygen-credentials ENV=prod
+          make setup-proxygen-credentials
 
       - name: Generate sandbox specification
         run: |
