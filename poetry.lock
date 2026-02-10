@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.31"
+version = "1.44.35"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.31-py3-none-any.whl", hash = "sha256:07881981cb191db7ae2242ba113518b5577522acd7c722fea18cd623c223e8d3"},
-    {file = "awscli-1.44.31.tar.gz", hash = "sha256:90bd06f747be0130001f44532546f3b2374cdda3bb3028366c99e696fafb915d"},
+    {file = "awscli-1.44.35-py3-none-any.whl", hash = "sha256:0823c1af8926a3bd10db652d8b64d61cfbf34268be845aca332ea7aea0c1ac15"},
+    {file = "awscli-1.44.35.tar.gz", hash = "sha256:bc38774bfc71fd33112fd283522b010c2f5b606e57b28a85884d96e8051c58e7"},
 ]
 
 [package.dependencies]
-botocore = "1.42.41"
+botocore = "1.42.45"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.41"
+version = "1.42.45"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.41-py3-none-any.whl", hash = "sha256:567530f7d4da668af891c1259fb80c01578ab8d9f1098127cc250451a46fb54f"},
-    {file = "botocore-1.42.41.tar.gz", hash = "sha256:0698967741d873d819134bea1ffe9c35decc00c741f49a42885dbd7ad8198fbc"},
+    {file = "botocore-1.42.45-py3-none-any.whl", hash = "sha256:a5ea5d1b7c46c2d5d113879e45b21eaf7d60dc865f4bcb46dfcf0703fe3429f4"},
+    {file = "botocore-1.42.45.tar.gz", hash = "sha256:40b577d07b91a0ed26879da9e4658d82d3a400382446af1014d6ad3957497545"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "8afe182253c66a1289af13ce1caa14a66ae3eb1b839fac85e3f362abf514b2c8"
+content-hash = "43a2a066aefc73baa9c6ad8e949bda79c67bb81b1419bed4000963aefe8da711"
