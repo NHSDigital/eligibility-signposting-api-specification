@@ -405,6 +405,7 @@ Examples:
         # Add NHS number header if provided
         if args.nhs_number:
             additional_headers['nhs-login-nhs-number'] = args.nhs_number
+            additional_headers['NHSE-Product-ID'] = 'P.XWA-VFF'
 
         # Add any custom headers
         if args.headers:
