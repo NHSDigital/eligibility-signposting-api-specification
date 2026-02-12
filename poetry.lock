@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.36"
+version = "1.44.37"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.36-py3-none-any.whl", hash = "sha256:377ce003c07f87ce8deb81bceb57eefb482372e779aeb78ded34f44c39e22729"},
-    {file = "awscli-1.44.36.tar.gz", hash = "sha256:2a0e7202c2f915f6eac2aeccb5886af36c2d3a7bfd406b325dbd8276cb508299"},
+    {file = "awscli-1.44.37-py3-none-any.whl", hash = "sha256:d5c2eccd760af25265673e7cb22554395645160678edf2a6c77824bd20b27b63"},
+    {file = "awscli-1.44.37.tar.gz", hash = "sha256:5118fdb359a129aecda6debf578ae1a7226dc4d7130687d51565f018930479c8"},
 ]
 
 [package.dependencies]
-botocore = "1.42.46"
+botocore = "1.42.47"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.46"
+version = "1.42.47"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.46-py3-none-any.whl", hash = "sha256:f7459fcf586f38a3b0a242a172d3332141c770a3f5767bbb21e79d810db95d75"},
-    {file = "botocore-1.42.46.tar.gz", hash = "sha256:fc290b33aba6e271f627c4f46b8bcebfa1a94e19157d396732da417404158c01"},
+    {file = "botocore-1.42.47-py3-none-any.whl", hash = "sha256:c60f5feaf189423e17755aca3f1d672b7466620dd2032440b32aaac64ae8cac8"},
+    {file = "botocore-1.42.47.tar.gz", hash = "sha256:c26e190c1b4d863ba7b44dc68cc574d8eb862ddae5f0fe3472801daee12a0378"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "04fa16974aab843747c3ebc455b49c207008074f3442208d4a7f5e288f4c54fd"
+content-hash = "ce7a1c5ee85b4b98574631cc6277b70435dfe7d73a44334eeffeca3721541082"
