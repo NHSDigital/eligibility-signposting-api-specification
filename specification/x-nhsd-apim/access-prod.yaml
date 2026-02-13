@@ -1,3 +1,6 @@
 - title: Eligibility Signposting API (Production Environment)
   grants:
     nhs-login-p9: []
+- title: Eligibility Signposting API (Production Environment) App Level 3
+  grants:
+    app-level3: []
