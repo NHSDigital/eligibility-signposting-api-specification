@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.45"
+version = "1.44.46"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.45-py3-none-any.whl", hash = "sha256:aaee40b71a3a6d5deedceca616e5c5a38fc8a5af55a6e663e42ef350099defd7"},
-    {file = "awscli-1.44.45.tar.gz", hash = "sha256:b829dad1b17be994e65c3e0e1fb690bf7d50eed24ea4c127a45757c95fe64569"},
+    {file = "awscli-1.44.46-py3-none-any.whl", hash = "sha256:7009b4f1ae6d6489fad0d4c0d46fca326848cfe1c662799a08f11423ea9f4311"},
+    {file = "awscli-1.44.46.tar.gz", hash = "sha256:7e324110b3587e3c68d9bbbb1f14569249f488985f7b61fd3c353ee1aab4fb8c"},
 ]
 
 [package.dependencies]
-botocore = "1.42.55"
+botocore = "1.42.56"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.55"
+version = "1.42.56"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.55-py3-none-any.whl", hash = "sha256:c092eb99d17b653af3ec9242061a7cde1c7b1940ed4abddfada68a9e1a3492d6"},
-    {file = "botocore-1.42.55.tar.gz", hash = "sha256:af22a7d7881883bcb475a627d0750ec6f8ee3d7b2f673e9ff342ebaa498447ee"},
+    {file = "botocore-1.42.56-py3-none-any.whl", hash = "sha256:111089dea212438a5197e909e5b528e7c30fd8cbd02c8c7d469359b368929343"},
+    {file = "botocore-1.42.56.tar.gz", hash = "sha256:b1d7d3cf2fbe4cc1804a6567a051fc7141d21bcdcfde0336257b8dd2085272c2"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "a2ef9f79ab03599fd93e5349b0bb4d551e69fd096c80c6807744f8e1896a2ca9"
+content-hash = "0371a941e19c99e7890ab5e0c00c9ea14d7714cdcf7163ce742ab036d652cdd5"
