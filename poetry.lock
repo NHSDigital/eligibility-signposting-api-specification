@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.48"
+version = "1.44.65"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.48-py3-none-any.whl", hash = "sha256:f5733d36154b93ae1237e5182abf0503466a43cc6abbb44144ac310df0afe2da"},
-    {file = "awscli-1.44.48.tar.gz", hash = "sha256:ad526194032f23c5fed87b7537be15d27993d97c4a4e88bb6465c358cce85170"},
+    {file = "awscli-1.44.65-py3-none-any.whl", hash = "sha256:12cff1f479ab38fcae303e5545eb0ec6ce0e75639e1cb525231a4bae6a299f43"},
+    {file = "awscli-1.44.65.tar.gz", hash = "sha256:cb7195d6b529824bdd0f027ace81ca2d0aa62fcec334bb7a972b9e86607e682f"},
 ]
 
 [package.dependencies]
-botocore = "1.42.58"
+botocore = "1.42.75"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.58"
+version = "1.42.75"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.58-py3-none-any.whl", hash = "sha256:3098178f4404cf85c8997ebb7948b3f267cff1dd191b08fc4ebb614ac1013a20"},
-    {file = "botocore-1.42.58.tar.gz", hash = "sha256:55224d6a91afae0997e8bee62d1ef1ae2dcbc6c210516939b32a774b0b35bec5"},
+    {file = "botocore-1.42.75-py3-none-any.whl", hash = "sha256:915e43b7ac8f50cf3dbc937ba713de5acb999ea48ad8fecd1589d92ad415f787"},
+    {file = "botocore-1.42.75.tar.gz", hash = "sha256:95c8e716b6be903ee1601531caa4f50217400aa877c18fe9a2c3047d2945d477"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "fffe24450ff94828222a76d1ae1eec1749f2fedad199646bb28220a99e0e7f6d"
+content-hash = "1dcf6cda6848f67eb312e1b6e80f9a31155e2c6520b6d051af0372e354bfe739"
