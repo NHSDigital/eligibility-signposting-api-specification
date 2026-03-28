@@ -34,6 +34,7 @@ format: ## Format and fix code
 generate-sandbox-spec: clean
 	mkdir -p build
 	mkdir -p sandbox/specification
+	$(MAKE) construct-spec APIM_ENV=sandbox
 	npm run publish 2> /dev/null
 	cp build/specification/sandbox/eligibility-signposting-api.json sandbox/specification/eligibility-signposting-api.json
 
