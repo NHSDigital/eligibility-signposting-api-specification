@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.48"
+version = "1.44.75"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.48-py3-none-any.whl", hash = "sha256:f5733d36154b93ae1237e5182abf0503466a43cc6abbb44144ac310df0afe2da"},
-    {file = "awscli-1.44.48.tar.gz", hash = "sha256:ad526194032f23c5fed87b7537be15d27993d97c4a4e88bb6465c358cce85170"},
+    {file = "awscli-1.44.75-py3-none-any.whl", hash = "sha256:6f81341dfbbdcf50855435b23421e988abe66b781b1993810f72e5465ef41b18"},
+    {file = "awscli-1.44.75.tar.gz", hash = "sha256:574c1dee3bc50e06e321e34c61d453d16f07e3c4113cf1574dd7191505d30620"},
 ]
 
 [package.dependencies]
-botocore = "1.42.58"
+botocore = "1.42.85"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.58"
+version = "1.42.85"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.58-py3-none-any.whl", hash = "sha256:3098178f4404cf85c8997ebb7948b3f267cff1dd191b08fc4ebb614ac1013a20"},
-    {file = "botocore-1.42.58.tar.gz", hash = "sha256:55224d6a91afae0997e8bee62d1ef1ae2dcbc6c210516939b32a774b0b35bec5"},
+    {file = "botocore-1.42.85-py3-none-any.whl", hash = "sha256:828b67722caeb7e240eefedee74050e803d1fa102958ead9c4009101eefd5381"},
+    {file = "botocore-1.42.85.tar.gz", hash = "sha256:2ee61f80b7724a143e16d0a85408ef5fa20b99dce7a3c8ec5d25cc8dced164c1"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "fffe24450ff94828222a76d1ae1eec1749f2fedad199646bb28220a99e0e7f6d"
+content-hash = "70ee80df9669c70deb54471863b15f6e6ba51a6df70ff848800e3752d579c538"
