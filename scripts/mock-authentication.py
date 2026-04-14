@@ -165,6 +165,9 @@ class NHSAPIAuth:
         Returns:
             Signed JWT string
         """
+        if expires_in_minutes <= 0:
+            raise ValueError("JWT expiry must be greater than 0 minutes")
+
         if expires_in_minutes > 5:
             raise ValueError("JWT expiry must not exceed 5 minutes")
 
@@ -173,10 +176,16 @@ class NHSAPIAuth:
             private_key = f.read()
 
         # Create claims
-        # Use slightly less than requested time to account for clock skew
-        # Subtract 10 seconds as a safety buffer
+        # Keep expiry comfortably below 5 minutes so minor clock skew does not
+        # push exp beyond the provider's strict validation threshold.
         current_time = int(time())
-        expiry_seconds = (expires_in_minutes * 60) - 10
+        requested_lifetime = expires_in_minutes * 60
+        clock_skew_buffer_seconds = 60
+        minimum_lifetime_seconds = 30
+        expiry_seconds = max(
+            minimum_lifetime_seconds,
+            requested_lifetime - clock_skew_buffer_seconds
+        )
 
         claims = {
             "sub": self.api_key,
@@ -203,6 +212,7 @@ class NHSAPIAuth:
         print(f"  Current time: {datetime.fromtimestamp(current_time)}")
         print(f"  Expiry time:  {exp_datetime}")
         print(f"  Time until expiry: {(claims['exp'] - current_time)} seconds")
+        print(f"  Clock skew buffer: {clock_skew_buffer_seconds} seconds")
 
         return signed_jwt
 
@@ -295,6 +305,18 @@ class NHSAPIAuth:
 
 
 def main():
+    def resolve_kid(explicit_kid: Optional[str], private_key_path: Optional[str], env: str) -> str:
+        """Resolve KID from explicit arg, private key filename, or environment default."""
+        if explicit_kid:
+            return explicit_kid
+
+        if private_key_path:
+            private_key_name = Path(private_key_path).name
+            if private_key_name.endswith('.pem'):
+                return Path(private_key_path).stem
+
+        return f"{env}-1"
+
     parser = argparse.ArgumentParser(
         description='NHS API JWT Authentication Helper',
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -382,7 +404,11 @@ Examples:
 
     # Handle get-token command
     elif args.command == 'get-token':
-        auth = NHSAPIAuth(args.api_key, args.env, args.kid)
+        resolved_kid = resolve_kid(args.kid, args.private_key, args.env)
+        if not args.kid:
+            print(f"Using KID: {resolved_kid}")
+
+        auth = NHSAPIAuth(args.api_key, args.env, resolved_kid)
         token = auth.get_access_token(args.private_key)
         print("\n" + "="*70)
         print(f"Access Token: {token}")
@@ -397,7 +423,11 @@ Examples:
         else:
             env = args.env
 
-        auth = NHSAPIAuth(args.api_key, env, args.kid)
+        resolved_kid = resolve_kid(args.kid, args.private_key, env)
+        if not args.kid:
+            print(f"Using KID: {resolved_kid}")
+
+        auth = NHSAPIAuth(args.api_key, env, resolved_kid)
 
         # Build additional headers
         additional_headers = {}
@@ -405,7 +435,7 @@ Examples:
         # Add NHS number header if provided
         if args.nhs_number:
             additional_headers['nhs-login-nhs-number'] = args.nhs_number
-            additional_headers['NHSE-Product-ID'] = 'P.XWA-VFF'
+            additional_headers['nhse_product_id'] = 'P.WTJ-FJT'
 
         # Add any custom headers
         if args.headers:
