@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.77"
+version = "1.44.79"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.77-py3-none-any.whl", hash = "sha256:fbd4859f5200b67ec03a0a7e5cead947b3e35872fa7c814f9872604781932dfe"},
-    {file = "awscli-1.44.77.tar.gz", hash = "sha256:07da94bd1b7b5f697340ac654ad8d01172a6eb14582bca8f67aed2b60b8812b5"},
+    {file = "awscli-1.44.79-py3-none-any.whl", hash = "sha256:c6a351e7554e7da8173565b4bc89b4d8798ed5e9097e9d52c130b28da0999535"},
+    {file = "awscli-1.44.79.tar.gz", hash = "sha256:85ef9f6a75c71d950c39c341b9493ed0872885bbb19cce5a26859c1b8fcd1397"},
 ]
 
 [package.dependencies]
-botocore = "1.42.87"
+botocore = "1.42.89"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.87"
+version = "1.42.89"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.87-py3-none-any.whl", hash = "sha256:32832df27c039cc1a518289afe0f6006296d3df26603b5f66e911457e67f0146"},
-    {file = "botocore-1.42.87.tar.gz", hash = "sha256:1c6cc9555c1feec50b290a42de70ba6f04826c009562c2c12bb9990d0258482d"},
+    {file = "botocore-1.42.89-py3-none-any.whl", hash = "sha256:d9b786c8d9db6473063b4cc5be0ba7e6a381082307bd6afb69d4216f9fa95f35"},
+    {file = "botocore-1.42.89.tar.gz", hash = "sha256:95ac52f472dad29942f3088b278ab493044516c16dbf9133c975af16527baa99"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "5510133cd7657cdac2d440df60ba12e973e03f746da0ab7536649f534f506f65"
+content-hash = "803424e505be3bce13401108fa35071cbabb6ce435cd8abe9e8aa8716ecab15d"
