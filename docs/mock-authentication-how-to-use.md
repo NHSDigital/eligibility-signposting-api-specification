@@ -30,7 +30,7 @@ pip install "PyJWT[crypto]" requests cryptography
 
 ## Script location
 
-From repo root:
+From repository root:
 
 ```bash
 python3 scripts/mock-authentication.py --help
