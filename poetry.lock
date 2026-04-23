@@ -17,18 +17,18 @@ test = ["coverage", "mypy", "pexpect", "ruff", "wheel"]
 
 [[package]]
 name = "awscli"
-version = "1.44.77"
+version = "1.44.84"
 description = "Universal Command Line Environment for AWS."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "awscli-1.44.77-py3-none-any.whl", hash = "sha256:fbd4859f5200b67ec03a0a7e5cead947b3e35872fa7c814f9872604781932dfe"},
-    {file = "awscli-1.44.77.tar.gz", hash = "sha256:07da94bd1b7b5f697340ac654ad8d01172a6eb14582bca8f67aed2b60b8812b5"},
+    {file = "awscli-1.44.84-py3-none-any.whl", hash = "sha256:86a95ff17e9c02fb9f309bb1eef49020a13729a4ca16a0c0cd51912b35598319"},
+    {file = "awscli-1.44.84.tar.gz", hash = "sha256:0c53beaf732c26f1b3d23c49910900abd6a10388638a1b79967822c92873953f"},
 ]
 
 [package.dependencies]
-botocore = "1.42.87"
+botocore = "1.42.94"
 colorama = ">=0.2.5,<0.4.7"
 docutils = ">=0.18.1,<=0.19"
 PyYAML = ">=3.10,<6.1"
@@ -75,14 +75,14 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-version = "1.42.87"
+version = "1.42.94"
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "botocore-1.42.87-py3-none-any.whl", hash = "sha256:32832df27c039cc1a518289afe0f6006296d3df26603b5f66e911457e67f0146"},
-    {file = "botocore-1.42.87.tar.gz", hash = "sha256:1c6cc9555c1feec50b290a42de70ba6f04826c009562c2c12bb9990d0258482d"},
+    {file = "botocore-1.42.94-py3-none-any.whl", hash = "sha256:a2143742132ed0f6cdb90204d667b89d0301068b1045e8bc099efa267bf1b348"},
+    {file = "botocore-1.42.94.tar.gz", hash = "sha256:41c6b3b11b073221a41f52b222ba387be34459fb77cdc506e8b74cdaf24bdcce"},
 ]
 
 [package.dependencies]
@@ -375,4 +375,4 @@ tests = ["build", "coverage", "mypy", "ruff", "wheel"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "5510133cd7657cdac2d440df60ba12e973e03f746da0ab7536649f534f506f65"
+content-hash = "7826cd4ba20b91a4b09efd2cd533adeef8bd6edadbfd64aa6f10a5c951fcb93f"
